@@ -1,8 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
-
+class Landing extends CI_Controller {
+	
+	function __construct(){
+		parent::__construct();		
+        $this->load->helper('url');// menggunakan helper url
+               
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -18,8 +23,9 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('V_landing/home');
 	}
 }
