@@ -50,7 +50,7 @@
           <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="#hero">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="#about">Tentang</a></li>
               <li><a href="#services">Galeri</a></li>
               <li><a href="#portfolio">Produk</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -87,7 +87,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>About Us</h2>
+          <h2>Tentang</h2>
           <!-- ======= Features Section ======= -->
                   <section id="features" class="features">
                   <div class="container">
@@ -96,54 +96,46 @@
                       <div class="col-lg-6 order-2 order-lg-1">
                         <div class="icon-box mt-5 mt-lg-0">
                           <i class="bx bx-receipt"></i>
-                          <h4>Est labore ad</h4>
-                          <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                          <h4>Motto Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
+                          <p style='text-align: right;'><strong>خْي ُر النا ِس أْنفَعُ ُهْم ِللنا ِس</strong></p>
+                          <br>
+                          <p style='text-align: justify;'><em>“Sebaik Baik Manusia Adalah Yang Paling Bermanfaat Bagi Orang Lain”</em></p>
                         </div>
                         <div class="icon-box mt-5">
                           <i class="bx bx-cube-alt"></i>
-                          <h4>Harum esse qui</h4>
-                          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                        </div>
-                        <div class="icon-box mt-5">
-                          <i class="bx bx-images"></i>
-                          <h4>Aut occaecati</h4>
-                          <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                          <h4>Visi Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
+                          <br>
+                          <p style='text-align: justify;'>Menjadi Ponpes yang unggul di bidang pendidikan akhlaq dan penyiapan SDM yang tangguh iman, 
+                          islam dan ihsan serta ketrampilan kewirausahaan.</p>
                         </div>
                         <div class="icon-box mt-5">
                           <i class="bx bx-shield"></i>
-                          <h4>Beatae veritatis</h4>
-                          <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                          <h4>Misi Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
+                          <p>Misi Kami : </p>
+                          <br>
+                            <p>1. Menyelenggarakan pendidikan dan pengajian agama</p>
+                            <p>2. Mengembangkan SDM khususnya ketrampilan wirausaha</p>
+                            <p>3. Mendirikan dan menjalankan usaha mandiri</p>
+                            <p>4. Menyelenggarakan majlis dzikir umum bersama masyarakat</p>
+                            <p>5. Menyelenggarakan program santunan kepada anak yatim dan faqir miskin</p>
                         </div>
                       </div>
-                      <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/logo_pondok.png");'></div>
+                      <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/iya.jpg");'></div>
                     </div>
 
                   </div>
                 </section><!-- End Features Section -->
 
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p style='text-align: justify;'><strong><em>Pondok Pesantren Raden Rahmat Sunan Ampel audalah salah satu pondok pesantren yang berada di Lingkungan Jambuan, Kelurahan Antirogo Kecamatan Sumbersari Kabupaten Jember. 
+          Ponpes Raden Rahmat Sunan Ampel merupakan lembaga pendidikan Islam yang didirikan oleh Yayasan Al-Munawwiriy Sunan Ampel pada tahun 2014. 
+          Yayasan al-munawwiriy sunan ampel bertempat di Desa Jatimulyo Kecamatan Jenggawah Kabupaten Jember. 
+          Pada awalnya santri Pondok Pesantren Raden Rahmat Sunan Ampel yang merupakan mahasiswa/i Universitas Jember dan Politeknik Negeri Jember 
+          mengikuti kegiatan pengajian, tadarus, dzikir bersama, qiyamul lail dan ibadah lainnya di Ponpes Al-Falah Desa Jatimulyo Kecamatan Jenggawah yang merupakan lembaga pendidikan Islam di bawah naungan Yayasan almunawwiriy sunan ampel. 
+          Untuk lebih mengoptimalkan kegiatan pendidikan santri mahasiswa, maka diperlukan Pondok Pesantren di lingkungan kampus di kota Jember. 
+          Ponpes tersebut diberi nama Pondok Pesantren Raden Rahmat Sunan Ampel (PONPES RRSA) Jember</em></strong></p> 
         </div>
-
         <div class="row content">
-          <div class="col-lg-6">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-          </div>
+            <a href="https://id-id.facebook.com/sunanampeljember/" class="btn-learn-more">Learn More</a>
         </div>
 
       </div>
@@ -154,171 +146,164 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Galeri</h2>
+          <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Bersholawat </h5>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <img src="assets/img/galeri/1s.JPG" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <img src="assets/img/galeri/2s.JPG" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <img src="assets/img/galeri/3s.JPG" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <img src="assets/img/galeri/4s.JPG" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+            <img src="assets/img/galeri/5s.JPG" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+            <img src="assets/img/galeri/7s.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/8s.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/6s.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/9.JPG" class="img-fluid" alt="">
             </div>
           </div>
 
         </div>
 
+        <section id="services" class="services">
+        <div class="container">
+
+        <div class="section-title">
+          
+        <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Peduli Covid-19 </h5>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <img src="assets/img/galeri/c2.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c8.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c7.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c3.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c6.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c5.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c4.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c9.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+            <img src="assets/img/galeri/c1.JPG" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container">
-
-        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">
 
         <div class="text-center title">
-          <h3>What we have achieved so far</h3>
-          <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+          <h3>Jumlah Santri Pondok Pesantren Raden Rahmat Sunan Ampel</h3>
+          <p>Santri kami terdiri atas santri pria dan juga santri pria berjumlah berikut</p>
         </div>
 
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">232</span>
-            <p>Clients</p>
+            <span data-toggle="counter-up">60</span>
+            <p>Total Santri</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">521</span>
-            <p>Projects</p>
+            <span data-toggle="counter-up">30</span>
+            <p>Santri Pria</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,463</span>
-            <p>Hours Of Support</p>
+            <span data-toggle="counter-up">30</span>
+            <p>Santri Wanita</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
-            <p>Hard Workers</p>
+            <span data-toggle="counter-up">10</span>
+            <p>Alumni</p>
           </div>
 
         </div>
@@ -331,17 +316,17 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Produk</h2>
+          <p>Produk Wirausaha yang di hasilkan Pondok Pesantren Sunan Ampel</p>
         </div>
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Makanan</li>
+              <li data-filter=".filter-card">Minuman</li>
+              <li data-filter=".filter-web">Sandang</li>
             </ul>
           </div>
         </div>
@@ -443,128 +428,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Pricing</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-            <div class="box recommended">
-              <span class="recommended-badge">Recommended</span>
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-            <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= Faq Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container-fluid">
-
-        <div class="row">
-
-          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-            <div class="content">
-              <h3>Frequently Asked <strong>Questions</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-            </div>
-
-            <div class="accordion-list">
-              <ul>
-                <li>
-                  <a data-toggle="collapse" class="collapse" href="#accordion-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-1" class="collapse show" data-parent=".accordion-list">
-                    <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-toggle="collapse" href="#accordion-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-2" class="collapse" data-parent=".accordion-list">
-                    <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-toggle="collapse" href="#accordion-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-3" class="collapse" data-parent=".accordion-list">
-                    <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                    </p>
-                  </div>
-                </li>
-
-              </ul>
-            </div>
-
-          </div>
-
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/faq.jpg");'>&nbsp;</div>
-        </div>
-
-      </div>
-    </section><!-- End Faq Section -->
+    
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
