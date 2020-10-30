@@ -154,54 +154,81 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <img src="assets/img/galeri/1s.JPG" class="img-fluid" alt="">
+              <br>
+              <br>
+              <a href="aassets/img/galeri/1s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
             <img src="assets/img/galeri/2s.JPG" class="img-fluid" alt="">
+              <br>
+              <br>
+              <a href="aassets/img/galeri/2s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
             <img src="assets/img/galeri/3s.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/3s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/4s.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/4s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/5s.JPG" class="img-fluid" alt="">
-            </div>
+            <br>
+              <br>
+              <a href="aassets/img/galeri/5s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+           </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/7s.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/7s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/8s.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/8s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/6s.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/6s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/9.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/9s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
@@ -219,54 +246,81 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <img src="assets/img/galeri/c2.JPG" class="img-fluid" alt="">
+              <br>
+              <br>
+              <a href="aassets/img/galeri/c2.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
             <img src="assets/img/galeri/c8.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c8.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
             <img src="assets/img/galeri/c7.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c7.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/c3.JPG" class="img-fluid" alt="">
+            <br>
+            <br>
+            <a href="assets/img/galeri/c3.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/c6.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c6.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/c5.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c5.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/c4.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c4.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/c9.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c9.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
             <img src="assets/img/galeri/c1.JPG" class="img-fluid" alt="">
+            <br>
+              <br>
+              <a href="aassets/img/galeri/c1.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
           </div>
         </div>
@@ -436,12 +490,12 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Anda dapat mengirim pesan serta menghubungi kami jika ada kendala teknis</p>
         </div>
       </div>
 
       <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.430040959495!2d113.73577421415862!3d-8.159354184004112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695bff3b16eeb%3A0xa66446d5bdacf5c1!2sPondok%20Pesantren%20Raden%20Rahmat%20Sunan%20Ampel%20Jember!5e0!3m2!1sid!2sid!4v1604020369647!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="container">
@@ -453,19 +507,19 @@
               <div class="address">
                 <i class="ri-map-pin-line"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>Jl. Koptu Berlian No.8, Jambutan, Antirogo, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68125</p>
               </div>
 
               <div class="email">
                 <i class="ri-mail-line"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>pprrsunanampel@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="ri-phone-line"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+6285331742836</p>
               </div>
 
             </div>
@@ -513,8 +567,6 @@
   <!-- ======= Footer ======= -->
 <footer id="footer">
     <div class="container">
-      <h3>KnightOne</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -523,14 +575,14 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>KnightOne</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>PPRRSA</span></strong>. 2020
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/knight-simple-one-page-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">TimBois</a>
       </div>
     </div>
   </footer><!-- End Footer -->
