@@ -88,15 +88,14 @@
                     <div class="portfolio-details-container">
 
                       <div class="owl-carousel portfolio-details-carousel">
-                        <img src="assets/img/produk/makanan/g1.jpeg" class="img-fluid" alt="">
-                        <img src="assets/img/produk/makanan/g2.jpeg" class="img-fluid" alt="">
-                        <img src="assets/img/produk/makanan/g3.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/produk/minuman/g1.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/produk/minuman/g2.jpeg" class="img-fluid" alt="">
                       </div>
 
                     </div>
 
                     <div class="portfolio-description">
-                      <h2>Detail Produk Makana</h2>
+                      <h2>Detail Produk Minuman</h2>
                       <p>
                         Produk makanan
                         1.
