@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?php echo base_url();?>/assets/img/logo_pondok.png" rel="icon">
-  <link href="<?php echo base_url();?>/assets/img/logo_pondok.png" rel="logo_pondok">
+  <link href="<?php echo base_url(); ?>/assets/img/logo_pondok.png" rel="icon">
+  <link href="<?php echo base_url(); ?>/assets/img/logo_pondok.png" rel="logo_pondok">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -25,7 +25,7 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="<?php echo base_url();?>/assets/css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: KnightOne - v2.1.0
@@ -81,35 +81,35 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-                <!-- ======= Portfolio Details Section ======= -->
-                <section id="portfolio-details" class="portfolio-details">
-                  <div class="container">
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
 
-                    <div class="portfolio-details-container">
+        <div class="portfolio-details-container">
 
-                      <div class="owl-carousel portfolio-details-carousel">
-                        <img src="assets/img/produk/minuman/g1.jpeg" class="img-fluid" alt="">
-                        <img src="assets/img/produk/minuman/g2.jpeg" class="img-fluid" alt="">
-                      </div>
+          <div class="owl-carousel portfolio-details-carousel">
+            <img src="assets/img/produk/minuman/g1.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/produk/minuman/g2.jpeg" class="img-fluid" alt="">
+          </div>
 
-                    </div>
+        </div>
 
-                    <div class="portfolio-description">
-                      <h2>Detail Produk Minuman</h2>
-                      <p>
-                        Produk makanan
-                        1.
-                      </p>
-                    </div>
+        <div class="portfolio-description">
+          <h2>Detail Produk Minuman</h2>
+          <p>
+            Produk makanan
+            1.
+          </p>
+        </div>
 
-                  </div>
-                </section><!-- End Portfolio Details Section -->
+      </div>
+    </section><!-- End Portfolio Details Section -->
 
-              </main><!-- End #main -->
+  </main><!-- End #main -->
 
-  
+
   <!-- ======= Footer ======= -->
-<footer id="footer">
+  <footer id="footer">
     <div class="container">
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -135,18 +135,18 @@
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="<?php echo base_url();?>/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/php-email-form/validate.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/counterup/counterup.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/venobox/venobox.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/php-email-form/validate.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="<?php echo base_url();?>/assets/js/main.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
 
 </body>
 

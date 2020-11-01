@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?php echo base_url();?>/assets/img/logo_pondok.png" rel="icon">
-  <link href="<?php echo base_url();?>/assets/img/logo_pondok.png" rel="logo_pondok">
+  <link href="<?php echo base_url(); ?>/assets/img/logo_pondok.png" rel="icon">
+  <link href="<?php echo base_url(); ?>/assets/img/logo_pondok.png" rel="logo_pondok">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -25,7 +25,7 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="<?php echo base_url();?>/assets/css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: KnightOne - v2.1.0
@@ -89,53 +89,53 @@
         <div class="section-title">
           <h2>Tentang</h2>
           <!-- ======= Features Section ======= -->
-                  <section id="features" class="features">
-                  <div class="container">
+          <section id="features" class="features">
+            <div class="container">
 
-                    <div class="row">
-                      <div class="col-lg-6 order-2 order-lg-1">
-                        <div class="icon-box mt-5 mt-lg-0">
-                          <i class="bx bx-receipt"></i>
-                          <h4>Motto Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
-                          <p style='text-align: right;'><strong>خْي ُر النا ِس أْنفَعُ ُهْم ِللنا ِس</strong></p>
-                          <br>
-                          <p style='text-align: justify;'><em>“Sebaik Baik Manusia Adalah Yang Paling Bermanfaat Bagi Orang Lain”</em></p>
-                        </div>
-                        <div class="icon-box mt-5">
-                          <i class="bx bx-cube-alt"></i>
-                          <h4>Visi Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
-                          <br>
-                          <p style='text-align: justify;'>Menjadi Ponpes yang unggul di bidang pendidikan akhlaq dan penyiapan SDM yang tangguh iman, 
-                          islam dan ihsan serta ketrampilan kewirausahaan.</p>
-                        </div>
-                        <div class="icon-box mt-5">
-                          <i class="bx bx-shield"></i>
-                          <h4>Misi Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
-                          <p>Misi Kami : </p>
-                          <br>
-                            <p>1. Menyelenggarakan pendidikan dan pengajian agama</p>
-                            <p>2. Mengembangkan SDM khususnya ketrampilan wirausaha</p>
-                            <p>3. Mendirikan dan menjalankan usaha mandiri</p>
-                            <p>4. Menyelenggarakan majlis dzikir umum bersama masyarakat</p>
-                            <p>5. Menyelenggarakan program santunan kepada anak yatim dan faqir miskin</p>
-                        </div>
-                      </div>
-                      <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/iya.jpg");'></div>
-                    </div>
-
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <div class="icon-box mt-5 mt-lg-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Motto Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
+                    <p style='text-align: right;'><strong>خْي ُر النا ِس أْنفَعُ ُهْم ِللنا ِس</strong></p>
+                    <br>
+                    <p style='text-align: justify;'><em>“Sebaik Baik Manusia Adalah Yang Paling Bermanfaat Bagi Orang Lain”</em></p>
                   </div>
-                </section><!-- End Features Section -->
+                  <div class="icon-box mt-5">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Visi Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
+                    <br>
+                    <p style='text-align: justify;'>Menjadi Ponpes yang unggul di bidang pendidikan akhlaq dan penyiapan SDM yang tangguh iman,
+                      islam dan ihsan serta ketrampilan kewirausahaan.</p>
+                  </div>
+                  <div class="icon-box mt-5">
+                    <i class="bx bx-shield"></i>
+                    <h4>Misi Pondok Pesantren Raden Rahmat Sunan Ampel</h4>
+                    <p>Misi Kami : </p>
+                    <br>
+                    <p>1. Menyelenggarakan pendidikan dan pengajian agama</p>
+                    <p>2. Mengembangkan SDM khususnya ketrampilan wirausaha</p>
+                    <p>3. Mendirikan dan menjalankan usaha mandiri</p>
+                    <p>4. Menyelenggarakan majlis dzikir umum bersama masyarakat</p>
+                    <p>5. Menyelenggarakan program santunan kepada anak yatim dan faqir miskin</p>
+                  </div>
+                </div>
+                <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/iya.jpg");'></div>
+              </div>
 
-          <p style='text-align: justify;'><strong><em>Pondok Pesantren Raden Rahmat Sunan Ampel audalah salah satu pondok pesantren yang berada di Lingkungan Jambuan, Kelurahan Antirogo Kecamatan Sumbersari Kabupaten Jember. 
-          Ponpes Raden Rahmat Sunan Ampel merupakan lembaga pendidikan Islam yang didirikan oleh Yayasan Al-Munawwiriy Sunan Ampel pada tahun 2014. 
-          Yayasan al-munawwiriy sunan ampel bertempat di Desa Jatimulyo Kecamatan Jenggawah Kabupaten Jember. 
-          Pada awalnya santri Pondok Pesantren Raden Rahmat Sunan Ampel yang merupakan mahasiswa/i Universitas Jember dan Politeknik Negeri Jember 
-          mengikuti kegiatan pengajian, tadarus, dzikir bersama, qiyamul lail dan ibadah lainnya di Ponpes Al-Falah Desa Jatimulyo Kecamatan Jenggawah yang merupakan lembaga pendidikan Islam di bawah naungan Yayasan almunawwiriy sunan ampel. 
-          Untuk lebih mengoptimalkan kegiatan pendidikan santri mahasiswa, maka diperlukan Pondok Pesantren di lingkungan kampus di kota Jember. 
-          Ponpes tersebut diberi nama Pondok Pesantren Raden Rahmat Sunan Ampel (PONPES RRSA) Jember</em></strong></p> 
+            </div>
+          </section><!-- End Features Section -->
+
+          <p style='text-align: justify;'><strong><em>Pondok Pesantren Raden Rahmat Sunan Ampel audalah salah satu pondok pesantren yang berada di Lingkungan Jambuan, Kelurahan Antirogo Kecamatan Sumbersari Kabupaten Jember.
+                Ponpes Raden Rahmat Sunan Ampel merupakan lembaga pendidikan Islam yang didirikan oleh Yayasan Al-Munawwiriy Sunan Ampel pada tahun 2014.
+                Yayasan al-munawwiriy sunan ampel bertempat di Desa Jatimulyo Kecamatan Jenggawah Kabupaten Jember.
+                Pada awalnya santri Pondok Pesantren Raden Rahmat Sunan Ampel yang merupakan mahasiswa/i Universitas Jember dan Politeknik Negeri Jember
+                mengikuti kegiatan pengajian, tadarus, dzikir bersama, qiyamul lail dan ibadah lainnya di Ponpes Al-Falah Desa Jatimulyo Kecamatan Jenggawah yang merupakan lembaga pendidikan Islam di bawah naungan Yayasan almunawwiriy sunan ampel.
+                Untuk lebih mengoptimalkan kegiatan pendidikan santri mahasiswa, maka diperlukan Pondok Pesantren di lingkungan kampus di kota Jember.
+                Ponpes tersebut diberi nama Pondok Pesantren Raden Rahmat Sunan Ampel (PONPES RRSA) Jember</em></strong></p>
         </div>
         <div class="row content">
-            <a href="https://id-id.facebook.com/sunanampeljember/" class="btn-learn-more">Learn More</a>
+          <a href="https://id-id.facebook.com/sunanampeljember/" class="btn-learn-more">Learn More</a>
         </div>
 
       </div>
@@ -162,7 +162,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
-            <img src="assets/img/galeri/2s.JPG" class="img-fluid" alt="">
+              <img src="assets/img/galeri/2s.JPG" class="img-fluid" alt="">
               <br>
               <br>
               <a href="aassets/img/galeri/2s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
@@ -171,8 +171,8 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-            <img src="assets/img/galeri/3s.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/3s.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/3s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
@@ -180,8 +180,8 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-            <img src="assets/img/galeri/4s.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/4s.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/4s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
@@ -189,17 +189,17 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-            <img src="assets/img/galeri/5s.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/5s.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/5s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-           </div>
+            </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-            <img src="assets/img/galeri/7s.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/7s.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/7s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
@@ -207,8 +207,8 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-            <img src="assets/img/galeri/8s.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/8s.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/8s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
@@ -216,8 +216,8 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-            <img src="assets/img/galeri/6s.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/6s.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/6s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
@@ -225,8 +225,8 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
-            <img src="assets/img/galeri/9.JPG" class="img-fluid" alt="">
-            <br>
+              <img src="assets/img/galeri/9.JPG" class="img-fluid" alt="">
+              <br>
               <br>
               <a href="aassets/img/galeri/9s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
             </div>
@@ -235,96 +235,96 @@
         </div>
 
         <section id="services" class="services">
-        <div class="container">
+          <div class="container">
 
-        <div class="section-title">
-          
-        <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Peduli Covid-19 </h5>
-        </div>
+            <div class="section-title">
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <img src="assets/img/galeri/c2.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/c2.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+              <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Peduli Covid-19 </h5>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c2.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c2.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c8.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c8.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c7.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c7.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c3.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="assets/img/galeri/c3.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c6.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c6.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c5.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c5.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c4.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c4.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c9.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c9.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <img src="assets/img/galeri/c1.JPG" class="img-fluid" alt="">
+                  <br>
+                  <br>
+                  <a href="aassets/img/galeri/c1.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c8.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c8.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c7.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c7.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c3.JPG" class="img-fluid" alt="">
-            <br>
-            <br>
-            <a href="assets/img/galeri/c3.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c6.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c6.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c5.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c5.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c4.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c4.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c9.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c9.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-            <img src="assets/img/galeri/c1.JPG" class="img-fluid" alt="">
-            <br>
-              <br>
-              <a href="aassets/img/galeri/c1.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </section><!-- End Services Section -->
 
@@ -387,23 +387,25 @@
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app"><!--filter makan-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <!--filter makan-->
             <img src="assets/img/produk/makanan/g1.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Rengginang</h4>
               <p>Harga : Rp. 15.000</p>
               <a href="aassets/img/produk/makanan/g1.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMakan');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMakan'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web"><!--filter mukennah-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <!--filter mukennah-->
             <img src="assets/img/produk/mukenah/g1.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Mukennah Motif</h4>
               <p>Harga : Rp. 47.000</p>
               <a href="assets/img/produk/mukenah/g1.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMukenah');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMukenah'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -413,17 +415,18 @@
               <h4>Prol Tape</h4>
               <p>Harga : Rp. 20.000</p>
               <a href="assets/img/produk/makanan/g2.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMakan');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMakan'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card"><!--filter minuman-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <!--filter minuman-->
             <img src="assets/img/produk/minuman/g1.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Wedang Jahe Merah</h4>
               <p>Harga : Rp. 7.000</p>
               <a href="assets/img/produk/minuman/g1.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMinuman');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMinuman'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -433,7 +436,7 @@
               <h4>Mukennah Terusan</h4>
               <p>Harga : Rp. 46.000</p>
               <a href="assets/img/produk/mukenah/g2.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMukenah');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMukenah'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -443,7 +446,7 @@
               <h4>Roti Kismis</h4>
               <p>Harga : Rp. 17.000</p>
               <a href="assets/img/produk/makanan/g3.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMakan');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMakan'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -453,17 +456,18 @@
               <h4>Wedang Uwuh</h4>
               <p>Harga : Rp. 10.000</p>
               <a href="assets/img/produk/minuman/g2.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMinuman');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMinuman'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web"><!--filter mukennah-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <!--filter mukennah-->
             <img src="assets/img/produk/mukenah/g3.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Mukennah Polos</h4>
               <p>Harga : Rp. 40.000</p>
               <a href="assets/img/produk/mukenah/g3.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="<?= base_url('detailMukenah');?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="<?= base_url('detailMukenah'); ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -472,7 +476,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -555,7 +559,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-<footer id="footer">
+  <footer id="footer">
     <div class="container">
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -581,18 +585,18 @@
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="<?php echo base_url();?>/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/php-email-form/validate.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/counterup/counterup.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/venobox/venobox.min.js"></script>
-  <script src="<?php echo base_url();?>/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/php-email-form/validate.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="<?php echo base_url();?>/assets/js/main.js"></script>
+  <script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
 
 </body>
 
