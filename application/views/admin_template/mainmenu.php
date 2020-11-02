@@ -15,15 +15,15 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/santri"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Data Santri</span></a>
                </li>
-               <li class=" nav-item"><a href="cards.html"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Pembayaran</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/pembayaran"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Pembayaran</span></a>
                </li>
-               <li class=" nav-item"><a href="buttons.html"><i class="ft-box"></i><span class="menu-title" data-i18n="">Perizinan</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/perizinan"><i class="ft-box"></i><span class="menu-title" data-i18n="">Perizinan</span></a>
                </li>
-               <li class=" nav-item"><a href="typography.html"><i class="ft-bold"></i><span class="menu-title" data-i18n="">Pelanggaran</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"><i class="ft-bold"></i><span class="menu-title" data-i18n="">Pelanggaran</span></a>
                </li>
-               <li class=" nav-item"><a href="tables.html"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/kompetensi"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
                </li>
-               <li class=" nav-item"><a href="form-elements.html"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Data Web User</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/dataWebUser"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Data Web User</span></a>
                </li>
 
            </ul>

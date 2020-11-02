@@ -48,7 +48,7 @@
 
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn">
-                            Login
+                            <a style="color:white;" href="<?php echo base_url(); ?>index.php/admin/admin"> Login</a>
                         </button>
                     </div>
                 </form>

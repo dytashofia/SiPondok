@@ -44,12 +44,30 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+    public function tmbhsantri()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhsantri');
+        $this->load->view('admin_template/footer');
+    }
+
     public function pembayaran()
     {
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_pembayaran');
+        $this->load->view('admin_template/footer');
+    }
+
+    public function tmbhpembayaran()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhpembayaran');
         $this->load->view('admin_template/footer');
     }
 
@@ -62,6 +80,15 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+    public function tmbhperizinan()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhperizinan');
+        $this->load->view('admin_template/footer');
+    }
+
     public function pelanggaran()
     {
 
@@ -70,6 +97,16 @@ class Admin extends CI_Controller
         $this->load->view('admin/v_pelanggaran');
         $this->load->view('admin_template/footer');
     }
+
+    public function tmbhpelanggaran()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhpelanggaran');
+        $this->load->view('admin_template/footer');
+    }
+
 
     public function kompetensi()
     {
@@ -80,12 +117,30 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    public function dataWebUser()
+    public function tmbhkompetensi()
     {
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_dataWebuser');
+        $this->load->view('admin/v_tmbhkompetensi');
+        $this->load->view('admin_template/footer');
+    }
+
+    public function datawebuser()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_datawebuser');
+        $this->load->view('admin_template/footer');
+    }
+
+    public function tmbhdatawebuser()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhdatawebuser');
         $this->load->view('admin_template/footer');
     }
 }
