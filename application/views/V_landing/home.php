@@ -172,77 +172,6 @@
             </div>
           </div>
 
-<<<<<<< Updated upstream
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <img src="assets/img/galeri/2s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/2s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <img src="assets/img/galeri/3s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/3s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <img src="assets/img/galeri/4s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/4s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <img src="assets/img/galeri/5s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/5s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <img src="assets/img/galeri/7s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/7s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <img src="assets/img/galeri/8s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/8s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <img src="assets/img/galeri/6s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/6s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <img src="assets/img/galeri/9.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/9s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-=======
           <div class="col-lg-4 col-md-6 portfolio-item filter-17">
             <img src="assets/img/17san/1.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
@@ -313,7 +242,6 @@
               <h4>Kemerdekaan RI</h4>
               <p>Acara 17 Agustus</p>
               <a href="assets/img/17san/3.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
->>>>>>> Stashed changes
             </div>
           </div>
 
@@ -326,14 +254,6 @@
             </div>
           </div>
 
-<<<<<<< Updated upstream
-        <section id="services" class="services">
-          <div class="container">
-
-            <div class="section-title">
-
-              <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Peduli Covid-19 </h5>
-=======
           <div class="col-lg-4 col-md-6 portfolio-item filter-17">
             <img src="assets/img/17san/5.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
@@ -359,96 +279,8 @@
               <h4>PPRRSA Bersholawat</h4>
               <p>Memperingati Maulid Nabi</p>
               <a href="assets/img/mengaji/5s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
->>>>>>> Stashed changes
             </div>
 
-<<<<<<< Updated upstream
-            <div class="row">
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c2.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c2.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c8.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c8.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c7.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c7.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c3.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="assets/img/galeri/c3.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c6.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c6.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c5.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c5.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c4.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c4.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c9.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c9.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div class="icon-box">
-                  <img src="assets/img/galeri/c1.JPG" class="img-fluid" alt="">
-                  <br>
-                  <br>
-                  <a href="aassets/img/galeri/c1.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section><!-- End Services Section -->
-=======
           <div class="col-lg-4 col-md-6 portfolio-item filter-17">
             <img src="assets/img/17san/6.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
@@ -548,7 +380,6 @@
             </div>
           </div>
         </div>
->>>>>>> Stashed changes
 
       </div>
     </section><!-- End Portfolio Section -->
