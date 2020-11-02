@@ -9,11 +9,11 @@
        </div>
        <div class="main-menu-content">
            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-               <li class="active"><a href="<?php echo base_url(); ?>index.php/admin/admin"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/user"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Data User</span></a>
                </li>
-               <li class=" nav-item"><a href="icons.html"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Data Santri</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/santri"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Data Santri</span></a>
                </li>
                <li class=" nav-item"><a href="cards.html"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Pembayaran</span></a>
                </li>
