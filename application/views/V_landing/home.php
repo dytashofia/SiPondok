@@ -51,8 +51,8 @@
             <ul>
               <li class="active"><a href="#hero">Home</a></li>
               <li><a href="#about">Tentang</a></li>
-              <li><a href="#services">Galeri</a></li>
-              <li><a href="#portfolio">Produk</a></li>
+              <li><a href="#galeri">Galeri</a></li>
+              <li><a href="#produk">Produk</a></li>
               <li><a href="#contact">Contact</a></li>
 
             </ul>
@@ -142,24 +142,37 @@
     </section><!-- End About Us Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="galeri" class="portfolio">
       <div class="container">
 
         <div class="section-title">
           <h2>Galeri</h2>
-          <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Bersholawat </h5>
+          <p>Kumpulan Foto Kegiatan Pondok Pesantren Raden Rahmat Sunan Ampel</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <img src="assets/img/galeri/1s.JPG" class="img-fluid" alt="">
-              <br>
-              <br>
-              <a href="aassets/img/galeri/1s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-sholawat">PPRRSA Bersholawat</li>
+              <li data-filter=".filter-covid">Peduli Covid</li>
+              <li data-filter=".filter-17">17 Agustus</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/1s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/1s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
             </div>
           </div>
 
+<<<<<<< Updated upstream
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <img src="assets/img/galeri/2s.JPG" class="img-fluid" alt="">
@@ -229,19 +242,127 @@
               <br>
               <br>
               <a href="aassets/img/galeri/9s.JPG" data-gall="galeri" class="venobox preview-link" title=" Galeri "><i class="bx bx-plus"> Lihat Gambar</i></a>
+=======
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/1.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/1.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
             </div>
           </div>
 
-        </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/2s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/2s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c1.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c1.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/2.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/2.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/3s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/3s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c2.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c2.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c3.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c3.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/3.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/3.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+>>>>>>> Stashed changes
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/4s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/4s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+<<<<<<< Updated upstream
         <section id="services" class="services">
           <div class="container">
 
             <div class="section-title">
 
               <h5>Pondok Pesantren Raden Rahmat Sunan Ampel Peduli Covid-19 </h5>
+=======
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/5.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/5.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c4.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c4.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/5s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/5s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+>>>>>>> Stashed changes
             </div>
 
+<<<<<<< Updated upstream
             <div class="row">
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="icon-box">
@@ -327,7 +448,110 @@
           </div>
       </div>
     </section><!-- End Services Section -->
+=======
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/6.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/6.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/6s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/6s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c5.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c5.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/7.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/7.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/7s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/7s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/8.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/8.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c6.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c6.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/8s.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/8s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
+            <img src="assets/img/covid/c7.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Peduli Covid</h4>
+              <p>peduli sesama covid 19</p>
+              <a href="assets/img/covid/c7.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
+            <img src="assets/img/17san/10.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Kemerdekaan RI</h4>
+              <p>Acara 17 Agustus</p>
+              <a href="assets/img/17san/10.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
+            <img src="assets/img/mengaji/9.JPG" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>PPRRSA Bersholawat</h4>
+              <p>Memperingati Maulid Nabi</p>
+              <a href="assets/img/mengaji/9.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
+            </div>
+          </div>
+        </div>
+>>>>>>> Stashed changes
+
+      </div>
+    </section><!-- End Portfolio Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
@@ -366,7 +590,7 @@
     </section><!-- End Counts Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="produk" class="portfolio">
       <div class="container">
 
         <div class="section-title">
