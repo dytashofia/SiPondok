@@ -69,9 +69,12 @@
                                 </div>
 
                                 <div class="progress-stats-container ct-golden-section height-75 position-relative pt-5" style=" 
+                                padding-right: 3rem !important;
+                                padding-left: 3rem !important;
+                                text-align :right;
                                 ">
-                                    <ul class="list-inline" style="width: 100%;">
-                                        <li class="list-inline-item" style="text-align: right;">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item" style="position: absolute;margin-top: -1.8rem;margin-left: -15rem;">
                                             <h1 class="display-1">
                                                 <small style="font-size:20pt;" class="">SEP</small>
                                             </h1>

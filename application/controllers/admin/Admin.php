@@ -26,6 +26,15 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+    public function tmbhuser()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhuser');
+        $this->load->view('admin_template/footer');
+    }
+
     public function santri()
     {
 
