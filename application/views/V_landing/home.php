@@ -57,9 +57,8 @@
 
             </ul>
           </nav><!-- .nav-menu -->
-
-          <a href="#about" class="get-started-btn scrollto">Login</a>
-          <a href="#about" class="get-started-btn scrollto">Daftar Santri</a>
+          <a href="#" class="get-started-btn scrollto">Login</a>
+          <a href="#" class="get-started-btn scrollto" >Daftar Santri</a>
         </div>
       </div>
 
