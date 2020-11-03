@@ -43,7 +43,7 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a href="Landing"> Ponpes Raden Rahmat Sunan Ampel</a></h1>
+          <h1 class="logo"><a href="Landing">PPRRSA</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="Landing" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -379,7 +379,6 @@
               <a href="assets/img/mengaji/9.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
             </div>
           </div>
-        </div>
 
       </div>
     </section><!-- End Portfolio Section -->
