@@ -41,32 +41,24 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">ID</h5>
+                                            <h5 class="mt-2">ID Produk</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="id_produk" id="id_produk" class="form-control" value="P001" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">ID Admin</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="id_admin" id="id_admin" class="form-control" value="A001" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Nama Produk</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" id="basicInput">
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama</h5>
+                                            <h5 class="mt-2">Deskripsi</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
-                                            </fieldset>
-
-                                            <h5 class="mt-2">Pelanggran</h5>
-                                            <fieldset class="form-group">
-                                                <select class="form-control" id="basicSelect">
-                                                    <option>Select Option</option>
-                                                    <option>Laki-Laki</option>
-                                                    <option>Perempuan</option>
-                                                </select>
-                                            </fieldset>
-
-                                            <h5 class="mt-2">Hukuman</h5>
-                                            <fieldset class="form-group">
-                                                <select class="form-control" id="basicSelect">
-                                                    <option>Select Option</option>
-                                                    <option>Laki-Laki</option>
-                                                    <option>Perempuan</option>
-                                                </select>
+                                                <textarea style="height: 200px;" class="form-control" id="basicTextarea" rows="5"></textarea>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -77,7 +69,7 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
-                                            <h5 class="mt-2">Catatan</h5>
+                                            <h5 class="mt-2">Resep</h5>
                                             <fieldset class="form-group">
                                                 <textarea style="height: 300px;" class="form-control" id="basicTextarea" rows="5"></textarea>
                                             </fieldset>

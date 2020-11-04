@@ -67,11 +67,13 @@
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
-                                            <th>ID</th>
-                                            <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
+                                            <th>ID PRODUK</th>
+                                            <th>ID ADMIN</th>
+                                            <th>NAMA PRODUK</th>
+                                            <th>DESKRIPSI</th>
+                                            <th>RESEP</th>
                                             <th>ACTION</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -81,6 +83,7 @@
                                             <td>aaa</td>
                                             <td>aaa</td>
                                             <td>aaaa</td>
+                                            <td>aaaaa</td>
                                             <td>aaaaa</td>
                                             <td>
 
@@ -115,6 +118,7 @@
                                             <td>aaa</td>
                                             <td>aaaa</td>
                                             <td>aaaaa</td>
+                                            <td>aaaaa</td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -147,6 +151,7 @@
                                             <td>aaa</td>
                                             <td>aaa</td>
                                             <td>aaaa</td>
+                                            <td>aaaaa</td>
                                             <td>aaaaa</td>
                                             <td>
 
@@ -181,6 +186,7 @@
                                             <td>aaa</td>
                                             <td>aaaa</td>
                                             <td>aaaaa</td>
+                                            <td>aaaaa</td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -213,6 +219,7 @@
                                             <td>aaa</td>
                                             <td>aaa</td>
                                             <td>aaaa</td>
+                                            <td>aaaaa</td>
                                             <td>aaaaa</td>
                                             <td>
 
@@ -247,6 +254,7 @@
                                             <td>aaa</td>
                                             <td>aaaa</td>
                                             <td>aaaaa</td>
+                                            <td>aaaaa</td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -279,6 +287,7 @@
                                             <td>aaa</td>
                                             <td>aaa</td>
                                             <td>aaaa</td>
+                                            <td>aaaaa</td>
                                             <td>aaaaa</td>
                                             <td>
 
@@ -313,6 +322,7 @@
                                             <td>aaa</td>
                                             <td>aaaa</td>
                                             <td>aaaaa</td>
+                                            <td>aaaaa</td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -345,6 +355,7 @@
                                             <td>aaa</td>
                                             <td>aaa</td>
                                             <td>aaaa</td>
+                                            <td>aaaaa</td>
                                             <td>aaaaa</td>
                                             <td>
 
@@ -379,6 +390,7 @@
                                             <td>aaa</td>
                                             <td>aaaa</td>
                                             <td>aaaaa</td>
+                                            <td>aaaaa</td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -412,6 +424,7 @@
                                             <td>aaa</td>
                                             <td>aaaa</td>
                                             <td>aaaaa</td>
+                                            <td>aaaaa</td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -444,10 +457,11 @@
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
-                                            <th>ID</th>
-                                            <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
+                                            <th>ID PRODUK</th>
+                                            <th>ID ADMIN</th>
+                                            <th>NAMA PRODUK</th>
+                                            <th>DESKRIPSI</th>
+                                            <th>RESEP</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>

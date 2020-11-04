@@ -67,10 +67,10 @@
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
-                                            <th>ID</th>
-                                            <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
+                                            <th>ID ARTIKEL</th>
+                                            <th>ID ADMIN</th>
+                                            <th>GAMBAR</th>
+                                            <th>DESKRIPSI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -444,10 +444,10 @@
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
-                                            <th>ID</th>
-                                            <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
+                                            <th>ID ARTIKEL</th>
+                                            <th>ID ADMIN</th>
+                                            <th>GAMBAR</th>
+                                            <th>DESKRIPSI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>
