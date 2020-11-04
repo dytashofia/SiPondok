@@ -34,7 +34,7 @@
                         Login
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: example@gmail.com">
                         <input class="input100" type="text" name="email" placeholder="Username">
                         <span class="focus-input100"></span>
 
