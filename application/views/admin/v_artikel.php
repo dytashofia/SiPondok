@@ -37,7 +37,7 @@
                         </div>
                         <div class="card-content collapse show">
                             <div class="card-body">
-                                <a href="<?php echo base_url(); ?>index.php/admin/admin/tmbhartikel"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
+                                <a href="<?php echo base_url(); ?>index.php/admin/artikel/tmbhartikel"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
                             </div>
                             <div class="table-responsive">
 
@@ -67,10 +67,10 @@
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
-                                            <th>ID</th>
-                                            <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
+                                            <th>ID ARTIKEL</th>
+                                            <th>ID ADMIN</th>
+                                            <th>GAMBAR</th>
+                                            <th>DESKRIPSI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -444,10 +444,10 @@
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
-                                            <th>ID</th>
-                                            <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
+                                            <th>ID ARTIKEL</th>
+                                            <th>ID ADMIN</th>
+                                            <th>GAMBAR</th>
+                                            <th>DESKRIPSI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>
