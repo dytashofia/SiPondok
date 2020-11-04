@@ -126,21 +126,21 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    public function datawebuser()
+    public function produk()
     {
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_datawebuser');
+        $this->load->view('admin/v_produk');
         $this->load->view('admin_template/footer');
     }
 
-    public function tmbhdatawebuser()
+    public function tmbhproduk()
     {
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhdatawebuser');
+        $this->load->view('admin/v_tmbhproduk');
         $this->load->view('admin_template/footer');
     }
 }

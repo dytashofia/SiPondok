@@ -23,7 +23,7 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/kompetensi"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
                </li>
-               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/dataWebUser"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Data Web User</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/produk"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Produk</span></a>
                </li>
 
            </ul>
