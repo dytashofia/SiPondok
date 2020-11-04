@@ -37,7 +37,7 @@
                         </div>
                         <div class="card-content collapse show">
                             <div class="card-body">
-                                <a href="<?php echo base_url(); ?>index.php/admin/admin/tmbhartikel"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
+                                <a href="<?php echo base_url(); ?>index.php/admin/artikel/tmbhartikel"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
                             </div>
                             <div class="table-responsive">
 
