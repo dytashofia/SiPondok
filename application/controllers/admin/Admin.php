@@ -143,4 +143,21 @@ class Admin extends CI_Controller
         $this->load->view('admin/v_tmbhproduk');
         $this->load->view('admin_template/footer');
     }
+    public function artikel()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_artikel');
+        $this->load->view('admin_template/footer');
+    }
+
+    public function tmbhartikel()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhartikel');
+        $this->load->view('admin_template/footer');
+    }
 }

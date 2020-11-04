@@ -25,6 +25,8 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/produk"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Produk</span></a>
                </li>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/artikel"><i class="ft-book"></i><span class="menu-title" data-i18n="">Artikel</span></a>
+               </li>
 
            </ul>
        </div>
