@@ -56,6 +56,11 @@
                                                 <input type="text" class="form-control" id="basicInput">
                                             </fieldset>
 
+                                            <h5 class="mt-2">Gambar</h5>
+                                            <fieldset class="form-group">
+                                                <input type="file" name="foto_produk" class="form-control" >
+                                            </fieldset>
+
                                             <h5 class="mt-2">Deskripsi</h5>
                                             <fieldset class="form-group">
                                                 <textarea style="height: 200px;" class="form-control" id="basicTextarea" rows="5"></textarea>

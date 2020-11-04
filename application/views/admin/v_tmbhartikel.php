@@ -53,7 +53,7 @@
 
                                             <h5 class="mt-2">Gambar</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="file" name="foto_artikel" class="form-control" >
                                             </fieldset>
                                         </div>
                                     </div>
