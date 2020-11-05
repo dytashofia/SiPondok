@@ -22,4 +22,13 @@ class M_master_produk extends CI_Model
        return $query;
    }
 
+   public function tampil_admin()
+   {
+      return $this->db->get('tb_admin');
+   }
+
+   function tambah_produk($data, $table)
+   {
+       $this->db->insert($table, $data);
+   }
 }

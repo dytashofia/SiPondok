@@ -35,25 +35,37 @@
                                 </ul>
                             </div>
                         </div>
-
+                        
+                        <?php echo form_open_multipart('index.php/admin/produk/aksiTambahproduk');?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
+
+                                            
                                             <h5 class="mt-2">ID Produk</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_produk" id="id_produk" class="form-control" value="P001" readonly>
+                                                <input type="text" name="id_produk" id="id_produk" class="form-control" placeholder="Masukkan ID Produk...">
                                             </fieldset>
 
                                             <h5 class="mt-2">ID Admin</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_admin" id="id_admin" class="form-control" value="A001" readonly>
+                                                <select name="id_admin" id="id_admin" class="custom-select">
+                                                <option value=""> Pilih Admin </option>
+                                                <?php
+                                                    foreach ($admin as $detailAdmin) :
+                                                ?>
+                                                    <option value="<?= $detailAdmin->id_admin; ?>"><?= $detailAdmin->nama_admin; ?></option>
+                                                <?php
+                                                    endforeach;
+                                                ?>
                                             </fieldset>
-
+                                            </select>
+                                            
                                             <h5 class="mt-2">Nama Produk</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="nama_produk" id="nama_produk"  placeholder="Masukkan Nama Produk...">
                                             </fieldset>
 
                                             <h5 class="mt-2">Gambar</h5>
@@ -63,8 +75,9 @@
 
                                             <h5 class="mt-2">Deskripsi</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 200px;" class="form-control" id="basicTextarea" rows="5"></textarea>
+                                                <textarea style="height: 200px;" class="form-control" id="deskripsi" name="deskripsi" rows="5"  placeholder="Masukkan Deskripsi..."></textarea>
                                             </fieldset>
+
                                         </div>
                                     </div>
                                 </div>
@@ -76,9 +89,8 @@
 
                                             <h5 class="mt-2">Resep</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 300px;" class="form-control" id="basicTextarea" rows="5"></textarea>
+                                                <textarea style="height: 300px;" class="form-control" name="resep" id="resep" rows="5" placeholder="Masukkan resep..."></textarea>
                                             </fieldset>
-
                                         </div>
                                     </div>
                                 </div>
@@ -87,16 +99,14 @@
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
                             <a href="<?php echo base_url(); ?>index.php/admin/produk/produk"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <a href="<?php echo base_url(); ?>index.php/admin/produk/produk"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
-
-
-
-
+                        <?php echo form_close();?>
                     </div>
                 </div>
             </div>
+            
             <!-- Striped rows end -->
         </div>
     </div>
