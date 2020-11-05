@@ -13,10 +13,10 @@ class Produk extends CI_Controller
 
 public function produk()
     {
-
+        $data['tb_produk'] = $this->m_master_produk->produk()->result();
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_produk');
+        $this->load->view('admin/v_produk', $data);
         $this->load->view('admin_template/footer');
     }
 

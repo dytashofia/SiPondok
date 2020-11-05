@@ -68,25 +68,28 @@
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
                                             <th>ID PRODUK</th>
-                                            <th>ID ADMIN</th>
-                                            <th>NAMA PRODUK</th>
-                                            <th>GAMBAR</th>
+                                            <th>NAMA ADMIN</th>
+                                            <th>NAMA PRODUK</th>                                           
                                             <th>DESKRIPSI</th>
                                             <th>RESEP</th>
+                                            <th>GAMBAR</th>
                                             <th>ACTION</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                        $noUrut = 1;
+                                        foreach($tb_produk as $produk) :
+                                    ?>
                                         <tr>
-                                            <td>1</td>
-                                            <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                            <td>aaa</td>
-                                            <td>aaa</td>
-                                            <td>aaaa</td>
-                                            <td>aaaaa</td>
-                                            <td>aaaaa</td>
-                                            <td>aaaaaA</td>
+                                            <td><?= $noUrut;?></td>
+                                            <td><?= $produk->id_produk;?></td>
+                                            <td><?= $produk->nama_admin;?></td>
+                                            <td><?= $produk->nama_produk;?></td>
+                                            <td><?= $produk->deskripsi;?></td>
+                                            <td><?= $produk->resep;?></td>
+                                            <td><?= $produk->foto_produk;?></td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -113,87 +116,21 @@
 
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                            <td>aaa</td>
-                                            <td>aaa</td>
-                                            <td>aaaa</td>
-                                            <td>aaaaa</td>
-                                            <td>aaaaa</td>
-                                            <td>aaaaaA</td>
-                                            <td>
-
-                                                <div class="btn-group mr-2 mb-2">
-                                                    <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                        <button type="button" class="btn btn-primary">
-                                                            <i class="la la-pencil color-muted m-r-5"></i>
-                                                        </button>
-                                                    </a>
-
-                                                    &nbsp;
-                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                        <button type="button" class="btn btn-danger">
-                                                            <i class="la la-trash color-danger"></i>
-                                                        </button>
-                                                    </a>
-                                                    &nbsp;
-                                                    <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                        <button type="button" class="btn btn-warning">
-                                                            <i class="la la-exclamation-circle color-danger"></i>
-                                                        </button>
-                                                    </a>
-
-                                                </div>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                            <td>aaa</td>
-                                            <td>aaa</td>
-                                            <td>aaaa</td>
-                                            <td>aaaaa</td>
-                                            <td>aaaaa</td>
-                                            <td>aaaaaA</td>
-                                            <td>
-                                            <div class="btn-group mr-2 mb-2">
-                                                    <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                        <button type="button" class="btn btn-primary">
-                                                            <i class="la la-pencil color-muted m-r-5"></i>
-                                                        </button>
-                                                    </a>
-
-                                                    &nbsp;
-                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                        <button type="button" class="btn btn-danger">
-                                                            <i class="la la-trash color-danger"></i>
-                                                        </button>
-                                                    </a>
-                                                    &nbsp;
-                                                    <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                        <button type="button" class="btn btn-warning">
-                                                            <i class="la la-exclamation-circle color-danger"></i>
-                                                        </button>
-                                                    </a>
-
-                                                </div>
-
-                                            </td>
-                                        </tr>
-
+                                        <?php
+                                            $noUrut++;
+                                            endforeach;
+                                        ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>NO</th>
                                             <!-- <th>ID ARMADA</th> -->
                                             <th>ID PRODUK</th>
-                                            <th>ID ADMIN</th>
-                                            <th>NAMA PRODUK</th>
-                                            <th>GAMBAR</th>
+                                            <th>NAMA ADMIN</th>
+                                            <th>NAMA PRODUK</th>                                          
                                             <th>DESKRIPSI</th>
                                             <th>RESEP</th>
+                                            <th>GAMBAR</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>
