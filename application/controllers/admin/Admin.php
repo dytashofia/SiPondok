@@ -5,6 +5,7 @@ class Admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+         $this->load->model('m_perizinan');
         $this->load->helper('url');
     }
 
@@ -73,10 +74,12 @@ class Admin extends CI_Controller
 
     public function perizinan()
     {
+        
+        $data['izin'] = $this->m_perizinan->tampil_data()->result();  
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_perizinan');
+        $this->load->view('admin/v_perizinan',$data);
         $this->load->view('admin_template/footer');
     }
 
