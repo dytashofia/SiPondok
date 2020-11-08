@@ -22,6 +22,12 @@ class M_master_produk extends CI_Model
        return $query;
    }
 
+   function tampil_produk_akhir()
+  {
+    $this->db->order_by('id_produk', 'DESC');
+    return $this->db->get('tb_produk', 1);
+  }
+
    public function tampil_admin()
    {
       return $this->db->get('tb_admin');

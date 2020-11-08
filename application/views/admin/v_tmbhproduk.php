@@ -46,7 +46,7 @@
                                             
                                             <h5 class="mt-2">ID Produk</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_produk" id="id_produk" class="form-control" placeholder="Masukkan ID Produk...">
+                                                <input type="text" name="id_produk" id="id_produk" class="form-control" value="<?= $id_produk; ?>" readonly placeholder="Masukkan ID Produk...">
                                             </fieldset>
 
                                             <h5 class="mt-2">ID Admin</h5>

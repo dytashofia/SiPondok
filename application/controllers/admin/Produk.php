@@ -22,10 +22,43 @@ public function produk()
 
     public function tmbhproduk()
     {
+
+        // Membuat fungsi untuk melakukan penambahan id produk secara otomatis
+		// Mendapatkan jumlah produk yang ada di database
+		$jumlahProduk = $this->m_master_produk->produk()->num_rows();
+		// Jika jumlah produk lebih dari 0
+		if ($jumlahProduk > 0) {
+			// Mengambil id produk sebelumnya
+			$lastId = $this->m_master_produk->tampil_produk_akhir()->result();
+			// Melakukan perulangan untuk mengambil data
+			foreach ($lastId as $row) {
+				// Melakukan pemisahan huruf dengan angka pada id produk
+				$rawIdProduk = substr($row->id_produk, 3);
+				// Melakukan konversi nilai pemisahan huruf dengan angka pada id order menjadi integer
+				$idProdukInt = intval($rawIdProduk);
+
+				// Menghitung panjang id yang sudah menjadi integer
+				if (strlen($idProdukInt) == 1) {
+					// jika panjang id hanya 1 angka
+					$idProduk = "PR00" . ($idProdukInt + 1);
+				} else if (strlen($idProdukInt) == 2) {
+					// jika panjang id hanya 2 angka
+					$idProduk = "PR0" . ($idProdukInt + 1);
+				} else if (strlen($idProdukInt) == 3) {
+					// jika panjang id hanya 3 angka
+					$idProduk = "PR" . ($idProdukInt + 1);
+				}
+			}
+		} else {
+			// Jika jumlah paket soal kurang dari sama dengan 0
+			$idProduk = "PR001";
+        }
+        
         $admin = $this->m_master_produk->tampil_admin()->result();
         
         $data = array(
-            'admin' => $admin
+            'admin' => $admin , 
+            'id_produk' => $idProduk
         );
 
         $this->load->view('admin_template/header');
