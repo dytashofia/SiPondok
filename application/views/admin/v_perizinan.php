@@ -66,13 +66,13 @@
                                     <thead>
                                         <tr>
                                             <th>NO</th>
-                                            <th class="text-center">ID IZIN</th>
-                                            <th class="text-center">NIS</th>
-                                            <th class="text-center">NAMA SANTRI</th>
-                                            <th class="text-center">TANGGAL IZIN</th>
-                                            <th class="text-center">TANGGAL KEMBALI</th>
-                                             <th class="text-center">ALASAN</th>
-                                            <th class="text-center">ACTION</th>
+                                            <th>ID IZIN</th>
+                                            <th>NIS</th>
+                                            <th>NAMA SANTRI</th>
+                                            <th>TANGGAL IZIN</th>
+                                            <th>TANGGAL KEMBALI</th>
+                                             <th>ALASAN</th>
+                                            <th>ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -82,13 +82,13 @@
                                         ?>
                                         <tr>
                                            
-                                            <td class="text-center"><?= $noUrut;?></td>
-                                            <td class="text-center"><?= $i->id_perizinan;?></td>
-                                            <td class="text-center"><?= $i->NIS;?></td>
-                                            <td class="text-center"><?= $i->nama_santri;?></td>
-                                            <td class="text-center"><?= $i->tgl_izin;?></td>
-                                            <td class="text-center"><?= $i->tgl_datang;?></td>
-                                             <td class="text-center"><?= $i->alasan;?></td>
+                                            <td><?= $noUrut;?></td>
+                                            <td><?= $i->id_perizinan;?></td>
+                                            <td><?= $i->NIS;?></td>
+                                            <td><?= $i->nama_santri;?></td>
+                                            <td><?= $i->tgl_izin;?></td>
+                                            <td><?= $i->tgl_datang;?></td>
+                                             <td><?= $i->alasan;?></td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -99,8 +99,7 @@
                                                     </a>
 
                                                     &nbsp;
-                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                        <button type="button" class="btn btn-danger">
+                                                        <button type="button" data-toggle="modal" data-target="#deletePaketModal<?=$i->id_perizinan;?>" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
                                                     </a>
@@ -133,3 +132,30 @@
         </div>
     </div>
 </div>
+
+ <?php
+        foreach($izin as $row) :    
+    ?>
+        <!-- Modal -->
+        <div class="modal fade" id="deletePaketModal<?= $row->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="deletePaketModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deletePaketModalTitle">Hapus Izin</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="text-justify">Apakah anda yakin akan menghapus data Izin dengan ID<em><strong> <?= $row->id_perizinan;?></strong></em></h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-secondary" type="button" data-dismiss="modal"> Batal </button>
+                        <a href="<?php echo base_url() ?>index.php/admin/Admin/hapusperizinan/<?php echo $row->id_perizinan ?>" role="button" class="btn btn-success"> Ya </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+        endforeach;
+    ?>
