@@ -72,6 +72,10 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+
+    // PERIZINAN
+
+
     public function perizinan()
     {
         
@@ -90,6 +94,12 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_tmbhperizinan');
         $this->load->view('admin_template/footer');
+    }
+
+    function hapusperizinan($id){
+        $where = array('id_perizinan' => $id); 
+        $this->m_perizinan->hapus_data($where,'tb_perizinan'); 
+        redirect('index.php/admin/Admin/perizinan');
     }
 
     public function pelanggaran()
