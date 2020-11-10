@@ -93,7 +93,7 @@
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                    <a href="<?php echo base_url('index.php/admin/produk/editProduk/'.$produk->id_produk);?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="la la-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -106,7 +106,7 @@
                                                         </button>
                                                     </a>
                                                     &nbsp;
-                                                    <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                    <a href="<?= base_url('index.php/admin/produk/tampilDetailProduk/'.$produk->id_produk);?>" title="Detail"  data-toggle="tooltip" data-placement="top" data-original-title="Detail">
                                                         <button type="button" class="btn btn-warning">
                                                             <i class="la la-exclamation-circle color-danger"></i>
                                                         </button>

@@ -13,6 +13,7 @@ class Produk extends CI_Controller
 
 public function produk()
     {
+        
         $data['tb_produk'] = $this->m_master_produk->produk()->result();
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
@@ -103,5 +104,52 @@ public function produk()
         redirect('index.php/admin/produk/produk'); 
 
         }
+
+        function tampilDetailProduk($idProdukUri)
+	{
+		// Mendapatkan Id Produk Soal dari URL
+		$idProduk = $idProdukUri;
+		// Membuat array untuk digunakan sebagai select
+		$where = array(
+			'tb_produk.id_produk' => $idProduk
+		);
+		// Mendapatkan data paket soal tertentu melalui model
+		$result = $this->m_master_produk->tampil_produk_where($where,'tb_produk')->result();
+        // Menyimpan hasil dari model kedalam array
+		$data = array(
+            'data_produk' => $result,
+		);
+		// Menampilkan view dengan data dari model
+		$this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detail_produk', $data);
+        $this->load->view('admin_template/footer');
+    }
+    
+    function editProduk($idProdukUri)
+	{
+		// Mendapatkan Id Produk Soal dari URL
+		$idProduk = $idProdukUri;
+		// Membuat array untuk digunakan sebagai media select
+		$where = array(
+			'id_produk' => $idProduk
+		);
+		// Mendapatkan data paket soal tertentu melalui modal
+		$result = $this->m_master_produk->tampil_produk_where_only($where, "tb_produk")->result();
+		// Mendapatkan data mata pelajaran melalui modal
+		$resultAdmin = $this->m_master_produk->tampil_admin()->result();
+		// Menyimpan hasil dari model kedalam array
+		$data = array(
+			'data_produk' => $result,
+			'data_admin' => $resultAdmin
+		);
+		// Menampilkan view dengan data dari model
+		$this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_edit_produk.php', $data);
+        $this->load->view('admin_template/footer');
+    }
+    
+    
     
 }

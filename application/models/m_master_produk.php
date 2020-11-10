@@ -3,7 +3,7 @@
 class M_master_produk extends CI_Model
 {
     // function untuk mengambil keseluruhan baris data dari tabel admin
-    public function produk()
+  public function produk()
     {
       
       $fields = array(
@@ -28,7 +28,7 @@ class M_master_produk extends CI_Model
     return $this->db->get('tb_produk', 1);
   }
 
-   public function tampil_admin()
+   function tampil_admin()
    {
       return $this->db->get('tb_admin');
    }
@@ -37,4 +37,30 @@ class M_master_produk extends CI_Model
    {
        $this->db->insert($table, $data);
    }
+
+  function tampil_produk_where($where, $table)
+  {
+    $fields = array(
+      "tb_produk.id_produk",
+      "tb_admin.nama_admin",
+      "tb_produk.nama_produk",
+      "tb_produk.deskripsi",
+      "tb_produk.resep",
+      "tb_produk.foto_produk",
+       
+    );
+
+    $this->db->select($fields);
+    $this->db->from($table);
+    $this->db->join('tb_admin', 'tb_produk.id_admin = tb_admin.id_admin');
+    $this->db->where($where);
+    return $this->db->get();
+  }
+  
+  function tampil_produk_where_only($where, $table)  
+  {
+    return $this->db->get_where($table, $where);
+    
+  }
+
 }
