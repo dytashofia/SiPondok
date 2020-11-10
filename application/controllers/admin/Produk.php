@@ -149,7 +149,42 @@ public function produk()
         $this->load->view('admin/v_edit_produk.php', $data);
         $this->load->view('admin_template/footer');
     }
+
+    function aksiEditProduk()
+	{
+		// Menyimpan input dari user kedalam variabel
+		$id_produk = $this->input->post('id_produk');
+        $id_admin = $this->input->post('id_admin');
+        $nama_produk = $this->input->post('nama_produk');
+        $foto_produk = $_FILES['foto_produk'];
+        $deskripsi = $this->input->post('deskripsi');
+        $resep = $this->input->post('resep');
+
+        $data = array(
+            'id_produk' => $id_produk,
+            'id_admin' => $id_admin,
+            'nama_produk' => $nama_produk,
+            'foto_produk' => $foto_produk,
+            'deskripsi' => $deskripsi,
+            'resep' => $resep,
+			);
+			// Menyimpan data sebagai unique key yang digunakan untuk mengupdate
+			$where = array(
+				'id_produk' => $id_produk
+			);
+			$this->m_master_produk->update_produk($where, $data, 'tb_produk');
+			redirect('index.php/admin/produk/produk');
+		}
     
-    
-    
+    function hapusPaket($idProdukUri)
+	{
+		// Mendapatkan id paket soal yang akan dihapus
+		$idProduk = $idProdukUri;
+		// Menyimpan id paket soal kedalam array
+		$where = array(
+			'id_produk' => $idProduk
+        );
+		$this->m_master_produk->delete_produk($where, 'tb_produk');
+		redirect('index.php/admin/produk/produk');
+	}
 }

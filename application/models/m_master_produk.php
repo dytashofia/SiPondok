@@ -63,4 +63,15 @@ class M_master_produk extends CI_Model
     
   }
 
+  function update_produk($where, $data, $table)
+  {
+    $this->db->where($where);
+    $this->db->update($table, $data);
+  }
+
+  function delete_produk($where, $table)
+  {
+    $this->db->delete($table, $where);
+  }
+
 }

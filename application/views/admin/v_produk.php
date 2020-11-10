@@ -100,7 +100,7 @@
                                                     </a>
 
                                                     &nbsp;
-                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                    <a href="<?= base_url('index.php/admin/produk/hapusPaket/'.$produk->id_produk);?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
