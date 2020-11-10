@@ -5,7 +5,10 @@ class Admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
         $this->load->model('m_master_pelanggaran');
+  $this->load->model('m_perizinan');
+
         $this->load->helper('url');
     }
 
@@ -72,12 +75,18 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+
+    // PERIZINAN
+
+
     public function perizinan()
     {
+        
+        $data['izin'] = $this->m_perizinan->tampil_data()->result();  
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_perizinan');
+        $this->load->view('admin/v_perizinan',$data);
         $this->load->view('admin_template/footer');
     }
 
@@ -90,6 +99,12 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+    function hapusperizinan($id){
+        $where = array('id_perizinan' => $id); 
+        $this->m_perizinan->hapus_data($where,'tb_perizinan'); 
+        redirect('index.php/admin/Admin/perizinan');
+    }
+
     public function pelanggaran()
     {
         $data['tb_pelanggaran'] = $this->m_master_pelanggaran->tampil_pelanggaran()->result();
@@ -99,7 +114,7 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    //================= Controller Pelanggaran ===================
+
 
     public function tmbhpelanggaran()
     {

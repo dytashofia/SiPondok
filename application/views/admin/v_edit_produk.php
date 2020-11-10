@@ -36,7 +36,10 @@
                             </div>
                         </div>
                         
-                        <?php echo form_open_multipart('index.php/admin/produk/aksiTambahproduk');?>
+                        <?php echo form_open_multipart('index.php/admin/produk/aksiEditProduk');?>
+                        <?php
+                            foreach($data_produk as $produk) :
+                        ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -46,7 +49,7 @@
                                             
                                             <h5 class="mt-2">ID Produk</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_produk" id="id_produk" class="form-control" value="<?= $id_produk; ?>" readonly placeholder="Masukkan ID Produk...">
+                                                <input type="text" name="id_produk" id="id_produk" class="form-control" value="<?= $produk->id_produk;?>"  placeholder="Masukkan ID Produk..." readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">ID Admin</h5>
@@ -54,28 +57,42 @@
                                                 <select name="id_admin" id="id_admin" class="custom-select">
                                                 <option value=""> Pilih Admin </option>
                                                 <?php
-                                                    foreach ($admin as $detailAdmin) :
-                                                ?>
-                                                    <option value="<?= $detailAdmin->id_admin; ?>"><?= $detailAdmin->nama_admin; ?></option>
-                                                <?php
-                                                    endforeach;
-                                                ?>
-                                            </fieldset>
+                                                foreach($data_admin as $opt_admin) :
+                                                    if($opt_admin->id_admin == $produk->id_admin)
+                                                    {
+                                                        ?>
+                                                            <option value="<?= $opt_admin->id_admin;?>" selected><?= $opt_admin->nama_admin?></option>
+                                                        <?php
+                                                    }else
+                                                    {
+                                                        ?>
+                                                            <option value="<?= $opt_admin->id_admin;?>"><?= $opt_admin->nama_admin;?></option>
+                                                        <?php
+                                                    }
+                                                endforeach;
+                                            ?>
                                             </select>
+                                            </fieldset>
                                             
                                             <h5 class="mt-2">Nama Produk</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_produk" id="nama_produk"  placeholder="Masukkan Nama Produk...">
+                                                <input type="text" class="form-control" name="nama_produk" id="nama_produk" value="<?= $produk->nama_produk;?>" placeholder="Masukkan Nama Produk...">
                                             </fieldset>
 
                                             <h5 class="mt-2">Gambar</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" name="foto_produk" class="form-control" >
+                                                <tr>
+                                                    <td>
+                                                        <img src="<?php echo base_url(); ?>assets/img/produk/<?php echo $produk->foto_produk; ?>
+                                                        " width="120" height="130">
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
                                             </fieldset>
 
                                             <h5 class="mt-2">Deskripsi</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 200px;" class="form-control" id="deskripsi" name="deskripsi" rows="5"  placeholder="Masukkan Deskripsi..."></textarea>
+                                                <textarea style="height: 200px;" class="form-control" id="deskripsi" name="deskripsi" rows="5"  placeholder="Masukkan Deskripsi..."><?= $produk->deskripsi;?></textarea>
                                             </fieldset>
 
                                         </div>
@@ -89,7 +106,7 @@
 
                                             <h5 class="mt-2">Resep</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 300px;" class="form-control" name="resep" id="resep" rows="5" placeholder="Masukkan resep..."></textarea>
+                                                <textarea style="height: 300px;" class="form-control" name="resep" id="resep" rows="5" placeholder="Masukkan resep..."><?= $produk->resep;?></textarea>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -102,6 +119,9 @@
                             <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
+                        <?php
+                                    endforeach;
+                         ?>
                         <?php echo form_close();?>
                     </div>
                 </div>
