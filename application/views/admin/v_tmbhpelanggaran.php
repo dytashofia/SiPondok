@@ -41,32 +41,29 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">ID</h5>
+                                            <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" name="NIS" class="form-control" id="basicInput">
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama</h5>
+                                            <h5 class="mt-2">Nama Santri</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" name="nama_santri" class="form-control" id="basicInput" require>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Pelanggran</h5>
+                                           <h5 class="mt-2">Jenis Pelanggaran</h5>
                                             <fieldset class="form-group">
-                                                <select class="form-control" id="basicSelect">
-                                                    <option>Select Option</option>
-                                                    <option>Laki-Laki</option>
-                                                    <option>Perempuan</option>
-                                                </select>
+                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="basicInput" require>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Hukuman</h5>
+                                            <h5 class="mt-2">Tanggal Melanggar</h5>
                                             <fieldset class="form-group">
-                                                <select class="form-control" id="basicSelect">
-                                                    <option>Select Option</option>
-                                                    <option>Laki-Laki</option>
-                                                    <option>Perempuan</option>
-                                                </select>
+                                                <input type="date" name="tgl" class="form-control" id="basicInput" require>
+                                            </fieldset>
+
+                                           <h5 class="mt-2">Sanksi</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="sanksi" class="form-control" id="basicInput" require>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -93,14 +90,12 @@
                             <a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
             <!-- Striped rows end -->
+            
         </div>
+
     </div>
 </div>
