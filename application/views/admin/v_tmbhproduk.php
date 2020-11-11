@@ -49,7 +49,7 @@
                                                 <input type="text" name="id_produk" id="id_produk" class="form-control" value="<?= $id_produk; ?>" readonly placeholder="Masukkan ID Produk...">
                                             </fieldset>
 
-                                            <h5 class="mt-2">ID Admin</h5>
+                                            <h5 class="mt-2">Nama Admin</h5>
                                             <fieldset class="form-group">
                                                 <select name="id_admin" id="id_admin" class="custom-select">
                                                 <option value=""> Pilih Admin </option>
