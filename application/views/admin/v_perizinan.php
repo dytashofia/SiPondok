@@ -72,6 +72,7 @@
                                             <th>TANGGAL IZIN</th>
                                             <th>TANGGAL KEMBALI</th>
                                              <th>ALASAN</th>
+                                             <th>KETERANGAN</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -86,9 +87,10 @@
                                             <td><?= $i->id_perizinan;?></td>
                                             <td><?= $i->NIS;?></td>
                                             <td><?= $i->nama_santri;?></td>
-                                            <td><?= $i->tgl_izin;?></td>
+                                            <td> <?= $i->tgl_izin;?></td>
                                             <td><?= $i->tgl_datang;?></td>
                                              <td><?= $i->alasan;?></td>
+                                             <td><a href="<?php echo base_url(); ?>index.php/admin/Admin/downloadketeranganizin/<?php echo $i->id_perizinan; ?>"><?= $i->keterangan;?></a></td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
