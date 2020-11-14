@@ -91,9 +91,20 @@ class Admin extends CI_Controller
     }
 
 
-    function hapusperizinan($id){
-        $where = array('id_perizinan' => $id); 
+   function hapusperizinan($id){
+         $where = array('id_perizinan' => $id); 
+        $foto = $this->db->get_where('tb_perizinan',$where);
         $this->m_perizinan->hapus_data($where,'tb_perizinan'); 
+
+         if($foto->num_rows($where)>0){
+      $pros=$foto->row();
+      $name=$pros->keterangan;
+     
+      if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+        unlink($lok);
+      }
+    }
+
         redirect('index.php/admin/Admin/perizinan');
     }
 
@@ -166,7 +177,7 @@ class Admin extends CI_Controller
 
             $this->load->library('upload',$config);
             if(!$this->upload->do_upload('keterangan')) {
-                echo "Upload Gagal"; die();
+                 $keterangan=$this->upload->data('file_name');
             }else{
             $keterangan=$this->upload->data('file_name');
 
@@ -188,12 +199,80 @@ class Admin extends CI_Controller
 
         }
 
-   public function downloadketeranganizin($id)
+    public function downloadketeranganizin($id)
     {
         $data = $this->db->get_where('tb_perizinan',['id_perizinan'=>$id])->row();
         force_download('./assets/file_izin/'.$data->keterangan,NULL);
 
     }
+
+
+    public function editperizinan($id){
+    $where = array('id_perizinan' => $id); 
+    $data['izinedit'] = $this->m_perizinan->edit_data($where,'tb_perizinan')->result();  
+     $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_edit_perizinan', $data);
+        $this->load->view('admin_template/footer');
+  
+    }
+
+
+    public function updateperizinan() {       
+        $id_perizinan = $this->input->post('id_perizinan');
+        $NIS = $this->input->post('NIS');
+        $tgl_izin = $this->input->post('tgl_izin');
+        $tgl_datang = $this->input->post('tgl_datang');
+        $alasan = $this->input->post('alasan');
+        $keterangan = $_FILES['keterangan'];
+        $where= array('id_perizinan' => $id_perizinan );
+         $foto = $this->db->get_where('tb_perizinan',$where);
+
+
+    if($foto->num_rows()>0){
+      $pros=$foto->row();
+      $name=$pros->keterangan;
+     
+      if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+        unlink($lok);
+      }
+    }
+
+        
+        if ($keterangan=''){}else{
+            $config['upload_path']          = './assets/file_izin';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
+
+            $this->load->library('upload',$config);
+            if($this->upload->do_upload('keterangan')) {
+               $keterangan=$this->upload->data('file_name');
+            }else{
+
+            
+            $keterangan=$this->upload->data('file_name');
+
+            }
+        }
+
+
+        $data = array(
+            'id_perizinan' => $id_perizinan,
+            'NIS' => $NIS,
+            'tgl_izin' => $tgl_izin,
+            'tgl_datang' => $tgl_datang,
+            'alasan' => $alasan
+            
+        );
+
+        if ($keterangan != NULL) {
+
+            $data['keterangan'] = $keterangan;
+        }
+
+        $this->m_perizinan->update_data($where,$data);
+            redirect('index.php/admin/Admin/perizinan');
+            
+          }
 
     // END PERIZINAN //
 

@@ -29,4 +29,17 @@ function tampil_perizinan()
       return $this->db->get('tb_perizinan');
    }
 
+function edit_data($where,$table){    
+  return $this->db->get_where($table,$where);
+  }
+
+
+function update_data($where,$data){
+    $this->db->where($where);
+    $this->db->update('tb_perizinan',$data);
+
+
+  } 
+
+
 }
