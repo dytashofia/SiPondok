@@ -3,7 +3,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
             <div class="content-header-left col-md-4 col-12 mb-2">
-                <h3 class="content-header-title">Tambah Data Perizinan</h3>
+                <h3 class="content-header-title">Detail Data Perizinan</h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
                 <div class="breadcrumbs-top float-md-right">
@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Tambah Data Perizinan
+                            <li class="breadcrumb-item active">Detail Data Perizinan
                             </li>
                         </ol>
                     </div>
@@ -23,20 +23,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Tambah Data Perizinan</h4>
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                            <div class="heading-elements">
-                                <ul class="list-inline mb-0">
-                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                      <?php echo form_open_multipart('index.php/admin/Admin/aksiTambahperizinan');?>
+                      <?php
+                            foreach($detail as $i) :
+                        ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -44,28 +33,36 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_perizinan" id="id_perizinan" class="form-control" value="<?= $id_perizinan;?>" readonly>
+                                                <input type="text" name="id_perizinan" id="id_perizinan" class="form-control" value="<?= $i->id_perizinan;?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text"  class="form-control" name="NIS" id="NIS">
+                                                <input type="text"  class="form-control" name="NIS" value="<?= $i->NIS;?>" id="NIS" readonly>
                                             </fieldset>
 
-                                            <!-- <h5 class="mt-2">Nama Santri </h5> -->
-                                            <!-- <fieldset class="form-group"> -->
-                                                <!-- <input type="text" class="form-control" id="basicInput" > -->
-                                            <!-- </fieldset> -->
+                                            <h5 class="mt-2">Nama Santri </h5>
+                                            <fieldset class="form-group">
+                                            <input type="text" class="form-control" name="nama_santri" id="nama_santri" value="<?= $i->nama_santri;?>"  readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Alamat Santri </h5>
+                                            <fieldset class="form-group">
+                                            <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $i->alamat;?>"  readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2"> No Yang bisa dihubungi </h5>
+                                            <fieldset class="form-group">
+                                            <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $i->no_hp;?>"  readonly>
+                                            </fieldset>
 
                                             <h5 class="mt-2">Tanggal Izin</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_izin" id="tgl_izin" >
+                                                <input type="date" class="form-control" name="tgl_izin" id="tgl_izin" value="<?= $i->tgl_izin;?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Tanggal Kembali</h5>
-                                            <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_datang" id="tgl_datang" >
-                                            </fieldset>
+
+
 
                                         </div>
                                     </div>
@@ -76,14 +73,19 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
-                                            <h5 class="mt-2">Alasan</h5>
+                                            <h5 class="mt-2">Keteragan</h5>
+                                            <?php
+                                                    if($i->keterangan==''){?>
+                                                                 <img src="<?php echo base_url('assets/file_izin/nofile.png')?>" width="360" height="390"><br>
+                                             <?php }else{ ?>
+ 
+                                                <embed  src="<?php echo base_url('assets/file_izin/'.$i->keterangan)?>" width="400" height="420"></embed><br>
+                                            <?php }?> 
                                             <fieldset class="form-group">
-                                                <textarea class="form-control" name="alasan" id="alasan" rows="4"></textarea>
-                                            </fieldset>
-
-                                            <h5 class="mt-2">Upload Keterangan Jika Ada</h5>
-                                            <fieldset class="form-group">
-                                                <input type="file" class="form-control" name="keterangan">
+                                            <div>
+                                                 <?php echo $i->keterangan; ?>
+                                                    
+                                            </div>
                                             </fieldset>
 
                                         </div>
@@ -94,11 +96,10 @@
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
                             <a href="<?php echo base_url(); ?>index.php/admin/admin/perizinan"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button>
-
                         </div>
-
-                    <?php echo form_close();?>
+                            <?php
+                                    endforeach;
+                         ?>
 
                     </div>
                 </div>

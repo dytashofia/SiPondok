@@ -35,7 +35,8 @@
                                 </ul>
                             </div>
                         </div>
-
+                        
+                        <?php echo form_open_multipart('index.php/admin/artikel/aksiTambahartikel');?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -43,17 +44,26 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID Artikel</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_artikel" id="id_artikel" class="form-control" value="AR001" readonly>
+                                                <input type="text" name="id_artikel" id="id_artikel" value="<?= $id_artikel; ?>" class="form-control" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">ID Admin</h5>
+                                            <h5 class="mt-2">Nama Admin</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_admin" id="id_admin" class="form-control" value="A001" readonly>
+                                            <select name="id_admin" id="id_admin" class="custom-select">
+                                                <option value=""> Pilih Admin </option>
+                                                <?php
+                                                    foreach ($admin as $detailAdmin) :
+                                                ?>
+                                                    <option value="<?= $detailAdmin->id_admin; ?>"><?= $detailAdmin->nama_admin; ?></option>
+                                                <?php
+                                                    endforeach;
+                                                ?>
+                                                </select>
                                             </fieldset>
 
                                             <h5 class="mt-2">Gambar</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" name="foto_artikel" class="form-control" >
+                                                <input type="file" name="gambar" class="form-control" >
                                             </fieldset>
                                         </div>
                                     </div>
@@ -66,7 +76,7 @@
 
                                             <h5 class="mt-2">Deskripsi</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 200px;" class="form-control" id="basicTextarea" rows="5"></textarea>
+                                                <textarea style="height: 200px;" class="form-control" name="deskripsi" id="deskripsi" rows="5"></textarea>
                                             </fieldset>
 
                                         </div>
@@ -77,7 +87,7 @@
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
                             <a href="<?php echo base_url(); ?>index.php/admin/artikel/artikel"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <a href="<?php echo base_url(); ?>index.php/admin/artikel/artikel"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
 

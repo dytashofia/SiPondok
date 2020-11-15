@@ -72,6 +72,7 @@
                                             <th>TANGGAL IZIN</th>
                                             <th>TANGGAL KEMBALI</th>
                                              <th>ALASAN</th>
+                                             <th>KETERANGAN</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -86,13 +87,14 @@
                                             <td><?= $i->id_perizinan;?></td>
                                             <td><?= $i->NIS;?></td>
                                             <td><?= $i->nama_santri;?></td>
-                                            <td><?= $i->tgl_izin;?></td>
+                                            <td> <?= $i->tgl_izin;?></td>
                                             <td><?= $i->tgl_datang;?></td>
                                              <td><?= $i->alasan;?></td>
+                                             <td><a href="<?php echo base_url(); ?>index.php/admin/Admin/downloadketeranganizin/<?php echo $i->id_perizinan; ?>"><?= $i->keterangan;?></a></td>
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                    <a href="<?php echo base_url() ?>index.php/admin/Admin/editperizinan/<?php echo $i->id_perizinan ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="la la-pencil color-muted m-r-5"></i>
                                                         </button>
@@ -104,7 +106,7 @@
                                                         </button>
                                                     </a>
                                                     &nbsp;
-                                                    <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                    <a href="<?php echo base_url() ?>index.php/admin/Admin/detail/<?php echo $i->id_perizinan ?>" title="Detail" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
                                                         <button type="button" class="btn btn-warning">
                                                             <i class="la la-exclamation-circle color-danger"></i>
                                                         </button>
