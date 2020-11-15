@@ -106,7 +106,7 @@
                                                         </button>
                                                     </a>
                                                     &nbsp;
-                                                    <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                    <a href="<?php echo base_url() ?>index.php/admin/Admin/detail/<?php echo $i->id_perizinan ?>" title="Detail" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
                                                         <button type="button" class="btn btn-warning">
                                                             <i class="la la-exclamation-circle color-danger"></i>
                                                         </button>
