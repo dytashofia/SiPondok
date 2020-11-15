@@ -41,5 +41,27 @@ function update_data($where,$data){
 
   } 
 
+  function detail_data($where){ 
+
+    $fields = array(
+      "tb_perizinan.id_perizinan", 
+      "tb_perizinan.alasan", 
+      "tb_perizinan.tgl_izin", 
+      "tb_perizinan.tgl_datang", 
+      "tb_perizinan.NIS",
+      "tb_perizinan.keterangan", 
+      "tb_santri.nama_santri", 
+      "tb_santri.no_hp", 
+      "tb_santri.alamat"
+          
+       );
+       $this->db->select($fields);
+       $this->db->from('tb_perizinan');
+       $this->db->where($where);
+       $this->db->join('tb_santri', 'tb_perizinan.NIS = tb_santri.NIS');
+       $query = $this->db->get();
+       return $query;
+  }
+
 
 }
