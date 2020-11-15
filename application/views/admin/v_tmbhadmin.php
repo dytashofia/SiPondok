@@ -3,7 +3,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
             <div class="content-header-left col-md-4 col-12 mb-2">
-                <h3 class="content-header-title">Tambah Data Pelanggaran</h3>
+                <h3 class="content-header-title">Tambah Data Admin</h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
                 <div class="breadcrumbs-top float-md-right">
@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Tambah Data Pelanggaran
+                            <li class="breadcrumb-item active">Tambah Data Admin
                             </li>
                         </ol>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tambah Data Pelanggaran</h4>
+                            <h4 class="card-title">Tambah Data Admin</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -36,36 +36,33 @@
                             </div>
                         </div>
 
-                    <?php echo form_open_multipart('admin/Admin/tambah_aksi_pelanggaran'); ?>    
+                        <?php echo form_open_multipart('index.php/admin/Admin/tmbhaksi_admin'); ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">NIS</h5>
+                                            <h5 class="mt-2">ID ADMIN</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="NIS" class="form-control" id="basicInput" require> 
+                                                <input type="text" class="form-control" name="id_admin" id="id_admin">
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama Santri</h5>
+                                            <h5 class="mt-2">Username</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="nama_santri" class="form-control" id="basicInput" require>
+                                                <input type="text" class="form-control" name="username" id="username">
                                             </fieldset>
 
-                                           <h5 class="mt-2">Jenis Pelanggaran</h5>
+                                            <h5 class="mt-2">Password</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="basicInput" require>
+                                                <input type="password" class="form-control" name="password" id="password">
                                             </fieldset>
 
-                                            <h5 class="mt-2">Tanggal Melanggar</h5>
+                                            <h5 class="mt-2">Nama Admin</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" name="tgl" class="form-control" id="basicInput" require>
+                                                <input type="text" class="form-control"name="nama_admin" id="nama_admin">
                                             </fieldset>
+                                            <br>
 
-                                           <h5 class="mt-2">Sanksi</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" name="sanksi" class="form-control" id="basicInput" require>
-                                            </fieldset>
                                         </div>
                                     </div>
                                 </div>
@@ -74,10 +71,10 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-
-                                            <h5 class="mt-2">Catatan</h5>
+                                                                                    
+                                            <h5 class="mt-2">Foto</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 300px;" class="form-control" id="basicTextarea" rows="5"></textarea>
+                                                <input type="file" name="foto_admin" class="form-control" >
                                             </fieldset>
 
                                         </div>
@@ -87,17 +84,14 @@
                         </div>
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
-                            <a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
-
+                            <a href="<?php echo base_url(); ?>index.php/admin/admin/admin"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
                         </div>
+                        <?php echo form_close(); ?>
                     </div>
-                    <?php echo form_close(); ?>
                 </div>
             </div>
             <!-- Striped rows end -->
-            
         </div>
-
     </div>
 </div>

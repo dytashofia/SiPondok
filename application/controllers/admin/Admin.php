@@ -7,10 +7,11 @@ class Admin extends CI_Controller
         parent::__construct();
 
         $this->load->model('m_master_pelanggaran');
-  $this->load->model('m_perizinan');
-
+        $this->load->model('m_perizinan');
+        $this->load->model('m_admin');
         $this->load->helper('url');
     }
+
 
     public function index()
     {
@@ -21,9 +22,141 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+    //admin
+    public function admin()
+    {
+        $data['tb_admin'] = $this->m_admin->tampil_admin()->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_admin', $data);
+        $this->load->view('admin_template/footer');
+    }
+    
+    public function tambah_admin() 
+    {
+        $data['tb_admin'] = $this->m_admin->tampil_admin()->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhadmin', $data);
+        $this->load->view('admin_template/footer');    
+    }
+
+    public function tmbhaksi_admin() 
+    {
+        $id_admin = $this->input->post('id_admin');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $nama_admin = $this->input->post('nama_admin');
+        $foto_admin = $this->input->post('foto_admin');
+
+        if ($foto_admin=''){}else{
+            $config['upload_path']          = './assets/img/gbrAdmin';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
+
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('foto_admin')) {
+                echo "Upload Gagal"; die();
+            }else{
+                $foto_admin=$this->upload->data('file_name');
+            }
+
+        }
+
+        $data = array(
+            'id_admin' => $id_admin,
+            'username' => $username,
+            'password' => $password,
+            'nama_admin' => $nama_admin,
+            'foto_admin' => $foto_admin,
+        );
+
+        $this->m_admin->tambah_admin($data, 'tb_admin');
+        redirect('index.php/admin/Admin/admin');
+    }
+
+    public function edit_admin($id)
+    {
+        $where = array (
+            'id_admin' => $id
+        );
+
+        $data['tb_admin'] = $this->m_admin->edit_admin($where, 'tb_admin')->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_editAdmin', $data);
+        $this->load->view('admin_template/footer'); 
+    }
+
+    public function update_admin() {
+        $id_admin = $this->input->post('id_admin');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $nama_admin = $this->input->post('nama_admin');
+        $foto_admin = $this->input->post('foto_admin');
+
+        if ($foto_admin=''){}else{
+            $config['upload_path']          = './assets/img/gbrAdmin';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
+
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('foto_admin')) {
+                echo "Upload Gagal";
+                ini_set('error_reporting', E_ALL );
+               //die();
+            }else{
+                $foto_admin=$this->upload->data('file_name');
+            }
+
+        }
+
+        $data = array 
+        (
+            'username' => $username,
+            'password' => $password,
+            'nama_admin' => $nama_admin,
+            'foto_admin' => $foto_admin,
+        );
+
+        $where = array ('id_admin' => $id_admin);
+
+        $this->m_admin->update_admin($where, $data, 'tb_admin');
+        redirect('index.php/admin/Admin/admin');   
+    }
+
+    public function detail_admin($id) 
+    {
+        $where = array 
+        (
+            'id_admin' => $id
+        );
+
+        $data['tb_admin'] = $this->m_admin->detail_admin($where, 'tb_admin')->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detail_admin', $data);
+        $this->load->view('admin_template/footer'); 
+    }
+
+   
+
+    public function hapus_admin($id) 
+    {
+        $where = array (
+            'id_admin' => $id
+        );
+
+        $this->m_admin->hapus_admin($where, 'tb_admin');
+        redirect('index.php/admin/Admin/admin');
+    }
+
+
+    // User
     public function user()
     {
-
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_user');
@@ -105,6 +238,8 @@ class Admin extends CI_Controller
         redirect('index.php/admin/Admin/perizinan');
     }
 
+
+    // PELANGGARAN
     public function pelanggaran()
     {
         $data['tb_pelanggaran'] = $this->m_master_pelanggaran->tampil_pelanggaran()->result();
@@ -126,7 +261,7 @@ class Admin extends CI_Controller
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhpelanggaran');
+        $this->load->view('admin/v_tmbhpelanggaran', $data);
         $this->load->view('admin_template/footer');
     }
 
@@ -189,7 +324,7 @@ class Admin extends CI_Controller
         redirect('index.php/admin/Admin/pelanggaran');
     }
 
-    public function hapus_pelanggaran() {
+    public function hapus_pelanggaran($id_pelanggaran) {
         $where = array (
             'id_pelanggaran' => $id_pelanggaran,
         );

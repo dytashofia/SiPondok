@@ -83,14 +83,12 @@ public function produk()
 
             $this->load->library('upload',$config);
             if(!$this->upload->do_upload('foto_produk')) {
-                echo "Upload Gagal"; die();
+                //echo "Upload Gagal"; die();
             }else{
                 $foto_produk=$this->upload->data('file_name');
             }
 
         }
-
-
         $data = array(
             'id_produk' => $id_produk,
             'id_admin' => $id_admin,

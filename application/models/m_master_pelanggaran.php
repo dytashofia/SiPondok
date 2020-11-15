@@ -19,7 +19,7 @@ class M_master_pelanggaran extends CI_Model {
         return $query;
     }
 
-    public function tambah_pelanggaran($where, $table) {
+    public function tambah_pelanggaran($data, $table) {
         $this->db->insert($table, $data);
     }
 
