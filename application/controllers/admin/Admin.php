@@ -274,6 +274,18 @@ class Admin extends CI_Controller
             
           }
 
+    function detail($id){
+
+    $where = array('id_perizinan' => $id);
+    $data['detail'] = $this->m_perizinan->detail_data($where)->result();  
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detail_perizinan',$data);
+        $this->load->view('admin_template/footer');
+
+        }
+
     // END PERIZINAN //
 
     public function pelanggaran()
