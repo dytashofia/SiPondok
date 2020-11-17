@@ -280,105 +280,6 @@
               <a href="assets/img/mengaji/5s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
             </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
-            <img src="assets/img/17san/6.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Kemerdekaan RI</h4>
-              <p>Acara 17 Agustus</p>
-              <a href="assets/img/17san/6.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
-            <img src="assets/img/mengaji/6s.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>PPRRSA Bersholawat</h4>
-              <p>Memperingati Maulid Nabi</p>
-              <a href="assets/img/mengaji/6s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
-            <img src="assets/img/covid/c5.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Peduli Covid</h4>
-              <p>peduli sesama covid 19</p>
-              <a href="assets/img/covid/c5.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
-            <img src="assets/img/17san/7.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Kemerdekaan RI</h4>
-              <p>Acara 17 Agustus</p>
-              <a href="assets/img/17san/7.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
-            <img src="assets/img/mengaji/7s.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>PPRRSA Bersholawat</h4>
-              <p>Memperingati Maulid Nabi</p>
-              <a href="assets/img/mengaji/7s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
-            <img src="assets/img/17san/8.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Kemerdekaan RI</h4>
-              <p>Acara 17 Agustus</p>
-              <a href="assets/img/17san/8.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
-            <img src="assets/img/covid/c6.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Peduli Covid</h4>
-              <p>peduli sesama covid 19</p>
-              <a href="assets/img/covid/c6.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
-            <img src="assets/img/mengaji/8s.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>PPRRSA Bersholawat</h4>
-              <p>Memperingati Maulid Nabi</p>
-              <a href="assets/img/mengaji/8s.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-covid">
-            <img src="assets/img/covid/c7.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Peduli Covid</h4>
-              <p>peduli sesama covid 19</p>
-              <a href="assets/img/covid/c7.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Peduli Covid"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-17">
-            <img src="assets/img/17san/10.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Kemerdekaan RI</h4>
-              <p>Acara 17 Agustus</p>
-              <a href="assets/img/17san/10.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="Kemerdekaan RI"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-sholawat">
-            <img src="assets/img/mengaji/9.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>PPRRSA Bersholawat</h4>
-              <p>Memperingati Maulid Nabi</p>
-              <a href="assets/img/mengaji/9.JPG" data-gall="portfolioGallery" class="venobox preview-link" title="PPRRSA Bersholawat"><i class="bx bx-link">Lihat</i></a>
-            </div>
-          </div>
-
       </div>
     </section><!-- End Portfolio Section -->
 
@@ -633,8 +534,9 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-
-  <div id="preloader"></div>
+  
+  <!-- ini pre loadernya kalo ini aku komen js nya malah ga kebaca def tapi bisa 
+  tampil landingnya hmm gimana nihh def salah dimana bantuin def <div id="preloader"></div>-->
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 
   <!-- Vendor JS Files -->
