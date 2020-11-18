@@ -39,7 +39,7 @@
 
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text"  class="form-control" name="NIS" value="<?= $i->NIS;?>" id="NIS">
+                                                <input type="text"  class="form-control" name="NIS" value="<?= $i->NIS;?>" id="NIS" readonly>
                                             </fieldset>
 
                                             <!-- <h5 class="mt-2">Nama Santri </h5> -->
@@ -84,8 +84,11 @@
                                                     
                                             </div>
                                           
-                                            
                                                 <input type="file" class="form-control" name="keterangan" value="<?= $i->keterangan;?>">
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <input type="hidden" name="status" id="status" class="form-control" value="<?= $i->status;?>" readonly>
                                             </fieldset>
 
                                         </div>
