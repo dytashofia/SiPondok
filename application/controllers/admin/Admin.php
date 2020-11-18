@@ -302,6 +302,7 @@ class Admin extends CI_Controller
         $tgl_datang = $this->input->post('tgl_datang');
         $alasan = $this->input->post('alasan');
         $keterangan = $_FILES['keterangan'];
+        $status = $this->input->post('status');
 
         if ($keterangan=''){}else{
             $config['upload_path']          = './assets/file_izin';
@@ -323,7 +324,8 @@ class Admin extends CI_Controller
             'tgl_izin' => $tgl_izin,
             'tgl_datang' => $tgl_datang,
             'alasan' => $alasan,
-            'keterangan' => $keterangan
+            'keterangan' => $keterangan,
+            'status' => $status
         );
         
         $this->m_perizinan->tambah_data($data,'tb_perizinan');
@@ -355,21 +357,12 @@ class Admin extends CI_Controller
         $tgl_izin = $this->input->post('tgl_izin');
         $tgl_datang = $this->input->post('tgl_datang');
         $alasan = $this->input->post('alasan');
+        $status = $this->input->post('status');
         $keterangan = $_FILES['keterangan'];
         $where= array('id_perizinan' => $id_perizinan );
          $foto = $this->db->get_where('tb_perizinan',$where);
 
 
-    if($foto->num_rows()>0){
-      $pros=$foto->row();
-      $name=$pros->keterangan;
-     
-      if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
-        unlink($lok);
-      }
-    }
-
-        
         if ($keterangan=''){}else{
             $config['upload_path']          = './assets/file_izin';
             $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
@@ -377,28 +370,40 @@ class Admin extends CI_Controller
             $this->load->library('upload',$config);
             if($this->upload->do_upload('keterangan')) {
                $keterangan=$this->upload->data('file_name');
-            }else{
+            } else{
 
-            
-            $keterangan=$this->upload->data('file_name');
-
+                $keterangan=$this->upload->data('file_name');
             }
+
+
+             // if($foto->num_rows()>0){
+      // $pros=$foto->row();
+      // $name=$pros->keterangan;
+     
+      // if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+        // unlink($lok);
+                    // }
+        // }
+
         }
 
+       
 
         $data = array(
             'id_perizinan' => $id_perizinan,
             'NIS' => $NIS,
             'tgl_izin' => $tgl_izin,
             'tgl_datang' => $tgl_datang,
-            'alasan' => $alasan
+            'alasan' => $alasan,
+            'status'   => $status
             
         );
 
-        if ($keterangan != NULL) {
+         if ($keterangan != NULL) {
 
-            $data['keterangan'] = $keterangan;
+        $data['keterangan'] = $keterangan;
         }
+        
 
         $this->m_perizinan->update_data($where,$data);
             redirect('index.php/admin/Admin/perizinan');
