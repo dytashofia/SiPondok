@@ -49,7 +49,7 @@
 
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text"  class="form-control" name="NIS" id="NIS">
+                                                <input type="text"  class="form-control" name="NIS" id="NIS" required>
                                             </fieldset>
 
                                             <!-- <h5 class="mt-2">Nama Santri </h5> -->
@@ -59,12 +59,12 @@
 
                                             <h5 class="mt-2">Tanggal Izin</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_izin" id="tgl_izin" >
+                                                <input type="date" class="form-control" name="tgl_izin" id="tgl_izin" required >
                                             </fieldset>
 
                                             <h5 class="mt-2">Tanggal Kembali</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_datang" id="tgl_datang" >
+                                                <input type="date" class="form-control" name="tgl_datang" id="tgl_datang" required>
                                             </fieldset>
 
                                         </div>
@@ -78,12 +78,16 @@
 
                                             <h5 class="mt-2">Alasan</h5>
                                             <fieldset class="form-group">
-                                                <textarea class="form-control" name="alasan" id="alasan" rows="4"></textarea>
+                                                <textarea class="form-control" name="alasan" id="alasan" rows="4" required></textarea>
                                             </fieldset>
 
                                             <h5 class="mt-2">Upload Keterangan Jika Ada</h5>
                                             <fieldset class="form-group">
                                                 <input type="file" class="form-control" name="keterangan">
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <input type="hidden" class="form-control" name="status" value="<?php echo "Belum dikonfirmasi" ?>">
                                             </fieldset>
 
                                         </div>
