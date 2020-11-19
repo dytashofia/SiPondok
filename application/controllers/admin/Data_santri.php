@@ -1,188 +1,225 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Data_Santri extends CI_Controller
+class Admin extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_master_produk');
+
+        $this->load->model('m_data_santri');
         $this->load->helper('url');
     }
 
 
-
-public function produk()
+public function data_santri()
     {
         
-        $data['tb_produk'] = $this->m_master_produk->produk()->result();
+        $data['santri'] = $this->m_data_santri->tampil_data()->result();  
+
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_produk', $data);
+        $this->load->view('admin/v_santri',$data);
         $this->load->view('admin_template/footer');
     }
 
-    public function tmbhproduk()
-    {
 
-        // Membuat fungsi untuk melakukan penambahan id produk secara otomatis
-		// Mendapatkan jumlah produk yang ada di database
-		$jumlahProduk = $this->m_master_produk->produk()->num_rows();
-		// Jika jumlah produk lebih dari 0
-		if ($jumlahProduk > 0) {
-			// Mengambil id produk sebelumnya
-			$lastId = $this->m_master_produk->tampil_produk_akhir()->result();
-			// Melakukan perulangan untuk mengambil data
-			foreach ($lastId as $row) {
-				// Melakukan pemisahan huruf dengan angka pada id produk
-				$rawIdProduk = substr($row->id_produk, 3);
-				// Melakukan konversi nilai pemisahan huruf dengan angka pada id order menjadi integer
-				$idProdukInt = intval($rawIdProduk);
+   function hapusdtsantri($id){
+         $where = array('NIS' => $id); 
+        $foto = $this->db->get_where('tb_santri',$where);
+        $this->m_data_santri->hapus_data($where,'tb_santri'); 
 
-				// Menghitung panjang id yang sudah menjadi integer
-				if (strlen($idProdukInt) == 1) {
-					// jika panjang id hanya 1 angka
-					$idProduk = "PR00" . ($idProdukInt + 1);
-				} else if (strlen($idProdukInt) == 2) {
-					// jika panjang id hanya 2 angka
-					$idProduk = "PR0" . ($idProdukInt + 1);
-				} else if (strlen($idProdukInt) == 3) {
-					// jika panjang id hanya 3 angka
-					$idProduk = "PR" . ($idProdukInt + 1);
-				}
-			}
-		} else {
-			// Jika jumlah paket soal kurang dari sama dengan 0
-			$idProduk = "PR001";
+         if($foto->num_rows($where)>0){
+      $pros=$foto->row();
+      $name=$pros->keterangan;
+     
+      if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+        unlink($lok);
+      }
+    }
+
+        redirect('index.php/admin/Admin/perizinan');
+    }
+
+    function tmbhperizinan(){
+        $data= $this->m_perizinan->tampil_data()->num_rows();
+        if($data > 0)
+        {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_perizinan->tampil_data_akhir()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach($lastId as $row)
+            {
+                // Melakukan pemisahan huruf dengan angka pada id perizinan
+                $rawid_perizinan = substr($row->id_perizinan,3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
+                $id_perizinanInt = intval($rawid_perizinan);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if(strlen($id_perizinanInt) == 1)
+                {
+                    // jika panjang id hanya 1 angka
+                    $id_perizinan = "IZ00".($id_perizinanInt + 1);
+                }else if(strlen($id_perizinanInt) == 2)
+                {
+                    // jika panjang id hanya 2 angka
+                    $id_perizinan = "IZ0".($id_perizinanInt + 1);
+                }else if(strlen($id_perizinanInt) == 3)
+                {
+                    // jika panjang id hanya 3 angka
+                    $idjurusan = "IZ".($id_perizinanInt + 1);
+                }
+
+            }
+        }else
+        {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_perizinan = "IZ001";
         }
+
+        // Mengambil data mata pelajaran menggunakan model
         
-        $admin = $this->m_master_produk->tampil_admin()->result();
+         $data= $this->m_perizinan->tampil_perizinan()->result();
         
-        $data = array(
-            'admin' => $admin , 
-            'id_produk' => $idProduk
-        );
+       $data = array(
+            'id_perizinan' => $id_perizinan,
+           
+        ); 
+
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhproduk', $data);
+        $this->load->view('admin/v_tmbhperizinan', $data);
         $this->load->view('admin_template/footer');
+         
+    
     }
 
-    public function aksiTambahproduk()
+    public function aksiTambahperizinan()
     {
-        $id_produk = $this->input->post('id_produk');
-        $id_admin = $this->input->post('id_admin');
-        $nama_produk = $this->input->post('nama_produk');
-        $foto_produk = $_FILES['foto_produk'];
-        $deskripsi = $this->input->post('deskripsi');
-        $resep = $this->input->post('resep');
+        $id_perizinan = $this->input->post('id_perizinan');
+        $NIS = $this->input->post('NIS');
+        $tgl_izin = $this->input->post('tgl_izin');
+        $tgl_datang = $this->input->post('tgl_datang');
+        $alasan = $this->input->post('alasan');
+        $keterangan = $_FILES['keterangan'];
+        $status = $this->input->post('status');
 
-        if ($foto_produk=''){}else{
-            $config['upload_path']          = './assets/img/produk';
-            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
+        if ($keterangan=''){}else{
+            $config['upload_path']          = './assets/file_izin';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
             $this->load->library('upload',$config);
-            if(!$this->upload->do_upload('foto_produk')) {
-                //echo "Upload Gagal"; die();
+            if(!$this->upload->do_upload('keterangan')) {
+                 $keterangan=$this->upload->data('file_name');
             }else{
-                $foto_produk=$this->upload->data('file_name');
-            }
+            $keterangan=$this->upload->data('file_name');
 
+            }
         }
+
+
         $data = array(
-            'id_produk' => $id_produk,
-            'id_admin' => $id_admin,
-            'nama_produk' => $nama_produk,
-            'foto_produk' => $foto_produk,
-            'deskripsi' => $deskripsi,
-            'resep' => $resep,
+            'id_perizinan' => $id_perizinan,
+            'NIS' => $NIS,
+            'tgl_izin' => $tgl_izin,
+            'tgl_datang' => $tgl_datang,
+            'alasan' => $alasan,
+            'keterangan' => $keterangan,
+            'status' => $status
         );
         
-        $this->m_master_produk->tambah_produk($data, 'tb_produk');
-        redirect('index.php/admin/produk/produk'); 
+        $this->m_perizinan->tambah_data($data,'tb_perizinan');
+        redirect('index.php/admin/Admin/perizinan'); 
 
         }
 
-        function tampilDetailProduk($idProdukUri)
-	{
-		// Mendapatkan Id Produk Soal dari URL
-		$idProduk = $idProdukUri;
-		// Membuat array untuk digunakan sebagai select
-		$where = array(
-			'tb_produk.id_produk' => $idProduk
-		);
-		// Mendapatkan data paket soal tertentu melalui model
-		$result = $this->m_master_produk->tampil_produk_where($where,'tb_produk')->result();
-        // Menyimpan hasil dari model kedalam array
-		$data = array(
-            'data_produk' => $result,
-		);
-		// Menampilkan view dengan data dari model
-		$this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_detail_produk', $data);
-        $this->load->view('admin_template/footer');
-    }
-    
-    function editProduk($idProdukUri)
-	{
-		// Mendapatkan Id Produk Soal dari URL
-		$idProduk = $idProdukUri;
-		// Membuat array untuk digunakan sebagai media select
-		$where = array(
-			'id_produk' => $idProduk
-		);
-		// Mendapatkan data paket soal tertentu melalui modal
-		$result = $this->m_master_produk->tampil_produk_where_only($where, "tb_produk")->result();
-		// Mendapatkan data mata pelajaran melalui modal
-		$resultAdmin = $this->m_master_produk->tampil_admin()->result();
-		// Menyimpan hasil dari model kedalam array
-		$data = array(
-			'data_produk' => $result,
-			'data_admin' => $resultAdmin
-		);
-		// Menampilkan view dengan data dari model
-		$this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_edit_produk.php', $data);
-        $this->load->view('admin_template/footer');
+    public function downloadketeranganizin($id)
+    {
+        $data = $this->db->get_where('tb_perizinan',['id_perizinan'=>$id])->row();
+        force_download('./assets/file_izin/'.$data->keterangan,NULL);
+
     }
 
-    function aksiEditProduk()
-	{
-		// Menyimpan input dari user kedalam variabel
-		$id_produk = $this->input->post('id_produk');
-        $id_admin = $this->input->post('id_admin');
-        $nama_produk = $this->input->post('nama_produk');
-        $foto_produk = $_FILES['foto_produk'];
-        $deskripsi = $this->input->post('deskripsi');
-        $resep = $this->input->post('resep');
+    public function editperizinan($id){
+    $where = array('id_perizinan' => $id); 
+    $data['izinedit'] = $this->m_perizinan->edit_data($where,'tb_perizinan')->result();  
+     $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_edit_perizinan', $data);
+        $this->load->view('admin_template/footer');
+  
+    }
+
+
+    public function updateperizinan() {       
+        $id_perizinan = $this->input->post('id_perizinan');
+        $NIS = $this->input->post('NIS');
+        $tgl_izin = $this->input->post('tgl_izin');
+        $tgl_datang = $this->input->post('tgl_datang');
+        $alasan = $this->input->post('alasan');
+        $status = $this->input->post('status');
+        $keterangan = $_FILES['keterangan'];
+        $where= array('id_perizinan' => $id_perizinan );
+         $foto = $this->db->get_where('tb_perizinan',$where);
+
+
+        if ($keterangan=''){}else{
+            $config['upload_path']          = './assets/file_izin';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
+
+            $this->load->library('upload',$config);
+            if($this->upload->do_upload('keterangan')) {
+               $keterangan=$this->upload->data('file_name');
+            } else{
+
+                $keterangan=$this->upload->data('file_name');
+            }
+
+
+             // if($foto->num_rows()>0){
+      // $pros=$foto->row();
+      // $name=$pros->keterangan;
+     
+      // if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+        // unlink($lok);
+                    // }
+        // }
+
+        }
+
+       
 
         $data = array(
-            'id_produk' => $id_produk,
-            'id_admin' => $id_admin,
-            'nama_produk' => $nama_produk,
-            'foto_produk' => $foto_produk,
-            'deskripsi' => $deskripsi,
-            'resep' => $resep,
-			);
-			// Menyimpan data sebagai unique key yang digunakan untuk mengupdate
-			$where = array(
-				'id_produk' => $id_produk
-			);
-			$this->m_master_produk->update_produk($where, $data, 'tb_produk');
-			redirect('index.php/admin/produk/produk');
-		}
-    
-    function hapusPaket($idProdukUri)
-	{
-		// Mendapatkan id paket soal yang akan dihapus
-		$idProduk = $idProdukUri;
-		// Menyimpan id paket soal kedalam array
-		$where = array(
-			'id_produk' => $idProduk
+            'id_perizinan' => $id_perizinan,
+            'NIS' => $NIS,
+            'tgl_izin' => $tgl_izin,
+            'tgl_datang' => $tgl_datang,
+            'alasan' => $alasan,
+            'status'   => $status
+            
         );
-		$this->m_master_produk->delete_produk($where, 'tb_produk');
-		redirect('index.php/admin/produk/produk');
-	}
-}
+
+         if ($keterangan != NULL) {
+
+        $data['keterangan'] = $keterangan;
+        }
+        
+
+        $this->m_perizinan->update_data($where,$data);
+            redirect('index.php/admin/Admin/perizinan');
+            
+          }
+
+    function detail($id){
+
+    $where = array('id_perizinan' => $id);
+    $data['detail'] = $this->m_perizinan->detail_data($where)->result();  
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detail_perizinan',$data);
+        $this->load->view('admin_template/footer');
+
+        }
+
+    // END PERIZINAN //
