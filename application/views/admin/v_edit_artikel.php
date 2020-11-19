@@ -74,16 +74,22 @@
                                             </select>
                                             </fieldset>
                                             
-                                            <h5 class="mt-2">Gambar</h5>
+                                            <h5 class="mt-2">Edit Gambar Jika Diperlukan</h5>
                                             <fieldset class="form-group">
-                                                <tr>
-                                                    <td>
-                                                        <img src="<?php echo base_url(); ?>assets/img/artikel/<?php echo $artikel->gambar; ?>
-                                                        " width="120" height="130">
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
+                                            <?php
+                                                if($artikel->gambar==''){?>
+                                                    <label>Belum Ada Gambar</label><br>
+                                                <?php }else{ ?>
+                                                    <img src="<?php echo base_url('assets/img/artikel/'.$artikel->gambar)?>" width="120" height="130"><br>
+                                                <?php }?>
+                                                <fieldset class="form-group">
+                                                    <div>
+                                                        <?php echo $artikel->gambar; ?>
+                                                    </div>
+                                          
+                                                <input type="file" class="form-control" name="gambar" value="<?= $artikel->gambar;?>">
                                             </fieldset>
+                                    
 
                                         </div>
                                     </div>

@@ -157,15 +157,47 @@ public function produk()
         $foto_produk = $_FILES['foto_produk'];
         $deskripsi = $this->input->post('deskripsi');
         $resep = $this->input->post('resep');
+        $where= array('id_produk' => $id_produk );
+         $foto = $this->db->get_where('tb_produk',$where);
+
+
+         if ($foto_produk=''){}else{
+            $config['upload_path']          = './assets/img/produk';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
+
+            
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('foto_produk')) {
+                //echo "Upload Gagal"; die();
+            }else{
+                $foto_produk=$this->upload->data('file_name');
+                
+                if($foto->num_rows()>0){
+                    $pros=$foto->row();
+                    $name=$pros->foto_produk;
+                   
+                    if(file_exists($lok=FCPATH.'/assets/img/produk/'.$name)){
+                        unlink($lok);
+                    }
+            }
+            
+        }
+
+        }
 
         $data = array(
             'id_produk' => $id_produk,
             'id_admin' => $id_admin,
             'nama_produk' => $nama_produk,
-            'foto_produk' => $foto_produk,
             'deskripsi' => $deskripsi,
             'resep' => $resep,
-			);
+            );
+            
+            
+            if ($foto_produk != NULL) {
+
+                $data['foto_produk'] = $foto_produk;
+                }
 			// Menyimpan data sebagai unique key yang digunakan untuk mengupdate
 			$where = array(
 				'id_produk' => $id_produk
@@ -176,13 +208,23 @@ public function produk()
     
     function hapusPaket($idProdukUri)
 	{
-		// Mendapatkan id paket soal yang akan dihapus
+		// Mendapatkan id produk yang akan dihapus
 		$idProduk = $idProdukUri;
-		// Menyimpan id paket soal kedalam array
+		// Menyimpan id produk kedalam array
 		$where = array(
 			'id_produk' => $idProduk
         );
-		$this->m_master_produk->delete_produk($where, 'tb_produk');
+        $foto = $this->db->get_where('tb_produk',$where);
+        $this->m_master_produk->delete_produk($where, 'tb_produk');
+        
+        if($foto->num_rows($where)>0){
+            $pros=$foto->row();
+            $name=$pros->foto_produk;
+           
+            if(file_exists($lok=FCPATH.'/assets/img/produk/'.$name)){
+              unlink($lok);
+            }
+          }
 		redirect('index.php/admin/produk/produk');
 	}
 }

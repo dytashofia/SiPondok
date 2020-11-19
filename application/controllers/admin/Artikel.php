@@ -150,15 +150,43 @@ class Artikel extends CI_Controller
         $id_admin = $this->input->post('id_admin');
         $gambar = $_FILES['gambar'];
         $deskripsi = $this->input->post('deskripsi');
+        $where= array('id_artikel' => $id_artikel );
+            $foto = $this->db->get_where('tb_artikel',$where);
         
-        
+            if ($gambar=''){}else{
+                $config['upload_path']          = './assets/img/artikel';
+                $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
+    
+                
+                $this->load->library('upload',$config);
+                if(!$this->upload->do_upload('gambar')) {
+                    //echo "Upload Gagal"; die();
+                }else{
+                    $gambar=$this->upload->data('file_name');
+                    
+                    if($foto->num_rows()>0){
+                        $pros=$foto->row();
+                        $name=$pros->gambar;
+                       
+                        if(file_exists($lok=FCPATH.'/assets/img/artikel/'.$name)){
+                            unlink($lok);
+                        }
+                }
+                
+            }
+    
+            }
         $data = array(
             'id_artikel' => $id_artikel,
             'id_admin' => $id_admin,
-            'gambar' => $gambar,
             'deskripsi' => $deskripsi,
        
-			);
+            );
+            
+            if ($gambar != NULL) {
+
+                $data['gambar'] = $gambar;
+                }
 			// Menyimpan data sebagai unique key yang digunakan untuk mengupdate
 			$where = array(
 				'id_artikel' => $id_artikel
@@ -176,7 +204,17 @@ class Artikel extends CI_Controller
             $where = array(
                 'id_artikel' => $idArtikel
             );
+            $foto = $this->db->get_where('tb_artikel',$where);
             $this->m_master_artikel->delete_artikel($where, 'tb_artikel');
+            
+            if($foto->num_rows($where)>0){
+                $pros=$foto->row();
+                $name=$pros->gambar;
+               
+                if(file_exists($lok=FCPATH.'/assets/img/artikel/'.$name)){
+                  unlink($lok);
+                }
+              }
             redirect('index.php/admin/artikel/artikel');
         }
 
