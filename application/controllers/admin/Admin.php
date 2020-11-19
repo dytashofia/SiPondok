@@ -363,27 +363,32 @@ class Admin extends CI_Controller
          $foto = $this->db->get_where('tb_perizinan',$where);
 
 
+
+
+
         if ($keterangan=''){}else{
             $config['upload_path']          = './assets/file_izin';
             $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
             $this->load->library('upload',$config);
-            if($this->upload->do_upload('keterangan')) {
-               $keterangan=$this->upload->data('file_name');
-            } else{
+            if(!$this->upload->do_upload('keterangan')) {
 
+            } else{
+                 if($foto->num_rows()>0){
+                $pros=$foto->row();
+                $name=$pros->keterangan;
+     
+                if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+                     unlink($lok);
+                        }
+                     }   
+
+                
                 $keterangan=$this->upload->data('file_name');
             }
 
 
-             // if($foto->num_rows()>0){
-      // $pros=$foto->row();
-      // $name=$pros->keterangan;
-     
-      // if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
-        // unlink($lok);
-                    // }
-        // }
+            
 
         }
 
@@ -420,7 +425,7 @@ class Admin extends CI_Controller
         $this->load->view('admin/v_detail_perizinan',$data);
         $this->load->view('admin_template/footer');
 
-        }
+        }        
 
     // END PERIZINAN //
 
