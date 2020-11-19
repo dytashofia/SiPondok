@@ -73,10 +73,10 @@
                                             <h5 class="mt-2">Edit Keterangan Jika diperlukan</h5>
                                             <?php
                                                     if($i->keterangan==''){?>
-                                                                 <img src="<?php echo base_url('assets/file_izin/nofile.png')?>" width="120" height="130"><br>
+                                                                 <img src="<?php echo base_url('assets/file_izin/nofile.png')?>" width="120" height="120"><br>
                                              <?php }else{ ?>
  
-                                                <embed  src="<?php echo base_url('assets/file_izin/'.$i->keterangan)?>" width="120" height="130"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/file_izin/'.$i->keterangan)?>" width="120" height="120"></embed><br>
                                             <?php }?> 
                                             <fieldset class="form-group">
                                             <div>
