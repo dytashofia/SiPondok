@@ -72,18 +72,25 @@
                                                 endforeach;
                                             ?>
                                             </select>
+                                            <?= form_error('id_admin','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
                                             
-                                            <h5 class="mt-2">Gambar</h5>
+                                            <h5 class="mt-2">Edit Gambar Jika Diperlukan</h5>
                                             <fieldset class="form-group">
-                                                <tr>
-                                                    <td>
-                                                        <img src="<?php echo base_url(); ?>assets/img/artikel/<?php echo $artikel->gambar; ?>
-                                                        " width="120" height="130">
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
+                                            <?php
+                                                if($artikel->gambar==''){?>
+                                                    <label>Belum Ada Gambar</label><br>
+                                                <?php }else{ ?>
+                                                    <img src="<?php echo base_url('assets/img/artikel/'.$artikel->gambar)?>" width="120" height="130"><br>
+                                                <?php }?>
+                                                <fieldset class="form-group">
+                                                    <div>
+                                                        <?php echo $artikel->gambar; ?>
+                                                    </div>
+                                          
+                                                <input type="file" class="form-control" name="gambar" value="<?= $artikel->gambar;?>">
                                             </fieldset>
+                                    
 
                                         </div>
                                     </div>
@@ -97,6 +104,7 @@
                                             <h5 class="mt-2">Deskrpsi</h5>
                                             <fieldset class="form-group">
                                                 <textarea style="height: 300px;" class="form-control" name="deskripsi" id="deskripsi" rows="5" placeholder="Masukkan deskripsi..."><?= $artikel->deskripsi;?></textarea>
+                                                <?= form_error('deskripsi','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
                                         </div>
                                     </div>

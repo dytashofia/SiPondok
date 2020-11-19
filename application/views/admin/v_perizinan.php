@@ -1,4 +1,5 @@
-<div class="app-content content">
+ 
+ <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
@@ -66,13 +67,13 @@
                                     <thead>
                                         <tr>
                                             <th>NO</th>
-                                            <th>ID IZIN</th>
-                                            <th>NIS</th>
                                             <th>NAMA SANTRI</th>
                                             <th>TANGGAL IZIN</th>
                                             <th>TANGGAL KEMBALI</th>
                                              <th>ALASAN</th>
                                              <th>KETERANGAN</th>
+                                             <th>STATUS</th>
+                                              <th>KONFIRMASI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -84,13 +85,37 @@
                                         <tr>
                                            
                                             <td><?= $noUrut;?></td>
-                                            <td><?= $i->id_perizinan;?></td>
-                                            <td><?= $i->NIS;?></td>
                                             <td><?= $i->nama_santri;?></td>
                                             <td> <?= $i->tgl_izin;?></td>
                                             <td><?= $i->tgl_datang;?></td>
                                              <td><?= $i->alasan;?></td>
-                                             <td><a href="<?php echo base_url(); ?>index.php/admin/Admin/downloadketeranganizin/<?php echo $i->id_perizinan; ?>"><?= $i->keterangan;?></a></td>
+                                             <td>
+                                            
+                                                       <?php
+                                                    if($i->keterangan !==''){?>
+                                                        
+                                                        <?= $i->keterangan;?>      
+                                                 <?php }else{ ?>   
+
+                                                 <?php echo "No File Uploaded"?>         
+                                             <?php } ?>
+                                                <br>
+                                                <?php
+                                                    if($i->keterangan !==''){?>
+                                                         <a title="Cek" data-toggle="tooltip" data-placement="top" data-original-title="Cek">
+                                                        <button type="button" data-toggle="modal" data-target="#cekketerangan<?=$i->id_perizinan;?>" class="btn-sx btn-info center-block"><i class="la la-eye color-success"></i>
+                                                                 
+                                                                  </button> 
+                                             <?php } ?>
+                                                    </td>
+                                            <td><?= $i->status;?></td>
+                                             
+                                             <td> 
+                                                        <button type="button" data-toggle="modal" data-target="#konfirmasiModal<?=$i->id_perizinan;?>" class="btn btn-success">
+                                                            <i class="la la-check-circle color-success"></i>
+                                                        </button> 
+                                                </td>
+
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
@@ -101,6 +126,7 @@
                                                     </a>
 
                                                     &nbsp;
+                                                    <a title="Hapus" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                         <button type="button" data-toggle="modal" data-target="#deletePaketModal<?=$i->id_perizinan;?>" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
@@ -138,7 +164,7 @@
  <?php
         foreach($izin as $row) :    
     ?>
-        <!-- Modal -->
+        <!--  delete Modal -->
         <div class="modal fade" id="deletePaketModal<?= $row->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="deletePaketModalTitle">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -155,6 +181,95 @@
                         <button class="btn btn-outline-secondary" type="button" data-dismiss="modal"> Batal </button>
                         <a href="<?php echo base_url() ?>index.php/admin/Admin/hapusperizinan/<?php echo $row->id_perizinan ?>" role="button" class="btn btn-success"> Ya </a>
                     </div>
+                </div>
+            </div>
+        </div>
+
+    <?php
+        endforeach;
+    ?>
+
+<!--  Konfirmasi Modal -->
+
+<?php
+        foreach($izin as $i) :    
+    ?>
+        
+
+        
+        <div class="modal fade" id="konfirmasiModal<?= $i->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle">Konfirmasi Izin</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="<?php echo base_url() ?>index.php/admin/Admin/updateperizinan/<?php echo $i->id_perizinan ?>">
+                    <div class="modal-body">
+                        
+                        <h5 class="text-justify"> Apakah santri diberi izin?
+                        <input type="hidden" name="id_perizinan" id="id_perizinan" value="<?php echo $i->id_perizinan;?>">
+                        <input type="hidden" name="NIS" id="NIS" value="<?= $i->NIS;?>">
+                        <input type="hidden" name="tgl_izin" id="tgl_izin" value="<?php echo $i->tgl_izin;?>">
+                        <input type="hidden" name="tgl_datang" id="tgl_datang" value="<?php echo $i->tgl_datang;?>">
+                        <input type="hidden" name="alasan" id="alasan" value="<?php echo $i->alasan;?>">
+                        <input type="hidden" name="keterangan" id="keterangan" value="<?php echo $i->keterangan;?>">
+                        <select name="status" id="status" >
+                            <option>Diizinkan</option>
+                            <option>Tidak diizinkan</option>
+                        </select>
+
+                        </h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success">Konfirmasi</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    <?php
+        endforeach;
+    ?>
+
+
+    <!--  tampil keterangan -->
+
+<?php
+        foreach($izin as $i) :    
+    ?>
+        
+
+        
+        <div class="modal fade" id="cekketerangan<?= $i->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle"><?php echo $i->keterangan;?></h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="<?php echo base_url() ?>index.php/admin/Admin/updateperizinan/<?php echo $i->id_perizinan ?>">
+                    <div class="modal-body">
+                        
+                        <h5 class="text-justify"> 
+                                    <?php
+                                                    if($i->keterangan==''){?>
+                                                                 <img src="<?php echo base_url('assets/file_izin/nofile.png')?>" width="360" height="390"><br>
+                                             <?php }else{ ?>
+ 
+                                                <embed  src="<?php echo base_url('assets/file_izin/'.$i->keterangan)?>" width="470" height="450"></embed><br>
+                                            <?php }?> 
+                        </h5>
+                    </div>
+                    <div class="modal-footer">
+                         <a href="<?php echo base_url(); ?>index.php/admin/Admin/downloadketeranganizin/<?php echo $i->id_perizinan;?>">
+                        <button type="button" class="btn btn-primary">Download</button></a>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>

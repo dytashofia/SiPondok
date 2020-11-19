@@ -6,7 +6,9 @@ class Artikel extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_master_artikel');
-        $this->load->helper('url');
+        $this->load->helper('url','form');
+        $this->load->library('form_validation');
+        
     }
 
 
@@ -80,12 +82,27 @@ class Artikel extends CI_Controller
 
             $this->load->library('upload',$config);
             if(!$this->upload->do_upload('gambar')) {
-                echo "Upload Gagal"; die();
+               // echo "Upload Gagal"; die();
             }else{
                 $gambar=$this->upload->data('file_name');
             }
 
         }
+        // Membuat validasi form
+		$this->form_validation->set_rules('id_admin', 'Nama Admin', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|strip_tags');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        
+        // Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->tmbhartikel();
+		} else {
+			// Apabila hasil validasi form menunjukkan tidak ada yang salah
 
         $data = array(
             'id_artikel' => $id_artikel,
@@ -98,6 +115,7 @@ class Artikel extends CI_Controller
         redirect('index.php/admin/artikel/artikel'); 
 
         }
+    }
 
         function tampilDetailArtikel($idArtikelUri)
         {
@@ -150,15 +168,60 @@ class Artikel extends CI_Controller
         $id_admin = $this->input->post('id_admin');
         $gambar = $_FILES['gambar'];
         $deskripsi = $this->input->post('deskripsi');
+        $where= array('id_artikel' => $id_artikel );
+            $foto = $this->db->get_where('tb_artikel',$where);
         
+            if ($gambar=''){}else{
+                $config['upload_path']          = './assets/img/artikel';
+                $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
+    
+                
+                $this->load->library('upload',$config);
+                if(!$this->upload->do_upload('gambar')) {
+                    //echo "Upload Gagal"; die();
+                }else{
+                    $gambar=$this->upload->data('file_name');
+                    
+                    if($foto->num_rows()>0){
+                        $pros=$foto->row();
+                        $name=$pros->gambar;
+                       
+                        if(file_exists($lok=FCPATH.'/assets/img/artikel/'.$name)){
+                            unlink($lok);
+                        }
+                }
+                
+            }
+    
+            }
+
+         // Membuat validasi form
+		$this->form_validation->set_rules('id_admin', 'Nama Admin', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|strip_tags');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
         
+        // Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->editArtikel($id_artikel);
+		} else {
+			// Apabila hasil validasi form menunjukkan tidak ada yang salah
+
         $data = array(
             'id_artikel' => $id_artikel,
             'id_admin' => $id_admin,
-            'gambar' => $gambar,
             'deskripsi' => $deskripsi,
        
-			);
+            );
+            
+            if ($gambar != NULL) {
+
+                $data['gambar'] = $gambar;
+                }
 			// Menyimpan data sebagai unique key yang digunakan untuk mengupdate
 			$where = array(
 				'id_artikel' => $id_artikel
@@ -166,7 +229,7 @@ class Artikel extends CI_Controller
 			$this->m_master_artikel->update_artikel($where, $data, 'tb_artikel');
 			redirect('index.php/admin/artikel/artikel');
 		}
-    
+    }
 
         function hapusArtikel($idArtikelUri)
         {
@@ -176,7 +239,17 @@ class Artikel extends CI_Controller
             $where = array(
                 'id_artikel' => $idArtikel
             );
+            $foto = $this->db->get_where('tb_artikel',$where);
             $this->m_master_artikel->delete_artikel($where, 'tb_artikel');
+            
+            if($foto->num_rows($where)>0){
+                $pros=$foto->row();
+                $name=$pros->gambar;
+               
+                if(file_exists($lok=FCPATH.'/assets/img/artikel/'.$name)){
+                  unlink($lok);
+                }
+              }
             redirect('index.php/admin/artikel/artikel');
         }
 

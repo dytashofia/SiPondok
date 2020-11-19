@@ -56,13 +56,10 @@
                                             <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $i->no_hp;?>"  readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Tanggal Izin</h5>
+                                             <h5 class="mt-2">Tanggal Izin</h5>
                                             <fieldset class="form-group">
                                                 <input type="date" class="form-control" name="tgl_izin" id="tgl_izin" value="<?= $i->tgl_izin;?>" readonly>
                                             </fieldset>
-
-
-
 
                                         </div>
                                     </div>
@@ -73,19 +70,34 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
+                                            <h5 class="mt-2">Tanggal Kembali</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" class="form-control" name="tgl_kembali" id="tgl_kembali" value="<?= $i->tgl_datang;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Alasan</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="alasan" id="alasan" value="<?= $i->alasan;?>" readonly>
+                                            </fieldset>
+
                                             <h5 class="mt-2">Keteragan</h5>
                                             <?php
                                                     if($i->keterangan==''){?>
-                                                                 <img src="<?php echo base_url('assets/file_izin/nofile.png')?>" width="360" height="390"><br>
+                                                                 <img src="<?php echo base_url('assets/file_izin/nofile.png')?>" width="120" height="120"><br>
                                              <?php }else{ ?>
  
-                                                <embed  src="<?php echo base_url('assets/file_izin/'.$i->keterangan)?>" width="400" height="420"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/file_izin/'.$i->keterangan)?>" width="120" height="120"></embed><br>
                                             <?php }?> 
                                             <fieldset class="form-group">
                                             <div>
                                                  <?php echo $i->keterangan; ?>
                                                     
                                             </div>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Status</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="status" id="status" value="<?= $i->status?>" readonly>
                                             </fieldset>
 
                                         </div>

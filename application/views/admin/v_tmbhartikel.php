@@ -48,7 +48,7 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Admin</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group<?=form_error('id_admin') ? 'has-error' : null?>">
                                             <select name="id_admin" id="id_admin" class="custom-select">
                                                 <option value=""> Pilih Admin </option>
                                                 <?php
@@ -59,6 +59,7 @@
                                                     endforeach;
                                                 ?>
                                                 </select>
+                                                <?= form_error('id_admin', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Gambar</h5>
@@ -75,8 +76,9 @@
                                         <div class="card-body">
 
                                             <h5 class="mt-2">Deskripsi</h5>
-                                            <fieldset class="form-group">
-                                                <textarea style="height: 200px;" class="form-control" name="deskripsi" id="deskripsi" rows="5"></textarea>
+                                            <fieldset class="form-group<?=form_error('deskripsi') ? 'has-error' : null?>">
+                                                <textarea style="height: 200px;" class="form-control" name="deskripsi" id="deskripsi" rows="5"><?=set_value('deskripsi');?></textarea>
+                                                <?= form_error('deskripsi', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                         </div>

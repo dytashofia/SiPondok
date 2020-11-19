@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         $this->load->model('m_pelanggaran');
         $this->load->model('m_perizinan');
         $this->load->model('m_admin');
+        $this->load->model('m_pembayaran');
         $this->load->helper('url');
     }
 
@@ -228,26 +229,8 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    public function pembayaran()
-    {
 
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_pembayaran');
-        $this->load->view('admin_template/footer');
-    }
-
-    public function tmbhpembayaran()
-    {
-
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhpembayaran');
-        $this->load->view('admin_template/footer');
-    }
-
-
-   // PERIZINAN//
+   //=======================================PERIZINAN===========================================//
 
     public function perizinan()
     {
@@ -340,6 +323,7 @@ class Admin extends CI_Controller
         $tgl_datang = $this->input->post('tgl_datang');
         $alasan = $this->input->post('alasan');
         $keterangan = $_FILES['keterangan'];
+        $status = $this->input->post('status');
 
         if ($keterangan=''){}else{
             $config['upload_path']          = './assets/file_izin';
@@ -361,7 +345,8 @@ class Admin extends CI_Controller
             'tgl_izin' => $tgl_izin,
             'tgl_datang' => $tgl_datang,
             'alasan' => $alasan,
-            'keterangan' => $keterangan
+            'keterangan' => $keterangan,
+            'status' => $status
         );
         
         $this->m_perizinan->tambah_data($data,'tb_perizinan');
@@ -393,50 +378,58 @@ class Admin extends CI_Controller
         $tgl_izin = $this->input->post('tgl_izin');
         $tgl_datang = $this->input->post('tgl_datang');
         $alasan = $this->input->post('alasan');
+        $status = $this->input->post('status');
         $keterangan = $_FILES['keterangan'];
         $where= array('id_perizinan' => $id_perizinan );
          $foto = $this->db->get_where('tb_perizinan',$where);
 
 
-    if($foto->num_rows()>0){
-      $pros=$foto->row();
-      $name=$pros->keterangan;
-     
-      if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
-        unlink($lok);
-      }
-    }
 
-        
+
+
         if ($keterangan=''){}else{
             $config['upload_path']          = './assets/file_izin';
             $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
             $this->load->library('upload',$config);
-            if($this->upload->do_upload('keterangan')) {
-               $keterangan=$this->upload->data('file_name');
-            }else{
+            if(!$this->upload->do_upload('keterangan')) {
+
+            } else{
+                 if($foto->num_rows()>0){
+                $pros=$foto->row();
+                $name=$pros->keterangan;
+     
+                if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+                     unlink($lok);
+                        }
+                     }   
+
+                
+                $keterangan=$this->upload->data('file_name');
+            }
+
 
             
-            $keterangan=$this->upload->data('file_name');
 
-            }
         }
 
+       
 
         $data = array(
             'id_perizinan' => $id_perizinan,
             'NIS' => $NIS,
             'tgl_izin' => $tgl_izin,
             'tgl_datang' => $tgl_datang,
-            'alasan' => $alasan
+            'alasan' => $alasan,
+            'status'   => $status
             
         );
 
-        if ($keterangan != NULL) {
+         if ($keterangan != NULL) {
 
-            $data['keterangan'] = $keterangan;
+        $data['keterangan'] = $keterangan;
         }
+        
 
         $this->m_perizinan->update_data($where,$data);
             redirect('index.php/admin/Admin/perizinan');
@@ -453,9 +446,39 @@ class Admin extends CI_Controller
         $this->load->view('admin/v_detail_perizinan',$data);
         $this->load->view('admin_template/footer');
 
-        }
+        }        
 
-    // END PERIZINAN //
+    //======================================END PERIZINAN=========================================//
+
+
+
+    //=======================================PEMBAYARAN==========================================//
+
+
+    public function pembayaran()
+
+    {
+
+        $data['bayar']=$this->m_pembayaran->tampil_data()->result();  
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_pembayaran',$data);
+        $this->load->view('admin_template/footer');
+
+    }
+    
+    public function tmbhpembayaran()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhpembayaran');
+        $this->load->view('admin_template/footer');
+    }
+
+    //======================================END PEMBAYARAN=======================================//
+
 
 
     // === Pelanggaran ===
