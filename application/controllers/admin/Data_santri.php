@@ -96,7 +96,7 @@ public function data_santri()
 
     public function aksiTambahperizinan()
     {
-        $id_perizinan = $this->input->post('id_perizinan');
+        $NIS = $this->input->post('NIS');
         $NIS = $this->input->post('NIS');
         $tgl_izin = $this->input->post('tgl_izin');
         $tgl_datang = $this->input->post('tgl_datang');
