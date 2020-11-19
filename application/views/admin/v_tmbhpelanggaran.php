@@ -36,35 +36,40 @@
                             </div>
                         </div>
 
-                    <?php echo form_open_multipart('admin/Admin/tambah_aksi_pelanggaran'); ?>    
+                    <?php echo form_open_multipart('index.php/admin/Admin/tambah_aksi_pelanggaran'); ?>    
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">NIS</h5>
+                                            <h5 class="mt-2">ID Pelanggaran</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="NIS" class="form-control" id="basicInput" require> 
+                                                <input type="text" name="id_pelanggaran" class="form-control" id="id_pelanggaran" value="<?php echo $id_pelanggaran; ?>" readonly> 
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama Santri</h5>
+                                            <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="nama_santri" class="form-control" id="basicInput" require>
+                                                <input type="text" name="NIS" class="form-control" id="NIS" require> 
                                             </fieldset>
+
+                                            <!--<h5 class="mt-2">Nama Santri</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="nama_santri" class="form-control" id="nama_santri" require>
+                                            </fieldset>-->
 
                                            <h5 class="mt-2">Jenis Pelanggaran</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="basicInput" require>
+                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="jenis_pelanggaran" require>
                                             </fieldset>
 
                                             <h5 class="mt-2">Tanggal Melanggar</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" name="tgl" class="form-control" id="basicInput" require>
+                                                <input type="date" name="tgl" class="form-control" id="tgl" require>
                                             </fieldset>
 
                                            <h5 class="mt-2">Sanksi</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="sanksi" class="form-control" id="basicInput" require>
+                                                <input type="text" name="sanksi" class="form-control" id="sanksi" require>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -77,7 +82,7 @@
 
                                             <h5 class="mt-2">Catatan</h5>
                                             <fieldset class="form-group">
-                                                <textarea style="height: 300px;" class="form-control" id="basicTextarea" rows="5"></textarea>
+                                                <textarea style="height: 300px;" class="form-control" id="catatan"  rows="5"></textarea>
                                             </fieldset>
 
                                         </div>
@@ -88,7 +93,7 @@
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
                             <a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
                     </div>

@@ -7,6 +7,12 @@ class M_admin extends CI_Model {
         return $this->db->get('tb_admin');
     }
 
+    public function tampil_data_akhir()
+    {
+        $this->db->order_by('id_admin', 'DESC');
+        return $this->db->get('tb_admin', 1);
+    }
+
     public function detail_admin($where, $table) 
     {
         return $this->db->get_where($table, $where);

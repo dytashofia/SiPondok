@@ -119,11 +119,11 @@
                                     <tfoot>
                                         <tr>
                                             <th>NO</th>
-                                            <!-- <th>ID ARMADA</th> -->
                                             <th>ID</th>
-                                            <th>NAMA</th>
                                             <th>USERNAME</th>
                                             <th>PASSWORD</th>
+                                            <th>NAMA ADMIN</th>
+                                            <th>FOTO ADMIN</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>

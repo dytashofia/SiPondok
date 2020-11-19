@@ -3,7 +3,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
             <div class="content-header-left col-md-4 col-12 mb-2">
-                <h3 class="content-header-title">Detail Data Admin</h3>
+                <h3 class="content-header-title">Detail Data Pelanggaran</h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
                 <div class="breadcrumbs-top float-md-right">
@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Detail Data Admin
+                            <li class="breadcrumb-item active">Detail Data Pelanggaran
                             </li>
                         </ol>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Detail Data Admin</h4>
+                            <h4 class="card-title">Detail Data Pelanggaran</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -37,32 +37,41 @@
                         </div>
 
                         <?php //echo form_open_multipart('index.php/admin/Admin/update_admin'); ?>
-                        <?php foreach($tb_admin as $admin) { ?>
+                        <?php foreach($tb_pelanggaran as $pelanggaran) { ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">ID ADMIN</h5>
+                                            <h5 class="mt-2">ID Pelanggaran</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="id_admin" id="id_admin" value="<?= $admin->id_admin; ?>" readonly>
+                                                <input type="text" class="form-control" name="id_pelanggaran" id="id_pelanggaran" value="<?= $pelanggaran->id_pelanggaran; ?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Username</h5>
+                                            <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="username" id="username" value="<?= $admin->username; ?>" readonly>
+                                                <input type="text" class="form-control" name="NIS" id="NIS" value="<?= $pelanggaran->NIS; ?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Password</h5>
+                                            <h5 class="mt-2">Nama Santri</h5>
                                             <fieldset class="form-group">
-                                                <input type="password" class="form-control" name="password" id="password" value="<?= $admin->password; ?>" readonly>
+                                                <input type="text" class="form-control" name="nama_santri" id="nama_santri" value="<?= $pelanggaran->nama_santri; ?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama Admin</h5>
+                                            <h5 class="mt-2">Pelanggaran</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_admin" id="nama_admin" value="<?= $admin->nama_admin; ?>" readonly>
+                                                <input type="text" class="form-control" name="jenis_pelanggaran" id="jenis_pelanggaran" value="<?= $pelanggaran->jenis_pelanggaran; ?>" readonly>
                                             </fieldset>
-                                            <br>
+
+                                            <h5 class="mt-2">Tanggal Melanggar</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" class="form-control" name="tgl" id="tgl" value="<?= $pelanggaran->tgl; ?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Sanksi</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="sanksi" id="sanksi" value="<?= $pelanggaran->sanksi; ?>" readonly>
+                                            </fieldset>
 
                                         </div>
                                     </div>
@@ -73,9 +82,9 @@
                                     <div class="card-block">
                                         <div class="card-body">
                                                                                     
-                                            <h5 class="mt-2">Foto</h5>
+                                            <h5 class="mt-2">Catatan</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="foto_admin" id="foto_admin" value="<?= $admin->foto_admin; ?>" readonly>
+                                                <input type="text" class="form-control" name="catatan" id="catatan" value="<?= $pelanggaran->catatan; ?>" readonly>
                                             </fieldset>
 
                                         </div>

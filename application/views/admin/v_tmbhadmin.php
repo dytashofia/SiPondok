@@ -44,7 +44,7 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID ADMIN</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="id_admin" id="id_admin">
+                                                <input type="text" class="form-control" name="id_admin" id="id_admin" value="<?php echo $id_admin; ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">Username</h5>

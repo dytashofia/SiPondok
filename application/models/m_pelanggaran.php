@@ -1,9 +1,10 @@
 <?php 
-class M_master_pelanggaran extends CI_Model {
+class M_pelanggaran extends CI_Model {
 
     public function tampil_pelanggaran() 
     {
         $field = array(
+            "tb_pelanggaran.id_pelanggaran",
             "tb_santri.NIS",
             "tb_santri.nama_santri",
             "tb_pelanggaran.jenis_pelanggaran",
@@ -13,6 +14,31 @@ class M_master_pelanggaran extends CI_Model {
         );
 
         $this->db->select($field);
+        $this->db->from('tb_pelanggaran');
+        $this->db->join('tb_santri', 'tb_santri.NIS = tb_pelanggaran.NIS');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function tampil_data_akhir() {
+        $this->db->order_by('id_pelanggaran', 'DESC');
+        return $this->db->get('tb_pelanggaran', 1);
+    }
+
+    public function detail_pelanggaran($where, $table) 
+    {
+        $field = array(
+            "tb_pelanggaran.id_pelanggaran",
+            "tb_santri.NIS",
+            "tb_santri.nama_santri",
+            "tb_pelanggaran.jenis_pelanggaran",
+            "tb_pelanggaran.tgl",
+            "tb_pelanggaran.sanksi",
+            "tb_pelanggaran.catatan",
+        );
+
+        $this->db->select($field);
+        $this->db->where($where);
         $this->db->from('tb_pelanggaran');
         $this->db->join('tb_santri', 'tb_santri.NIS = tb_pelanggaran.NIS');
         $query = $this->db->get();

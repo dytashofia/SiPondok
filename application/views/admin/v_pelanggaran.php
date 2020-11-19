@@ -66,6 +66,7 @@
                                     <thead>
                                         <tr>
                                             <th>NO</th>
+                                            <th>ID PELANGGARAN</th>
                                             <th>NIS</th>
                                             <th>NAMA SANTRI</th>
                                             <th>PELANGGARAN</th>
@@ -82,6 +83,7 @@
                                     ?>                              
                                         <tr>
                                             <td><?= $no_urut ?></td>
+                                            <td><?= $pelanggaran->id_pelanggaran ?></td>
                                             <td><?= $pelanggaran->NIS;?></td>
                                             <td><?= $pelanggaran->nama_santri; ?></td>
                                             <td><?= $pelanggaran->jenis_pelanggaran; ?></td>
@@ -98,13 +100,13 @@
                                                     </a>
 
                                                     &nbsp;
-                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                    <a href="<?php echo base_url('index.php/admin/Admin/hapus_pelanggaran/'. $pelanggaran->id_pelanggaran); ?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
                                                     </a>
                                                     &nbsp;
-                                                    <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                    <a href="<?php echo base_url('index.php/admin/Admin/detail_pelanggaran/'.$pelanggaran->id_pelanggaran);?>" title="Detail" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
                                                         <button type="button" class="btn btn-warning">
                                                             <i class="la la-exclamation-circle color-danger"></i>
                                                         </button>
