@@ -6,7 +6,9 @@ class Artikel extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_master_artikel');
-        $this->load->helper('url');
+        $this->load->helper('url','form');
+        $this->load->library('form_validation');
+        
     }
 
 
@@ -80,12 +82,27 @@ class Artikel extends CI_Controller
 
             $this->load->library('upload',$config);
             if(!$this->upload->do_upload('gambar')) {
-                echo "Upload Gagal"; die();
+               // echo "Upload Gagal"; die();
             }else{
                 $gambar=$this->upload->data('file_name');
             }
 
         }
+        // Membuat validasi form
+		$this->form_validation->set_rules('id_admin', 'Nama Admin', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|strip_tags');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        
+        // Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->tmbhartikel();
+		} else {
+			// Apabila hasil validasi form menunjukkan tidak ada yang salah
 
         $data = array(
             'id_artikel' => $id_artikel,
@@ -98,6 +115,7 @@ class Artikel extends CI_Controller
         redirect('index.php/admin/artikel/artikel'); 
 
         }
+    }
 
         function tampilDetailArtikel($idArtikelUri)
         {
@@ -176,6 +194,23 @@ class Artikel extends CI_Controller
             }
     
             }
+
+         // Membuat validasi form
+		$this->form_validation->set_rules('id_admin', 'Nama Admin', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|strip_tags');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        
+        // Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->editArtikel($id_artikel);
+		} else {
+			// Apabila hasil validasi form menunjukkan tidak ada yang salah
+
         $data = array(
             'id_artikel' => $id_artikel,
             'id_admin' => $id_admin,
@@ -194,7 +229,7 @@ class Artikel extends CI_Controller
 			$this->m_master_artikel->update_artikel($where, $data, 'tb_artikel');
 			redirect('index.php/admin/artikel/artikel');
 		}
-    
+    }
 
         function hapusArtikel($idArtikelUri)
         {

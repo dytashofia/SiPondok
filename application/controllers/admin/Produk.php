@@ -6,7 +6,9 @@ class Produk extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_master_produk');
-        $this->load->helper('url');
+        $this->load->library('form_validation');
+        $this->load->helper('url','form');
+        
     }
 
 
@@ -77,6 +79,7 @@ public function produk()
         $deskripsi = $this->input->post('deskripsi');
         $resep = $this->input->post('resep');
 
+
         if ($foto_produk=''){}else{
             $config['upload_path']          = './assets/img/produk';
             $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG';
@@ -89,6 +92,23 @@ public function produk()
             }
 
         }
+
+        // Membuat validasi form
+		$this->form_validation->set_rules('id_admin', 'Nama Admin', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('nama_produk', 'Nama Produk', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|strip_tags');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        
+        // Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->tmbhproduk();
+		} else {
+			// Apabila hasil validasi form menunjukkan tidak ada yang salah
         $data = array(
             'id_produk' => $id_produk,
             'id_admin' => $id_admin,
@@ -102,6 +122,7 @@ public function produk()
         redirect('index.php/admin/produk/produk'); 
 
         }
+    } 
 
         function tampilDetailProduk($idProdukUri)
 	{
@@ -185,6 +206,22 @@ public function produk()
 
         }
 
+         // Membuat validasi form
+		$this->form_validation->set_rules('id_admin', 'Nama Admin', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('nama_produk', 'Nama Produk', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required|strip_tags');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+
+        // Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->editProduk($id_produk);
+		} else {
+
         $data = array(
             'id_produk' => $id_produk,
             'id_admin' => $id_admin,
@@ -204,7 +241,8 @@ public function produk()
 			);
 			$this->m_master_produk->update_produk($where, $data, 'tb_produk');
 			redirect('index.php/admin/produk/produk');
-		}
+        }
+    }
     
     function hapusPaket($idProdukUri)
 	{

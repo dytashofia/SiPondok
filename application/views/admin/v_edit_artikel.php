@@ -72,6 +72,7 @@
                                                 endforeach;
                                             ?>
                                             </select>
+                                            <?= form_error('id_admin','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
                                             
                                             <h5 class="mt-2">Edit Gambar Jika Diperlukan</h5>
@@ -103,6 +104,7 @@
                                             <h5 class="mt-2">Deskrpsi</h5>
                                             <fieldset class="form-group">
                                                 <textarea style="height: 300px;" class="form-control" name="deskripsi" id="deskripsi" rows="5" placeholder="Masukkan deskripsi..."><?= $artikel->deskripsi;?></textarea>
+                                                <?= form_error('deskripsi','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
                                         </div>
                                     </div>

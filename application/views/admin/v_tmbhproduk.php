@@ -50,7 +50,7 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Admin</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group<?=form_error('id_admin') ? 'has-error' : null?>">
                                                 <select name="id_admin" id="id_admin" class="custom-select">
                                                 <option value=""> Pilih Admin </option>
                                                 <?php
@@ -60,12 +60,15 @@
                                                 <?php
                                                     endforeach;
                                                 ?>
+                                                </select>
+                                                <?= form_error('id_admin', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
-                                            </select>
+                                            
                                             
                                             <h5 class="mt-2">Nama Produk</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_produk" id="nama_produk"  placeholder="Masukkan Nama Produk...">
+                                            <fieldset class="form-group<?=form_error('nama_produk') ? 'has-error' : null?>">
+                                                <input type="text" class="form-control" name="nama_produk" id="nama_produk" value="<?=set_value('nama_produk');?>" placeholder="Masukkan Nama Produk...">
+                                                <?= form_error('nama_produk', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Gambar</h5>
@@ -74,8 +77,9 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">Deskripsi</h5>
-                                            <fieldset class="form-group">
-                                                <textarea style="height: 200px;" class="form-control" id="deskripsi" name="deskripsi" rows="5"  placeholder="Masukkan Deskripsi..."></textarea>
+                                            <fieldset class="form-group<?=form_error('deskripsi') ? 'has-error' : null?>">
+                                                <textarea style="height: 200px;" class="form-control" id="deskripsi" name="deskripsi" rows="5" placeholder="Masukkan Deskripsi..."><?=set_value('deskripsi');?></textarea>
+                                                <?= form_error('deskripsi', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                         </div>

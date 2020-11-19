@@ -72,11 +72,13 @@
                                                 endforeach;
                                             ?>
                                             </select>
+                                            <?= form_error('id_admin','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
                                             
                                             <h5 class="mt-2">Nama Produk</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="nama_produk" id="nama_produk" value="<?= $produk->nama_produk;?>" placeholder="Masukkan Nama Produk...">
+                                                <?= form_error('nama_produk','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Edit Gambar Jika Diperlukan</h5>
@@ -99,6 +101,7 @@
                                             <h5 class="mt-2">Deskripsi</h5>
                                             <fieldset class="form-group">
                                                 <textarea style="height: 200px;" class="form-control" id="deskripsi" name="deskripsi" rows="5"  placeholder="Masukkan Deskripsi..."><?= $produk->deskripsi;?></textarea>
+                                                <?= form_error('deskripsi','<small class="text-form text-danger mt-2 ml-2">','</small>');?>
                                             </fieldset>
 
                                         </div>
