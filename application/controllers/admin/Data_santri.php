@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class Admin extends CI_Controller
+class Data_Santri extends CI_Controller
 {
     public function __construct()
     {
@@ -30,65 +30,65 @@ public function data_santri()
 
          if($foto->num_rows($where)>0){
       $pros=$foto->row();
-      $name=$pros->keterangan;
+      $name=$pros->foto;
      
-      if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
+      if(file_exists($lok=FCPATH.'/assets/img/'.$name)){
         unlink($lok);
       }
     }
 
-        redirect('index.php/admin/Admin/perizinan');
+        redirect('index.php/admin/Data_Santri');
     }
 
-    function tmbhperizinan(){
-        $data= $this->m_perizinan->tampil_data()->num_rows();
+    function tmbhdtsantri(){
+        $data= $this->m_data_santri->tampil_data()->num_rows();
         if($data > 0)
         {
             // Mengambil id soal sebelumnya
-            $lastId = $this->m_perizinan->tampil_data_akhir()->result();
+            $lastId = $this->m_data_santri->tampil_data_akhir()->result();
             // Melakukan perulangan untuk mengambil data
             foreach($lastId as $row)
             {
                 // Melakukan pemisahan huruf dengan angka pada id perizinan
-                $rawid_perizinan = substr($row->id_perizinan,3);
+                $rawNIS = substr($row->NIS,3);
                 // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
-                $id_perizinanInt = intval($rawid_perizinan);
+                $NISInt = intval($rawNIS);
 
                 // Menghitung panjang id yang sudah menjadi integer
-                if(strlen($id_perizinanInt) == 1)
+                if(strlen($NISInt) == 1)
                 {
                     // jika panjang id hanya 1 angka
-                    $id_perizinan = "IZ00".($id_perizinanInt + 1);
-                }else if(strlen($id_perizinanInt) == 2)
+                    $NIS = "SNTR00".($NISInt + 1);
+                }else if(strlen($NISInt) == 2)
                 {
                     // jika panjang id hanya 2 angka
-                    $id_perizinan = "IZ0".($id_perizinanInt + 1);
-                }else if(strlen($id_perizinanInt) == 3)
+                    $NIS = "SNTR0".($NISInt + 1);
+                }else if(strlen($NISInt) == 3)
                 {
                     // jika panjang id hanya 3 angka
-                    $idjurusan = "IZ".($id_perizinanInt + 1);
+                    $idjurusan = "SNTR".($NISInt + 1);
                 }
 
             }
         }else
         {
             // Jika jumlah perizinan kurang dari sama dengan 0
-            $id_perizinan = "IZ001";
+            $NIS = "SNTR001";
         }
 
         // Mengambil data mata pelajaran menggunakan model
         
-         $data= $this->m_perizinan->tampil_perizinan()->result();
+         $data= $this->m_data_santri->tampil_santri()->result();
         
        $data = array(
-            'id_perizinan' => $id_perizinan,
+            'NIS' => $NIS,
            
         ); 
 
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhperizinan', $data);
+        $this->load->view('admin/v_tmbhdtsantri', $data);
         $this->load->view('admin_template/footer');
          
     
