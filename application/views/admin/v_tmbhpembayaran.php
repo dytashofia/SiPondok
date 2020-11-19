@@ -35,34 +35,33 @@
                                 </ul>
                             </div>
                         </div>
-
+                        <?php echo form_open_multipart('index.php/admin/Admin/aksiTambahpembayaran');?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">ID</h5>
+                                            <h5 class="mt-2">ID PEMBAYARAN </h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="id_pembayaran" id="id_pembayaran" value="<?= $id_pembayaran;?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama</h5>
+                                            <h5 class="mt-2">NIS SANTRI</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="NIS" id="NIS">
                                             </fieldset>
 
-                                            <h5 class="mt-2">Pembayaran</h5>
+                                            <h5 class="mt-2">NAMA PEMABAYAR</h5>
                                             <fieldset class="form-group">
-                                                <select class="form-control" id="basicSelect">
-                                                    <option>Select Option</option>
+                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
+                                            </fieldset>
+
+                                            <h5 class="mt-2">JENIS PEMBAYARAN</h5>
+                                            <fieldset class="form-group">
+                                                <select class="form-control" name="jenis_pembayaran" id="jenis_pembayaran">
                                                     <option>SPP</option>
                                                     <option>PHBI</option>
                                                 </select>
-                                            </fieldset>
-
-                                            <h5 class="mt-2">Jumlah yang harus dibayar</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
                                             </fieldset>
 
                                         </div>
@@ -74,13 +73,19 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
+                                                <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
+                                            </fieldset>
+
                                             <h5 class="mt-2">Upload Bukti Transfer</h5>
                                             <fieldset class="form-group">
-                                                <input style="height: 270px; 
-                                                    padding:37% 0 0 100%; 
-                                                    background-image:url('<?php echo base_url(); ?>assets/img/tabah.png'); 
-                                                    background-repeat: no-repeat;
-                                                    background-position: center;" type="file" class="form-control" id="basicInput">
+                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
+                                            </fieldset>
+
+                                            
+                                            <fieldset class="form-group">
+                                                <input type="hidden" class="form-control" name="status" id="status" value="Belum dikonfirmasi">
                                             </fieldset>
 
                                         </div>
@@ -91,10 +96,11 @@
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
                             <a href="<?php echo base_url(); ?>index.php/admin/admin/pembayaran"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <a href="<?php echo base_url(); ?>index.php/admin/admin/pembayaran"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
 
+                    <?php echo form_close();?>
 
 
 

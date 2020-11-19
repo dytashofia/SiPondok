@@ -10,4 +10,15 @@ class M_pembayaran extends CI_Model {
   
 	}
 
+	function tambah_data($data, $table)
+   {
+       $this->db->insert($table, $data);
+   }
+
+    function tampil_data_akhir()
+  {
+    $this->db->order_by('id_pembayaran', 'DESC');
+    return $this->db->get('tb_pembayaran', 1);
+  }
+
 	}

@@ -114,7 +114,11 @@
 
                                             </td>
                                         </tr>
-                                        
+                                         <?php
+                                            $noUrut++;
+                                            endforeach;
+                                            ?>
+
                                     </tbody>
                                 </table>
 
@@ -127,6 +131,3 @@
         </div>
     </div>
 </div>
-<?php
-        endforeach;
-    ?>
