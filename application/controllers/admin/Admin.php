@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         $this->load->model('m_master_pelanggaran');
         $this->load->model('m_perizinan');
         $this->load->model('m_admin');
+        $this->load->model('m_pembayaran');
         $this->load->helper('url');
     }
 
@@ -189,26 +190,8 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    public function pembayaran()
-    {
 
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_pembayaran');
-        $this->load->view('admin_template/footer');
-    }
-
-    public function tmbhpembayaran()
-    {
-
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhpembayaran');
-        $this->load->view('admin_template/footer');
-    }
-
-
-   // PERIZINAN//
+   //=======================================PERIZINAN===========================================//
 
 
     public function perizinan()
@@ -427,7 +410,37 @@ class Admin extends CI_Controller
 
         }        
 
-    // END PERIZINAN //
+    //======================================END PERIZINAN=========================================//
+
+
+
+    //=======================================PEMBAYARAN==========================================//
+
+
+    public function pembayaran()
+
+    {
+
+        $data['bayar']=$this->m_pembayaran->tampil_data()->result();  
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_pembayaran',$data);
+        $this->load->view('admin_template/footer');
+
+    }
+    
+    public function tmbhpembayaran()
+    {
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhpembayaran');
+        $this->load->view('admin_template/footer');
+    }
+
+    //======================================END PEMBAYARAN=======================================//
+
 
     public function pelanggaran()
     {
