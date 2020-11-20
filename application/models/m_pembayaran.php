@@ -21,4 +21,8 @@ class M_pembayaran extends CI_Model {
     return $this->db->get('tb_pembayaran', 1);
   }
 
+function hapus_data($where,$table){
+    $this->db->where($where); 
+    $this->db->delete($table);
+  }
 	}

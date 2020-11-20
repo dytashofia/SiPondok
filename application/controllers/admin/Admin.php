@@ -560,6 +560,25 @@ public function aksiTambahpembayaran()
 
         }
 
+
+        function hapuspembayaran($id){
+
+         $where = array('id_pembayaran' => $id); 
+        $foto = $this->db->get_where('tb_pembayaran',$where);
+        $this->m_pembayaran->hapus_data($where,'tb_pembayaran'); 
+
+         if($foto->num_rows($where)>0){
+            $pros=$foto->row();
+            $name=$pros->bukti_pembayaran;
+     
+            if(file_exists($lok=FCPATH.'/assets/img/pembayaran'.$name)){
+            unlink($lok);
+      }
+    }
+
+        redirect('index.php/admin/Admin/pembayaran');
+    }
+
    
 
     //======================================END PEMBAYARAN=======================================//
