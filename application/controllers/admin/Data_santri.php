@@ -97,11 +97,21 @@ public function data_santri()
     public function aksiTambahperizinan()
     {
         $NIS = $this->input->post('NIS');
-        $NIS = $this->input->post('NIS');
-        $tgl_izin = $this->input->post('tgl_izin');
-        $tgl_datang = $this->input->post('tgl_datang');
-        $alasan = $this->input->post('alasan');
-        $keterangan = $_FILES['keterangan'];
+        $nama_santri = $this->input->post('nama_santri');
+        $jk = $this->input->post('jk');
+        $ttl = $this->input->post('ttl');
+        $alamat = $this->input->post('alamat');
+        $pendidikan = $this->input->post('pendidikan');
+        $jurusan = $this->input->post('jurusan');
+        $nim = $this->input->post('nim');
+        $tgl_masuk = $this->input->post('tgl_masuk');
+        $nama_ayah = $this->input->post('nama_ayah');
+        $nama_ibu = $this->input->post('nama_ibu');
+        $nama_wali = $this->input->post('nama_wali');
+        $no_telp_wali = $this->input->post('no_telp_wali');
+        $foto = $_FILES['foto'];
+        $surat_pernyataan = $_FILES['surat_pernyataan'];
+        $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
 
         if ($keterangan=''){}else{
