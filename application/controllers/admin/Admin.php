@@ -579,6 +579,17 @@ public function aksiTambahpembayaran()
         redirect('index.php/admin/Admin/pembayaran');
     }
 
+    function detailbayar($id){
+
+    $where = array('id_pembayaran' => $id);
+    $data['detailbayar'] = $this->m_pembayaran->detail_data($where)->result();  
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detail_pembayaran',$data);
+        $this->load->view('admin_template/footer');
+
+        }  
    
 
     //======================================END PEMBAYARAN=======================================//
