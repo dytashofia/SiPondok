@@ -561,7 +561,7 @@ class Admin extends CI_Controller
         );
 
         $this->m_pelanggaran->tambah_pelanggaran($data, 'tb_pelanggaran');
-        //redirect('index.php/admin/Admin/pelanggaran');
+        redirect('index.php/admin/Admin/pelanggaran');
 
     }
 
@@ -579,20 +579,21 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer'); 
     }
     
-    public function edit_pelanggaran() {
-
+    public function edit_pelanggaran($id) 
+    {
         $where = array (
-            'id_pelanggaran' => $id_pelanggaran,
+            'id_pelanggaran' => $id
         );
 
-        $data['tb_pelanggaran'] = $this->m_pelanggaran($where, 'tb_pelanggaran')->result;
+        $data['tb_pelanggaran'] = $this->m_pelanggaran->edit_pelanggaran($where, 'tb_pelanggaran')->result();
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_edit_pelanggaran');
-        $this->load->view('admin_template/footer');
-
+        $this->load->view('admin/v_edit_pelanggaran', $data);
+        $this->load->view('admin_template/footer'); 
     }
+
+    
 
     public function update_pelanggaran() {
         $id_pelanggaran = $this->input->post('id_pelanggaran');

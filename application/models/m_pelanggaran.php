@@ -50,7 +50,7 @@ class M_pelanggaran extends CI_Model {
     }
 
     public function edit_pelanggaran($table, $where) {
-        return $this->db->get->where($where, $table);
+        return $this->db->get_where($where, $table);
     }
 
     public function update_pelanggaran($where, $data, $table) {

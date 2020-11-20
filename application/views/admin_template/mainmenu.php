@@ -13,7 +13,7 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/user"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Data User</span></a>
                </li>
-               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/admin"><i class="ft-pie-chart"></i></i><span class="menu-title" data-i18n="">Data Admin</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/admin"><i class="fas fa-user"></i><span class="menu-title" data-i18n="">Data Admin</span></a>
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/santri"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Data Santri</span></a>
                </li>
