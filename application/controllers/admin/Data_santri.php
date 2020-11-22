@@ -32,7 +32,7 @@ public function data_santri()
       $pros=$foto->row();
       $name=$pros->foto;
      
-      if(file_exists($lok=FCPATH.'/assets/img/'.$name)){
+      if(file_exists($lok=FCPATH.'/assets/file_santri/'.$name)){
         unlink($lok);
       }
     }
@@ -112,14 +112,17 @@ public function data_santri()
         $foto = $_FILES['foto'];
         $surat_pernyataan = $_FILES['surat_pernyataan'];
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
-        $status = $this->input->post('status');
+        $nama_institusi = $this->input->post('nama_institusi');
+        $status_pembayaran = $this->input->post('status_pembayaran');
+        $nusername= $this->input->post('username');
+        $password = $this->input->post('password');
 
-        if ($keterangan=''){}else{
+        if ($foto, $surat_pernyataan, $bukti_pembayaran =''){}else{
             $config['upload_path']          = './assets/file_izin';
             $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
             $this->load->library('upload',$config);
-            if(!$this->upload->do_upload('keterangan')) {
+            if(!$this->upload->do_upload('foto, surat_pernyataan, bukti_pembayaran')) {
                  $keterangan=$this->upload->data('file_name');
             }else{
             $keterangan=$this->upload->data('file_name');
