@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 
 class M_perizinan extends CI_Model{
 
