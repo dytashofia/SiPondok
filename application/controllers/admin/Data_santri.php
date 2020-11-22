@@ -94,7 +94,7 @@ public function data_santri()
     
     }
 
-    public function aksiTambahperizinan()
+    public function aksiTambahdtsantri()
     {
         $NIS = $this->input->post('NIS');
         $nama_santri = $this->input->post('nama_santri');
@@ -118,53 +118,67 @@ public function data_santri()
         $password = $this->input->post('password');
 
         if ($foto, $surat_pernyataan, $bukti_pembayaran =''){}else{
-            $config['upload_path']          = './assets/file_izin';
+            $config['upload_path']          = './assets/file_santri';
             $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
             $this->load->library('upload',$config);
             if(!$this->upload->do_upload('foto, surat_pernyataan, bukti_pembayaran')) {
-                 $keterangan=$this->upload->data('file_name');
+                 $foto, $surat_pernyataan, $bukti_pembayaran=$this->upload->data('file_name');
             }else{
-            $keterangan=$this->upload->data('file_name');
+                $foto, $surat_pernyataan, $bukti_pembayaran=$this->upload->data('file_name');
 
             }
         }
 
 
         $data = array(
-            'id_perizinan' => $id_perizinan,
             'NIS' => $NIS,
-            'tgl_izin' => $tgl_izin,
-            'tgl_datang' => $tgl_datang,
-            'alasan' => $alasan,
-            'keterangan' => $keterangan,
-            'status' => $status
+            'nama_santri' => $nama_santri,
+            'jk' => $jk,
+            'ttl' => $ttl,
+            'alamat' => $alamat,
+            'pendidikan' => $pendidikan,
+            'jurusan' => $jurusan,
+            'nim' => $nim,
+            'tgl_masuk' => $tgl_masuk,
+            'nama_ayah'=> $nama_ayah,
+            'nama_ibu' => $nama_ibu,
+            'nama_wali' => $nama_wali,
+            'no_telp_wali' => $no_telp_wali,
+            'foto' => $foto,
+            'surat_pernyataan' => $surat_pernyataan,
+            'bukti_pembayaran' => $bukti_pembayaran,
+            'nama_institusi' => $nama_institusi,
+            'status_pembayaran' => $status_pembayaran,
+            'username' => $nusername,
+            'password' => $password
+            
         );
         
-        $this->m_perizinan->tambah_data($data,'tb_perizinan');
-        redirect('index.php/admin/Admin/perizinan'); 
+        $this->m_data_santri->tambah_data($data,'tb_santri');
+        redirect('index.php/admin/Data_santri'); 
 
         }
 
-    public function downloadketeranganizin($id)
+    public function downloadfilesantri($id)
     {
-        $data = $this->db->get_where('tb_perizinan',['id_perizinan'=>$id])->row();
-        force_download('./assets/file_izin/'.$data->keterangan,NULL);
+        $data = $this->db->get_where('tb_santri',['NIS'=>$id])->row();
+        force_download('./assets/file_santri/'.$data->keterangan,NULL);
 
     }
 
-    public function editperizinan($id){
-    $where = array('id_perizinan' => $id); 
-    $data['izinedit'] = $this->m_perizinan->edit_data($where,'tb_perizinan')->result();  
+    public function editdtsantri($id){
+    $where = array('NIS' => $id); 
+    $data['izinedit'] = $this->antri->edit_data($where,'tb_santri')->result();  
      $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_edit_perizinan', $data);
+        $this->load->view('admin/v_edit_dtsantri', $data);
         $this->load->view('admin_template/footer');
   
     }
 
 
-    public function updateperizinan() {       
+    public function updatedtsantri() {       
         $id_perizinan = $this->input->post('id_perizinan');
         $NIS = $this->input->post('NIS');
         $tgl_izin = $this->input->post('tgl_izin');
@@ -203,12 +217,27 @@ public function data_santri()
        
 
         $data = array(
-            'id_perizinan' => $id_perizinan,
             'NIS' => $NIS,
-            'tgl_izin' => $tgl_izin,
-            'tgl_datang' => $tgl_datang,
-            'alasan' => $alasan,
-            'status'   => $status
+            'nama_santri' => $nama_santri,
+            'jk' => $jk,
+            'ttl' => $ttl,
+            'alamat' => $alamat,
+            'pendidikan' => $pendidikan,
+            'jurusan' => $jurusan,
+            'nim' => $nim,
+            'tgl_masuk' => $tgl_masuk,
+            'nama_ayah'=> $nama_ayah,
+            'nama_ibu' => $nama_ibu,
+            'nama_wali' => $nama_wali,
+            'no_telp_wali' => $no_telp_wali,
+            'foto' => $foto,
+            'surat_pernyataan' => $surat_pernyataan,
+            'bukti_pembayaran' => $bukti_pembayaran,
+            'nama_institusi' => $nama_institusi,
+            'status_pembayaran' => $status_pembayaran,
+            'username' => $nusername,
+            'password' => $password
+            
             
         );
 
@@ -219,18 +248,18 @@ public function data_santri()
         
 
         $this->m_perizinan->update_data($where,$data);
-            redirect('index.php/admin/Admin/perizinan');
+            redirect('index.php/admin/Data_admin');
             
           }
 
     function detail($id){
 
-    $where = array('id_perizinan' => $id);
-    $data['detail'] = $this->m_perizinan->detail_data($where)->result();  
+    $where = array('NIS' => $id);
+    $data['detail'] = $this->m_data_santri->detail_data($where)->result();  
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_detail_perizinan',$data);
+        $this->load->view('admin/v_detail_dtsantri',$data);
         $this->load->view('admin_template/footer');
 
         }
