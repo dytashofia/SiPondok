@@ -579,6 +579,7 @@ public function aksiTambahpembayaran()
         redirect('index.php/admin/Admin/pembayaran');
     }
 
+
     function detailbayar($id){
 
     $where = array('id_pembayaran' => $id);
@@ -590,6 +591,82 @@ public function aksiTambahpembayaran()
         $this->load->view('admin_template/footer');
 
         }  
+
+        public function editpembayaran($id){
+    $where = array('id_pembayaran' => $id); 
+    $data['editbayar'] = $this->m_pembayaran->edit_data($where,'tb_pembayaran')->result();  
+     $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_edit_pembayaran', $data);
+        $this->load->view('admin_template/footer');
+  
+    }
+
+
+    public function updatepembayaran() {       
+       $id_pembayaran = $this->input->post('id_pembayaran');
+        $NIS = $this->input->post('NIS');
+        $nama_pembayar = $this->input->post('nama_pembayar');
+        $jenis_pembayaran = $this->input->post('jenis_pembayaran');
+        $tgl_pembayaran = $this->input->post('tgl_pembayaran');
+        $bukti_pembayaran = $_FILES['bukti_pembayaran'];
+        $status = $this->input->post('status');
+        $where= array('id_pembayaran' => $id_pembayaran );
+         $foto = $this->db->get_where('tb_pembayaran',$where);
+
+
+
+
+
+        if ($bukti_pembayaran =''){}else{
+            $config['upload_path']          = './assets/img/pembayaran';
+            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
+
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('bukti_pembayaran')) {
+
+            } else{
+                
+                 if($foto->num_rows()>0){
+                $pros=$foto->row();
+                $name=$pros->bukti_pembayaran;
+     
+                if(file_exists($lok=FCPATH.'/assets/img/pembayaran/'.$name)){
+                     unlink($lok);
+                        }
+                     } 
+
+                     $bukti_pembayaran=$this->upload->data('file_name');  
+            }
+
+
+            
+
+        }
+
+       
+
+        $data = array(
+            'id_pembayaran' => $id_pembayaran,
+            'NIS' => $NIS,
+            'nama_pembayar' => $nama_pembayar,
+            'jenis_pembayaran' => $jenis_pembayaran,
+            'tgl_pembayaran' => $tgl_pembayaran,
+            'status' => $status
+            
+        );
+
+         if($bukti_pembayaran!=NULL) {
+
+        $data['bukti_pembayaran'] = $bukti_pembayaran;
+
+        }
+        
+
+        $this->m_pembayaran->update_data($where,$data);
+            redirect('index.php/admin/Admin/pembayaran');
+            
+          }
    
 
     //======================================END PEMBAYARAN=======================================//

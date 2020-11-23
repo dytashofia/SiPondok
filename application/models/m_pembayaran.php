@@ -47,5 +47,19 @@ function hapus_data($where,$table){
        $query = $this->db->get();
        return $query;
   } 
-}
+
+  function edit_data($where,$table){    
+  return $this->db->get_where($table,$where);
+  }
+
+
+function update_data($where,$data){
+    $this->db->where($where);
+    $this->db->update('tb_pembayaran',$data);
+
+
+  } 
+
+	}
+
 
