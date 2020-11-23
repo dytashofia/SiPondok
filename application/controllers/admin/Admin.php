@@ -596,7 +596,7 @@ public function aksiTambahpembayaran()
 
 
 
-    // === Pelanggaran ===
+    // ======================================= Pelanggaran =======================================//
     
     public function pelanggaran()
     {
@@ -606,8 +606,6 @@ public function aksiTambahpembayaran()
         $this->load->view('admin/v_pelanggaran', $data);
         $this->load->view('admin_template/footer');
     }
-
-
 
     public function tmbhpelanggaran()
     {
@@ -677,7 +675,6 @@ public function aksiTambahpembayaran()
 
         $this->m_pelanggaran->tambah_pelanggaran($data, 'tb_pelanggaran');
         redirect('index.php/admin/Admin/pelanggaran');
-
     }
 
     public function detail_pelanggaran($id) {
@@ -707,8 +704,6 @@ public function aksiTambahpembayaran()
         $this->load->view('admin/v_edit_pelanggaran', $data);
         $this->load->view('admin_template/footer'); 
     }
-
-    
 
     public function update_pelanggaran() {
         $id_pelanggaran = $this->input->post('id_pelanggaran');
@@ -743,7 +738,7 @@ public function aksiTambahpembayaran()
         redirect('index.php/admin/Admin/pelanggaran');
     }
 
-    //============ Batas Controller Pelanggaran ===============
+//========================================= Batas Controller Pelanggaran ===================================//
 
 
     public function kompetensi()

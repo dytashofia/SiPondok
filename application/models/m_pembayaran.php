@@ -47,5 +47,5 @@ function hapus_data($where,$table){
        $query = $this->db->get();
        return $query;
   } 
-	}
+}
 
