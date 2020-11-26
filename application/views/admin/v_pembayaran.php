@@ -87,7 +87,13 @@
                                             <td><?= $b->nama_pembayar;?></td>
                                             <td> <?= $b->jenis_pembayaran;?></td>
                                             <td> <?= $b->tgl_pembayaran;?></td>
-                                            <td><?= $b->bukti_pembayaran;?></td>
+                                            <td><?= $b->bukti_pembayaran;?> <br>
+                                                
+                                                <a title="Cek" data-toggle="tooltip" data-placement="top" data-original-title="Cek">
+                                                        <button type="button" data-toggle="modal" data-target="#cekbukti<?=$b->id_pembayaran;?>" class="btn-sx btn-info center-block"><i class="la la-eye color-success"></i>
+                                                                 
+                                                                  </button> 
+                                            </td>
                                              <td><?= $b->status;?></td>
 
                                              <td> 
@@ -205,6 +211,40 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success">Konfirmasi</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    <?php
+        endforeach;
+    ?>
+
+    <?php
+        foreach($bayar as $b) :    
+    ?>
+        
+        <div class="modal fade" id="cekbukti<?= $b->id_pembayaran?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle"><?php echo $b->bukti_pembayaran;?></h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="<?php echo base_url() ?>index.php/admin/Admin/updatepembayaran/<?php echo $b->id_pembayaran?>">
+                    <div class="modal-body">
+                        
+                        <h5 class="text-justify"> 
+                                    
+                                                                 <embed src="<?php echo base_url('assets/img/pembayaran/'.$b->bukti_pembayaran)?>" width="470" height="450"><br>
+                                             
+                        </h5>
+                    </div>
+                    <div class="modal-footer">
+                         <a href="<?php echo base_url(); ?>index.php/admin/Admin/downloadbuktipembayaran/<?php echo $b->id_pembayaran;?>">
+                        <button type="button" class="btn btn-primary">Download</button></a>
                     </div>
                 </form>
                 </div>

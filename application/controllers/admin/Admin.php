@@ -667,6 +667,13 @@ public function aksiTambahpembayaran()
             redirect('index.php/admin/Admin/pembayaran');
             
           }
+
+          public function downloadbuktipembayaran($id)
+    {
+        $data = $this->db->get_where('tb_pembayaran',['id_pembayaran'=>$id])->row();
+        force_download('./assets/img/pembayaran/'.$data->bukti_pembayaran,NULL);
+
+    }
    
 
     //======================================END PEMBAYARAN=======================================//
