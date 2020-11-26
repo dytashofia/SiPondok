@@ -10,6 +10,7 @@ class Admin extends CI_Controller
         $this->load->model('m_perizinan');
         $this->load->model('m_admin');
         $this->load->model('m_pembayaran');
+        $this->load->model('m_setbayar');
         $this->load->helper('url');
     }
 
@@ -678,7 +679,130 @@ public function aksiTambahpembayaran()
 
     //======================================END PEMBAYARAN=======================================//
 
+//======================================= SET PEMBAYARAN==========================================//
 
+    public function settingbayar()
+    {
+        
+        $data['detail'] = $this->m_setbayar->tampil_data()->result();  
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_setting_pembayaran',$data);
+        $this->load->view('admin_template/footer');
+    }
+
+function hapussetbayar($id){
+         $where = array('id_setbayar' => $id); 
+        
+        $this->m_setbayar->hapus_data($where,'detail_pembayaran'); 
+
+        redirect('index.php/admin/Admin/settingbayar');
+    }
+
+
+public function updatesetbayar() {
+        $id_setbayar = $this->input->post('id_setbayar');
+        $jenis_pembayaran = $this->input->post('jenis_pembayaran');
+        $jumlah_bayar = $this->input->post('jumlah_bayar');
+        $tanggal_awal = $this->input->post('tanggal_awal');
+        $tanggal_akhir = $this->input->post('tanggal_akhir');
+
+        $data = array(
+            'id_setbayar' => $id_setbayar,
+            'jenis_pembayaran' => $jenis_pembayaran,
+            'jumlah_bayar' => $jumlah_bayar,
+            'tanggal_awal' => $tanggal_awal,
+            'tanggal_akhir' => $tanggal_akhir,
+        );
+
+        $where = array(
+            'id_setbayar' => $id_setbayar
+        );
+
+        $this->m_setbayar->update_data($where,$data);
+        redirect('index.php/admin/Admin/settingbayar');
+    }
+
+
+    public function tmbhsetbayar()
+    {
+        $data= $this->m_setbayar->tampil_data()->num_rows();
+        if($data > 0)
+        {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_setbayar->tampil_data_akhir()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach($lastId as $row)
+            {
+                // Melakukan pemisahan huruf dengan angka pada id pembayaran
+                $rawid_setbayar = substr($row->id_setbayar,3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id pembayran menjadi integer
+                $id_setbayarInt = intval($rawid_setbayar);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if(strlen($id_setbayarInt) == 1)
+                {
+                    // jika panjang id hanya 1 angka
+                    $id_setbayar = "ST00".($id_setbayarInt + 1);
+                }else if(strlen($id_setbayarInt) == 2)
+                {
+                    // jika panjang id hanya 2 angka
+                    $id_setbayar = "ST0".($id_setbayarInt + 1);
+                }else if(strlen($id_setbayarInt) == 3)
+                {
+                    // jika panjang id hanya 3 angka
+                    $id_setbayar = "ST".($id_setbayarInt + 1);
+                }
+
+            }
+        }else
+        {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_setbayar = "ST001";
+        }
+
+        // Mengambil data pembayaran menggunakan model
+        
+         $data= $this->m_setbayar->tampil_data()->result();
+        
+       $data = array(
+            'id_setbayar' => $id_setbayar,
+           
+        ); 
+
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_setting_pembayaran2',$data);
+        $this->load->view('admin_template/footer');
+    }
+
+public function aksitmbhsetbayar()
+    {
+        $id_setbayar = $this->input->post('id_setbayar');
+        $jenis_pembayaran = $this->input->post('jenis_pembayaran');
+        $jumlah_bayar = $this->input->post('jumlah_bayar');
+        $tanggal_awal = $this->input->post('tanggal_awal');
+        $tanggal_akhir = $this->input->post('tanggal_akhir');
+
+            $data = array(
+            'id_setbayar' => $id_setbayar,
+            'jenis_pembayaran' => $jenis_pembayaran,
+            'jumlah_bayar' => $jumlah_bayar,
+            'tanggal_awal' => $tanggal_awal,
+            'tanggal_akhir' => $tanggal_akhir,
+        );
+        
+    
+        $this->m_setbayar->tambah_data($data,'detail_pembayaran');
+        redirect('index.php/admin/Admin/settingbayar'); 
+
+        }
+
+
+
+//======================================= END SET PEMBAYARAN==========================================//
 
     // ======================================= Pelanggaran =======================================//
     
