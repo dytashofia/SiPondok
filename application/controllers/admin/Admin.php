@@ -72,6 +72,7 @@ class Admin extends CI_Controller
         }
         $admin = $this->m_admin->tampil_admin();
 
+
         $data = array (
             'id_admin' => $id_admin            
         );
@@ -96,11 +97,10 @@ class Admin extends CI_Controller
 
             $this->load->library('upload',$config);
             if(!$this->upload->do_upload('foto_admin')) {
-                echo "Upload Gagal"; die();
+                //echo "Upload Gagal"; die();
             }else{
                 $foto_admin=$this->upload->data('file_name');
             }
-
         }
 
         $data = array(
@@ -722,6 +722,7 @@ public function aksiTambahpembayaran()
         }
 
         $pelanggaran = $this->m_pelanggaran->tampil_pelanggaran();
+			// Apabila hasil validasi form menunjukkan tidak ada yang salah
 
         $data = array (
             'id_pelanggaran' => $id_pelanggaran           
