@@ -72,6 +72,7 @@
                                             <th>TANGGAL BAYAR</th>
                                             <th>BUKTI BAYAR</th>
                                             <th>STATUS</th>
+                                             <th>KONFIRMASI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -86,9 +87,23 @@
                                             <td><?= $b->nama_pembayar;?></td>
                                             <td> <?= $b->jenis_pembayaran;?></td>
                                             <td> <?= $b->tgl_pembayaran;?></td>
-                                            <td><?= $b->bukti_pembayaran;?></td>
+                                            <td><?= $b->bukti_pembayaran;?> <br>
+                                                
+                                                <a title="Cek" data-toggle="tooltip" data-placement="top" data-original-title="Cek">
+                                                        <button type="button" data-toggle="modal" data-target="#cekbukti<?=$b->id_pembayaran;?>" class="btn-sx btn-info center-block"><i class="la la-eye color-success"></i>
+                                                                 
+                                                                  </button> 
+                                            </td>
                                              <td><?= $b->status;?></td>
+
+                                             <td> 
+                                                        <button type="button" data-toggle="modal" data-target="#konfirmasiModal<?=$b->id_pembayaran;?>" class="btn btn-success">
+                                                            <i class="la la-check-circle color-success"></i>
+                                                        </button> 
+                                                </td>
+
                                             <td>
+
 
                                                 <div class="btn-group mr-2 mb-2">
                                                     <a href="<?php echo base_url() ?>index.php/admin/Admin/editpembayaran/<?php echo $b->id_pembayaran ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
@@ -156,6 +171,85 @@
             </div>
         </div>
 
+    <?php
+        endforeach;
+    ?>
+
+    <!--  Konfirmasi Modal -->
+
+<?php
+        foreach($bayar as $b) :    
+    ?>
+        
+
+        
+        <div class="modal fade" id="konfirmasiModal<?= $b->id_pembayaran?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle">Konfirmasi Bayar</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="<?php echo base_url() ?>index.php/admin/Admin/updatepembayaran/<?php echo $b->id_pembayaran ?>">
+                    <div class="modal-body">
+                        
+                        <h5 class="text-justify"> Apakah pembayaran ini bisa dinyatakan lunas?
+                        <input type="hidden" name="id_pembayaran" id="id_pembayaran" value="<?php echo $b->id_pembayaran;?>">
+                        <input type="hidden" name="NIS" id="NIS" value="<?= $b->NIS;?>">
+                        <input type="hidden" name="nama_pembayar" id="nama_pembayar" value="<?php echo $b->nama_pembayar;?>">
+                        <input type="hidden" name="jenis_pembayaran" id="jenis_pembayaran" value="<?php echo $b->jenis_pembayaran;?>">
+                        <input type="hidden" name="tgl_pembayaran" id="tgl_pembayaran" value="<?php echo $b->tgl_pembayaran;?>">
+                        <input type="hidden" name="bukti_pembayaran" id="bukti_pembayaran" value="<?php echo $b->bukti_pembayaran;?>">
+                        <select name="status" id="status" >
+                            <option>Lunas</option>
+                            <option>pembayaran tidak sah</option>
+                        </select>
+
+                        </h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success">Konfirmasi</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    <?php
+        endforeach;
+    ?>
+
+    <?php
+        foreach($bayar as $b) :    
+    ?>
+        
+        <div class="modal fade" id="cekbukti<?= $b->id_pembayaran?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle"><?php echo $b->bukti_pembayaran;?></h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="<?php echo base_url() ?>index.php/admin/Admin/updatepembayaran/<?php echo $b->id_pembayaran?>">
+                    <div class="modal-body">
+                        
+                        <h5 class="text-justify"> 
+                                    
+                                                                 <embed src="<?php echo base_url('assets/img/pembayaran/'.$b->bukti_pembayaran)?>" width="470" height="450"><br>
+                                             
+                        </h5>
+                    </div>
+                    <div class="modal-footer">
+                         <a href="<?php echo base_url(); ?>index.php/admin/Admin/downloadbuktipembayaran/<?php echo $b->id_pembayaran;?>">
+                        <button type="button" class="btn btn-primary">Download</button></a>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
     <?php
         endforeach;
     ?>
