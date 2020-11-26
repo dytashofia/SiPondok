@@ -49,11 +49,12 @@
 
                                             <h5 class="mt-2">Username</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="username" id="username">
+                                                <input type="text" class="form-control" name="username" id="username"> 
+                                                
                                             </fieldset>
 
                                             <h5 class="mt-2">Password</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group ">
                                                 <input type="password" class="form-control" name="password" id="password">
                                             </fieldset>
 
