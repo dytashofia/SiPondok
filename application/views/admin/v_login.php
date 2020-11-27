@@ -25,15 +25,31 @@
 
 
 <body>
+
+    <style>
+        .warning {
+            text-align: center;
+            background-color: white;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
     <?php
     // Cetak jika ada notifikasi
     if ($this->session->flashdata('sukses')) {
-        echo '<p class="warning" style="margin: 10px 20px;">' . $this->session->flashdata('sukses') . '</p>';
+        echo '<p class="warning" style=" position:fixed; ">' . $this->session->flashdata('sukses') . '</p>';
     }
     ?>
+
     <div class="limiter">
+
         <div class="container-login100">
+
             <div class="wrap-login100">
+
                 <form class="login100-form validate-form" method="post" action="<?php echo base_url('admin/login'); ?>">
                     <span class=" login100-form-title2">
                         Login
@@ -53,7 +69,7 @@
 
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn" type="submit">
-                            <a style="color:white;" href=""> Login</a>
+                            Login
                         </button>
                     </div>
                 </form>
