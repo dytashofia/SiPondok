@@ -39,14 +39,16 @@ class Simple_login
 
         if ($query->num_rows() == 1) {
             //ambil data user berdasar username
-            $row  = $this->CI->db->query('SELECT id_admin FROM tb_admin where username = "' . $username . '"');
+            $row  = $this->CI->db->query('SELECT * FROM tb_admin where username = "' . $username . '"');
             $admin     = $row->row();
             $id   = $admin->id_admin;
             $nama = $admin->nama_admin;
+            $foto   = $admin->foto_admin;
 
             //set session user
             $this->CI->session->set_userdata('username', $username);
             $this->CI->session->set_userdata('nama_admin', $nama);
+            $this->CI->session->set_userdata('foto_admin', $foto);
             $this->CI->session->set_userdata('id_login', uniqid(rand()));
             $this->CI->session->set_userdata('id', $id);
 
