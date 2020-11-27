@@ -25,30 +25,35 @@
 
 
 <body>
-
+    <?php
+    // Cetak jika ada notifikasi
+    if ($this->session->flashdata('sukses')) {
+        echo '<p class="warning" style="margin: 10px 20px;">' . $this->session->flashdata('sukses') . '</p>';
+    }
+    ?>
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" method="post" action="<?php echo base_url('admin/login'); ?>">
                     <span class=" login100-form-title2">
                         Login
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: example@gmail.com">
-                        <input class="input100" type="text" name="email" placeholder="Username">
+                        <input class="input100" type="text" name="username" placeholder="Username">
                         <span class="focus-input100"></span>
 
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password">
                         <span class="focus-input100"></span>
 
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            <a style="color:white;" href="<?php echo base_url(); ?>index.php/admin/admin"> Login</a>
+                        <button class="login100-form-btn" type="submit">
+                            <a style="color:white;" href=""> Login</a>
                         </button>
                     </div>
                 </form>
@@ -78,6 +83,9 @@
     <script src="<?php echo base_url(); ?>assets/Login1/vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
     <script src="<?php echo base_url(); ?>assets/Login1/vendor/tilt/tilt.jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/dist/js/myscript.js"></script>
     <script>
         $('.js-tilt').tilt({
             scale: 1.1
