@@ -36,6 +36,7 @@
                             </div>
                         </div>
                         <?php echo form_open_multipart('index.php/admin/Admin/aksiTambahpembayaran');?>
+                       
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -57,12 +58,22 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">JENIS PEMBAYARAN</h5>
-                                            <fieldset class="form-group">
-                                                <select class="form-control" name="jenis_pembayaran" id="jenis_pembayaran">
-                                                    <option>SPP</option>
-                                                    <option>PHBI</option>
+                                            <fieldset class="form-group<?=form_error('id_setbayar') ? 'has-error' : null?>">
+                                                <select name="id_setbayar" id="id_setbayar" class="custom-select">
+                                                
+                                                  <?php
+                                                    foreach ($detail as $d) :
+                                                ?>
+                                                    <option value="<?= $d->id_setbayar; ?>"><?= $d->jenis_pembayaran; ?></option>
+                                                <?php
+                                                    endforeach;
+                                                ?>
+                                                
                                                 </select>
+                                                <?= form_error('id_setbayar', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
+
+                                            
 
                                         </div>
                                     </div>
@@ -100,6 +111,7 @@
 
                         </div>
 
+                            
                     <?php echo form_close();?>
 
 

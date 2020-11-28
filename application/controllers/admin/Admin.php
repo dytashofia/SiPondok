@@ -481,9 +481,11 @@ class Admin extends CI_Controller
         // Mengambil data pembayaran menggunakan model
 
         $data = $this->m_pembayaran->tampil_data()->result();
+        $detail= $this->m_setbayar->tampil_data()->result();
 
         $data = array(
-            'id_pembayaran' => $id_pembayaran,
+            'detail'=>$detail,
+            'id_pembayaran' => $id_pembayaran
 
         );
 
@@ -499,7 +501,7 @@ class Admin extends CI_Controller
         $id_pembayaran = $this->input->post('id_pembayaran');
         $NIS = $this->input->post('NIS');
         $nama_pembayar = $this->input->post('nama_pembayar');
-        $jenis_pembayaran = $this->input->post('jenis_pembayaran');
+        $id_setbayar = $this->input->post('id_setbayar');
         $tgl_pembayaran = $this->input->post('tgl_pembayaran');
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
@@ -522,7 +524,7 @@ class Admin extends CI_Controller
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $NIS,
             'nama_pembayar' => $nama_pembayar,
-            'jenis_pembayaran' => $jenis_pembayaran,
+            'id_setbayar' => $id_setbayar,
             'tgl_pembayaran' => $tgl_pembayaran,
             'bukti_pembayaran' => $bukti_pembayaran,
             'status' => $status
@@ -581,7 +583,7 @@ class Admin extends CI_Controller
         $id_pembayaran = $this->input->post('id_pembayaran');
         $NIS = $this->input->post('NIS');
         $nama_pembayar = $this->input->post('nama_pembayar');
-        $jenis_pembayaran = $this->input->post('jenis_pembayaran');
+        $id_setbayar = $this->input->post('id_setbayar');
         $tgl_pembayaran = $this->input->post('tgl_pembayaran');
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
@@ -620,7 +622,7 @@ class Admin extends CI_Controller
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $NIS,
             'nama_pembayar' => $nama_pembayar,
-            'jenis_pembayaran' => $jenis_pembayaran,
+            'id_setbayar' => $id_setbayar,
             'tgl_pembayaran' => $tgl_pembayaran,
             'status' => $status
 
