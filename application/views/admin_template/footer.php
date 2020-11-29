@@ -27,6 +27,7 @@
 <!-- <script src="<?php echo base_url(); ?>theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script> -->
 <!-- END PAGE LEVEL JS-->
 <!-- BEGIN PAGE LEVEL JS-->
+
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/bar/bar.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/line/line.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/pie-doughnut/pie-simple.js" type="text/javascript"></script>

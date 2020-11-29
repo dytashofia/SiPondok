@@ -5,7 +5,7 @@ class M_pembayaran extends CI_Model {
     public function tampil_data() 
     {
 
-		$query= $this->db->query("SELECT tb_pembayaran.id_pembayaran, tb_pembayaran.NIS, tb_pembayaran.jenis_pembayaran, tb_pembayaran.tgl_pembayaran, tb_pembayaran.bukti_pembayaran, tb_pembayaran.status, tb_pembayaran.nama_pembayar, tb_santri.nama_santri,tb_santri.nama_wali FROM tb_pembayaran JOIN tb_santri ON tb_pembayaran.NIS=tb_santri.NIS;");
+		$query= $this->db->query("SELECT tb_pembayaran.id_pembayaran, tb_pembayaran.NIS, detail_pembayaran.jenis_pembayaran, detail_pembayaran.jumlah_bayar, tb_pembayaran.tgl_pembayaran, tb_pembayaran.bukti_pembayaran, tb_pembayaran.status, tb_pembayaran.nama_pembayar, tb_santri.nama_santri,tb_santri.nama_wali, tb_pembayaran.id_setbayar FROM tb_pembayaran JOIN tb_santri ON tb_pembayaran.NIS=tb_santri.NIS JOIN detail_pembayaran ON tb_pembayaran.id_setbayar=detail_pembayaran.id_setbayar;");
         return $query;
   
 	}
@@ -33,7 +33,7 @@ function hapus_data($where,$table){
       "tb_pembayaran.id_pembayaran", 
       "tb_pembayaran.NIS", 
       "tb_pembayaran.nama_pembayar", 
-      "tb_pembayaran.jenis_pembayaran", 
+      "detail_pembayaran.jenis_pembayaran", 
       "tb_pembayaran.tgl_pembayaran",
       "tb_pembayaran.status", 
       "tb_pembayaran.bukti_pembayaran", 
@@ -44,6 +44,7 @@ function hapus_data($where,$table){
        $this->db->from('tb_pembayaran');
        $this->db->where($where);
        $this->db->join('tb_santri', 'tb_pembayaran.NIS = tb_santri.NIS');
+       $this->db->join('detail_pembayaran', 'tb_pembayaran.id_setbayar = detail_pembayaran.id_setbayar');
        $query = $this->db->get();
        return $query;
   } 

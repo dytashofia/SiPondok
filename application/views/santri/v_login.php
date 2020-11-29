@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FLAT HOTSPOT</title>
+    <title>Login Santri</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -97,7 +97,7 @@ ig          : @alpuketmerah
                             </div>
                             <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
                                 <div class="col-inner clearfix">
-                                    <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="<?php echo base_url(); ?>assets\Login2\img\item\home.png" alt="" data-sr="right">
+
                                 </div>
                             </div>
                         </div>

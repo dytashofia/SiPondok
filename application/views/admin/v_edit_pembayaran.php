@@ -54,7 +54,33 @@
 
                                             <h5 class="mt-2">Jenis Pembayaran</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="jenis_pembayaran" id="jenis_pembayaran" value="<?= $b->jenis_pembayaran;?>">
+                                                <select class="form-control" name="id_setbayar" id="id_setbayar">
+                                                    <?php
+                                                    if($b->id_setbayar=="ST001"){
+
+                                                       ?>     
+                                                       <option value="ST001" selected>SPP</option>
+                                                            <option value="ST002">DAFTAR ULANG</option>
+                                                            <option value="ST003">PHBI</option>
+                                                    <?php
+                                                    }elseif($b->id_setbayar=="ST002" ){
+                                                        ?> 
+                                                        <option value="ST002" selected>DAFTAR ULANG</option>
+                                                         <option value="ST001">SPP</option>
+                                                         <option value="ST003">PHBI</option>
+
+                                                         <?php
+                                                    }else{
+                                                        ?>   
+                                                        <option value="ST001" >SPP</option>
+                                                            <option value="ST002">DAFTAR ULANG</option>
+                                                            <option value="ST003" selected>PHBI</option>
+
+
+                                                            <?php
+                                                    }
+                                                    ?>
+                                                </select>
                                             </fieldset>
 
                                         </div>
@@ -84,7 +110,7 @@
                                                     
                                             </div>
                                           
-                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" value="<?= $b->bukti_pembayaran;?>">s 
+                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" value="<?= $b->bukti_pembayaran;?>">
                                             </fieldset>
 
                                             <fieldset class="form-group">
