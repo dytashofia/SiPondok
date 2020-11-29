@@ -57,12 +57,12 @@ ig          : @alpuketmerah
                         <div class="collapse navbar-collapse" id="navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#login">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#brief_1">Service</a></li>
-                                <li><a href="#pricing">Pricing</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#about">Tentang</a></li>
+                                <li><a href="#brief_1">Galeri</a></li>
+                                <li><a href="#pricing">Produk</a></li>
+                                <li><a href="#contact">Kontak</a></li>
                                 <li class="active">
-                                    <a class="login100-form-btn " href="#">LOGIN</a>
+                                    <a class="login100-form-btn " href="#">LOGIN</a> &nbsp;
                                     <a class="login100-form-btn " href="#">DAFTAR</a>
                                 </li>
 
@@ -73,7 +73,7 @@ ig          : @alpuketmerah
                 </nav>
             </header>
             <!-- .site-header -->
-            <main class="site-main">
+            <main class="site-main" style="height: 100vh;">
                 <div id="home" class="section block-primary position-r align-c-xs-max">
                     <div id="particles-js" class="site-bg">
                         <div class="site-bg-img"></div>
@@ -96,8 +96,35 @@ ig          : @alpuketmerah
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
-                                <div class="col-inner clearfix">
+                                <div class="col-inner clearfix" data-sr="right">
+                                    <div style="width: 100%; background-image: -moz-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+    background-image: -webkit-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+    background-image: -ms-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);  display:flex; justify-content: center;
+            align-items: center; text-align:center; height:440px; width:370px; border-radius: 10px; box-shadow: 0px 0px 10px 0px #00979e; ">
+                                        <form class="login100-form validate-form" method="post" action="<?php echo base_url('admin/login'); ?>">
+                                            <span class=" login100-form-title2">
+                                                Login
+                                            </span>
 
+                                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: example@gmail.com">
+                                                <input class="input100" type="text" name="username" placeholder="Username">
+                                                <span class="focus-input100"></span>
+
+                                            </div>
+
+                                            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                                <input class="input100" type="password" name="password" placeholder="Password">
+                                                <span class="focus-input100"></span>
+
+                                            </div>
+
+                                            <div class="container-login100-form-btn">
+                                                <button class="login100-form-btn" type="submit">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

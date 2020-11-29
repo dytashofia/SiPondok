@@ -1471,6 +1471,7 @@
         margin-bottom: 0px !important;
     }
     .m-x-auto-xs-max {
+        display: none;
         margin-right: auto;
         margin-left: auto;
     }
@@ -1751,7 +1752,7 @@
         margin-bottom: 60px !important;
     }
     .m-t-60-xs-max {
-        margin-top: 60px !important;
+        margin-top: 10px !important;
     }
     .m-r-60-xs-max {
         margin-right: 60px !important;
@@ -6567,6 +6568,7 @@ form._default textarea {
     width: 100px;
     height: 27px;
     border-radius: 25px;
+    box-shadow: 0px 0px 10px 0px #00979e;
     background-image: -moz-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
     background-image: -webkit-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
     background-image: -ms-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
