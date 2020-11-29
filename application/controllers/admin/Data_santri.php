@@ -1,267 +1,264 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
-class Data_Santri extends CI_Controller
+
+class Data_santri extends CI_Controller 
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->load->model('m_data_santri');
-        $this->load->helper('url');
-    }
-
-
-public function data_santri()
-    {
-        
-        $data['santri'] = $this->m_data_santri->tampil_data()->result();  
-
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_santri',$data);
-        $this->load->view('admin_template/footer');
-    }
-
-
-   function hapusdtsantri($id){
-         $where = array('NIS' => $id); 
-        $foto = $this->db->get_where('tb_santri',$where);
-        $this->m_data_santri->hapus_data($where,'tb_santri'); 
-
-         if($foto->num_rows($where)>0){
-      $pros=$foto->row();
-      $name=$pros->foto;
-     
-      if(file_exists($lok=FCPATH.'/assets/file_santri/'.$name)){
-        unlink($lok);
-      }
-    }
-
-        redirect('index.php/admin/Data_Santri');
-    }
-
-    function tmbhdtsantri(){
-        $data= $this->m_data_santri->tampil_data()->num_rows();
-        if($data > 0)
-        {
-            // Mengambil id soal sebelumnya
-            $lastId = $this->m_data_santri->tampil_data_akhir()->result();
-            // Melakukan perulangan untuk mengambil data
-            foreach($lastId as $row)
-            {
-                // Melakukan pemisahan huruf dengan angka pada id perizinan
-                $rawNIS = substr($row->NIS,3);
-                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
-                $NISInt = intval($rawNIS);
-
-                // Menghitung panjang id yang sudah menjadi integer
-                if(strlen($NISInt) == 1)
-                {
-                    // jika panjang id hanya 1 angka
-                    $NIS = "SNTR00".($NISInt + 1);
-                }else if(strlen($NISInt) == 2)
-                {
-                    // jika panjang id hanya 2 angka
-                    $NIS = "SNTR0".($NISInt + 1);
-                }else if(strlen($NISInt) == 3)
-                {
-                    // jika panjang id hanya 3 angka
-                    $idjurusan = "SNTR".($NISInt + 1);
-                }
-
-            }
-        }else
-        {
-            // Jika jumlah perizinan kurang dari sama dengan 0
-            $NIS = "SNTR001";
-        }
-
-        // Mengambil data mata pelajaran menggunakan model
-        
-         $data= $this->m_data_santri->tampil_santri()->result();
-        
-       $data = array(
-            'NIS' => $NIS,
-           
-        ); 
-
-
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tmbhdtsantri', $data);
-        $this->load->view('admin_template/footer');
-         
+  // method yang akan otomatis dijalankan ketika class dibuat
+  function __construct()
+  {
+    parent::__construct();
+    $this->load->model('M_data_paket');
+    $this->load->library('PrimsLib');
     
-    }
+  }
 
-    public function aksiTambahdtsantri()
-    {
-        $NIS = $this->input->post('NIS');
-        $nama_santri = $this->input->post('nama_santri');
-        $jk = $this->input->post('jk');
-        $ttl = $this->input->post('ttl');
-        $alamat = $this->input->post('alamat');
-        $pendidikan = $this->input->post('pendidikan');
-        $jurusan = $this->input->post('jurusan');
-        $nim = $this->input->post('nim');
-        $tgl_masuk = $this->input->post('tgl_masuk');
-        $nama_ayah = $this->input->post('nama_ayah');
-        $nama_ibu = $this->input->post('nama_ibu');
-        $nama_wali = $this->input->post('nama_wali');
-        $no_telp_wali = $this->input->post('no_telp_wali');
-        $foto = $_FILES['foto'];
-        $surat_pernyataan = $_FILES['surat_pernyataan'];
-        $bukti_pembayaran = $_FILES['bukti_pembayaran'];
-        $nama_institusi = $this->input->post('nama_institusi');
-        $status_pembayaran = $this->input->post('status_pembayaran');
-        $nusername= $this->input->post('username');
-        $password = $this->input->post('password');
-
-        if ($foto, $surat_pernyataan, $bukti_pembayaran =''){}else{
-            $config['upload_path']          = './assets/file_santri';
-            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
-
-            $this->load->library('upload',$config);
-            if(!$this->upload->do_upload('foto, surat_pernyataan, bukti_pembayaran')) {
-                 $foto, $surat_pernyataan, $bukti_pembayaran=$this->upload->data('file_name');
-            }else{
-                $foto, $surat_pernyataan, $bukti_pembayaran=$this->upload->data('file_name');
-
-            }
-        }
-
-
-        $data = array(
-            'NIS' => $NIS,
-            'nama_santri' => $nama_santri,
-            'jk' => $jk,
-            'ttl' => $ttl,
-            'alamat' => $alamat,
-            'pendidikan' => $pendidikan,
-            'jurusan' => $jurusan,
-            'nim' => $nim,
-            'tgl_masuk' => $tgl_masuk,
-            'nama_ayah'=> $nama_ayah,
-            'nama_ibu' => $nama_ibu,
-            'nama_wali' => $nama_wali,
-            'no_telp_wali' => $no_telp_wali,
-            'foto' => $foto,
-            'surat_pernyataan' => $surat_pernyataan,
-            'bukti_pembayaran' => $bukti_pembayaran,
-            'nama_institusi' => $nama_institusi,
-            'status_pembayaran' => $status_pembayaran,
-            'username' => $nusername,
-            'password' => $password
-            
-        );
-        
-        $this->m_data_santri->tambah_data($data,'tb_santri');
-        redirect('index.php/admin/Data_santri'); 
-
-        }
-
-    public function downloadfilesantri($id)
-    {
-        $data = $this->db->get_where('tb_santri',['NIS'=>$id])->row();
-        force_download('./assets/file_santri/'.$data->keterangan,NULL);
-
-    }
-
-    public function editdtsantri($id){
-    $where = array('NIS' => $id); 
-    $data['izinedit'] = $this->antri->edit_data($where,'tb_santri')->result();  
-     $this->load->view('admin_template/header');
+  // Menampilkan tabel Promo
+  public function index()
+  {
+    $data['tb_santri'] = $this->M_data_santri->getAll('tb_santri')->result();
+    $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_edit_dtsantri', $data);
-        $this->load->view('admin_template/footer');
-  
-    }
+        $this->load->view('admin/v_santri', $data);
+        $this->load->view('admin_template/footer');  
+  }
 
-
-    public function updatedtsantri() {       
-        $id_perizinan = $this->input->post('id_perizinan');
-        $NIS = $this->input->post('NIS');
-        $tgl_izin = $this->input->post('tgl_izin');
-        $tgl_datang = $this->input->post('tgl_datang');
-        $alasan = $this->input->post('alasan');
-        $status = $this->input->post('status');
-        $keterangan = $_FILES['keterangan'];
-        $where= array('id_perizinan' => $id_perizinan );
-         $foto = $this->db->get_where('tb_perizinan',$where);
-
-
-        if ($keterangan=''){}else{
-            $config['upload_path']          = './assets/file_izin';
-            $config['allowed_types']        ='jpg|png|jpeg|gif|JPG|JPEG|pdf';
-
-            $this->load->library('upload',$config);
-            if($this->upload->do_upload('keterangan')) {
-               $keterangan=$this->upload->data('file_name');
-            } else{
-
-                $keterangan=$this->upload->data('file_name');
-            }
-
-
-             // if($foto->num_rows()>0){
-      // $pros=$foto->row();
-      // $name=$pros->keterangan;
-     
-      // if(file_exists($lok=FCPATH.'/assets/file_izin/'.$name)){
-        // unlink($lok);
-                    // }
-        // }
-
-        }
-
-       
-
-        $data = array(
-            'NIS' => $NIS,
-            'nama_santri' => $nama_santri,
-            'jk' => $jk,
-            'ttl' => $ttl,
-            'alamat' => $alamat,
-            'pendidikan' => $pendidikan,
-            'jurusan' => $jurusan,
-            'nim' => $nim,
-            'tgl_masuk' => $tgl_masuk,
-            'nama_ayah'=> $nama_ayah,
-            'nama_ibu' => $nama_ibu,
-            'nama_wali' => $nama_wali,
-            'no_telp_wali' => $no_telp_wali,
-            'foto' => $foto,
-            'surat_pernyataan' => $surat_pernyataan,
-            'bukti_pembayaran' => $bukti_pembayaran,
-            'nama_institusi' => $nama_institusi,
-            'status_pembayaran' => $status_pembayaran,
-            'username' => $nusername,
-            'password' => $password
-            
-            
-        );
-
-         if ($keterangan != NULL) {
-
-        $data['keterangan'] = $keterangan;
-        }
-        
-
-        $this->m_perizinan->update_data($where,$data);
-            redirect('index.php/admin/Data_admin');
-            
-          }
-
-    function detail($id){
-
+  // menampilkan form edit data promo
+  public function edit()
+  {
     $where = array('NIS' => $id);
-    $data['detail'] = $this->m_data_santri->detail_data($where)->result();  
-
-        $this->load->view('admin_template/header');
+    $data['tb_santri'] = $this->M_data_santri->getEdit($where, 'tb_santri')->result();
+    $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_detail_dtsantri',$data);
-        $this->load->view('admin_template/footer');
+        $this->load->view('admin/v_editdtsantri', $data);
+        $this->load->view('admin_template/footer');  
+  }
+  // menampilkan detail data promo
+  public function detail($id)
+  {
+    $where = array('NIS' => $id);
+    $detail = $this->M_data_santri->detail_data($id);
+    $data['detail'] = $this->M_data_santri->detail_data($id);
+    $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detaildtsantri', $data);
+        $this->load->view('admin_template/footer');  
+  }
 
-        }
+  public function tambah()
+  {
+      // memeriksa apakah ada id pada database
+    $row_id = $this->M_data_santri->getId()->num_rows();
+    // mengambil 1 baris data terakhir
+    $old_id = $this->M_data_santri->getId()->row();
 
-    // END PERIZINAN //
+    if($row_id>0){
+      // melakukan auto number dari id terakhir
+    $id = $this->primslib->autonumber($old_id->NIS, 3, 12);
+    }else{
+      // generate id pertama kali jika tidak ada data sama sekali di dalam database
+    $id = 'SNTR001';
+    }
+
+    $foto = null;
+    $surat_pernyataan = null;
+    $bukti_perytaan = null;
+    // menjalankan perintah untuk mengupload gambar
+    if ($_FILES['foto']['name'] != null) {
+      $foto = $_FILES['foto']['name'];
+      $foto = $this->primslib->upload_file('foto', $foto, 'jpg|jpeg|png', '3024');
+    }
+    if ($_FILES['surat_pernyataan']['name'] != null) {
+            $surat_pernyataan = $_FILES['surat_pernyataan']['name'];
+            $surat_pernyataan = $this->primslib->upload_file('surat_pernyataan', $surat_pernyataan, 'jpg|jpeg|png|pdf');
+    }
+    if ($_FILES['bukti_pembayaran']['name'] != null) {
+            $bukti_pembayaran = $_FILES['bukti_pembayaran']['name'];
+            $bukti_pembayaran = $this->primslib->upload_file('bukti_pembayaran', $bukti_pemayaran, 'jpg|jpeg|png|pdf');
+        
+    }
+    
+
+    // merekam data yang dikirim melalui form
+    $data = array(
+      'NIS' => $id,
+      'nama_santri' => $this->input->post('nama_santri'),
+      'jk' => $this->input->post('jk'),
+      'ttl' => $this->input->post('ttl'),
+      'alamat' => $this->input->post('alamat'),
+      'pendidikan' => $this->input->post('pendidikan'),
+      'jurusan' => $this->input->post('jurusan'),
+      'nim' => $this->input->post('nim'),
+      'no_hp' => $this->input->post('no_hp'),
+      'tgl_masuk' => $this->input->post('tgl_masuk'),
+      'nama_ayah' => $this->input->post('nama_ayah'),
+      'nama_ibu' => $this->input->post('nama_ibu'),
+      'nama_wali' => $this->input->post('nama_wali'),
+      'no_telp_wali' => $this->input->post('no_telp_wali'),
+      'foto' => $foto,
+      'surat_pernyataan' => $surat_pernyataan,
+      'bukti_pembayaran' => $bukti_pembayaran,
+      'nama_institusi' => $this->input->post('nama_institusi'),
+      'status_pembayaran' => $this->input->post('status_pembayaran'),
+      'username' => $this->input->post('username'),
+      'password' => $this->input->post('password')
+      
+    );
+
+    // menjalankan fungsi insert pada model_promo untuk menambah data ke database
+    $this->M_data_santri->insert($data, 'tb_santri');
+    // mengirim pesan berhasil dihapus
+    $this->session->set_flashdata('pesan', '
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Selamat!</strong> Anda berhasil menambahkan data.
+      <button type="button" class="close py-auto" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    ');
+    // mengarahkan ke halaman tabel promo
+    redirect('admin/Data_santri');
+    }
+
+  public function update()
+  {
+    // merekam id sebagai parameter where saat update
+    $where = array('NIS' => $this->input->post('NIS'));
+    $foto = null;
+    $surat_pernyataan = null;
+    $bukti_pembayaran = null;
+    // memeriksa apakah admin mengganti gambar atau tidak
+    if ($_FILES['foto']['name'] != null) {
+      // jika memilih gambar
+      $foto = $_FILES['foto']['name'];
+
+      if ($foto != '') {
+          $config['upload_path'] = './assets/file_santri/';
+          $config['allowed_types'] = 'jpg|jpeg|png';
+          $config['max_size'] = '3024';
+          $config['overwrite'] = true;
+          $config['file_name'] = $this->db->get_where('tb_santri', array('NIS' => $this->input->post('NIS')))->row()->foto;
+    
+    if ($_FILES['surat_pernyataan']['name'] != null) {
+            // jika memilih gambar
+        $foto = $_FILES['surat_pernyataan']['name'];
+      
+        if ($surat_pernyataan != '') {
+            $config['upload_path'] = './assets/file_santri/';
+            $config['allowed_types'] = 'jpg|jpeg|png|pdf';
+            // $config['max_size'] = '3024';
+            $config['overwrite'] = true;
+            $config['file_name'] = $this->db->get_where('tb_santri', array('NIS' => $this->input->post('NIS')))->row()->surat_pernyataan;
+    
+    if ($_FILES['bukti_pembayaran']['name'] != null) {
+              // jika memilih gambar
+        $foto = $_FILES['bukti_pembayaran']['name'];
+        
+        if ($bukti_pembayaran != '') {
+            $config['upload_path'] = './assets/file_santri/';
+            $config['allowed_types'] = 'jpg|jpeg|png|pdf';
+              // $config['max_size'] = '3024';
+            $config['overwrite'] = true;
+            $config['file_name'] = $this->db->get_where('tb_santri', array('NIS' => $this->input->post('NIS')))->row()->surat_pernyataan;
+
+            $this->load->library('upload', $config);
+          
+            if (!$this->upload->do_upload('foto'))
+            {
+                $error = array('error' => $this->upload->display_errors(),
+                                'tb_santri' => $this->m_data_santri->getAll('tb_santri')->result(),
+                                'custom' => $this->lang->line('Pengunggahan file foto Gagal!')
+                );
+                echo $this->load->view('admin_template/header', array(), TRUE);
+                echo $this->load->view('admin_template/mainmenu'array(), TRUE);
+                echo $this->load->view('admin/v_santri', $error, TRUE);
+                echo $this->load->view('admin_template/footer', array(), TRUE);  
+                exit;
+            }
+            else
+            {
+                $foto = $this->upload->data('file_name');
+                $surat_pernyataan = $this->upload->data('file_name');
+                $bukti_pembayaran = $this->upload->data('file_name');
+            }
+  
+          }
+    
+      $data = array(
+        'NIS' => $id,
+        'nama_santri' => $this->input->post('nama_santri'),
+        'jk' => $this->input->post('jk'),
+        'ttl' => $this->input->post('ttl'),
+        'alamat' => $this->input->post('alamat'),
+        'pendidikan' => $this->input->post('pendidikan'),
+        'jurusan' => $this->input->post('jurusan'),
+        'nim' => $this->input->post('nim'),
+        'no_hp' => $this->input->post('no_hp'),
+        'tgl_masuk' => $this->input->post('tgl_masuk'),
+        'nama_ayah' => $this->input->post('nama_ayah'),
+        'nama_ibu' => $this->input->post('nama_ibu'),
+        'nama_wali' => $this->input->post('nama_wali'),
+        'no_telp_wali' => $this->input->post('no_telp_wali'),
+        'foto' => $foto,
+        'surat_pernyataan' => $surat_pernyataan,
+        'bukti_pembayaran' => $bukti_pembayaran,
+        'nama_institusi' => $this->input->post('nama_institusi'),
+        'status_pembayaran' => $this->input->post('status_pembayaran'),
+        'username' => $this->input->post('username'),
+        'password' => $this->input->post('password')
+      );
+    
+
+    // menjalankan method update pada model isi paket
+    $this->M_data_santri->update($where, $data, 'tb_santri');
+
+    // mengirim pesan berhasil update data
+    $this->session->set_flashdata('pesan', '
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      Anda <strong>berhasil</strong> mengubah data.
+      <button type="button" class="close py-auto" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    ');
+    // mengarahkan ke halaman tabel isi paket
+    redirect('admin/Data_santri');
+  }
+
+  // method yang berfungsi menghapus data
+  public function destroy($id)
+  {
+    // deklarasi $where by id
+    $where = array('NIS' => $id);
+    // menjalankan fungsi delete pada model_isi paket
+    $this->M_data_santri->delete($where, 'tb_santri');
+    // mengirim pesan berhasil dihapus
+    $this->session->set_flashdata('pesan', '
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      Anda <strong>berhasil</strong> menghapus data.
+      <button type="button" class="close py-auto" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    ');
+    // mengarahkan ke halaman tabel isi paket
+    redirect('admin/Data_santri');
+  }
+
+  // method untuk melakukan print PDF
+  public function pdf()
+  {
+    $this->load->library('Dompdf_gen');
+
+    $data['tb_santri'] = $this->Model_promo->getAll('tb_santri')->result();
+
+    $this->load->view('admin/datasantri/laporan_pdf', $data);
+
+    $paper_size = 'A4';
+    $oriantation = 'landscape';
+    $html = $this->output->get_output();
+    $this->dompdf->set_paper($paper_size, $oriantation);
+
+    $this->dompdf->load_html($html);
+    $this->dompdf->render();
+    $this->dompdf->stream("laporan_data_santri_".date('Y-m-d_H-i-s').".pdf", array('Attachment' => 0));
+  }
+}

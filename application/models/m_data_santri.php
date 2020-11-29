@@ -1,68 +1,53 @@
-<?php 
+<?php
+//  berfungsi untuk melayani segala query CRUD database
+class M_data_santri extends CI_Model
+{
+    // function untuk mengambil keseluruhan baris data dari tabel user
+    public function tampil_data()
+    {
+        return $this->db->get('tb_santri');
+    }
 
-class M_perizinan extends CI_Model{
+    public function get_table()
+    {
+        $sql = $this->db->get('tb_santri');
 
-function tampil_data(){
-		 $query= $this->db->query("SELECT tb_perizinan.id_perizinan, tb_perizinan.alasan, tb_perizinan.tgl_izin, tb_perizinan.tgl_datang,  tb_perizinan.status, tb_perizinan.NIS,tb_perizinan.keterangan, tb_santri.nama_santri FROM tb_perizinan JOIN tb_santri ON tb_perizinan.NIS=tb_santri.NIS;");
-    return $query;
-  
-	}
-	
-function hapus_data($where,$table){
-		$this->db->where($where); 
-		$this->db->delete($table);
-	}
+        return $sql->result_array();
+    }
 
-function tambah_data($data, $table)
-   {
-       $this->db->insert($table, $data);
-   }
+    public function edit($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
 
-    function tampil_data_akhir()
-  {
-    $this->db->order_by('id_perizinan', 'DESC');
-    return $this->db->get('tb_perizinan', 1);
-  }
+    public function getAll($table)
+    {
+        return $this->db->get($table);
+    }
 
-function tampil_perizinan()
-   {
-      return $this->db->get('tb_perizinan');
-   }
+    public function getId()
+    {
+        return $this->db->query("SELECT * FROM tb_santri ORDER BY NIS DESC LIMIT 1");
+    }
 
-function edit_data($where,$table){    
-  return $this->db->get_where($table,$where);
-  }
+    public function insert($data, $table)
+    {
+        $this->db->insert($table, $data);
+    }
 
+    public function delete($where, $table)
+    {
+        $this->db->delete($table, $where);
+    }
 
-function update_data($where,$data){
-    $this->db->where($where);
-    $this->db->update('tb_perizinan',$data);
+    public function update($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
 
-
-  } 
-
-  function detail_data($where){ 
-
-    $fields = array(
-      "tb_perizinan.id_perizinan", 
-      "tb_perizinan.alasan", 
-      "tb_perizinan.tgl_izin", 
-      "tb_perizinan.tgl_datang", 
-      "tb_perizinan.NIS",
-      "tb_perizinan.keterangan", 
-      "tb_perizinan.status",
-      "tb_santri.nama_santri", 
-      "tb_santri.no_hp", 
-      "tb_santri.alamat"
-          
-       );
-       $this->db->select($fields);
-       $this->db->from('tb_perizinan');
-       $this->db->where($where);
-       $this->db->join('tb_santri', 'tb_perizinan.NIS = tb_santri.NIS');
-       $query = $this->db->get();
-       return $query;
-  }
-
-
+    public function detail($id = NULL){
+        $query = $this->db->get_where('tb_santri', array('NIS' => $id))->result();
+        return $query;
+      }
 }
