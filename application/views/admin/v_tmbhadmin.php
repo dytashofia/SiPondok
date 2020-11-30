@@ -48,19 +48,21 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">Username</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="username" id="username"> 
-                                                
+                                            <fieldset class="form-group<?= form_error('username') ? 'has-error' : null; ?>">
+                                                <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
+                                                <?= form_error('username', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
                                             <h5 class="mt-2">Password</h5>
-                                            <fieldset class="form-group ">
-                                                <input type="password" class="form-control" name="password" id="password">
+                                            <fieldset class="form-group <?= form_error('password') ? 'has-error' : null; ?> ">
+                                                <input type="text" class="form-control" name="password" id="password" placeholder="Masukkan Password">
+                                                <?= form_error('password', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Admin</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control"name="nama_admin" id="nama_admin">
+                                            <fieldset class="form-group<?= form_error('nama_admin') ? 'has-error' : null; ?>">
+                                                <input type="text" class="form-control"name="nama_admin" id="nama_admin" placeholder="Tambah Nama Admin">
+                                                <?= form_error('nama_admin', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
                                             <br>
 
@@ -75,7 +77,7 @@
                                                                                     
                                             <h5 class="mt-2">Foto</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" name="foto_admin" class="form-control" >
+                                                <input type="file" name="foto_admin" id="foto_admin" class="form-control" >
                                             </fieldset>
 
                                         </div>

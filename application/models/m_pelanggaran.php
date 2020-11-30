@@ -20,6 +20,13 @@ class M_pelanggaran extends CI_Model {
         return $query;
     }
 
+    public function tampil_santri()
+    {
+        return $this->db->get('tb_santri');
+    }
+
+    // fungsi untuk menampilkan nama berdasarkan NIS yang di pilih
+    
     public function tampil_data_akhir() {
         $this->db->order_by('id_pelanggaran', 'DESC');
         return $this->db->get('tb_pelanggaran', 1);
