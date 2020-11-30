@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FLAT HOTSPOT</title>
+    <title>Login Santri</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -57,12 +57,13 @@ ig          : @alpuketmerah
                         <div class="collapse navbar-collapse" id="navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#login">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#brief_1">Service</a></li>
-                                <li><a href="#pricing">Pricing</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#about">Tentang</a></li>
+                                <li><a href="#brief_1">Galeri</a></li>
+                                <li><a href="#pricing">Produk</a></li>
+                                <li><a href="#contact">Kontak</a></li>
                                 <li class="active">
-                                    <a class="login100-form-btn " href="#">LOGIN</a>
+                                    &nbsp;
+                                    <a class="login100-form-btn " href="#">LOGIN</a> &nbsp;
                                     <a class="login100-form-btn " href="#">DAFTAR</a>
                                 </li>
 
@@ -73,7 +74,7 @@ ig          : @alpuketmerah
                 </nav>
             </header>
             <!-- .site-header -->
-            <main class="site-main">
+            <main class="site-main" style="height: 100vh;">
                 <div id="home" class="section block-primary position-r align-c-xs-max">
                     <div id="particles-js" class="site-bg">
                         <div class="site-bg-img"></div>
@@ -96,8 +97,107 @@ ig          : @alpuketmerah
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
-                                <div class="col-inner clearfix">
-                                    <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="<?php echo base_url(); ?>assets\Login2\img\item\home.png" alt="" data-sr="right">
+                                <div class="col-inner clearfix" data-sr="right">
+                                    <div style="width: 100%; background-image: -moz-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+    background-image: -webkit-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+    background-image: -ms-linear-gradient( -10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);  display:flex; justify-content: center;
+            align-items: center; text-align:center; height:440px; width:370px; border-radius: 10px; box-shadow: 0px 0px 10px 0px #00979e; ">
+
+                                        <style>
+                                            .input100 {
+                                                width: 234px;
+                                                height: 27px;
+                                                font-size: 12px;
+                                                font-family: "Poppins";
+                                                color: rgb(118, 118, 118);
+                                                line-height: 1.2;
+                                                display: block;
+                                                width: 100%;
+                                                box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.39);
+                                                height: 27px;
+                                                border-radius: 25px;
+                                                padding: 0 30px 0 20px;
+                                                margin-bottom: 30px;
+                                                border-width: 2px;
+                                                border-style: inset;
+                                                border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+                                                border-image: initial;
+                                                border: none;
+                                            }
+
+                                            .tombol {
+                                                text-align: center;
+                                                width: 234px;
+                                                height: 27px;
+                                                border-radius: 25px;
+                                                border: none;
+                                                background: -webkit-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                                background: -o-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                                background: -moz-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                                background: linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                                font-size: 12px;
+                                                font-family: "Poppins";
+                                                color: rgb(255, 255, 255);
+                                                line-height: 1.2;
+                                                color: #fff;
+                                                text-transform: uppercase;
+                                                -webkit-transition: all 0.4s;
+                                                -o-transition: all 0.4s;
+                                                -moz-transition: all 0.4s;
+                                                transition: all 0.4s;
+                                                border-width: 0.1px;
+                                                border-style: outset;
+                                                border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+                                                border-image: initial;
+                                            }
+
+                                            .tombol:hover {
+                                                background-image: -moz-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                                background-image: -webkit-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                                background-image: -ms-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                            }
+
+                                            .login100-form-title2 {
+                                                font-size: 25.81px;
+                                                margin-top: -20px;
+                                                font-family: "HomepageBaukasten";
+                                                color: white;
+                                                font-weight: bold;
+                                                line-height: 1.2;
+                                                text-align: center;
+                                                width: 100%;
+                                                display: block;
+                                                padding-bottom: 35px;
+                                            }
+                                        </style>
+
+
+                                        <form class="login100-form validate-form" method="post" action="<?php echo base_url('admin/login'); ?>">
+                                            <span class=" login100-form-title2">
+                                                Login
+                                            </span>
+                                            <style>
+
+                                            </style>
+                                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: example@gmail.com">
+                                                <input class="input100" type="text" name="username" placeholder="Username">
+                                                <span class="focus-input100"></span>
+
+                                            </div>
+
+                                            <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                                <input class="input100" type="password" name="password" placeholder="Password">
+                                                <span class="focus-input100"></span>
+
+                                            </div>
+
+                                            <div class="">
+                                                <button class="tombol" type="submit">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

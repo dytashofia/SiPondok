@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="no-js" lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
-    <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
-    <meta name="author" content="ThemeSelect">
-    <title>Dashboard - Admin Ponpes Raden Rahmat Sunan Ampel</title>
+    <title>Login Santri</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets\Login2\img\favicon.png">
+    <link rel="icon" href="<?php echo base_url(); ?>assets\Login2\img\favicon.png">
+    <link rel='stylesheet' href='<?php echo base_url(); ?>assets\Login2\css\bootstrap.min.css'>
+    <link rel='stylesheet' href='<?php echo base_url(); ?>assets\Login2\css\vendor.css'>
+    <link rel='stylesheet' href='<?php echo base_url(); ?>assets\Login2\css\style.css'>
+    <link rel='stylesheet' href='<?php echo base_url(); ?>assets\Login2\css\demo.css'>
+    <link rel='stylesheet' href='<?php echo base_url(); ?>assets\Login2\css\custom.css'>
+    <script src='<?php echo base_url(); ?>assets\Login2\js\vendor\html5shiv.min.js'></script>
     <link rel="apple-touch-icon" href="<?php echo base_url(); ?>theme-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/Login1/images/logo_pondok.png">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
@@ -23,48 +31,59 @@
     <!-- BEGIN Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>theme-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>theme-assets/css/core/colors/palette-gradient.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>theme-assets/css/pages/dashboard-ecommerce.css"> -->
-    <!-- END Page Level CSS-->
-    <!-- BEGIN Custom CSS-->
-    <!-- END Custom CSS-->
 </head>
 
+<body>
+    <!-- 
+======================================================
+created     : Lalat Merah
+situs       : wp.icmp.my.id
+whatsapp    : 082-120-215-248
+ig          : @alpuketmerah
+====================================================== 
+-->
 
-<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-gradient-x-blue-green" data-col="2-columns">
-
-    <!-- fixed-top-->
-    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
-        <div class="navbar-wrapper">
-            <div class="navbar-container content">
-                <div class="collapse navbar-collapse show" id="navbar-mobile">
-                    <ul class="nav navbar-nav mr-auto float-left">
-                        <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html"><img class="brand-logo" alt="Pprrsa admin logo" src="<?php echo base_url(); ?>assets/Login1/images/logo_pondok.png" />
-                                <h3 class="brand-text">PPRRSA Admin Page</h3>
-                            </a></li>
-                    </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                                <div class="arrow_box"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Russian</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Spanish</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail"> </i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read </a></div>
-                            </div>
-                        </li>
-                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"> <span class="avatar avatar-online"><img src="<?php echo base_url(); ?>theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="<?php echo base_url(); ?>theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><span class="user-name text-bold-700 ml-1">John Doe</span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="<?php echo base_url(); ?>index.php/admin/login"><i class="ft-power"></i> Logout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="site">
+        <div class="site-loader">
+            <div class="site-loader-spinner"></div>
         </div>
-    </nav>
+        <!-- .site-loader -->
+
+        <div class="site-canvas007">
+            <header class="site-header007">
+                <nav class="navbar007 navbar-theme007">
+                    <div class="container007" style="width: 100%;">
+                        <div class="navbar-header007">
+                            <button type="button" class="navbar-toggle007 collapsed" data-toggle="collapse007" data-target="#navbar-collapse007" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-brand-wrap007">
+                                <a class="navbar-brand007" href="#">
+                                    <img src="<?php echo base_url(); ?>assets\Login2\img\logo_pondok.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- .navbar-header -->
+
+                        <div class="collapse007 navbar-collapse007" id="navbar-collapse007">
+                            <ul class="nav007 navbar-nav007 navbar-right007">
+                                <li><a href="#login">Home</a></li>
+                                <li><a href="#about">Tentang</a></li>
+                                <li><a href="#brief_1">Galeri</a></li>
+                                <li><a href="#pricing">Produk</a></li>
+                                <li><a href="#contact">Kontak</a></li>
+                                <li class="active">
+                                    &nbsp;
+                                    <a class="login100-form-btn " href="#">Logout</a> &nbsp;
+                                    <!-- <a class="login100-form-btn " href="#">DAFTAR</a> -->
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- .navbar-collapse -->
+                    </div>
+                </nav>
+            </header>

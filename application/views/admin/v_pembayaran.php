@@ -38,7 +38,10 @@
                         <div class="card-content collapse show">
                             <div class="card-body">
                                 <a href="<?php echo base_url(); ?>index.php/admin/admin/tmbhpembayaran"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
+
+                                <a href="<?php echo base_url(); ?>index.php/admin/admin/settingbayar"><button type="button" class="btn btn-primary mr-1 mb-1"><i class="la la-cog"> </i></button></a>
                             </div>
+
                             <div class="table-responsive">
 
 
@@ -69,6 +72,7 @@
                                             <th>NAMA SANTRI</th>
                                             <th>NAMA PEMBAYAR</th>
                                             <th>JENIS PEMBAYARAN</th>
+                                            <th>JUMLAH BAYAR</th>
                                             <th>TANGGAL BAYAR</th>
                                             <th>BUKTI BAYAR</th>
                                             <th>STATUS</th>
@@ -86,6 +90,7 @@
                                             <td><?= $b->nama_santri;?></td>
                                             <td><?= $b->nama_pembayar;?></td>
                                             <td> <?= $b->jenis_pembayaran;?></td>
+                                            <td> <?= $b->jumlah_bayar;?></td>
                                             <td> <?= $b->tgl_pembayaran;?></td>
                                             <td><?= $b->bukti_pembayaran;?> <br>
                                                 
@@ -199,7 +204,7 @@
                         <input type="hidden" name="id_pembayaran" id="id_pembayaran" value="<?php echo $b->id_pembayaran;?>">
                         <input type="hidden" name="NIS" id="NIS" value="<?= $b->NIS;?>">
                         <input type="hidden" name="nama_pembayar" id="nama_pembayar" value="<?php echo $b->nama_pembayar;?>">
-                        <input type="hidden" name="jenis_pembayaran" id="jenis_pembayaran" value="<?php echo $b->jenis_pembayaran;?>">
+                        <input type="hidden" name="id_setbayar" id="id_setbayar" value="<?php echo $b->id_setbayar;?>">
                         <input type="hidden" name="tgl_pembayaran" id="tgl_pembayaran" value="<?php echo $b->tgl_pembayaran;?>">
                         <input type="hidden" name="bukti_pembayaran" id="bukti_pembayaran" value="<?php echo $b->bukti_pembayaran;?>">
                         <select name="status" id="status" >

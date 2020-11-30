@@ -54,19 +54,28 @@
 
                                             <h5 class="mt-2">Jenis Pembayaran</h5>
                                             <fieldset class="form-group">
-                                                <select class="form-control" name="jenis_pembayaran" id="jenis_pembayaran">
+                                                <select class="form-control" name="id_setbayar" id="id_setbayar">
                                                     <?php
-                                                    if($b->jenis_pembayaran=="SPP"){
+                                                    if($b->id_setbayar=="ST001"){
 
                                                        ?>     
-                                                       <option value="SPP" selected>SPP</option>
-                                                            <option value="PHBI">PHBI</option>
+                                                       <option value="ST001" selected>SPP</option>
+                                                            <option value="ST002">DAFTAR ULANG</option>
+                                                            <option value="ST003">PHBI</option>
                                                     <?php
-                                                    }else{
+                                                    }elseif($b->id_setbayar=="ST002" ){
                                                         ?> 
-                                                        <option value="PHBI" selected>PHBI</option>
-                                                         <option value="SPP">SPP</option>
-                                                            
+                                                        <option value="ST002" selected>DAFTAR ULANG</option>
+                                                         <option value="ST001">SPP</option>
+                                                         <option value="ST003">PHBI</option>
+
+                                                         <?php
+                                                    }else{
+                                                        ?>   
+                                                        <option value="ST001" >SPP</option>
+                                                            <option value="ST002">DAFTAR ULANG</option>
+                                                            <option value="ST003" selected>PHBI</option>
+
 
                                                             <?php
                                                     }
