@@ -36,8 +36,32 @@
         <div class="navbar-wrapper">
             <div class="navbar-container content">
                 <div class="collapse navbar-collapse show" id="navbar-mobile">
+                    <style>
+                        @media (max-width: 768px) {
+                            .ss {
+                                padding-top: .7rem;
+                            }
+                        }
+                    </style>
+                    <div class="navbar-brand-wrap">
+                        <a class="navbar-brand" href="#">
+                            <img class="ss" width="306px" style="vertical-align:baseline; " src="<?php echo base_url(); ?>assets\Login2\img\logo_pondok.png" alt="">
+                        </a>
+                    </div>
                     <ul class="nav navbar-nav mr-auto float-left">
-                        <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+
+                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label " href="#" data-toggle="dropdown"><i class="ficon ft-menu"> </i></a>
+                            <div class="dropdown-menu dropdown-menu-left">
+                                <div class="arrow_box">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-book"></i> Read Mail</a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-bookmark"></i> Read Later</a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-check-square"></i> Mark all Read </a>
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
                         <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
                             <ul class="dropdown-menu">
@@ -54,14 +78,18 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li> <a href=""> Menu</a></li>
-                    </ul>
 
                     <ul class="nav navbar-nav float-right">
                         <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail"> </i></a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read </a></div>
+                                <div class="arrow_box_right">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-book"></i> Read Mail</a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-bookmark"></i> Read Later</a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-check-square"></i> Mark all Read </a>
+                                </div>
                             </div>
                         </li>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"> <span class="avatar avatar-online"><img src="<?= base_url(); ?>assets/img/Santri/<?php echo ucfirst($this->session->userdata('foto')); ?>" alt="avatar"><i></i></span></a>
