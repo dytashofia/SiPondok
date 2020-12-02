@@ -69,21 +69,8 @@
                     </div>
                     <ul class="nav navbar-nav mr-auto float-left">
 
+                        <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" href="<?php echo base_url(); ?>santri/Santri"><i class="ficon ft-home"></i></a>
 
-                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
-                        <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="arrow_box">
-                                    <form>
-                                        <div class="input-group search-box">
-                                            <div class="position-relative has-icon-right full-width">
-                                                <input class="form-control" id="search" type="text" placeholder="Search here...">
-                                                <div class="form-control-position navbar-search-close"><i class="ft-x"> </i></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
 
@@ -113,3 +100,11 @@
             </div>
         </div>
     </nav>
+
+    <style>
+        .ff {
+            background: linear-gradient(to right, #00cef9, #00e6af);
+            border: 0;
+            box-shadow: 0 1px 15px 1px #b9b9b9;
+        }
+    </style>
