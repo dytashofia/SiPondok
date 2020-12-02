@@ -118,11 +118,57 @@
                                          width: 200px;
                                          height: 200px;
                                      }
+
+                                     .btn.btn-icon i {
+                                         font-size: 5rem;
+                                     }
+
+                                     .as {
+
+                                         display: flex;
+                                         align-items: center;
+                                         justify-content: center;
+                                         margin-top: 50px;
+                                     }
+
+
+                                 }
+
+
+
+                                 .btn .badge {
+                                     top: -152px;
+                                     right: -91px;
+
+                                     width: 50px;
+                                     height: 50px;
+                                     font-size: 2rem;
+                                 }
+
+                                 @media (max-width: 768px) {
+                                     .btn .badge {
+                                         top: -38px;
+                                         right: -20px;
+                                         width: 30px;
+                                         height: 30px;
+                                         font-size: 1.2rem;
+                                     }
+
+                                     .bm {
+                                         width: 58.8px;
+                                         height: 39px;
+                                     }
+
+                                     .ad {
+                                         display: flex;
+                                     }
+
                                  }
                              </style>
                              <div class="card-body text-center">
                                  <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music as ad"></i>
+                                     <span class="badge badge-pill badge-danger">1</span></button>
                                  <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
                                  <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
                                  <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
