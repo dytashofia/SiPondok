@@ -95,6 +95,15 @@
                          </div>
                          <div class="card-content collapse show">
                              <style>
+                                 .bm {
+                                     background: -webkit-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                     background: -o-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                     background: -moz-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                     background: linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                     box-shadow: 0 1px 15px 1px #b9b9b9;
+
+                                 }
+
                                  @media (min-width: 768px) {
                                      .bm {
                                          width: 200px;
