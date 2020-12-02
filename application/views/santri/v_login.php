@@ -64,7 +64,7 @@ ig          : @alpuketmerah
                                 <li class="active">
                                     &nbsp;
                                     <a class="login100-form-btn " href="#">LOGIN</a> &nbsp;
-                                    <a class="login100-form-btn " href="#">DAFTAR</a>
+                                    <a class="login100-form-btn " href="<?php echo base_url(); ?>santri/daftar">DAFTAR</a>
                                 </li>
 
                             </ul>
