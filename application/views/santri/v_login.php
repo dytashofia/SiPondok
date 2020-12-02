@@ -98,7 +98,7 @@ ig          : @alpuketmerah
                         background: -webkit-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
                         background: -o-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
                         background: -moz-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
-                        background: linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);" class="site-bg-overlay"></div>
+                        background: linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%); " class="site-bg-overlay"></div>
                         <div class="site-bg-effect layer" data-depth=".30"></div>
                         <canvas class="site-bg-canvas layer" data-depth=".30"></canvas>
 
@@ -115,7 +115,7 @@ ig          : @alpuketmerah
                             </div>
                             <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
 
-                                <div class="col-inner clearfix" data-sr="right">
+                                <div class="col-inner clearfix" data-sr="right" style="display:inline-flex;">
 
                                     <div class="ll">
 

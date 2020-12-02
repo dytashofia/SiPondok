@@ -37,6 +37,10 @@
             <div class="navbar-container content">
                 <div class="collapse navbar-collapse show" id="navbar-mobile">
                     <style>
+                        .ss {
+                            padding-top: .7rem;
+                        }
+
                         @media (max-width: 768px) {
                             .ss {
                                 padding-top: .7rem;
@@ -47,21 +51,25 @@
                         <a class="navbar-brand" href="#">
                             <img class="ss" width="306px" style="vertical-align:baseline; " src="<?php echo base_url(); ?>assets\Login2\img\logo_pondok.png" alt="">
                         </a>
+                        <ul class="nav navbar-nav mr-auto float-right">
+
+                            <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label " href="#" data-toggle="dropdown"><i class="ficon ft-menu"> </i></a>
+                                <div class="dropdown-menu dropdown-menu-left">
+                                    <div class="arrow_box">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="ft-book"></i> Read Mail</a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="ft-bookmark"></i> Read Later</a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="ft-check-square"></i> Mark all Read </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <ul class="nav navbar-nav mr-auto float-left">
 
-                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label " href="#" data-toggle="dropdown"><i class="ficon ft-menu"> </i></a>
-                            <div class="dropdown-menu dropdown-menu-left">
-                                <div class="arrow_box">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-book"></i> Read Mail</a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-bookmark"></i> Read Later</a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-check-square"></i> Mark all Read </a>
-                                </div>
-                            </div>
-                        </li>
+
                         <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
                         <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
                             <ul class="dropdown-menu">
