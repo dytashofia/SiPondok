@@ -124,11 +124,22 @@
                                      }
 
                                      .as {
-
                                          display: flex;
                                          align-items: center;
                                          justify-content: center;
-                                         margin-top: 50px;
+                                         margin-top: 35px;
+                                     }
+
+                                     .ab {
+                                         margin-top: 15px;
+                                         font-weight: bold;
+                                     }
+
+                                     .ag {
+                                         display: flex;
+                                         align-items: center;
+                                         justify-content: center;
+                                         margin-top: 15px;
                                      }
 
 
@@ -137,7 +148,7 @@
 
 
                                  .btn .badge {
-                                     top: -152px;
+                                     top: -185px;
                                      right: -91px;
 
                                      width: 50px;
@@ -163,18 +174,38 @@
                                          display: flex;
                                      }
 
+                                     .ab {
+                                         display: none;
+                                     }
+
                                  }
                              </style>
                              <div class="card-body text-center">
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music as ad"></i>
-                                     <span class="badge badge-pill badge-danger">1</span></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
-                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music"></i></button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-bar-chart-2  ag"></i>
+                                     <p class="ab">KOMPETENSI</p>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-watch as ad"></i>
+                                     <p class="ab">PEMBAYARAN</p>
+                                     <span class="badge badge-pill badge-danger">5</span>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-feather ag"></i>
+                                     <p class="ab">PELANGGARAN</p>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-alert-circle ag"></i>
+                                     <p class="ab">PERIZINAN</p>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
+                                     <p class="ab">SOON</p>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
+                                     <p class="ab">SOON</p>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
+                                     <p class="ab">SOON</p>
+                                 </button>
+                                 <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
+                                     <p class="ab">SOON</p>
+                                 </button>
                              </div>
                          </div>
                      </div>
