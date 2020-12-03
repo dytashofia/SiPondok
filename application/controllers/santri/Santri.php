@@ -135,6 +135,77 @@ class Santri extends CI_Controller
         redirect('santri/Santri/pembayaran');
     }
 
+    public function editupload($id)
+    {
+        $where = array('id_pembayaran' => $id);
+        $data['editbayar'] = $this->m_user_pembayaran->edit_data($where, 'tb_pembayaran')->result();
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_editupload', $data);
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
+        
+
+    }
+
+    public function updatepembayaran()
+    {
+        $id_pembayaran = $this->input->post('id_pembayaran');
+        $NIS = $this->input->post('NIS');
+        $nama_pembayar = $this->input->post('nama_pembayar');
+        $id_setbayar = $this->input->post('id_setbayar');
+        $tgl_pembayaran = $this->input->post('tgl_pembayaran');
+        $bukti_pembayaran = $_FILES['bukti_pembayaran'];
+        $status = $this->input->post('status');
+        $foto = $this->db->get_where('tb_pembayaran', $where);
+
+        if ($bukti_pembayaran = '') {
+        } else {
+            $config['upload_path']          = './assets/img/pembayaran';
+            $config['allowed_types']        = 'jpg|png|jpeg|gif|JPG|JPEG|pdf';
+
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('bukti_pembayaran')) {
+                //echo "Upload Gagal"; die();
+            }else{
+                $bukti_pembayaran=$this->upload->data('file_name');
+                
+                if($foto->num_rows()>0){
+                    $pros=$foto->row();
+                    $name=$pros->bukti_pembayaran;
+                   
+                    if(file_exists($lok=FCPATH.'/assets/img/pembayaran/'.$name)){
+                        unlink($lok);
+                    }
+            }
+            
+        }
+
+        }
+
+       
+                
+        $data = array(
+            'id_pembayaran' => $id_pembayaran,
+            'NIS' => $NIS,
+            'nama_pembayar' => $nama_pembayar,
+            'id_setbayar' => $id_setbayar,
+            'tgl_pembayaran' => $tgl_pembayaran,
+            'status' => $status
+        );
+        
+        if ($bukti_pembayaran != NULL) {
+
+            $data['bukti_pembayaran'] = $bukti_pembayaran;
+        }
+
+        $where = array(
+            'id_pembayaran' => $id_pembayaran
+        );
+
+        $this->m_user_pembayaran->update_data($where, $data, 'tb_pembayaran');
+        redirect('santri/Santri/pembayaran');
+    }
+
 
     //=======================================END PEMBAYARAN==========================================//
 

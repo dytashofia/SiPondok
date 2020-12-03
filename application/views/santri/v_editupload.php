@@ -68,7 +68,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tambah Data Pembayaran</h4>
+                            <h4 class="card-title">Upload Ulang Pembayaran</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -79,8 +79,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <?php echo form_open_multipart('santri/Santri/aksiTambahuploadpembayaran');?>
-                       
+                        <?php echo form_open_multipart('santri/Santri/updatepembayaran');?>
+                        <?php
+                            foreach($editbayar as $b) :
+                        ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -88,7 +90,7 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID PEMBAYARAN </h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="id_pembayaran" id="id_pembayaran" value="<?= $id_pembayaran;?>" readonly>
+                                                <input type="text" class="form-control" name="id_pembayaran" id="id_pembayaran" value="<?= $b->id_pembayaran;?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">NAMA SANTRI</h5>
@@ -97,28 +99,43 @@
                                             </fieldset>
 
                                             <fieldset class="form-group">
-                                                <input type="hidden" class="form-control" name="NIS" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS'));?>">
+                                                <input type="hidden" class="form-control" name="NIS" id="NIS" value="<?= $b->NIS;?>">
                                             </fieldset>
 
                                             <h5 class="mt-2">NAMA PEMABAYAR</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
+                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar" Value="<?= $b->nama_pembayar;?>">
                                             </fieldset>
 
                                             <h5 class="mt-2">JENIS PEMBAYARAN</h5>
-                                            <fieldset class="form-group<?=form_error('id_setbayar') ? 'has-error' : null?>">
-                                                <select name="id_setbayar" id="id_setbayar" class="custom-select">
-                                                <option value=""> Pilih Jenis Pembayaran </option>
-                                                  <?php
-                                                    foreach ($detail as $d) :
-                                                ?>
-                                                    <option value="<?= $d->id_setbayar; ?>"><?= $d->jenis_pembayaran; ?></option>
-                                                <?php
-                                                    endforeach;
-                                                ?>
-                                                
+                                            <fieldset class="form-group">
+                                                <select class="form-control" name="id_setbayar" id="id_setbayar">
+                                                    <?php
+                                                    if($b->id_setbayar=="ST001"){
+
+                                                       ?>     
+                                                       <option value="ST001" selected>SPP</option>
+                                                            <option value="ST002">DAFTAR ULANG</option>
+                                                            <option value="ST003">PHBI</option>
+                                                    <?php
+                                                    }elseif($b->id_setbayar=="ST002" ){
+                                                        ?> 
+                                                        <option value="ST002" selected>DAFTAR ULANG</option>
+                                                         <option value="ST001">SPP</option>
+                                                         <option value="ST003">PHBI</option>
+
+                                                         <?php
+                                                    }else{
+                                                        ?>   
+                                                        <option value="ST001" >SPP</option>
+                                                            <option value="ST002">DAFTAR ULANG</option>
+                                                            <option value="ST003" selected>PHBI</option>
+
+
+                                                            <?php
+                                                    }
+                                                    ?>
                                                 </select>
-                                                <?= form_error('id_setbayar', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             
@@ -134,10 +151,10 @@
 
                                                 <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
+                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran" value="<?= $b->tgl_pembayaran;?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Upload Bukti Transfer</h5>
+                                            <h5 class="mt-2">Silahkan Upload Ulang Bukti Transfer</h5>
                                             <fieldset class="form-group">
                                                 <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
                                             </fieldset>
@@ -154,12 +171,14 @@
                         </div>
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
-                            <a href="<?php echo base_url('santri/Santri/infopembayaran');?>"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <a href="<?php echo base_url('santri/Santri/pembayaran');?>"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
                             <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
 
-                            
+                        <?php
+                                    endforeach;
+                         ?>
                     <?php echo form_close();?>
 
 
