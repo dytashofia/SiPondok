@@ -49,7 +49,7 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
-    public function tmbhuploadpembayaran()
+    public function tmbhuploadpembayaran($id)
     {
         $data = $this->m_user_pembayaran->tampil_data_bayar()->num_rows();
         if ($data > 0) {
@@ -82,7 +82,10 @@ class Santri extends CI_Controller
         // Mengambil data pembayaran menggunakan model
 
         $data = $this->m_user_pembayaran->tampil_data()->result();
-        $detail= $this->m_user_pembayaran->tampil_data_info()->result();
+        
+        $where = array('id_setbayar' => $id);
+        $detail = $this->m_user_pembayaran->tampil_data_info_where($where, 'detail_pembayaran')->result();
+
 
         $data = array(
             'detail'=>$detail,

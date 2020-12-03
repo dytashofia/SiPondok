@@ -98,44 +98,18 @@
                                                 <input type="text" class="form-control" name="nama_santri" id="nama_santri" value="<?php echo ucfirst($this->session->userdata('nama_santri'));?>" readonly>
                                             </fieldset>
 
+                                            <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran" value="<?= $b->tgl_pembayaran;?>" readonly>
+                                            </fieldset>
+
+
                                             <fieldset class="form-group">
                                                 <input type="hidden" class="form-control" name="NIS" id="NIS" value="<?= $b->NIS;?>">
                                             </fieldset>
 
-                                            <h5 class="mt-2">NAMA PEMABAYAR</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar" Value="<?= $b->nama_pembayar;?>">
-                                            </fieldset>
-
-                                            <h5 class="mt-2">JENIS PEMBAYARAN</h5>
-                                            <fieldset class="form-group">
-                                                <select class="form-control" name="id_setbayar" id="id_setbayar">
-                                                    <?php
-                                                    if($b->id_setbayar=="ST001"){
-
-                                                       ?>     
-                                                       <option value="ST001" selected>SPP</option>
-                                                            <option value="ST002">DAFTAR ULANG</option>
-                                                            <option value="ST003">PHBI</option>
-                                                    <?php
-                                                    }elseif($b->id_setbayar=="ST002" ){
-                                                        ?> 
-                                                        <option value="ST002" selected>DAFTAR ULANG</option>
-                                                         <option value="ST001">SPP</option>
-                                                         <option value="ST003">PHBI</option>
-
-                                                         <?php
-                                                    }else{
-                                                        ?>   
-                                                        <option value="ST001" >SPP</option>
-                                                            <option value="ST002">DAFTAR ULANG</option>
-                                                            <option value="ST003" selected>PHBI</option>
-
-
-                                                            <?php
-                                                    }
-                                                    ?>
-                                                </select>
+                                                <input type="hidden" class="form-control" name="id_setbayar" id="id_setbayar" Value="<?= $b->id_setbayar;?>">
                                             </fieldset>
 
                                             
@@ -149,10 +123,10 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
-                                                <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
-                                            <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran" value="<?= $b->tgl_pembayaran;?>" readonly>
-                                            </fieldset>
+                                            <h5 class="mt-2">NAMA PEMBAYAR</h5>
+                                                <fieldset class="form-group">
+                                                    <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar" Value="<?= $b->nama_pembayar;?>">
+                                                </fieldset>
 
                                             <h5 class="mt-2">Silahkan Upload Ulang Bukti Transfer</h5>
                                             <fieldset class="form-group">

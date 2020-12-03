@@ -96,32 +96,45 @@
                                                 <input type="text" class="form-control" name="nama_santri" id="nama_santri" value="<?php echo ucfirst($this->session->userdata('nama_santri'));?>" readonly>
                                             </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <input type="hidden" class="form-control" name="NIS" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS'));?>">
-                                            </fieldset>
-
-                                            <h5 class="mt-2">NAMA PEMABAYAR</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
-                                            </fieldset>
-
                                             <h5 class="mt-2">JENIS PEMBAYARAN</h5>
-                                            <fieldset class="form-group<?=form_error('id_setbayar') ? 'has-error' : null?>">
-                                                <select name="id_setbayar" id="id_setbayar" class="custom-select">
-                                                <option value=""> Pilih Jenis Pembayaran </option>
+                                            <fieldset class="form-group">
+                            
                                                   <?php
                                                     foreach ($detail as $d) :
                                                 ?>
-                                                    <option value="<?= $d->id_setbayar; ?>"><?= $d->jenis_pembayaran; ?></option>
+                                                    <input type="text" class="form-control" name="jenis pembayaran" id="jenis pembayaran" value="<?= $d->jenis_pembayaran;?>" readonly>
                                                 <?php
                                                     endforeach;
                                                 ?>
                                                 
-                                                </select>
-                                                <?= form_error('id_setbayar', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
-                                            
+                                            <h5 class="mt-2">JUMLAH BAYAR</h5>
+                                            <fieldset class="form-group">
+                            
+                                                  <?php
+                                                    foreach ($detail as $d) :
+                                                ?>
+                                                    <input type="text" class="form-control" name="jumlah pembayaran" id="jumlah pembayaran" value="<?= $d->jumlah_bayar;?>" readonly>
+                                                <?php
+                                                    endforeach;
+                                                ?>
+                                                
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                            <?php
+                                                    foreach ($detail as $d) :
+                                                ?>
+                                                <input type="hidden" class="form-control" name="id_setbayar" id="id_setbayar" value="<?= $d->id_setbayar;?>">
+                                                <?php
+                                                    endforeach;
+                                                ?>
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <input type="hidden" class="form-control" name="NIS" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS'));?>">
+                                            </fieldset>
 
                                         </div>
                                     </div>
@@ -132,7 +145,12 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
-                                                <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
+                                            <h5 class="mt-2">NAMA PEMBAYAR</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
+                                            </fieldset>
+
+                                            <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
                                             <fieldset class="form-group">
                                                 <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
                                             </fieldset>

@@ -163,7 +163,7 @@
                                                                 
                                                         <?php }else{ ?>   
                                                             <div class="btn-group mr-2 mb-2">
-                                                                    <a href="<?php echo base_url(); ?>santri/Santri/tmbhuploadpembayaran" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                                    <a href="<?php echo base_url('santri/Santri/tmbhuploadpembayaran/'.$produk->id_setbayar); ?>" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
                                                                         <button type="button" class="btn btn-primary">
                                                                             <i class="la la-pencil color-muted m-r-5">Bayar</i>
                                                                         </button>

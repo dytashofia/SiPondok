@@ -56,4 +56,9 @@ class M_user_pembayaran extends CI_Model {
       $this->db->where($where);
       $this->db->update($table, $data);
     }
+    
+    public function tampil_data_info_where($where,$table){    
+      return $this->db->get_where($table,$where);
+    }
+
   }
