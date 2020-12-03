@@ -69,7 +69,7 @@
                              <ul class="list-inline kl ">
                                  <li><i class=" ft-watch rr"></i></li>
                                  <li class="tb">
-                                     <h4 class="pp  text-center">PEMBAYARAN</h4>
+                                     <h4 class="pp  text-center">HISTORI PEMBAYARAN</h4>
                                  </li>
                                  </span>
                              </ul>
