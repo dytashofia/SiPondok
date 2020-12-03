@@ -29,4 +29,22 @@ class M_user_pembayaran extends CI_Model {
       {
           return $this->db->get('detail_pembayaran');
       }
+    public function tampil_data_bayar() 
+      {
+  
+      $query= $this->db->query("SELECT tb_pembayaran.id_pembayaran, tb_pembayaran.NIS, detail_pembayaran.jenis_pembayaran, detail_pembayaran.jumlah_bayar, tb_pembayaran.tgl_pembayaran, tb_pembayaran.bukti_pembayaran, tb_pembayaran.status, tb_pembayaran.nama_pembayar, tb_santri.nama_santri,tb_santri.nama_wali, tb_pembayaran.id_setbayar FROM tb_pembayaran JOIN tb_santri ON tb_pembayaran.NIS=tb_santri.NIS JOIN detail_pembayaran ON tb_pembayaran.id_setbayar=detail_pembayaran.id_setbayar;");
+          return $query;
+    
+      }
+    function tampil_data_akhir()
+    {
+      $this->db->order_by('id_pembayaran', 'DESC');
+      return $this->db->get('tb_pembayaran', 1);
     }
+    
+    function tambah_data_bayar($data, $table)
+    {
+        $this->db->insert($table, $data);
+    }
+ 
+  }

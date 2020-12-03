@@ -96,6 +96,10 @@
                                      <h4 class="card-title mb-3">Segala Pembayaran yang harus dilunasi Santri Bulan Ini :</h4>
                                      <!-- &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a> -->
                                  </div>
+                                 <div class="ml-1 mt-1">
+                                     <h4 class="card-title mb-3"> Atas Nama Santri : <?php echo ucfirst($this->session->userdata('nama_santri'));?> </h4>
+                                     <!-- &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a> -->
+                                 </div>
                                  <div class="table-responsive">
 
 
@@ -153,15 +157,20 @@
                                                     <td><?= $produk->tanggal_awal;?></td>
                                                     <td><?= $produk->tanggal_akhir;?></td>
                                                     <td>
-
-                                                        <div class="btn-group mr-2 mb-2">
-                                                            <a href="<?php echo base_url(); ?>santri/Santri/tmbhuploadpembayaran" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                                <button type="button" class="btn btn-primary">
-                                                                    <i class="la la-pencil color-muted m-r-5">Bayar</i>
-                                                                </button>
-                                                            </a>
-                                                        </div>
-
+                                                            <?php
+                                                            if($produk->tanggal_awal =='0000-00-00'){?>
+                                                                 <?php echo "tidak ada aksi"?>
+                                                                
+                                                        <?php }else{ ?>   
+                                                            <div class="btn-group mr-2 mb-2">
+                                                                    <a href="<?php echo base_url(); ?>santri/Santri/tmbhuploadpembayaran" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                                        <button type="button" class="btn btn-primary">
+                                                                            <i class="la la-pencil color-muted m-r-5">Bayar</i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>       
+                                                    <?php } ?>
+                                                   
                                                     </td>
                                                 </tr>
                                                 <?php
