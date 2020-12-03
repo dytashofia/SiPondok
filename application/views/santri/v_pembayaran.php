@@ -91,7 +91,7 @@
                          <div class="card-content collapse show">
                              <div class="card-body">
                                  <div>
-                                     &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
+                                     <a class="ml-1" href="<?php echo base_url(); ?>santri/Santri/infopembayaran"><button type="button" class="btn btn-primary btn-min-width mr-1 ff mb-1"><i class="ft-alert-octagon"></i> INFO PEMBAYARAN</button></a>
                                  </div>
                                  <div class="table-responsive">
 

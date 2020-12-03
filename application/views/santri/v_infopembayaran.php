@@ -91,7 +91,7 @@
                          </div>
                          <div class="card-content collapse show">
                              <div class="card-body">
-                                 <a class="ml-1" href="<?php echo base_url(); ?>santri/Santri/pembayaran"><button type="button" class="btn btn-primary btn-min-width mr-1 ff mb-2">HISTORY</button></a>
+                                 <a class="ml-1" href="<?php echo base_url(); ?>santri/Santri/pembayaran"><button type="button" class="btn btn-primary btn-min-width mr-1 ff mb-2"><i class="ft-bookmark"></i> HISTORY</button></a>
                                  <div class="ml-1 mt-1">
                                      <h4 class="card-title mb-3">Segala Pembayaran yang harus dilunasi Santri Bulan Ini :</h4>
                                      <!-- &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a> -->
