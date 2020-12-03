@@ -36,6 +36,14 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
+    public function infopembayaran()
+    {
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_infopembayaran');
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
+    }
+
 
     public function pelanggaran()
     {

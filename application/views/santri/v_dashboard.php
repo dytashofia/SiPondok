@@ -162,7 +162,7 @@
                                          <p class="ab">KOMPETENSI</p>
                                      </button>
                                  </a>
-                                 <a href="<?php echo base_url(); ?>santri/Santri/pembayaran">
+                                 <a href="<?php echo base_url(); ?>santri/Santri/infopembayaran">
                                      <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-watch as ad"></i>
                                          <p class="ab">PEMBAYARAN</p>
                                          <span class="badge badge-pill badge-danger">5</span>
