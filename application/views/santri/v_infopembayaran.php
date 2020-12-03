@@ -142,39 +142,33 @@
                                              </tr>
                                          </thead>
                                          <tbody>
-                                             <tr>
-                                                 <td>1</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
+                                            <?php
+                                                $noUrut = 1;
+                                                foreach($info as $produk) :
+                                            ?>
+                                                <tr>
+                                                    <td><?= $noUrut;?></td>
+                                                    <td><?= $produk->jenis_pembayaran;?></td>
+                                                    <td><?= $produk->jumlah_bayar;?></td>
+                                                    <td><?= $produk->tanggal_awal;?></td>
+                                                    <td><?= $produk->tanggal_akhir;?></td>
+                                                    <td>
 
-                                                     <div class="btn-group ">
-                                                         <a href="#"><button type="button" class="btn btn-primary btn-min-width ff ">BAYAR</button></a>
+                                                        <div class="btn-group mr-2 mb-2">
+                                                            <a href="<?php echo base_url(); ?>santri/Santri/tmbhuploadpembayaran" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                                <button type="button" class="btn btn-primary">
+                                                                    <i class="la la-pencil color-muted m-r-5">Bayar</i>
+                                                                </button>
+                                                            </a>
+                                                        </div>
 
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>2</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group ">
-                                                         <a href="#"><button type="button" class="btn btn-primary btn-min-width ff ">BAYAR</button></a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                         </tbody>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                                    $noUrut++;
+                                                    endforeach;
+                                                ?>
+                                            </tbody>
                                          <tfoot>
                                              <tr>
                                                  <th>NO</th>

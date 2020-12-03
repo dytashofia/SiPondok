@@ -41,7 +41,7 @@ class Simple_login2
             //ambil data user berdasar username
             $row  = $this->CI->db->query('SELECT * FROM tb_santri where username = "' . $username . '"');
             $santri     = $row->row();
-            $nis   = $santri->nis;
+            $NIS   = $santri->NIS;
             $nama = $santri->nama_santri;
             $foto   = $santri->foto;
 
@@ -50,7 +50,7 @@ class Simple_login2
             $this->CI->session->set_userdata('nama_santri', $nama);
             $this->CI->session->set_userdata('foto', $foto);
             $this->CI->session->set_userdata('id_login', uniqid(rand()));
-            $this->CI->session->set_userdata('nis', $nis);
+            $this->CI->session->set_userdata('NIS', $NIS);
 
             //redirect ke halaman dashboard
             redirect(site_url('santri/Santri'));
@@ -91,7 +91,7 @@ class Simple_login2
     {
         $this->CI->session->unset_userdata('username');
         $this->CI->session->unset_userdata('id_login');
-        $this->CI->session->unset_userdata('nis');
+        $this->CI->session->unset_userdata('NIS');
         $this->CI->session->set_flashdata('sukses', 'Anda berhasil logout');
         redirect(site_url('santri/login'));
     }

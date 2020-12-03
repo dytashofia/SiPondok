@@ -7,7 +7,9 @@ class Santri extends CI_Controller
     {
         parent::__construct();
         $this->simple_login2->cek_login();
-        $this->load->helper('url');
+        $this->load->model('m_user_pembayaran');
+
+        $this->load->helper('url','form');
     }
 
     public function index()
@@ -27,23 +29,27 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
-
+            //=======================================PEMBAYARAN==========================================//
+    
     public function pembayaran()
     {
+        $data['user'] = $this->m_user_pembayaran->tampil_data()->result();
         $this->load->view('santri_template/header');
-        $this->load->view('santri/v_pembayaran');
+        $this->load->view('santri/v_histori_pembayaran', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
 
     public function infopembayaran()
     {
+        $data['info'] = $this->m_user_pembayaran->tampil_data_info()->result();
         $this->load->view('santri_template/header');
-        $this->load->view('santri/v_infopembayaran');
+        $this->load->view('santri/v_infopembayaran', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
 
+    //=======================================END PEMBAYARAN==========================================//
 
     public function pelanggaran()
     {
