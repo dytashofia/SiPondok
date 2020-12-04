@@ -33,6 +33,57 @@
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/pie-doughnut/pie-simple.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/bar/column.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/pie-doughnut/doughnut-simple.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="<?php echo base_url().'assets/file_izin/js/jquery-3.2.1.js'?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/file_izin/js/bootstrap.min.js'?>"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+ 
+        $('#submit').submit(function(e){
+            e.preventDefault(); 
+                 $.ajax({
+                     url:'<?php echo base_url();?>index.php/santri/Santri/aksiTambahperizinan',
+                     type:"post",
+                     data:new FormData(this),
+                     processData:false,
+                     contentType:false,
+                     cache:false,
+                     async:false,
+                      success: function(data){
+                          window.location.replace('<?php echo base_url();?>index.php/santri/Santri/perizinan');
+                   }
+                 });
+            });
+         
+ 
+    });
+     
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+ 
+        $('#edit').submit(function(e){
+            e.preventDefault(); 
+                 $.ajax({
+                     url:'<?php echo base_url();?>index.php/santri/Santri/updateperizinan',
+                     type:"post",
+                     data:new FormData(this),
+                     processData:false,
+                     contentType:false,
+                     cache:false,
+                     async:false,
+                      success: function(data){
+                          window.location.replace('<?php echo base_url();?>index.php/santri/Santri/perizinan');
+                   }
+                 });
+            });
+         
+ 
+    });
+     
+</script>
+
 <!-- END PAGE LEVEL JS-->
 
 
