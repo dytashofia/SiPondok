@@ -6,8 +6,9 @@ class Data_santri extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->model('M_data_paket');
+    $this->load->model('M_data_santri');
     $this->load->library('PrimsLib');
+    $this->load->helper('url');
     
   }
 
@@ -25,7 +26,7 @@ class Data_santri extends CI_Controller
   public function edit()
   {
     $where = array('NIS' => $id);
-    $data['tb_santri'] = $this->M_data_santri->getEdit($where, 'tb_santri')->result();
+    $data['tb_santri'] = $this->M_data_santri->Edit($where, 'tb_santri')->result();
     $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_editdtsantri', $data);
@@ -35,8 +36,8 @@ class Data_santri extends CI_Controller
   public function detail($id)
   {
     $where = array('NIS' => $id);
-    $detail = $this->M_data_santri->detail_data($id);
-    $data['detail'] = $this->M_data_santri->detail_data($id);
+    $detail = $this->M_data_santri->detail($id);
+    $data['detail'] = $this->M_data_santri->detail($id);
     $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_detaildtsantri', $data);
@@ -168,7 +169,7 @@ class Data_santri extends CI_Controller
                                 'custom' => $this->lang->line('Pengunggahan file foto Gagal!')
                 );
                 echo $this->load->view('admin_template/header', array(), TRUE);
-                echo $this->load->view('admin_template/mainmenu'array(), TRUE);
+                echo $this->load->view('admin_template/mainmenu', array(), TRUE);
                 echo $this->load->view('admin/v_santri', $error, TRUE);
                 echo $this->load->view('admin_template/footer', array(), TRUE);  
                 exit;
@@ -181,6 +182,11 @@ class Data_santri extends CI_Controller
             }
   
           }
+        }
+      }
+    }
+  }
+
     
       $data = array(
         'NIS' => $id,
@@ -205,6 +211,28 @@ class Data_santri extends CI_Controller
         'username' => $this->input->post('username'),
         'password' => $this->input->post('password')
       );
+    }else{
+      $data = array(
+        'NIS' => $id,
+        'nama_santri' => $this->input->post('nama_santri'),
+        'jk' => $this->input->post('jk'),
+        'ttl' => $this->input->post('ttl'),
+        'alamat' => $this->input->post('alamat'),
+        'pendidikan' => $this->input->post('pendidikan'),
+        'jurusan' => $this->input->post('jurusan'),
+        'nim' => $this->input->post('nim'),
+        'no_hp' => $this->input->post('no_hp'),
+        'tgl_masuk' => $this->input->post('tgl_masuk'),
+        'nama_ayah' => $this->input->post('nama_ayah'),
+        'nama_ibu' => $this->input->post('nama_ibu'),
+        'nama_wali' => $this->input->post('nama_wali'),
+        'no_telp_wali' => $this->input->post('no_telp_wali'),
+        'nama_institusi' => $this->input->post('nama_institusi'),
+        'status_pembayaran' => $this->input->post('status_pembayaran'),
+        'username' => $this->input->post('username'),
+        'password' => $this->input->post('password')
+      );
+    }
     
 
     // menjalankan method update pada model isi paket
