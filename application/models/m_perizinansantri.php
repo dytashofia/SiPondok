@@ -47,8 +47,26 @@ class M_perizinansantri extends CI_Model{
     $this->db->where($where);
     $this->db->update('tb_perizinan',$data);
 
-
   } 
+  
+ function suket_data($where){ 
 
+    $fields = array(
+      "tb_perizinan.id_perizinan", 
+      "tb_perizinan.alasan", 
+      "tb_perizinan.tgl_izin", 
+      "tb_perizinan.tgl_datang",
+      "tb_santri.nama_santri", 
+       "tb_santri.nama_wali",
+       "tb_santri.alamat",
+          
+       );
+       $this->db->select($fields);
+       $this->db->from('tb_perizinan');
+       $this->db->where($where);
+       $this->db->join('tb_santri', 'tb_perizinan.NIS = tb_santri.NIS');
+       $query = $this->db->get();
+       return $query;
+  }
 
 }
