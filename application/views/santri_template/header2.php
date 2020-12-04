@@ -51,50 +51,20 @@
                         <a class="navbar-brand" href="#">
                             <img class="ss" width="306px" style="vertical-align:baseline; " src="<?php echo base_url(); ?>assets\Login2\img\logo_pondok.png" alt="">
                         </a>
-                        <ul class="nav navbar-nav mr-auto float-right">
 
-                            <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label " href="#" data-toggle="dropdown"><i class="ficon ft-menu"> </i></a>
-                                <div class="dropdown-menu dropdown-menu-left">
-                                    <div class="arrow_box">
-                                        <a class="dropdown-item" href="#">
-                                            <i class="ft-book"></i> Read Mail</a>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="ft-bookmark"></i> Read Later</a>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="ft-check-square"></i> Mark all Read </a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                     <ul class="nav navbar-nav mr-auto float-left">
 
-                        <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" href="<?php echo base_url(); ?>santri/Santri"><i class="ficon ft-home"></i></a>
+                        <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" href="<?php echo base_url(); ?>santri/Santri"><i class=""></i></a>
 
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail"> </i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-book"></i> Read Mail</a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-bookmark"></i> Read Later</a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="ft-check-square"></i> Mark all Read </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"> <span class="avatar avatar-online"><img src="<?= base_url(); ?>assets/img/Santri/<?php echo ucfirst($this->session->userdata('foto')); ?>" alt="avatar"><i></i></span></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="<?= base_url(); ?>assets/img/gbrSantri/<?php echo ucfirst($this->session->userdata('foto')); ?>" alt="avatar"><span class="user-name text-bold-700 ml-1"><?php echo ucfirst($this->session->userdata('username')); ?></span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="<?php echo base_url('index.php/santri/Santri/edit_santri/'); ?><?php echo ucfirst($this->session->userdata('id')); ?>"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="<?php echo base_url(); ?>santri/login/logout"><i class="ft-power"></i> Logout</a>
-                                </div>
-                            </div>
-                        </li>
+
+                        <a href="<?php echo base_url(); ?>santri/login"><button type="button" class="btn btn-primary btn-min-width ff mr-1 mt-1 mb-1">LOGIN</button></a>
+
+
                     </ul>
                 </div>
             </div>
@@ -105,6 +75,9 @@
         .ff {
             background: linear-gradient(to right, #00cef9, #00e6af);
             border: 0;
-            box-shadow: 0 1px 15px 1px #b9b9b9;
+            box-shadow: 0 3px 2px 0 rgba(105, 103, 206, .451), 0 1px 3px 1px rgba(105, 103, 206, .302);
+            cursor: pointer;
+            font-weight: bold;
+            /* box-shadow: 0 1px 15px 1px #b9b9b9; */
         }
     </style>

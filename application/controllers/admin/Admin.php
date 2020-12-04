@@ -16,7 +16,6 @@ class Admin extends CI_Controller
 
         $this->load->model('m_setbayar');
         $this->load->helper('url');
-
     }
 
 
@@ -111,26 +110,25 @@ class Admin extends CI_Controller
             'foto_admin' => $foto_admin,
         );
 
-        
+
         // Form Validasi
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|sprid_tags' );
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|sprid_tags' );
-        $this->form_validation->set_rules('nama_admin', 'Nama Admin', 'trim|required|sprid_tags' );
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|sprid_tags');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|sprid_tags');
+        $this->form_validation->set_rules('nama_admin', 'Nama Admin', 'trim|required|sprid_tags');
 
         // Pesan form validasi
         $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
-		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
         $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
 
         // Menjalankan form, apabila berhasil maka tambah produk berhasil
         if ($this->form_validation->run() == false) {
-			$this->tambah_admin();
-		} else {
+            $this->tambah_admin();
+        } else {
 
-        $this->m_admin->tambah_admin($data, 'tb_admin');
-        redirect('index.php/admin/Admin/admin');
+            $this->m_admin->tambah_admin($data, 'tb_admin');
+            redirect('index.php/admin/Admin/admin');
         }
-
     }
 
     public function edit_admin($id)
@@ -504,10 +502,10 @@ class Admin extends CI_Controller
         // Mengambil data pembayaran menggunakan model
 
         $data = $this->m_pembayaran->tampil_data()->result();
-        $detail= $this->m_setbayar->tampil_data()->result();
+        $detail = $this->m_setbayar->tampil_data()->result();
 
         $data = array(
-            'detail'=>$detail,
+            'detail' => $detail,
             'id_pembayaran' => $id_pembayaran
 
         );
@@ -832,12 +830,12 @@ class Admin extends CI_Controller
 
 
         $santri = $this->m_pelanggaran->tampil_santri()->result();
-			// Apabila hasil validasi form menunjukkan tidak ada yang salah
+        // Apabila hasil validasi form menunjukkan tidak ada yang salah
 
-        $data = array (
+        $data = array(
             'santri' => $santri,
             'id_pelanggaran' => $id_pelanggaran,
-        );               
+        );
 
         $pelanggaran = $this->m_pelanggaran->tampil_pelanggaran();
         // Apabila hasil validasi form menunjukkan tidak ada yang salah
@@ -871,25 +869,25 @@ class Admin extends CI_Controller
             'catatan' => $catatan,
         );
 
-         // Form Validasi
-        $this->form_validation->set_rules('NIS', 'NIS : Nama Santri', 'trim|required|sprid_tags' );
-        $this->form_validation->set_rules('jenis_pelanggaran', 'Jenis Pelanggaran', 'trim|required|sprid_tags' );
-        $this->form_validation->set_rules('tgl', 'Tanggal Melanggar', 'trim|required|sprid_tags' );
-        $this->form_validation->set_rules('sanksi', 'sanksi', 'trim|required|sprid_tags' );
-        
+        // Form Validasi
+        $this->form_validation->set_rules('NIS', 'NIS : Nama Santri', 'trim|required|sprid_tags');
+        $this->form_validation->set_rules('jenis_pelanggaran', 'Jenis Pelanggaran', 'trim|required|sprid_tags');
+        $this->form_validation->set_rules('tgl', 'Tanggal Melanggar', 'trim|required|sprid_tags');
+        $this->form_validation->set_rules('sanksi', 'sanksi', 'trim|required|sprid_tags');
+
 
         // Pesan form validasi
         $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
-		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
         $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
 
         // Menjalankan form, apabila berhasil maka tambah produk berhasil
         if ($this->form_validation->run() == false) {
-			$this->tmbhpelanggaran();
-		} else {
+            $this->tmbhpelanggaran();
+        } else {
 
-        $this->m_pelanggaran->tambah_pelanggaran($data, 'tb_pelanggaran');
-        redirect('index.php/admin/Admin/pelanggaran');
+            $this->m_pelanggaran->tambah_pelanggaran($data, 'tb_pelanggaran');
+            redirect('index.php/admin/Admin/pelanggaran');
         }
     }
 
