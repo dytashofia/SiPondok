@@ -93,7 +93,7 @@
                                                     </a>
 
                                                     &nbsp;
-                                                    <a onclick="return confirm('Apakah anda yakin ingin menghapus item ini ?');" href="<?php echo base_url() ?>index.php/admin/Data_santri/destroy/<?php echo $sntr->NIS;?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                    <a href="<?php echo base_url() ?>index.php/admin/Data_santri/destroy/<?php echo $sntr->NIS;?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
@@ -124,3 +124,30 @@
     </div>
 </div>
 <?php
+
+foreach($tb_santri as $row) :    
+?>
+<!--  delete Modal -->
+<div class="modal fade" id="deletePaketModalsantri<?= $row->NIS?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="deletePaketModalTitle">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePaketModalTitle">Hapus data santri</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-justify">Apakah anda yakin akan menghapus data santri dengan ID<em><strong> <?= $row->NIS;?></strong></em></h5>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-secondary" type="button" data-dismiss="modal"> Batal </button>
+                <a href="<?php echo base_url() ?>index.php/admin/Data_santri/destroy/<?php echo $row->NIS ?>" role="button" class="btn btn-success"> Ya </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+endforeach;
+?>
