@@ -55,7 +55,7 @@
 
                                             <h5 class="mt-2">Password</h5>
                                             <fieldset class="form-group">
-                                                <input type="password" class="form-control" name="password" id="password" value="<?= $admin->password; ?>">
+                                                <input type="text" class="form-control" name="password" id="password" value="<?= $admin->password; ?>">
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Admin</h5>

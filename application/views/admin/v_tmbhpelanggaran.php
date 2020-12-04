@@ -47,29 +47,37 @@
                                                 <input type="text" name="id_pelanggaran" class="form-control" id="id_pelanggaran" value="<?php echo $id_pelanggaran; ?>" readonly> 
                                             </fieldset>
 
-                                            <h5 class="mt-2">NIS</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" name="NIS" class="form-control" id="NIS" require> 
+                                            <h5 class="mt-2">NIS : Nama Santri</h5>
+                                            <fieldset class="form-group<?= form_error('NIS') ? 'has-error' : null; ?>">
+                                                <select name="NIS" id="NIS" class="custom-select">
+                                                <option value=""> Pilih NIS : Nama </option>
+                                                <?php
+                                                    foreach ($santri as $detailSantri) :
+                                                ?>
+                                                    <option value="<?= $detailSantri->NIS; ?>"><?= $detailSantri->NIS; ?> : <?= $detailSantri->nama_santri; ?></option>
+                                                <?php
+                                                    endforeach;
+                                                ?>
+                                                </select>
+                                                <?= form_error('NIS', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
-                                            <!--<h5 class="mt-2">Nama Santri</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" name="nama_santri" class="form-control" id="nama_santri" require>
-                                            </fieldset>-->
-
                                            <h5 class="mt-2">Jenis Pelanggaran</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="jenis_pelanggaran" require>
+                                            <fieldset class="form-group<?= form_error('jenis_pelanggaran') ? 'has-error' : null; ?>">
+                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="jenis_pelanggaran" placeholder="Masukkan Jenis Pelanggaran" required>
+                                                <?= form_error('jenis_pelanggaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
                                             <h5 class="mt-2">Tanggal Melanggar</h5>
-                                            <fieldset class="form-group">
-                                                <input type="date" name="tgl" class="form-control" id="tgl" require>
+                                            <fieldset class="form-group<? form_error('tgl') ? 'has-error' : null; ?>">
+                                                <input type="date" data-format="dd-MM-yyyy" name="tgl" class="form-control" id="tgl" required>
+                                                <?= form_error('tgl', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
                                            <h5 class="mt-2">Sanksi</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" name="sanksi" class="form-control" id="sanksi" require>
+                                            <fieldset class="form-group<?= form_error('sanksi') ? 'has-eror' : null; ?>">
+                                                <input type="text" name="sanksi" class="form-control" id="sanksi" placeholder="Masukkan Sanksi" required>
+                                                <?= form_error('sanksi', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
                                         </div>
                                     </div>
@@ -82,7 +90,7 @@
 
                                             <h5 class="mt-2">Catatan</h5>
                                             <fieldset class="form-group">
-                                                <textarea class="form-control" name="catatan" id="catatan" rows="4" required></textarea>
+                                                <textarea class="form-control" name="catatan" id="catatan" rows="4" placeholder="Tambahkan Catatan" ></textarea>
                                             </fieldset>
 
                                         </div>
@@ -99,8 +107,23 @@
                     </div>
                     <?php echo form_close(); ?>
                 </div>
+
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
+                </script>
+
+
+                <script type="text/javascript">
+                    $(function() {
+                        $("tgl").datepicker({
+                            todayHighlight: true;
+                            format : "dd-mm-yyyy";
+                        });   
+                    })
+                </script>
             </div>
             <!-- Striped rows end -->
+           
             
         </div>
 
