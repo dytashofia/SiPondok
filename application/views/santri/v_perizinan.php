@@ -96,7 +96,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="background: linear-gradient(to right, #00cef9, #00e6af);">
-                        <h5 class="modal-title" id="deletePaketModalTitle">Hapus Izin</h5>
+                        <h5 class="modal-title" id="deletePaketModalTitle" style="color:white; font-weight:bold;">Hapus Izin</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -116,9 +116,8 @@
         endforeach;
     ?>
 
-     <!--  Edit Modal -->
-
-<?php
+    <!-- edit modal perizinan -->
+     <?php
         foreach($izin as $i) :    
     ?>
         
@@ -244,7 +243,7 @@
 
              <style>
                  .rr {
-                     color:  black;}
+                     color:  white;}
 
                  .tb {
                      width: 85%;
@@ -370,7 +369,27 @@
                                             <td><?= $i->tgl_datang;?></td>
                                              <td><?= $i->alasan;?></td>
                                              <td><?= $i->keterangan;?></td>
-                                             <td><?= $i->status;?></td>
+                                             <td><?= $i->status;?>
+                                                 <br>
+                                                 <?php
+                                                    if($i->status =='Diizinkan'){?>
+                                                         <a href="<?php echo base_url() ?>index.php/santri/Santri/suket/<?php echo $i->id_perizinan ?>" title="Cetak surat izin" data-toggle="tooltip" data-placement="top" data-original-title="Cetak Bukti Lunas">
+                                                        <button type="button" class="btn-sx btn-info "><i class="la la-print color-success"></i>
+                                                                 
+                                                                  </button> 
+                                             <?php } elseif($i->status =='Tidak diizinkan'){?>
+                                                    &nbsp;
+                                                        <a title="set ulang" data-toggle="tooltip" data-placement="top" data-original-title="set ulang">
+                                                        <button type="button" data-toggle="modal" data-target="#editModal<?=$i->id_perizinan;?>" class="btn-sx btn-primary">
+                                                            <i class="la la-rotate-right color-muted m-r-5"></i>
+                                                        </button> 
+                                                        </a>
+                                                        &nbsp;
+
+                                            <?php } else{?>
+                                                    
+                                             <?php }?>
+                                             </td>
                                                  <td>
 
                                                      <div class="btn-group mr-2 mb-2">
