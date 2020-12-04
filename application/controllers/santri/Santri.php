@@ -378,5 +378,15 @@ class Santri extends CI_Controller
         redirect('index.php/admin/Admin/perizinan');
     }
 
+public function suket($id)
+    {
+
+        $where = array('id_perizinan' => $id);
+        $data['izin']= $this->m_perizinansantri->suket_data($where)->result();
+        $this->load->library('pdf');
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "Surat_Izin.pdf";
+        $this->pdf->load_view('santri/suketizin', $data);
+    }
     //===============================================EDNPERIZINAN=================================================//
 }
