@@ -147,13 +147,13 @@ class Admin extends CI_Controller
         $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
 
         // Menjalankan form, apabila berhasil maka tambah produk berhasil
-        if ($this->form_validation->run() == false) {
+        /*if ($this->form_validation->run() == false) {
             $this->edit_admin();
         } else {
 
-            $this->m_admin->edit_admin($data, 'tb_admin');
-            redirect('index.php/admin/Admin/admin');
-        }
+            $this->m_admin->edit_admin($where, 'tb_admin');
+            //redirect('index.php/admin/Admin/admin');
+        }*/
 
         $data['tb_admin'] = $this->m_admin->edit_admin($where, 'tb_admin')->result();
 
