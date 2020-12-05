@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                       <?php
-                            foreach($detailsantri as $ds) :
+                            foreach($detail as $ds) : {
                         ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
@@ -41,7 +41,7 @@
                                                 <input type="text" class="form-control" name="nama_santri" id="nama_santri" value="<?= $ds->nama_santri;?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">JENIS KKELAMIN</h5>
+                                            <h5 class="mt-2">JENIS KELAMIN</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="jk" id="jk" value="<?= $ds->jk;?>" readonly>
                                             </fieldset>
@@ -66,11 +66,50 @@
                                                 <input type="text" class="form-control" name="jurusan" id="jurusan" value="<?= $ds->jurusan;?>" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">nim</h5>
+                                            <h5 class="mt-2">NIM</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="nim" id="nim" value="<?= $ds->nim;?>" readonly>
                                             </fieldset>
-                                            
+
+                                            <h5 class="mt-2">TELEPON</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $ds->no_hp;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">TANGGAL MASUK</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="tgl_masuk" id="tgl_masuk" value="<?= $ds->tgl_masuk;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">NAMA AYAH</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" value="<?= $ds->nama_ayah;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">NAMA IBU</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" value="<?= $ds->nama_ibu;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">NAMA WALI</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nama_wali" id="nama_wali" value="<?= $ds->nama_wali;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">TELEPON WALI</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="no_telp_wali" id="no_telp_wali" value="<?= $ds->no_telp_wali;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">USERNAME</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="username" id="username" value="<?= $ds->username;?>" readonly>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">PASSWORD</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="password" id="password" value="<?= $ds->password;?>" readonly>
+                                            </fieldset>
 
                                         </div>
                                     </div>
@@ -81,30 +120,44 @@
                                     <div class="card-block">
                                         <div class="card-body">
 
-                                                <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
-                                            <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran" value="<?= $b->tgl_pembayaran;?>" readonly>
-                                            </fieldset>
-
-                                            <h5 class="mt-2">Bukti Pembayaran</h5>
-                                            <?php
-                                                    if($b->bukti_pembayaran==''){?>
-                                                                 <img src="<?php echo base_url('assets/img/pembayaran/nofile.png')?>" width="120" height="120"><br>
+                                            <h5 class="mt-2">FOTO</h5>
+                                            <?php if($ds->foto==''){?>
+                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
                                              <?php }else{ ?>
- 
-                                                <embed  src="<?php echo base_url('assets/img/pembayaran/'.$b->bukti_pembayaran)?>" width="120" height="120"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/file_santri'.$ds->foto)?>" width="120" height="120"></embed><br>
                                             <?php }?> 
                                             <fieldset class="form-group">
                                             <div>
-                                                 <?php echo $b->bukti_pembayaran; ?>
-                                                    
+                                                 <?php echo $ds->foto; ?>
                                             </div>
-                                            </fieldset>
-                                            
-
-                                            
+                                            </fieldset>  
+                                            <h5 class="mt-2">SURAT PERNYATAAN</h5>
+                                            <?php if($ds->surat_pernyataan==''){?>
+                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                             <?php }else{ ?>
+                                                <a  class="btn btn-success" href="<?php echo base_url('assets/file_santri'.$ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
+                                            <?php }?> 
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="status" id="status" value="Belum dikonfirmasi" value="<?= $b->status;?>" readonly>
+                                            <!-- <div>
+                                                 <?php echo $ds->surat_pernyataan; ?>
+                                            </div> -->
+                                            </fieldset>  
+                                            <h5 class="mt-2">BUKTI PEMBAYARAN</h5>
+                                            <?php if($ds->bukti_pembayaran==''){?>
+                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                             <?php }else{ ?>
+                                                <embed  src="<?php echo base_url('assets/file_santri'.$ds->bukti_pembayaran)?>" width="120" height="120"></embed><br>
+                                            <?php }?> 
+                                            <fieldset class="form-group">
+                                            <div>
+                                                 <?php echo $ds->bukti_pembayaran; ?>
+                                            </div>
+                                            </fieldset> 
+                                        </div>
+                                        <div> 
+                                            <h5 class="mt-2">STATUS</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="status_pembayaran" id="status_pembayaran" value="Belum dikonfirmasi" value="<?= $ds->status_pembayaran; ?>" readonly>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -113,10 +166,10 @@
                         </div>
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
-                            <a href="<?php echo base_url(); ?>index.php/admin/admin/pembayaran"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <a href="<?php echo base_url(); ?>index.php/admin/Data_Santri"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
                         </div>
-                            <?php
-                                    endforeach;
+                                             <?php }
+                                    endforeach; 
                          ?>
 
                     </div>
