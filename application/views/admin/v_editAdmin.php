@@ -44,23 +44,26 @@
                                     <div class="card-block">
                                         <div class="card-body">
                                             <h5 class="mt-2">ID ADMIN</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="id_admin" id="id_admin" value="<?= $admin->id_admin; ?>">
+                                            <fieldset class="form-group<?= form_error('id_admin') ? 'has-error' : null; ?>">
+                                                <input type="text" class="form-control" name="id_admin" id="id_admin" value="<?= $admin->id_admin; ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">Username</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group<?= form_error('username') ? 'has-error' : null; ?>">
                                                 <input type="text" class="form-control" name="username" id="username" value="<?= $admin->username; ?>">
+                                                <?= form_error('username', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Password</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group<?= form_erro('password') ? 'has-error' : null; ?>">
                                                 <input type="text" class="form-control" name="password" id="password" value="<?= $admin->password; ?>">
+                                                <?= form_error('password', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Admin</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group<?= form_error('foto_admin') ? 'has-error' : null; ?>">
                                                 <input type="text" class="form-control" name="nama_admin" id="nama_admin" value="<?= $admin->nama_admin; ?>">
+                                                <?= form_error('foto_admin', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
                                             <br>
 
@@ -71,13 +74,11 @@
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
-                                        <div class="card-body">
-                                                                                    
+                                        <div class="card-body">                                         
                                             <h5 class="mt-2">Foto</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" name="foto_admin" id="foto_admin" class="form-control" value="<?= $admin->foto_admin; ?>">
+                                                <input type="file" class="form-control" name="foto_admin" id="foto_admin" value="<?= $admin->foto_admin; ?>">
                                             </fieldset>
-
                                         </div>
                                     </div>
                                 </div>

@@ -15,7 +15,7 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/admin"><i class="ft-user"></i><span class="menu-title" data-i18n="">Data Admin</span></a>
                </li>
-               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/Data_Santri"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Data Santri</span></a>
+               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/Data_Santri"><i class="ft-users"></i></i><span class="menu-title" data-i18n="">Data Santri</span></a>
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/pembayaran"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Pembayaran</span></a>
                </li>
