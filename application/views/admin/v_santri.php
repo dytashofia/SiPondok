@@ -77,7 +77,9 @@
                                     <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($tb_santri as $sntr) { ?>
+                                    foreach ($tb_santri as $sntr) { 
+                                        $id = $sntr->NIS;    
+                                    ?>
                                         <tr>
                                             <td><?=$no++?></td>
                                             <td><?=$sntr->NIS?></td>
@@ -86,7 +88,7 @@
                                             <td><?=$sntr->password?></td>
                                             <td>
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="<?php echo base_url() ?>index.php/admin/Data_santri/edit/<?php echo $sntr->NIS ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                    <a href="<?php echo base_url() ?>index.php/admin/Data_santri/edit/<?php echo $id; ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="la la-pencil color-muted m-r-5"></i>
                                                         </button>

@@ -40,7 +40,6 @@
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="nama_santri" id="nama_santri" value="<?= $ds->nama_santri;?>" readonly>
                                             </fieldset>
-
                                             <h5 class="mt-2">JENIS KELAMIN</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="jk" id="jk" value="<?= $ds->jk;?>" readonly>
