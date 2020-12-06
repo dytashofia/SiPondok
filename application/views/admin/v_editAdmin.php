@@ -55,7 +55,7 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">Password</h5>
-                                            <fieldset class="form-group<?= form_erro('password') ? 'has-error' : null; ?>">
+                                            <fieldset class="form-group<?= form_error('password') ? 'has-error' : null; ?>">
                                                 <input type="text" class="form-control" name="password" id="password" value="<?= $admin->password; ?>">
                                                 <?= form_error('password', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
