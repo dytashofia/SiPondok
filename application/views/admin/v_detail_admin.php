@@ -36,7 +36,6 @@
                             </div>
                         </div>
 
-                        <?php //echo form_open_multipart('index.php/admin/Admin/update_admin'); ?>
                         <?php foreach($tb_admin as $admin) { ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
@@ -88,9 +87,8 @@
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
                             <a href="<?php echo base_url('index.php/admin/Admin/admin'); ?>" type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
+                            
                         </div>
-                        <?php echo form_close(); ?>
                         
                     </div>
                 </div>

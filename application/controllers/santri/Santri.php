@@ -9,6 +9,7 @@ class Santri extends CI_Controller
         $this->simple_login2->cek_login();
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
+        $this->load->model('m_user_pelanggaran');
         $this->load->helper('url','form');
     }
 
@@ -29,7 +30,7 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
-            //=======================================PEMBAYARAN==========================================//
+    //=======================================PEMBAYARAN==========================================//
     
     public function pembayaran()
     {
@@ -212,13 +213,21 @@ class Santri extends CI_Controller
 
     //=======================================END PEMBAYARAN==========================================//
 
+
+
+    //=======================================PELANGGARAN==============================================//
+
     public function pelanggaran()
     {
+        $data['pelanggaran_user'] = $this->m_user_pelanggaran->tampil_pelanggaran_santri()->result();
         $this->load->view('santri_template/header');
-        $this->load->view('santri/v_pelanggaran');
+        $this->load->view('santri/v_pelanggaran_santri', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
+
+
+    //======================================END PELANGGARAN============================================//
 
 
 
