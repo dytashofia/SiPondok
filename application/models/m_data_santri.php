@@ -15,9 +15,15 @@ class M_data_santri extends CI_Model
         return $sql->result_array();
     }
 
-    public function edit($where, $table)
-    {
-        return $this->db->get_where($table, $where);
+    // public function edit($where, $table)
+    // {
+    //     return $this->db->get_where($table, $where);
+    // }
+
+    public function edit($id) {
+        return $this->db->get_where('tb_santri', [
+            'NIS' => $id
+        ])->result_array();
     }
 
     public function getAll($table)
