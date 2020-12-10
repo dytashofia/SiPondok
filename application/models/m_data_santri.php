@@ -46,11 +46,13 @@ class M_data_santri extends CI_Model
         $this->db->delete($table, $where);
     }
 
-    public function update($where, $data, $table)
+    public function ubah($edit, $NIS)
     {
-        $this->db->where($where);
-        $this->db->update($table, $data);
+        $this->db->set($edit);
+        $this->db->where('NIS', $NIS);
+        $this->db->update('tb_santri');
     }
+
 
     public function detail($id = NULL){
         $query = $this->db->get_where('tb_santri', array('NIS' => $id))->result();

@@ -26,7 +26,7 @@
                     <?php foreach($santri as $edit) : 
                         $id = $edit['NIS'];    
                     ?>
-                      <?php echo form_open_multipart('index.php/admin/Data_Santri/edit/' . $id); ?>
+                      <?php echo form_open_multipart('admin/Data_Santri/edit/' . $id); ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -34,13 +34,13 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="NIS" id="NIS" class="form-control" value="<?= $edit['NIS']; ?>" readonly>
+                                                <input type="text" name="NIS" id="NIS" class="form-control" value="<?= $id; ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Santri </h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" value="<?= $edit['nama_santri']; ?>" name="nama" id="nama" >
-                                                <?= form_error('nama', '<small class="text-danger">','</small>'); ?>
+                                                <input type="text" class="form-control" value="<?= $edit['nama_santri']; ?>" name="nama_santri" id="nama_santri" >
+                                                <?= form_error('nama_santri', '<small class="text-danger">','</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Jenis Kelamin</h5>
@@ -171,13 +171,13 @@
 
                                             <h5 class="mt-2">Username</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput" value="<?= $edit['username']; ?>">
+                                                <input type="text" class="form-control" name="username" id="username" value="<?= $edit['username']; ?>">
                                                 <?= form_error('username', '<small class="text-danger">','</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Password</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput" value="<?= $edit['password']; ?>">
+                                                <input type="text" class="form-control" name="password" id="password" value="<?= $edit['password']; ?>">
                                                 <?= form_error('password', '<small class="text-danger">','</small>'); ?>
                                             </fieldset>
 
