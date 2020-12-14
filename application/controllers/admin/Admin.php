@@ -1,4 +1,4 @@
-<?php
+   <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 class Admin extends CI_Controller
 {
@@ -479,7 +479,8 @@ class Admin extends CI_Controller
 
     {
 
-        $data['bayar'] = $this->m_pembayaran->tampil_data()->result();
+        $data['bayar']= $this->m_pembayaran->tampil_data()->result();
+
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
@@ -683,6 +684,24 @@ class Admin extends CI_Controller
         force_download('./assets/img/pembayaran/' . $data->bukti_pembayaran, NULL);
     }
 
+ public function laporan()
+    {
+        $startdate=$this->input->get('startdate');
+        $enddate=$this->input->get('enddate');
+       $id_setbayar=$this->input->get('id_setbayar');
+        $bayar= $this->m_pembayaran->laporan($startdate,$enddate,$id_setbayar); 
+       
+        $tidak= $this->m_pembayaran->laporan2($startdate,$enddate,$id_setbayar);
+         $data = array(
+            'bayar' => $bayar,
+            'tidak' => $tidak
+            );
+
+       $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_laporan_pembayaran',$data);
+        $this->load->view('admin_template/footer');
+    }
 
     //======================================END PEMBAYARAN=======================================//
 
@@ -801,7 +820,7 @@ class Admin extends CI_Controller
         redirect('index.php/admin/Admin/settingbayar');
     }
 
-
+   
 
     //======================================= END SET PEMBAYARAN==========================================//
 
