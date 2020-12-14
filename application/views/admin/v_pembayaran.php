@@ -40,6 +40,9 @@
                                 <a href="<?php echo base_url(); ?>index.php/admin/admin/tmbhpembayaran"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
 
                                 <a href="<?php echo base_url(); ?>index.php/admin/admin/settingbayar"><button type="button" class="btn btn-primary mr-1 mb-1"><i class="la la-cog"> </i></button></a>
+
+                                <a title="Cek laporan pembayaran" data-toggle="tooltip" data-placement="top" data-original-title="Cek laporan pembayaran"><button type="button" data-toggle="modal" data-target="#laporanModal" class="btn mr-1 mb-1 btn-secondary"><i class="la la-files-o"> </i></button></a>
+                                <br>
                             </div>
 
                             <div class="table-responsive">
@@ -258,3 +261,51 @@
     <?php
         endforeach;
     ?>
+
+
+<!-- laporan pembayaran -->
+   
+        <div class="modal fade" id="laporanModal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle">Cek laporan pembayaran</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="get" action="<?php echo base_url() ?>index.php/admin/Admin/laporan">
+                    <div class="modal-body">
+                    
+                    <h5 class="mt-2">Dari tanggal</h5>
+                    <fieldset class="form-group">
+                      <input type="date" class="form-control" name="startdate" id="startdate">
+                  </fieldset>
+                  <h5 class="mt-2">Sampai tanggal </h5>
+                    <fieldset class="form-group">
+                    <input type="date" class="form-control" name="enddate" id="enddate">
+                <h5 class="mt-2">JENIS PEMBAYARAN</h5>
+                                            <fieldset class="form-group<?=form_error('id_setbayar') ? 'has-error' : null?>">
+                                                <select name="id_setbayar" id="id_setbayar" class="custom-select">
+                                                
+                                                  <?php
+                                                    foreach ($bayar as $b) :
+                                                ?>
+                                                    <option value="<?= $b->id_setbayar;?>"><?= $b->jenis_pembayaran;?></option>
+                                                <?php
+                                                    endforeach;
+                                                ?>
+                                                
+                                                </select>
+                                                <?= form_error('id_setbayar', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
+                                            </fieldset>
+
+            </div>
+                                
+                    <div class="modal-footer">
+                        <button class="btn btn-success">Cek</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+   
