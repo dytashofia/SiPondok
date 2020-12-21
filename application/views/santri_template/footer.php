@@ -61,28 +61,6 @@
 </script>
 
 
-
-<script type="text/javascript">
-    $(document).ready(function(){
- 
-        $('#edit').submit(function(e){  
-            e.preventDefault(); 
-                 $.ajax({
-                     url:'<?php echo base_url();?>index.php/santri/Santri/updateperizinan',
-                     type:"post",
-                     data:new FormData(this),
-                     processData:false,
-                     contentType:false,
-                     cache:false,
-                     async:false,
-                      success: function(data){
-                          window.location.replace('<?php echo base_url();?>index.php/santri/Santri/perizinan');
-                   }
-                 });
-            });
-         
- 
-    });
      
 
 
