@@ -89,7 +89,7 @@
 
  <!--  delete Modal -->
 <?php
-        foreach($izin as $row) :    
+        foreach($izin as $row ) :    
     ?>
        
         <div class="modal fade" id="deletePaketModal<?= $row->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="deletePaketModalTitle">
@@ -121,7 +121,7 @@
         foreach($izin as $i) :    
     ?>
         
-        <div class="modal fade" id="editModal<?= $i->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+        <div class="modal fade" id="<?= $i->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
            <div class="modal-dialog  modal-dialog-centered" style=" max-width: 700px;">
                 <div class="modal-content" >
 
@@ -147,7 +147,7 @@
                                     <div class="card-block">
                                         <div class="card-body">
                                            
-                                                <input type="hidden" name="id_perizinan" id="id_perizinan" class="form-control" value="<?= $i->id_perizinan;?>" readonly>
+                                                <input type="text" name="id_perizinan" id="id_perizinan" class="form-control" value="<?= $i->id_perizinan;?>" readonly>
 
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
@@ -220,6 +220,51 @@
         endforeach;
     ?>
 
+
+<!--  Konfirmasi Modal -->
+
+<?php
+        foreach($izin as $i) :    
+    ?>
+        
+
+        
+        <div class="modal fade" id="editModal<?= $i->id_perizinan?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalTitle">Konfirmasi Izin</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form class="form-horizontal" id="edit">
+                    <div class="modal-body">
+                        
+                        <h5 class="text-justify"> Apakah santri diberi izin?
+                        <input type="hidden" name="id_perizinan" id="id_perizinan" value="<?php echo $i->id_perizinan;?>">
+                        <input type="text" name="NIS" id="NIS" value="<?= $i->NIS;?>">
+                        <input type="date" name="tgl_izin" id="tgl_izin" value="<?php echo $i->tgl_izin;?>">
+                        <input type="date" name="tgl_datang" id="tgl_datang" value="<?php echo $i->tgl_datang;?>">
+                        <input type="text" name="alasan" id="alasan" value="<?php echo $i->alasan;?>">
+                        <input type="file" name="keterangan" id="keterangan" value="<?php echo $i->keterangan;?>">
+                        <select name="status" id="status" >
+                            <option>Diizinkan</option>
+                            <option>Tidak diizinkan</option>
+                        </select>
+
+                        </h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success">Konfirmasi</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    <?php
+        endforeach;
+    ?>
 
  <div class="app-content content">
      <div class="content-wrapper">
@@ -395,7 +440,7 @@
                                                      <div class="btn-group mr-2 mb-2">
                                                         &nbsp;
                                                         <a title="edit" data-toggle="tooltip" data-placement="top" data-original-title="edit">
-                                                        <button type="button" data-toggle="modal" data-target="#editModal<?=$i->id_perizinan;?>" class="btn btn-primary">
+                                                        <button type="button" data-toggle="modal" data-target="#editModal<?= $i->id_perizinan?>" class="btn btn-primary">
                                                             <i class="la la-pencil color-muted m-r-5"></i>
                                                         </button> 
                                                         </a>

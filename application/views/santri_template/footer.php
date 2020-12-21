@@ -60,10 +60,12 @@
      
 </script>
 
+
+
 <script type="text/javascript">
     $(document).ready(function(){
  
-        $('#edit').submit(function(e){
+        $('#edit').submit(function(e){  
             e.preventDefault(); 
                  $.ajax({
                      url:'<?php echo base_url();?>index.php/santri/Santri/updateperizinan',
@@ -82,7 +84,7 @@
  
     });
      
-</script>
+
 
 <!-- END PAGE LEVEL JS-->
 

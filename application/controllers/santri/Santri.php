@@ -276,7 +276,7 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_perizinan', $data);
         $this->load->view('santri_template/profile');
-        $this->load->view('santri_template/footer');
+        $this->load->view('santri_template/footer',$data);
     }
 
 
@@ -384,7 +384,7 @@ class Santri extends CI_Controller
         }
 
         $this->m_perizinansantri->update_data($where, $data);
-        redirect('index.php/admin/Admin/perizinan');
+        redirect('index.php/santri/Santri/perizinan');
     }
 
 public function suket($id)

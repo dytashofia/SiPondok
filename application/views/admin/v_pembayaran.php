@@ -212,7 +212,7 @@
                         <input type="hidden" name="bukti_pembayaran" id="bukti_pembayaran" value="<?php echo $b->bukti_pembayaran;?>">
                         <select name="status" id="status" >
                             <option>Lunas</option>
-                            <option>pembayaran tidak sah</option>
+                            <option>Tidak Valid</option>
                         </select>
 
                         </h5>
