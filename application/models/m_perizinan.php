@@ -7,16 +7,6 @@ function tampil_data(){
     return $query;
   
 	}
-	
-  function cek($startdate,$enddate,$alasan){
-     $query= $this->db->query("SELECT tb_santri.nama_santri, tb_perizinan.alasan, tb_perizinan.tgl_izin FROM tb_perizinan JOIN tb_santri ON tb_perizinan.NIS=tb_santri.NIS WHERE EXISTS(SELECT NIS FROM tb_santri WHERE tb_santri.NIS=tb_perizinan.NIS and tb_perizinan.tgl_izin BETWEEN '$startdate' and '$enddate' and tb_perizinan.alasan='$alasan')");
-     return $query->result();
-  }
-
-  function cek2($startdate,$enddate){
-     $query= $this->db->query("SELECT *FROM tb_santri WHERE NOT EXISTS(SELECT NIS FROM tb_perizinan WHERE tb_santri.NIS=tb_perizinan.NIS and tb_perizinan.tgl_izin BETWEEN '$startdate' and '$enddate')");
-     return $query->result();
-  }
 
 function hapus_data($where,$table){
 		$this->db->where($where); 
