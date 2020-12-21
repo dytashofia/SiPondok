@@ -374,6 +374,17 @@ class Santri extends CI_Controller
         redirect('index.php/santri/Santri/perizinan');
     }
 
+
+     public function editperizinan($id)
+    {
+        $where = array('id_perizinan' => $id);
+        $data['izinedit'] = $this->m_perizinansantri->edit_data($where, 'tb_perizinan')->result();
+        $this->load->view('santri_template/header');
+
+        $this->load->view('santri/v_editizin_santri', $data);
+        $this->load->view('santri_template/footer');
+    }
+
     public function updateperizinan()
     {
         $id_perizinan = $this->input->post('id_perizinan');
