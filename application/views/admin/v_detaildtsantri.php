@@ -69,7 +69,6 @@
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="nim" id="nim" value="<?= $ds->nim;?>" readonly>
                                             </fieldset>
-
                                             <h5 class="mt-2">TELEPON</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $ds->no_hp;?>" readonly>

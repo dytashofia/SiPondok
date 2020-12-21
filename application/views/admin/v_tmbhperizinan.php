@@ -87,7 +87,7 @@
                                             </fieldset>
 
                                             <fieldset class="form-group">
-                                                <input type="hidden" class="form-control" name="status" value="<?php echo "Belum dikonfirmasi" ?>">
+                                                <input type="hidden" class="form-control" name="status" value="Belum dikonfirmasi">
                                             </fieldset>
 
                                         </div>
