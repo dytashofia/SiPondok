@@ -102,10 +102,10 @@ class Santri extends CI_Controller
 
     public function aksiTambahuploadpembayaran()
     {
+        $id = $this->input->post('id_setbayar');
         $id_pembayaran = $this->input->post('id_pembayaran');
         $NIS = $this->input->post('NIS');
         $nama_pembayar = $this->input->post('nama_pembayar');
-        $id_setbayar = $this->input->post('id_setbayar');
         $tgl_pembayaran = $this->input->post('tgl_pembayaran');
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
@@ -124,12 +124,29 @@ class Santri extends CI_Controller
 
         }
 
+        // Membuat validasi form
+		$this->form_validation->set_rules('nama_pembayar', 'NAMA PEMBAYAR', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('tgl_pembayaran', 'TANGGAL PEMBAYARAN', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('bukti_pembayaran', 'Upload Bukti Transfer', 'uploaded');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('uploaded', ' %s tidak boleh kosong.');
+
+		// Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->tmbhuploadpembayaran($id);
+		} else {
+
 
         $data = array(
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $NIS,
             'nama_pembayar' => $nama_pembayar,
-            'id_setbayar' => $id_setbayar,
+            'id_setbayar' => $id,
             'tgl_pembayaran' => $tgl_pembayaran,
             'bukti_pembayaran' => $bukti_pembayaran,
             'status' => $status
@@ -138,6 +155,7 @@ class Santri extends CI_Controller
         $this->m_user_pembayaran->tambah_data_bayar($data, 'tb_pembayaran');
         redirect('santri/Santri/pembayaran');
     }
+}
 
     public function editupload($id)
     {
@@ -160,6 +178,7 @@ class Santri extends CI_Controller
         $tgl_pembayaran = $this->input->post('tgl_pembayaran');
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
+        $where = array('id_pembayaran' => $id_pembayaran);
         $foto = $this->db->get_where('tb_pembayaran', $where);
 
         if ($bukti_pembayaran = '') {
@@ -186,6 +205,24 @@ class Santri extends CI_Controller
 
         }
 
+        // Membuat validasi form
+		$this->form_validation->set_rules('nama_pembayar', 'NAMA PEMBAYAR', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('tgl_pembayaran', 'TANGGAL PEMBAYARAN', 'trim|required|strip_tags');
+		$this->form_validation->set_rules('bukti_pembayaran', 'Upload Bukti Transfer', 'uploaded[bukti_pembayaran]');
+		
+		// Membuat pesan validasi error
+		$this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+		$this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('uploaded', ' %s tidak boleh kosong.');
+
+		// Menjalankan form
+		// Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+		if ($this->form_validation->run() == false) {
+			$this->editupload($id_pembayaran);
+		} else {
+
+
        
                 
         $data = array(
@@ -209,6 +246,7 @@ class Santri extends CI_Controller
         $this->m_user_pembayaran->update_data($where, $data, 'tb_pembayaran');
         redirect('santri/Santri/pembayaran');
     }
+}
 
 
     //=======================================END PEMBAYARAN==========================================//

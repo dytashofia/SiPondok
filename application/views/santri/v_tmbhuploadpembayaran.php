@@ -147,17 +147,21 @@
 
                                             <h5 class="mt-2">NAMA PEMBAYAR</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
+                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar" value="<?= set_value('nama_pembayar'); ?>" placeholder="Masukkan Nama Pembayar...">
+                                                <?= form_error('nama_pembayar', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
+                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran" value="<?= set_value('tgl_pembayaran'); ?>" placeholder="Masukkan Tanggal Pembayar...">
+                                                <?= form_error('tgl_pembayaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Upload Bukti Transfer</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
+                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" value="<?= set_value('bukti_pembayaran'); ?>" placeholder="Masukkan Bukti Pembayaran...">
+                                                <!--masih belum bisa validasinya-->
+                                                <?= form_error('bukti_pembayaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             
