@@ -68,7 +68,7 @@
                                                   </fieldset>
 
                                                   <fieldset style="margin-bottom:0;" class="form-group">
-                                                      <input type="hidden" class="form-control" name="status" id="status" value="Menunngu Konfirmasi">
+                                                      <input type="hidden" class="form-control" name="status" id="status" value="Menunggu Konfirmasi">
                                                   </fieldset>
 
                                               </div>
