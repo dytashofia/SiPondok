@@ -1,4 +1,4 @@
- <div class="app-content content">
+ <div style="margin-left:0;" class="app-content content">
      <div class="content-wrapper">
          <!-- <div class="content-wrapper-before"></div> -->
          <div class="content-header row">
@@ -91,7 +91,7 @@
                          <div class="card-content collapse show">
                              <div class="card-body">
                                  <div>
-                                     &nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('santri/Santri/infopembayaran');?>"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1">Info Pembayaran</button></a>
+                                     &nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('santri/Santri/infopembayaran'); ?>"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1">Info Pembayaran</button></a>
                                  </div>
                                  <div class="table-responsive">
 
@@ -119,62 +119,62 @@
                                          </style>
                                          <thead>
                                              <tr>
-                                                <th>NO</th>
-                                                <!-- <th>ID ARMADA</th> -->
-                                                <th>tanggal Bayar</th>
-                                                <th>nama pembayar</th>
-                                                <th>Jenis PEMBAYARAN</th>                                           
-                                                <th>JUMLAH BAYAR</th>
-                                                <th>BUKTI</th>
-                                                <th>STATUS</th>
-                                                <th>ACTION</th>
+                                                 <th>NO</th>
+                                                 <!-- <th>ID ARMADA</th> -->
+                                                 <th>tanggal Bayar</th>
+                                                 <th>nama pembayar</th>
+                                                 <th>Jenis PEMBAYARAN</th>
+                                                 <th>JUMLAH BAYAR</th>
+                                                 <th>BUKTI</th>
+                                                 <th>STATUS</th>
+                                                 <th>ACTION</th>
                                              </tr>
                                          </thead>
                                          <tbody>
                                              <tr>
-                                             <?php
-                                        $noUrut = 1;
-                                        foreach($user as $produk) :
-                                    ?>
-                                        <tr>
-                                            <td><?= $noUrut;?></td>
-                                            <td><?= $produk->tgl_pembayaran;?></td>
-                                            <td><?= $produk->nama_pembayar;?></td>
-                                            <td><?= $produk->jenis_pembayaran;?></td>
-                                            <td><?= $produk->jumlah_bayar;?></td>
-                                            <td><?= $produk->bukti_pembayaran;?></td>
-                                            <td><?= $produk->status;?></td>
-                                            <td>
-                                            <?php
-                                                    if($produk->status =='Tidak Valid'){?>
-                                                            <a href="<?php echo base_url('santri/Santri/editupload/'.$produk->id_pembayaran);?>" title="Bayar Lagi" data-toggle="tooltip" data-placement="top" data-original-title="Bayar Lagi">
-                                                                <button type="button" class="btn btn-primary">
-                                                                    <i>BAYAR LAGI</i>
-                                                                </button>
-                                                            </a>    
-                                                 <?php }else{ ?>   
-                                                 <?php echo "tidak ada aksi"?>         
-                                             <?php } ?>
-                                                
+                                                 <?php
+                                                    $noUrut = 1;
+                                                    foreach ($user as $produk) :
+                                                    ?>
+                                             <tr>
+                                                 <td><?= $noUrut; ?></td>
+                                                 <td><?= $produk->tgl_pembayaran; ?></td>
+                                                 <td><?= $produk->nama_pembayar; ?></td>
+                                                 <td><?= $produk->jenis_pembayaran; ?></td>
+                                                 <td><?= $produk->jumlah_bayar; ?></td>
+                                                 <td><?= $produk->bukti_pembayaran; ?></td>
+                                                 <td><?= $produk->status; ?></td>
+                                                 <td>
+                                                     <?php
+                                                        if ($produk->status == 'Tidak Valid') { ?>
+                                                         <a href="<?php echo base_url('santri/Santri/editupload/' . $produk->id_pembayaran); ?>" title="Bayar Lagi" data-toggle="tooltip" data-placement="top" data-original-title="Bayar Lagi">
+                                                             <button type="button" class="btn btn-primary">
+                                                                 <i>BAYAR LAGI</i>
+                                                             </button>
+                                                         </a>
+                                                     <?php } else { ?>
+                                                         <?php echo "tidak ada aksi" ?>
+                                                     <?php } ?>
 
-                                            </td>
-                                        </tr>
-                                        <?php
-                                            $noUrut++;
-                                            endforeach;
-                                        ?>
-                                    </tbody>
+
+                                                 </td>
+                                             </tr>
+                                         <?php
+                                                        $noUrut++;
+                                                    endforeach;
+                                            ?>
+                                         </tbody>
                                          <tfoot>
-                                         <tr>
-                                                <th>NO</th>
-                                                <!-- <th>ID ARMADA</th> -->
-                                                <th>tanggal Bayar</th>
-                                                <th>nama pembayar</th>
-                                                <th>Jenis PEMBAYARAN</th>                                           
-                                                <th>JUMLAH BAYAR</th>
-                                                <th>BUKTI</th>
-                                                <th>STATUS</th>
-                                                <th>ACTION</th>
+                                             <tr>
+                                                 <th>NO</th>
+                                                 <!-- <th>ID ARMADA</th> -->
+                                                 <th>tanggal Bayar</th>
+                                                 <th>nama pembayar</th>
+                                                 <th>Jenis PEMBAYARAN</th>
+                                                 <th>JUMLAH BAYAR</th>
+                                                 <th>BUKTI</th>
+                                                 <th>STATUS</th>
+                                                 <th>ACTION</th>
                                              </tr>
                                          </tfoot>
                                      </table>

@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                    <?php echo form_open_multipart('index.php/admin/Admin/tambah_aksi_pelanggaran'); ?>    
+                        <?php echo form_open_multipart('santri/Santri/aksi_tambah_diniyah'); ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -86,7 +86,7 @@
                                                     <option value="" selected>--Pilih--</option>
                                                     <option value="Hadir">Hadir</option>
                                                     <option value="Tidak Hadir">Tidak Hadir</option>
-                                                </select>  
+                                                </select>
                                             </fieldset>
 
                                             <h5 class="mt-2">Mata Pelajaran</h5>
@@ -125,29 +125,40 @@
                             <a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
                             <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
+
+                            </div>
                         </div>
                     </div>
-                    <?php echo form_close(); ?>
                 </div>
 
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
-                </script>
-
-
-                <script type="text/javascript">
-                    $(function() {
-                        $("tgl").datepicker({
-                            todayHighlight: true;
-                            format : "dd-mm-yyyy";
-                        });   
-                    })
-                </script>
             </div>
-            <!-- Striped rows end -->
-           
-            
-        </div>
+            <div class="form-group" style="text-align:right; padding-right:10px;">
+                <!-- Buttons with Icon -->
+                <a href="<?php echo base_url(); ?>/santri/Santri/absen_khataman"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
+            </div>
+        </div>
+        <?php echo form_close(); ?>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $("tgl").datepicker({
+                todayHighlight: true;
+                format: "dd-mm-yyyy";
+            });
+        })
+    </script>
+</div>
+<!-- Striped rows end -->
+
+
+</div>
+
+</div>
 </div>

@@ -1,4 +1,4 @@
- <div class="app-content content">
+ <div style="margin-left:0;" class="app-content content">
      <div class="content-wrapper">
          <!-- <div class="content-wrapper-before"></div> -->
          <div class="content-header row">
@@ -92,422 +92,113 @@
                          </div>
                          <div class="card-content collapse show">
                              <div class="card-body">
-                                 <div>
-                                     &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn btn-primary btn-min-width mr-1 ff mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
-                                 </div>
-                                 <div class="table-responsive">
+
+                                 <div class="table-responsive" style=" display: flex; justify-content: center;">
+
+                                     <style>
+                                         .bm {
+                                             background: -webkit-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                             background: -o-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                             background: -moz-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                             background: linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+                                             box-shadow: 0 1px 15px 1px #b9b9b9;
+                                             border: 0;
+
+                                         }
+
+                                         .bm:hover {
+                                             background: -webkit-linear-gradient(-10deg, rgb(0, 204, 255) 0%, rgb(101, 231, 196) 100%);
+
+                                             box-shadow: 0 1px 15px 1px #b9b9b9;
+
+                                         }
 
 
-                                     <table class="table table-striped table-bordered zero-configuration">
-                                         <style>
-                                             .dataTables_filter {
-                                                 text-align: right;
+                                         @media (min-width: 768px) {
+                                             .bm {
+                                                 width: 200px;
+                                                 height: 200px;
                                              }
 
-                                             .dataTables_filter label {
-                                                 text-align: left;
+                                             .btn.btn-icon i {
+                                                 font-size: 5rem;
                                              }
 
-                                             .dataTables_paginate ul {
-                                                 position: absolute;
-                                                 right: 0;
-                                                 padding-right: 1rem;
+                                             .as {
+                                                 display: flex;
+                                                 align-items: center;
+                                                 justify-content: center;
+                                                 margin-top: 35px;
                                              }
 
-                                             .dataTables_info {
-                                                 padding-top: 15px;
-                                                 padding-bottom: 50px;
+                                             .ab {
+                                                 margin-top: 15px;
+                                                 font-weight: bold;
                                              }
-                                         </style>
-                                         <thead>
-                                             <tr>
-                                                 <th>NO</th>
-                                                 <!-- <th>ID ARMADA</th> -->
-                                                 <th>ID</th>
-                                                 <th>NAMA</th>
-                                                 <th>USERNAME</th>
-                                                 <th>PASSWORD</th>
-                                                 <th>ACTION</th>
-                                             </tr>
-                                         </thead>
-                                         <tbody>
-                                             <tr>
-                                                 <td>1</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
 
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
+                                             .ag {
+                                                 display: flex;
+                                                 align-items: center;
+                                                 justify-content: center;
+                                                 margin-top: 15px;
+                                             }
 
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
+                                             .rr {
+                                                 font-size: 100px;
+                                             }
 
-                                                     </div>
 
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>2</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
+                                         }
 
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
 
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
 
-                                                     </div>
+                                         .btn .badge {
+                                             top: -185px;
+                                             right: -91px;
 
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>3</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
+                                             width: 50px;
+                                             height: 50px;
+                                             font-size: 2rem;
+                                         }
 
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
+                                         @media (max-width: 768px) {
+                                             .btn .badge {
+                                                 top: -38px;
+                                                 right: -20px;
+                                                 width: 30px;
+                                                 height: 30px;
+                                                 font-size: 1.2rem;
+                                             }
 
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
+                                             .bm {
+                                                 width: 138.8px;
+                                                 height: 130px;
+                                             }
 
-                                                     </div>
+                                             .ad {
+                                                 display: flex;
+                                             }
 
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>4</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
+                                             /* .ab {
+                                                 display: none;
+                                             } */
 
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
+                                             .rr {
+                                                 font-size: 30px;
+                                             }
 
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
+                                         }
+                                     </style>
 
-                                                     </div>
+                                     <a href=" <?php echo base_url(); ?>santri/Santri/diniyah"> <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i style=" font-size: 6rem;" class="ft-file  ag"></i>
+                                             <p class="ab">DINIYAH</p>
+                                         </button>
+                                     </a>
+                                     <a href=" <?php echo base_url(); ?>santri/Santri/khataman"> <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i style=" font-size: 6rem;" class="ft-layers  ag"></i>
+                                             <p class="ab">KHATAMAN</p>
+                                         </button>
+                                     </a>
 
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>5</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>6</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>7</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>8</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>9</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>10</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td>11</td>
-                                                 <!-- <td><?= $data['ID_ARM']; ?></td> -->
-                                                 <td>aaa</td>
-                                                 <td>aaa</td>
-                                                 <td>aaaa</td>
-                                                 <td>aaaaa</td>
-                                                 <td>
-
-                                                     <div class="btn-group mr-2 mb-2">
-                                                         <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                             <button type="button" class="btn btn-primary">
-                                                                 <i class="la la-pencil color-muted m-r-5"></i>
-                                                             </button>
-                                                         </a>
-
-                                                         &nbsp;
-                                                         <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                             <button type="button" class="btn btn-danger">
-                                                                 <i class="la la-trash color-danger"></i>
-                                                             </button>
-                                                         </a>
-                                                         &nbsp;
-                                                         <a href="#" title="Detail" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                             <button type="button" class="btn btn-warning">
-                                                                 <i class="la la-exclamation-circle color-danger"></i>
-                                                             </button>
-                                                         </a>
-
-                                                     </div>
-
-                                                 </td>
-                                             </tr>
-
-                                         </tbody>
-                                         <tfoot>
-                                             <tr>
-                                                 <th>NO</th>
-                                                 <!-- <th>ID ARMADA</th> -->
-                                                 <th>ID</th>
-                                                 <th>NAMA</th>
-                                                 <th>USERNAME</th>
-                                                 <th>PASSWORD</th>
-                                                 <th>ACTION</th>
-                                             </tr>
-                                         </tfoot>
-                                     </table>
 
                                  </div>
                              </div>
