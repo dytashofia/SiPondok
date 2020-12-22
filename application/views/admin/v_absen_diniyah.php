@@ -3,7 +3,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
             <div class="content-header-left col-md-4 col-12 mb-2">
-                <h3 class="content-header-title">Data Pelanggaran</h3>
+                <h3 class="content-header-title">Data Absen Diniyah</h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
                 <div class="breadcrumbs-top float-md-right">
@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Data Pelanggaran
+                            <li class="breadcrumb-item active">Data Absen Diniyah
                             </li>
                         </ol>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tabel Data Pelanggaran</h4>
+                            <h4 class="card-title">Tabel Data Absen Diniyah</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -37,7 +37,7 @@
                         </div>
                         <div class="card-content collapse show">
                             <div class="card-body">
-                                <a href="<?php echo base_url(); ?>index.php/admin/admin/tmbhpelanggaran"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
+                                <a href="<?= base_url('index.php/admin/admin/tambah_absen_diniyah'); ?>"><button type="button" class="btn btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a>
                             </div>
                             <div class="table-responsive">
 
@@ -66,47 +66,47 @@
                                     <thead>
                                         <tr>
                                             <th>NO</th>
-                                            <th>ID PELANGGARAN</th>
+                                            <th>ID DINIYAH</th>
                                             <th>NIS</th>
                                             <th>NAMA SANTRI</th>
-                                            <th>PELANGGARAN</th>
-                                            <th>TANGGAL MELANGGAR</th>
-                                            <th>SANKSI</th>
-                                            <th>CATATAN</th>
-                                            <th>AKSI</th>
+                                            <th>TANGGAL ABSEN</th>
+                                            <th>KETERANGAN</th>
+                                            <th>MATA PELAJARAN</th>
+                                            <th>RINGKASAN MATERI</th>
                                         </tr>
                                     </thead>
                                     <tbody>    
                                     <?php 
                                     $no_urut = 1;
-                                    foreach($tb_pelanggaran as $pelanggaran) :
+                                    foreach($absen_diniyah as $diniyah) :
                                     ?>                              
                                         <tr>
                                             <td><?= $no_urut ?></td>
-                                            <td><?= $pelanggaran->id_pelanggaran ?></td>
-                                            <td><?= $pelanggaran->NIS;?></td>
-                                            <td><?= $pelanggaran->nama_santri; ?></td>
-                                            <td><?= $pelanggaran->jenis_pelanggaran; ?></td>
-                                            <td><?= $pelanggaran->tgl; ?></td>
-                                            <td><?= $pelanggaran->sanksi; ?></td>
-                                            <td><?= $pelanggaran->catatan; ?></td>
+                                            <td><?= $diniyah->id_diniyah; ?></td>
+                                            <td><?= $diniyah->NIS; ?></td>
+                                            <td><?= $diniyah->nama_santri; ?></td>
+                                            <td><?= $diniyah->tgl; ?></td>
+                                            <td><?= $diniyah->keterangan; ?></td>
+                                            <td><?= $diniyah->nama_mapel; ?></td>
+                                            <td><?= $diniyah->ringkasan_materi; ?></td>
+
                                             <td>
 
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="<?php echo base_url('index.php/admin/Admin/edit_pelanggaran/'.$pelanggaran->id_pelanggaran); ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                    <a href="#" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="la la-pencil color-muted m-r-5"></i>
                                                         </button>
                                                     </a>
 
                                                     &nbsp;
-                                                    <a href="<?php echo base_url('index.php/admin/Admin/hapus_pelanggaran/'. $pelanggaran->id_pelanggaran); ?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
                                                     </a>
                                                     &nbsp;
-                                                    <a href="<?php echo base_url('index.php/admin/Admin/detail_pelanggaran/'.$pelanggaran->id_pelanggaran);?>" title="Detail" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                    <a href="#" title="Detail" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
                                                         <button type="button" class="btn btn-warning">
                                                             <i class="la la-exclamation-circle color-danger"></i>
                                                         </button>
@@ -123,14 +123,16 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                           <tr>
                                             <th>NO</th>
+                                            <th>ID DINIYAH</th>
                                             <th>NIS</th>
                                             <th>NAMA SANTRI</th>
-                                            <th>PELANGGARAN</th>
-                                            <th>TANGGAL MELANGGAR</th>
-                                            <th>SANKSI</th>
-                                            <th>CATATAN</th>
-                                            <th>AKSI</th>
+                                            <th>TANGGAL ABSEN</th>
+                                            <th>KETERANGAN</th>
+                                            <th>MATA PELAJARAN</th>
+                                            <th>RINGKASAN MATERI</th>
+                                        </tr>
                                         </tr>
                                     </tfoot>
                                 </table>

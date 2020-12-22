@@ -92,7 +92,6 @@
                                                 <textarea class="form-control" name="catatan" id="catatan" rows="4" placeholder="Tambahkan Catatan" ></textarea>
                                             <?= form_error('catatan', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
-
                                         </div>
                                     </div>
                                 </div>

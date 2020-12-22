@@ -10,7 +10,7 @@ class Santri extends CI_Controller
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
         $this->load->model('m_user_pelanggaran');
-        $this->load->model('m_user_absensi');
+      
         $this->load->helper('url','form');
     }
 

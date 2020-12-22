@@ -1,4 +1,4 @@
-   <?php
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 class Admin extends CI_Controller
 {
@@ -10,6 +10,7 @@ class Admin extends CI_Controller
         $this->load->model('m_perizinan');
         $this->load->model('m_admin');
         $this->load->model('m_pembayaran');
+        $this->load->model('m_absensi_diniyah');
 
         $this->load->helper('url', 'form');
         $this->load->library('form_validation');
@@ -477,8 +478,7 @@ class Admin extends CI_Controller
 
     {
 
-        $data['bayar']= $this->m_pembayaran->tampil_data()->result();
-
+        $data['bayar'] = $this->m_pembayaran->tampil_data()->result();
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
@@ -682,24 +682,6 @@ class Admin extends CI_Controller
         force_download('./assets/img/pembayaran/' . $data->bukti_pembayaran, NULL);
     }
 
- public function laporan()
-    {
-        $startdate=$this->input->get('startdate');
-        $enddate=$this->input->get('enddate');
-       $id_setbayar=$this->input->get('id_setbayar');
-        $bayar= $this->m_pembayaran->laporan($startdate,$enddate,$id_setbayar); 
-       
-        $tidak= $this->m_pembayaran->laporan2($startdate,$enddate,$id_setbayar);
-         $data = array(
-            'bayar' => $bayar,
-            'tidak' => $tidak
-            );
-
-       $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_laporan_pembayaran',$data);
-        $this->load->view('admin_template/footer');
-    }
 
     //======================================END PEMBAYARAN=======================================//
 
@@ -818,7 +800,7 @@ class Admin extends CI_Controller
         redirect('index.php/admin/Admin/settingbayar');
     }
 
-   
+
 
     //======================================= END SET PEMBAYARAN==========================================//
 
@@ -987,6 +969,8 @@ class Admin extends CI_Controller
     //========================================= Batas Controller Pelanggaran ===================================//
 
 
+    
+    
     public function kompetensi()
     {
 
@@ -1003,5 +987,70 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_tmbhkompetensi');
         $this->load->view('admin_template/footer');
+    }
+
+
+    //================================ Absensi ============================================
+
+    public function absen_diniyah()
+    {
+        $data['absen_diniyah'] = $this->m_absensi_diniyah->tampil_absen_diniyah()->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_absen_diniyah', $data);
+        $this->load->view('admin_template/footer');
+    }
+
+    public function tambah_absen_diniyah()
+    {
+        $data = $this->m_absensi_diniyah->tampil_absen_diniyah()->num_rows();
+        if ($data > 0) {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_absensi_diniyah->tampil_data_akhir_diniyah()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach ($lastId as $row) {
+                // Melakukan pemisahan huruf dengan angka pada id perizinan
+                $rawid_diniyah = substr($row->id_diniyah, 3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
+                $id_diniyahInt = intval($rawid_diniyah);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if (strlen($id_diniyahInt) == 1) {
+                    // jika panjang id hanya 1 angka
+                    $id_diniyah = "DN00" . ($id_diniyahInt + 1);
+                } else if (strlen($id_diniyahInt) == 2) {
+                    // jika panjang id hanya 2 angka
+                    $id_diniyah = "DN0" . ($id_diniyahInt + 1);
+                } else if (strlen($id_pelanggaranInt) == 3) {
+                    // jika panjang id hanya 3 angka
+                    $id_diniyah = "DN" . ($id_diniyahInt + 1);
+                }
+            }
+        } else {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_diniyah = "DN001";
+        }
+
+
+        $santri = $this->m_absensi_diniyah->tampil_santri()->result();
+        // Apabila hasil validasi form menunjukkan tidak ada yang salah
+
+        $mapel = $this->m_absensi_diniyah->tampil_mapel()->result();
+
+        $data = array(
+            'santri' => $santri,
+            'id_diniyah' => $id_diniyah,
+            'id_mapel' => $id_mapel
+        );
+
+        $diniyah = $this->m_absensi_diniyah->tampil_absen_diniyah();
+        // Apabila hasil validasi form menunjukkan tidak ada yang salah
+
+        //$this->load->view('admin_template/header');
+        //$this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tambah_diniyah', $data);
+        //$this->load->view('admin_template/footer');
+
     }
 }
