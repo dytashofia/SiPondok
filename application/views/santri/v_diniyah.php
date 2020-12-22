@@ -121,9 +121,9 @@
                                   <div>
 
 
-                                      <button type="button" data-toggle="modal" data-target="#tambahModal" class="btn ff btn-primary btn-min-width mr-1 mb-1">
+                                      <!-- <button type="button" data-toggle="modal" data-target="#tambahModal" class="btn ff btn-primary btn-min-width mr-1 mb-1">
                                           <i class="ft-plus"></i>Buat Diniyah Baru
-                                      </button>
+                                      </button> -->
                                   </div>
                                   <div class="table-responsive">
 
@@ -152,53 +152,65 @@
                                           <thead>
                                               <tr>
                                                   <th>NO</th>
-                                                  <th>NAMA SANTRI</th>
-                                                  <th>TANGGAL IZIN</th>
-                                                  <th>TANGGAL KEMBALI</th>
-                                                  <th>ALASAN</th>
-                                                  <th>KETERANGAN</th>
-                                                  <th>STATUS</th>
+                                                  <th>ID DINIYAH</th>
+                                                  <th>TANGGAL</th>
+                                                  <th>MAPEL</th>
+                                                  <th>RINGKASAN MATERI</th>
                                                   <th>ACTION</th>
                                               </tr>
                                           </thead>
                                           <tbody>
-                                              <tr>
-
-                                              <tr>
-
-                                                  <td>sdfdsasdsa</td>
-                                                  <td>adsasdasd</td>
-                                                  <td> adasasd</td>
-                                                  <td>adassd</td>
-                                                  <td>asdasda</td>
-                                                  <td>sdasdsa</td>
-                                                  <td>asdasdas</td>
-                                                  <td>
-
-                                                      <div class="btn-group mr-2 mb-2">
-                                                          &nbsp;
-                                                          <a title="edit" data-toggle="tooltip" data-placement="top" data-original-title="edit">
-                                                              <button type="button" data-toggle="modal" data-target="" class="btn btn-primary">
-                                                                  <i class="la la-pencil color-muted m-r-5"></i>
+                                              <?php $no_urut = 1;
+                                                foreach ($tb_diniyah as $diniyah) :
+                                                ?>
+                                                  <tr>
+                                                      <td><?= $no_urut; ?></td>
+                                                      <td><?= $diniyah->id_diniyah; ?></td>
+                                                      <td><?= $diniyah->tgl_diniyah; ?></td>
+                                                      <td><?= $diniyah->id_mapel; ?></td>
+                                                      <td>
+                                                          <a href="<?php echo base_url(); ?>index.php/admin/admin/absen_diniyah" title="Lihat Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Lihat Ringkasan">
+                                                              <button type="button" class="btn btn-success">
+                                                                  <i class="la la-eye color-muted m-r-5"></i>
                                                               </button>
                                                           </a>
-                                                          &nbsp;
+                                                      </td>
+                                                      <td>
 
-                                                          &nbsp;
-                                                          <a title="Hapus" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                              <button type="button" data-toggle="modal" data-target="" class="btn btn-danger">
-                                                                  <i class="la la-trash color-danger"></i>
-                                                              </button>
-                                                          </a>
-                                                          &nbsp;
+                                                          <div class="btn-group mr-2 mb-2">
 
-                                                      </div>
+                                                              <a href="#" title="Tambah Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Ringkasan">
+                                                                  <button type="button" class="btn btn-warning">
+                                                                      <i class="la la-plus color-danger"></i> Ringkasan
+                                                                  </button>
+                                                              </a>
 
-                                                  </td>
-                                              </tr>
+                                                              &nbsp;
+                                                              <a href="#" title="Edit Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Edit Ringkasan">
+                                                                  <button type="button" class="btn btn-primary">
+                                                                      <i class="la la-pencil color-muted m-r-5"></i>
+                                                                  </button>
+                                                              </a>
 
+                                                          </div>
+
+                                                      </td>
+                                                  </tr>
+                                              <?php
+                                                    $no_urut++;
+                                                endforeach;
+                                                ?>
                                           </tbody>
-
+                                          <tfoot>
+                                              <tr>
+                                                  <th>NO</th>
+                                                  <th>ID DINIYAH</th>
+                                                  <th>TANGGAL</th>
+                                                  <th>MAPEL</th>
+                                                  <th>RINGKASAN MATERI</th>
+                                                  <th>ACTION</th>
+                                              </tr>
+                                          </tfoot>
                                       </table>
 
                                   </div>

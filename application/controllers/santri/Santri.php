@@ -10,8 +10,8 @@ class Santri extends CI_Controller
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
         $this->load->model('m_user_pelanggaran');
-      
-        $this->load->helper('url','form');
+        $this->load->model('m_diniyah');
+        $this->load->helper('url', 'form');
     }
 
     public function index()
@@ -33,8 +33,9 @@ class Santri extends CI_Controller
 
     public function diniyah()
     {
+        $data['tb_diniyah'] = $this->m_diniyah->tampil_diniyah()->result();
         $this->load->view('santri_template/header');
-        $this->load->view('santri/v_diniyah');
+        $this->load->view('santri/v_diniyah', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
@@ -51,7 +52,7 @@ class Santri extends CI_Controller
 
     public function pembayaran()
     {
-        
+
         $data['user'] = $this->m_user_pembayaran->tampil_data()->result();
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_histori_pembayaran', $data);

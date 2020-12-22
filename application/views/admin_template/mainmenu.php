@@ -11,8 +11,8 @@
            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
                </li>
-               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/user"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Data User</span></a>
-               </li>
+               <!-- <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/user"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Data User</span></a>
+               </li> -->
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/admin"><i class="ft-user"></i><span class="menu-title" data-i18n="">Data Admin</span></a>
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/Data_Santri"><i class="ft-users"></i></i><span class="menu-title" data-i18n="">Data Santri</span></a>
@@ -25,7 +25,7 @@
                </li>
                <li class="nav-item has-sub "><a href="#"><i class="ft-grid"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
                    <ul class="menu-content" style="">
-                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/absen_diniyah">Diniyah</a>
+                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/diniyah">Diniyah</a>
                        </li>
                        <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/khataman">Khataman</a>
                        </li>
