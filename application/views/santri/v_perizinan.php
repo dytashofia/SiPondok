@@ -19,12 +19,12 @@
               <form class="form-horizontal" id="submit">
                   <div class="modal-body">
                       <div class="col-12">
-                          <div class="card">
+                          <div style="margin-bottom:0;" class="card">
                               <div class="row match-height">
                                   <div class="col-lg-6 col-md-12">
-                                      <div class="card">
+                                      <div style="margin-bottom:0;" class="card">
                                           <div class="card-block">
-                                              <div class="card-body">
+                                              <div style="padding-top:0; padding-bottom:0;" class="card-body">
 
                                                   <input type="hidden" name="id_perizinan" id="id_perizinan" class="form-control" value="<?= $id_perizinan; ?>" readonly>
 
@@ -53,9 +53,9 @@
                                       </div>
                                   </div>
                                   <div class="col-lg-6 col-md-12">
-                                      <div class="card">
+                                      <div style="margin-bottom:0;" class="card">
                                           <div class="card-block">
-                                              <div class="card-body">
+                                              <div style="padding-top: 0; padding-bottom:0;" class="card-body">
 
                                                   <h5 class="mt-2">Alasan</h5>
                                                   <fieldset class="form-group">
@@ -67,7 +67,7 @@
                                                       <input type="file" class="form-control" name="keterangan">
                                                   </fieldset>
 
-                                                  <fieldset class="form-group">
+                                                  <fieldset style="margin-bottom:0;" class="form-group">
                                                       <input type="hidden" class="form-control" name="status" id="status" value="Menunngu Konfirmasi">
                                                   </fieldset>
 
@@ -118,7 +118,7 @@
 
 
 
-  <div class="app-content content">
+  <div style="margin-left:0;" class="app-content content">
       <div class="content-wrapper">
           <!-- <div class="content-wrapper-before"></div> -->
           <div class="content-header row">

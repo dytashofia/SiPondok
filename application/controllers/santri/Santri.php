@@ -396,6 +396,7 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/header');
 
         $this->load->view('santri/v_editizin_santri', $data);
+        $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
 
