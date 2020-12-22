@@ -34,7 +34,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <?php echo form_open_multipart('santri/Santri/aksi_tambah_diniyah'); ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
@@ -43,12 +43,12 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID DINIYAH</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_diniyah" class="form-control" id="id_diniyah" value="<?= $id_diniyah; ?>" readonly> 
+                                                <input type="text" name="id_diniyah" class="form-control" id="id_diniyah" value="<?= $id_diniyah; ?>" readonly>
                                             </fieldset>
-                                            
-                                           <h5 class="mt-2">NIS</h5>
+
+                                            <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group<">
-                                                <input type="text" name="NIS" class="form-control" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS'));?>" readonly>  
+                                                <input type="text" name="NIS" class="form-control" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS')); ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">Tanggal</h5>
@@ -62,53 +62,52 @@
                                                     <option value="" selected>--Pilih--</option>
                                                     <option value="Hadir">Hadir</option>
                                                     <option value="Tidak Hadir">Tidak Hadir</option>
-                                                </select>  
+                                                </select>
                                             </fieldset>
-                                            
+
                                             <h5 class="mt-2">Ringkasan Materi</h5>
                                             <fieldset class="form-group">
-                                                <textarea class="form-control" name="ringkasan_materi" id="ringkasan_materi" rows="4" placeholder="Tambahkan Ringkasan Materi" ></textarea>
+                                                <textarea class="form-control" name="ringkasan_materi" id="ringkasan_materi" rows="4" placeholder="Tambahkan Ringkasan Materi"></textarea>
                                             </fieldset>
-                                             
-                                    </div>
-                                </div>
-                            </div>
-
 
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                        </div>
-                        <div class="form-group" style="text-align:right; padding-right:10px;">
-                            <!-- Buttons with Icon -->
-                            <a href="<?php echo base_url(); ?>/santri/Santri/absen_khataman"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
+
+                            </div>
                         </div>
                     </div>
-                    <?php echo form_close(); ?>
                 </div>
 
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
-                </script>
-
-
-                <script type="text/javascript">
-                    $(function() {
-                        $("tgl").datepicker({
-                            todayHighlight: true;
-                            format : "dd-mm-yyyy";
-                        });   
-                    })
-                </script>
             </div>
-            <!-- Striped rows end -->
-           
-            
-        </div>
+            <div class="form-group" style="text-align:right; padding-right:10px;">
+                <!-- Buttons with Icon -->
+                <a href="<?php echo base_url(); ?>/santri/Santri/absen_khataman"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
+            </div>
+        </div>
+        <?php echo form_close(); ?>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $("tgl").datepicker({
+                todayHighlight: true;
+                format: "dd-mm-yyyy";
+            });
+        })
+    </script>
+</div>
+<!-- Striped rows end -->
+
+
+</div>
+
+</div>
 </div>
