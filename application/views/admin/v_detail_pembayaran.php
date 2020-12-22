@@ -89,7 +89,7 @@
 
                                             
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="status" id="status" value="Belum dikonfirmasi" value="<?= $b->status;?>" readonly>
+                                                <input type="text" class="form-control" name="status" id="status" value="<?= $b->status;?>" readonly>
                                             </fieldset>
                                         </div>
                                     </div>

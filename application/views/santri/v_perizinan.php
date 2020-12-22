@@ -68,7 +68,7 @@
                                                   </fieldset>
 
                                                   <fieldset class="form-group">
-                                                      <input type="hidden" class="form-control" name="status" id="status" value="Belum dikonfirmasi">
+                                                      <input type="hidden" class="form-control" name="status" id="status" value="Menunngu Konfirmasi">
                                                   </fieldset>
 
                                               </div>
@@ -116,109 +116,6 @@
     endforeach;
     ?>
 
-  <!-- edit modal perizinan -->
-  <?php
-    foreach ($izin as $i) :
-    ?>
-
-      <div class="modal fade" id="editModal<?= $i->id_perizinan ?>" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="konfirmasiModalTitle">
-          <div class="modal-dialog modal-dialog-centered" style=" max-width: 700px;">
-              <div class="modal-content">
-
-                  <div class="card-header " style="background: linear-gradient(to right, #00cef9, #00e6af);">
-                      <button class="close" type="button" data-dismiss="modal" aria-label="close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                      <ul class="list-inline kl ">
-                          <li>
-                              <h4 class="text-center" style="color: white; font-weight:bold; "> EDIT PERIZINAN</h4>
-
-                          </li>
-                      </ul>
-                  </div>
-
-                  <form class="form-horizontal" id="edit">
-                      <div class="modal-body">
-                          <div class="col-12">
-                              <div class="card">
-                                  <div class="row match-height">
-                                      <div class="col-lg-6 col-md-12">
-                                          <div class="card">
-                                              <div class="card-block">
-                                                  <div class="card-body">
-
-                                                      <input type="hidden" name="id_perizinan" id="id_perizinan" class="form-control" value="<?= $i->id_perizinan; ?>" readonly>
-
-                                                      <h5 class="mt-2">NIS</h5>
-                                                      <fieldset class="form-group">
-                                                          <input type="text" class="form-control" name="NIS" value="<?= $i->NIS; ?>" id="NIS" readonly>
-                                                      </fieldset>
-
-                                                      <h5 class="mt-2">Nama Santri </h5>
-                                                      <fieldset class="form-group">
-                                                          <input type="text" class="form-control" id="nama_santri" value="<?php echo ucfirst($this->session->userdata('nama_santri')); ?>" readonly>
-                                                      </fieldset>
-
-                                                      <h5 class="mt-2">Tanggal Izin</h5>
-                                                      <fieldset class="form-group">
-                                                          <input type="date" class="form-control" name="tgl_izin" id="tgl_izin" value="<?= $i->tgl_izin; ?>">
-                                                      </fieldset>
-
-                                                      <h5 class="mt-2">Tanggal Kembali</h5>
-                                                      <fieldset class="form-group">
-                                                          <input type="date" class="form-control" name="tgl_datang" id="tgl_datang" value="<?= $i->tgl_datang; ?>">
-                                                      </fieldset>
-
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-lg-6 col-md-12">
-                                          <div class="card">
-                                              <div class="card-block">
-                                                  <div class="card-body">
-
-                                                      <h5 class="mt-2">Alasan</h5>
-                                                      <fieldset class="form-group">
-                                                          <textarea class="form-control" name="alasan" id="alasan" rows="4"><?= $i->alasan; ?></textarea>
-                                                      </fieldset>
-                                                      <h5 class="mt-2">Edit Keterangan Jika diperlukan</h5>
-                                                      <?php
-                                                        if ($i->keterangan == '') { ?>
-                                                          <img src="<?php echo base_url('assets/file_izin/nofile.png') ?>" width="120" height="120"><br>
-                                                      <?php } else { ?>
-
-                                                          <embed src="<?php echo base_url('assets/file_izin/' . $i->keterangan) ?>" width="120" height="120"></embed><br>
-                                                      <?php } ?>
-                                                      <fieldset class="form-group">
-                                                          <div>
-                                                              <?php echo $i->keterangan; ?>
-
-                                                          </div>
-
-                                                          <input type="file" class="form-control" name="keterangan" value="<?= $i->keterangan; ?>">
-                                                      </fieldset>
-
-                                                      <input type="hidden" name="status" id="status" class="form-control" value="<?= $i->status; ?>" readonly>
-
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer">
-                                  <button class="btn btn-success">SIMPAN</button>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  <?php
-    endforeach;
-    ?>
 
 
   <div class="app-content content">
@@ -369,7 +266,18 @@
                                                   <td> <?= $i->tgl_izin; ?></td>
                                                   <td><?= $i->tgl_datang; ?></td>
                                                   <td><?= $i->alasan; ?></td>
-                                                  <td><?= $i->keterangan; ?></td>
+                                                  <td>
+
+                                                      <?php
+                                                        if ($i->keterangan !== '') { ?>
+
+                                                          <?= $i->keterangan; ?>
+                                                      <?php } else { ?>
+
+                                                          <?php echo "No File Uploaded" ?>
+                                                      <?php } ?>
+                                                  </td>
+
                                                   <td><?= $i->status; ?>
                                                       <br>
                                                       <?php
@@ -380,8 +288,9 @@
                                                               </button>
                                                           <?php } elseif ($i->status == 'Tidak diizinkan') { ?>
                                                               &nbsp;
-                                                              <a title="set ulang" data-toggle="tooltip" data-placement="top" data-original-title="set ulang">
-                                                                  <button type="button" data-toggle="modal" data-target="#editModal<?= $i->id_perizinan; ?>" class="btn-sx btn-primary">
+                                                              <a href="<?php echo base_url() ?>index.php/santri/Santri/editperizinan/<?php echo $i->id_perizinan ?>" title="Set ulang" data-toggle="tooltip" data-placement="top" data-original-title="Set ulang">
+
+                                                                  <button type="button" class="btn-sx btn-primary">
                                                                       <i class="la la-rotate-right color-muted m-r-5"></i>
                                                                   </button>
                                                               </a>
@@ -394,13 +303,11 @@
                                                   <td>
 
                                                       <div class="btn-group mr-2 mb-2">
-                                                          &nbsp;
-                                                          <a title="edit" data-toggle="tooltip" data-placement="top" data-original-title="edit">
-                                                              <button type="button" data-toggle="modal" data-target="#editModal<?= $i->id_perizinan; ?>" class="btn btn-primary">
+                                                          <a href="<?php echo base_url() ?>index.php/santri/Santri/editperizinan/<?php echo $i->id_perizinan ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                              <button type="button" class="btn btn-primary">
                                                                   <i class="la la-pencil color-muted m-r-5"></i>
                                                               </button>
                                                           </a>
-                                                          &nbsp;
 
                                                           &nbsp;
                                                           <a title="Hapus" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">

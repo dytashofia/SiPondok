@@ -10,6 +10,7 @@ class Santri extends CI_Controller
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
         $this->load->model('m_user_pelanggaran');
+        $this->load->model('m_user_absensi');
         $this->load->helper('url', 'form');
     }
 
@@ -117,10 +118,10 @@ class Santri extends CI_Controller
 
     public function aksiTambahuploadpembayaran()
     {
+        $id = $this->input->post('id_setbayar');
         $id_pembayaran = $this->input->post('id_pembayaran');
         $NIS = $this->input->post('NIS');
         $nama_pembayar = $this->input->post('nama_pembayar');
-        $id_setbayar = $this->input->post('id_setbayar');
         $tgl_pembayaran = $this->input->post('tgl_pembayaran');
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
@@ -138,19 +139,37 @@ class Santri extends CI_Controller
             }
         }
 
+        // Membuat validasi form
+        $this->form_validation->set_rules('nama_pembayar', 'NAMA PEMBAYAR', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('tgl_pembayaran', 'TANGGAL PEMBAYARAN', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('bukti_pembayaran', 'Upload Bukti Transfer', 'uploaded');
 
-        $data = array(
-            'id_pembayaran' => $id_pembayaran,
-            'NIS' => $NIS,
-            'nama_pembayar' => $nama_pembayar,
-            'id_setbayar' => $id_setbayar,
-            'tgl_pembayaran' => $tgl_pembayaran,
-            'bukti_pembayaran' => $bukti_pembayaran,
-            'status' => $status
-        );
+        // Membuat pesan validasi error
+        $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+        $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('uploaded', ' %s tidak boleh kosong.');
 
-        $this->m_user_pembayaran->tambah_data_bayar($data, 'tb_pembayaran');
-        redirect('santri/Santri/pembayaran');
+        // Menjalankan form
+        // Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+        if ($this->form_validation->run() == false) {
+            $this->tmbhuploadpembayaran($id);
+        } else {
+
+
+            $data = array(
+                'id_pembayaran' => $id_pembayaran,
+                'NIS' => $NIS,
+                'nama_pembayar' => $nama_pembayar,
+                'id_setbayar' => $id,
+                'tgl_pembayaran' => $tgl_pembayaran,
+                'bukti_pembayaran' => $bukti_pembayaran,
+                'status' => $status
+            );
+
+            $this->m_user_pembayaran->tambah_data_bayar($data, 'tb_pembayaran');
+            redirect('santri/Santri/pembayaran');
+        }
     }
 
     public function editupload($id)
@@ -172,6 +191,7 @@ class Santri extends CI_Controller
         $tgl_pembayaran = $this->input->post('tgl_pembayaran');
         $bukti_pembayaran = $_FILES['bukti_pembayaran'];
         $status = $this->input->post('status');
+        $where = array('id_pembayaran' => $id_pembayaran);
         $foto = $this->db->get_where('tb_pembayaran', $where);
 
         if ($bukti_pembayaran = '') {
@@ -197,27 +217,47 @@ class Santri extends CI_Controller
         }
 
 
+        // Membuat validasi form
+        $this->form_validation->set_rules('nama_pembayar', 'NAMA PEMBAYAR', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('tgl_pembayaran', 'TANGGAL PEMBAYARAN', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('bukti_pembayaran', 'Upload Bukti Transfer', 'uploaded[bukti_pembayaran]');
 
-        $data = array(
-            'id_pembayaran' => $id_pembayaran,
-            'NIS' => $NIS,
-            'nama_pembayar' => $nama_pembayar,
-            'id_setbayar' => $id_setbayar,
-            'tgl_pembayaran' => $tgl_pembayaran,
-            'status' => $status
-        );
+        // Membuat pesan validasi error
+        $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+        $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('uploaded', ' %s tidak boleh kosong.');
 
-        if ($bukti_pembayaran != NULL) {
+        // Menjalankan form
+        // Apabila hasil validasi form menunjukkan ada sesuatu yang salah
+        if ($this->form_validation->run() == false) {
+            $this->editupload($id_pembayaran);
+        } else {
 
-            $data['bukti_pembayaran'] = $bukti_pembayaran;
+
+
+
+            $data = array(
+                'id_pembayaran' => $id_pembayaran,
+                'NIS' => $NIS,
+                'nama_pembayar' => $nama_pembayar,
+                'id_setbayar' => $id_setbayar,
+                'tgl_pembayaran' => $tgl_pembayaran,
+                'status' => $status
+            );
+
+            if ($bukti_pembayaran != NULL) {
+
+                $data['bukti_pembayaran'] = $bukti_pembayaran;
+            }
+
+            $where = array(
+                'id_pembayaran' => $id_pembayaran
+            );
+
+            $this->m_user_pembayaran->update_data($where, $data, 'tb_pembayaran');
+            redirect('santri/Santri/pembayaran');
         }
-
-        $where = array(
-            'id_pembayaran' => $id_pembayaran
-        );
-
-        $this->m_user_pembayaran->update_data($where, $data, 'tb_pembayaran');
-        redirect('santri/Santri/pembayaran');
     }
 
 
@@ -286,7 +326,7 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_perizinan', $data);
         $this->load->view('santri_template/profile');
-        $this->load->view('santri_template/footer');
+        $this->load->view('santri_template/footer', $data);
     }
 
 
@@ -346,6 +386,17 @@ class Santri extends CI_Controller
         redirect('index.php/santri/Santri/perizinan');
     }
 
+
+    public function editperizinan($id)
+    {
+        $where = array('id_perizinan' => $id);
+        $data['izinedit'] = $this->m_perizinansantri->edit_data($where, 'tb_perizinan')->result();
+        $this->load->view('santri_template/header');
+
+        $this->load->view('santri/v_editizin_santri', $data);
+        $this->load->view('santri_template/footer');
+    }
+
     public function updateperizinan()
     {
         $id_perizinan = $this->input->post('id_perizinan');
@@ -394,7 +445,7 @@ class Santri extends CI_Controller
         }
 
         $this->m_perizinansantri->update_data($where, $data);
-        redirect('index.php/admin/Admin/perizinan');
+        redirect('index.php/santri/Santri/perizinan');
     }
 
     public function suket($id)
@@ -408,4 +459,149 @@ class Santri extends CI_Controller
         $this->pdf->load_view('santri/suketizin', $data);
     }
     //===============================================EDNPERIZINAN=================================================//
+
+
+    //================================================== ABSENSI =====================================================
+    public function absen()
+    {
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_absen');
+        $this->load->view('santri_template/footer');
+    }
+
+    public function absen_khataman()
+    {
+        $data['absensi_khataman'] = $this->m_user_absensi->tampil_absen_khataman()->result();
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_absen_khataman', $data);
+        $this->load->view('santri_template/footer');
+    }
+
+    public function tambah_absen_khataman()
+    {
+        $data = $this->m_user_absensi->tampil_absen_khataman()->num_rows();
+        if ($data > 0) {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_user_absensi->tampil_data_akhir_khataman()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach ($lastId as $row) {
+                // Melakukan pemisahan huruf dengan angka pada id perizinan
+                $rawid_khataman = substr($row->id_khataman, 3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
+                $id_khatamanInt = intval($rawid_khataman);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if (strlen($id_khatamanInt) == 1) {
+                    // jika panjang id hanya 1 angka
+                    $id_khataman = "KH00" . ($id_khatamanInt + 1);
+                } else if (strlen($id_khatamanInt) == 2) {
+                    // jika panjang id hanya 2 angka
+                    $id_khataman = "KH0" . ($id_khatamanInt + 1);
+                } else if (strlen($id_khatamanInt) == 3) {
+                    // jika panjang id hanya 3 angka
+                    $id_khataman = "KH" . ($id_khatamanInt + 1);
+                }
+            }
+        } else {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_khataman = "KH001";
+        }
+        $khataman = $this->m_user_absensi->tampil_absen_khataman();
+
+
+        $data = array(
+            'id_khataman' => $id_khataman
+        );
+
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_tambah_khataman', $data);
+        $this->load->view('santri_template/footer');
+    }
+
+    public function aksi_tambah_khataman()
+    {
+        $id_khataman = $this->input->post('id_khataman');
+        $NIS = $this->input->post('NIS');
+        $tgl = $this->input->post('tgl');
+        $keterangan = $this->input->post('keterangan');
+
+        $data = array(
+            'id_khataman' => $id_khataman,
+            'NIS' => $NIS,
+            'tgl' => $tgl,
+            'keterangan' => $keterangan
+        );
+
+        $this->m_user_absensi->tambah_absen_khataman($data, 'tb_absensi_khataman');
+        redirect('santri/Santri/absen_khataman');
+    }
+
+    public function absen_diniyah()
+    {
+        $data['absensi_diniyah'] = $this->m_user_absensi->tampil_absen_diniyah()->result();
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_absen_diniyah', $data);
+        $this->load->view('santri_template/footer');
+    }
+
+    public function tambah_absen_diniyah()
+    {
+        $data = $this->m_user_absensi->tampil_absen_diniyah()->num_rows();
+        if ($data > 0) {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_user_absensi->tampil_data_akhir_diniyah()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach ($lastId as $row) {
+                // Melakukan pemisahan huruf dengan angka pada id perizinan
+                $rawid_diniyah = substr($row->id_diniyah, 3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
+                $id_diniyahInt = intval($rawid_diniyah);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if (strlen($id_diniyahInt) == 1) {
+                    // jika panjang id hanya 1 angka
+                    $id_diniyah = "DN00" . ($id_diniyahInt + 1);
+                } else if (strlen($id_diniyahInt) == 2) {
+                    // jika panjang id hanya 2 angka
+                    $id_khataman = "DN0" . ($id_diniyahInt + 1);
+                } else if (strlen($id_diniyahInt) == 3) {
+                    // jika panjang id hanya 3 angka
+                    $id_diniyah = "DN" . ($id_diniyahInt + 1);
+                }
+            }
+        } else {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_diniyah = "DN001";
+        }
+        $diniyah = $this->m_user_absensi->tampil_absen_diniyah();
+
+
+        $data = array(
+            'id_diniyah' => $id_diniyah
+        );
+
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_tambah_diniyah', $data);
+        $this->load->view('santri_template/footer');
+    }
+
+    public function aksi_tambah_diniyah()
+    {
+        $id_diniyah = $this->input->post('id_diniyah');
+        $NIS = $this->input->post('NIS');
+        $tgl = $this->input->post('tgl');
+        $keterangan = $this->input->post('keterangan');
+        $ringkasan_materi = $this->input->post('ringkasan_materi');
+
+        $data = array(
+            'id_diniyah' => $id_diniyah,
+            'NIS' => $NIS,
+            'tgl' => $tgl,
+            'keterangan' => $keterangan,
+            'ringkasan_materi' => $ringkasan_materi
+        );
+
+        $this->m_user_absensi->tambah_absen_diniyah($data, 'tb_absensi_diniyah');
+        redirect('santri/Santri/absen_diniyah');
+    }
 }

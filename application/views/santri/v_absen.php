@@ -1,4 +1,4 @@
- <div style="margin-left:0;" class="app-content content">
+ <div class="app-content content">
      <div class="content-wrapper">
          <!-- <div class="content-wrapper-before"></div> -->
          <div class="content-header row">
@@ -23,34 +23,12 @@
              <div class="row">
                  <div class="col-xl-9 col-lg-6 col-md-12">
                      <div class="card ">
-                         <div class="card-header text-center">
-                             <h4 class="card-title">Pengumuman</h4>
-                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                             <div class="heading-elements">
-                                 <ul class="list-inline mb-0">
-                                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                     <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                     <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                     <li><a data-action="close"><i class="ft-x"></i></a></li>
-                                 </ul>
-                             </div>
-                         </div>
-                         <div class="card-content collapse show">
-                             <div class="card-body">
-                                 <h4 class="card-title">Content title</h4>
-                                 <p class="card-text">Jelly beans sugar plum cheesecake cookie oat cake soufflé.Tootsie roll bonbon liquorice tiramisu pie powder.Donut sweet
-                                     roll marzipan pastry cookie cake tootsie roll oat cake cookie.</p>
-                                 <h4 class="card-title">Content title</h4>
-                                 <p class="card-text">Sweet roll marzipan pastry halvah. Cake bear claw sweet. Tootsie roll pie marshmallow lollipop chupa chups donut fruitcake
-                                     cake.Jelly beans sugar plum cheesecake cookie oat cake soufflé. Tart lollipop carrot cake sugar plum. Marshmallow
-                                     wafer tiramisu jelly beans.</p>
-                             </div>
-
-                         </div>
                      </div>
                      <div class="card ">
                          <div class="card-header text-center">
-                             <h4 class="card-title">Menu</h4>
+                             <h4 class="card-title">Absensi</h4>
+                             <br><br><br>
+                             <h4 class="card-title">Info Santri</h4>
                              <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                              <div class="heading-elements">
                                  <ul class="list-inline mb-0">
@@ -156,49 +134,32 @@
 
                                  }
                              </style>
-                             <div class="card-body text-center">
-                                 <a href="<?php echo base_url(); ?>santri/Santri/kompetensi">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-bar-chart-2  ag"></i>
-                                         <p class="ab">KOMPETENSI</p>
+                             
+                            <div class="ml-1 mt-1">
+                                     <h4 class="card-title mb-3"> NIS : <?php echo ucfirst($this->session->userdata('NIS'));?> </h4>      
+                            </div>
+                            <div class="table-responsive">  
+
+                            <div class="ml-1 mt-1">
+                                     <h4 class="card-title mb-3"> Nama Santri : <?php echo ucfirst($this->session->userdata('nama_santri'));?> </h4>      
+                            </div>
+                            <div class="table-responsive"> 
+                           
+                            <div class="card-body text-center">
+                                 <a href="<?php echo base_url('santri/Santri/absen_diniyah/'); ?>">
+                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-5 ml-5 mb-5 mt-5"><i class="ft-bar-chart-2  ag"></i>
+                                         <p class="ab">DINIYAH</p>
                                      </button>
                                  </a>
-                                 <a href="<?php echo base_url(); ?>santri/Santri/infopembayaran">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-watch as ad"></i>
-                                         <p class="ab">PEMBAYARAN</p>
-                                         <span class="badge badge-pill badge-danger">5</span>
+                                 <a href="<?= base_url('santri/Santri/absen_khataman/'); ?>">
+                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-5 ml-5 mb-5 mt-5"><i class="ft-watch as ad"></i>
+                                         <p class="ab"> قراءةالقرأن </p>
+                                        
                                      </button>
-                                 </a>
-                                 <a href="<?php echo base_url(); ?>santri/Santri/pelanggaran">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-alert-circle ag"></i>
-                                         <p class="ab">PELANGGARAN</p>
-                                     </button>
-                                 </a>
-                                 <a href="<?php echo base_url(); ?>santri/Santri/perizinan">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-feather ag"></i>
-                                         <p class="ab">PERIZINAN</p>
-                                     </button>
-                                 </a>
-                                 <a href="<?= base_url(); ?>santri/Santri/absen">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-book"></i>
-                                         <p class="ab">PRESENSI</p>
-                                     </button>
-                                 </a>
-                                 <a href="">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
-                                         <p class="ab">SOON</p>
-                                     </button>
-                                 </a>
-                                 <a href="">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
-                                         <p class="ab">SOON</p>
-                                     </button>
-                                 </a>
-                                 <a href="">
-                                     <button type="button" class="btn bm btn-icon btn-secondary  mr-1 ml-1 mb-2 mt-2"><i class="ft-music ag"></i>
-                                         <p class="ab">SOON</p>
-                                     </button>
-                                 </a>
+                                 </a> 
                              </div>
                          </div>
                      </div>
                  </div>
+            </div>     
+

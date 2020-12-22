@@ -140,52 +140,77 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="card">
-                                        <div class="card-block">
-                                            <div class="card-body">
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-block">
+                                        <div class="card-body">
 
-                                                <h5 class="mt-2">NAMA PEMBAYAR</h5>
-                                                <fieldset class="form-group">
-                                                    <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
-                                                </fieldset>
+                                            <h5 class="mt-2">NAMA PEMBAYAR</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar" value="<?= set_value('nama_pembayar'); ?>" placeholder="Masukkan Nama Pembayar...">
+                                                <?= form_error('nama_pembayar', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
+                                            </fieldset>
 
-                                                <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
-                                                <fieldset class="form-group">
-                                                    <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
-                                                </fieldset>
+                                            <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran" value="<?= set_value('tgl_pembayaran'); ?>" placeholder="Masukkan Tanggal Pembayar...">
+                                                <?= form_error('tgl_pembayaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
+                                            </fieldset>
 
-                                                <h5 class="mt-2">Upload Bukti Transfer</h5>
-                                                <fieldset class="form-group">
-                                                    <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
-                                                </fieldset>
+                                            <h5 class="mt-2">Upload Bukti Transfer</h5>
+                                            <fieldset class="form-group">
+                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" value="<?= set_value('bukti_pembayaran'); ?>" placeholder="Masukkan Bukti Pembayaran...">
+                                                <!--masih belum bisa validasinya-->
+                                                <?= form_error('bukti_pembayaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
+                                            </fieldset>
 
 
-                                                <fieldset class="form-group">
-                                                    <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
-                                                </fieldset>
+                                            <fieldset class="form-group">
+                                                <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
+                                            </fieldset>
 
-                                            </div>
+                                            <h5 class="mt-2">NAMA PEMBAYAR</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
+                                            </fieldset>
+
+                                            <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Upload Bukti Transfer</h5>
+                                            <fieldset class="form-group">
+                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
+                                            </fieldset>
+
+
+                                            <fieldset class="form-group">
+                                                <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
+                                            </fieldset>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group" style="text-align:right; padding-right:10px;">
-                                <!-- Buttons with Icon -->
-                                <a href="<?php echo base_url('santri/Santri/infopembayaran'); ?>"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                                <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
-
-                            </div>
-
-
-                            <?php echo form_close(); ?>
-
-
+                        </div>
+                        <div class="form-group" style="text-align:right; padding-right:10px;">
+                            <!-- Buttons with Icon -->
+                            <a href="<?php echo base_url('santri/Santri/infopembayaran'); ?>"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
 
                         </div>
+
+
+                        <?php echo form_close(); ?>
+
+
+
                     </div>
                 </div>
-                <!-- Striped rows end -->
             </div>
+            <!-- Striped rows end -->
         </div>
     </div>
+</div>

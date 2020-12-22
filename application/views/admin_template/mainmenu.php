@@ -25,9 +25,9 @@
                </li>
                <li class="nav-item has-sub "><a href="#"><i class="ft-grid"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
                    <ul class="menu-content" style="">
-                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/kompetensi">Diniyah</a>
+                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/diniyah">Diniyah</a>
                        </li>
-                       <li class="is-shown"><a class="menu-item" href="">Khataman</a>
+                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/khataman">Khataman</a>
                        </li>
                    </ul>
                </li>
@@ -36,6 +36,7 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/artikel/artikel"><i class="ft-book"></i><span class="menu-title" data-i18n="">Artikel</span></a>
                </li>
+
 
            </ul>
        </div>

@@ -102,6 +102,21 @@
                 }
             }
 
+        //Form Validasi
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('nama_admin', 'Nama Admin', 'trim|required|strip_tags');
+
+            // Pesan form validasi
+            $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+            $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+            $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+
+        // Menjalankan form, apabila berhasil maka tambah produk berhasil
+        if ($this->form_validation->run() == false) {
+           $this->tambah_admin();
+        } else {
+
             $data = array(
                 'id_admin' => $id_admin,
                 'username' => $username,
@@ -110,25 +125,8 @@
                 'foto_admin' => $foto_admin,
             );
 
-
-            // Form Validasi
-            $this->form_validation->set_rules('username', 'Username', 'trim|required|sprid_tags');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|sprid_tags');
-            $this->form_validation->set_rules('nama_admin', 'Nama Admin', 'trim|required|sprid_tags');
-
-            // Pesan form validasi
-            $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
-            $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
-            $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
-
-            // Menjalankan form, apabila berhasil maka tambah produk berhasil
-            if ($this->form_validation->run() == false) {
-                $this->tambah_admin();
-            } else {
-
-                $this->m_admin->tambah_admin($data, 'tb_admin');
-                redirect('index.php/admin/Admin/admin');
-            }
+            $this->m_admin->tambah_admin($data, 'tb_admin');
+            redirect('index.php/admin/Admin/admin');
         }
 
         public function edit_admin($id)
@@ -137,25 +135,8 @@
                 'id_admin' => $id
             );
 
-            $this->form_validation->set_rules('username', 'Username', 'trim|required|sprid_tags');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|sprid_tags');
-            $this->form_validation->set_rules('nama_admin', 'Nama Admin', 'trim|required|sprid_tags');
-
-            // Pesan form validasi
-            $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
-            $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
-            $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
-
-            // Menjalankan form, apabila berhasil maka tambah produk berhasil
-            /*if ($this->form_validation->run() == false) {
-            $this->edit_admin();
-        } else {
-
-            $this->m_admin->edit_admin($where, 'tb_admin');
-            //redirect('index.php/admin/Admin/admin');
-        }*/
-
-            $data['tb_admin'] = $this->m_admin->edit_admin($where, 'tb_admin')->result();
+        
+        $data['tb_admin'] = $this->m_admin->edit_admin($where, 'tb_admin')->result();
 
             $this->load->view('admin_template/header');
             $this->load->view('admin_template/mainmenu');
@@ -186,18 +167,34 @@
                 }
             }
 
-            $data = array(
-                'username' => $username,
-                'password' => $password,
-                'nama_admin' => $nama_admin,
-                'foto_admin' => $foto_admin,
-            );
+        //Form Validasi
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|strip_tags');
+        $this->form_validation->set_rules('nama_admin', 'Nama Admin', 'trim|required|strip_tags');
+
+        // Pesan form validasi
+        $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+        $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+
+        // Menjalankan form, apabila berhasil maka tambah produk berhasil
+        if ($this->form_validation->run() == false) {
+           $this->edit_admin();
+        } else {
+
+        $data = array(
+            'username' => $username,
+            'password' => $password,
+            'nama_admin' => $nama_admin,
+            'foto_admin' => $foto_admin,
+        );
 
             $where = array('id_admin' => $id_admin);
 
-            $this->m_admin->update_admin($where, $data, 'tb_admin');
-            redirect('index.php/admin/Admin/admin');
+        $this->m_admin->update_admin($where, $data, 'tb_admin');
+        redirect('index.php/admin/Admin/admin');
         }
+    }
 
         public function detail_admin($id)
         {
@@ -918,28 +915,50 @@
             $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
             $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
 
-            // Menjalankan form, apabila berhasil maka tambah produk berhasil
-            if ($this->form_validation->run() == false) {
-                $this->tmbhpelanggaran();
-            } else {
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tmbhpelanggaran', $data);
+        $this->load->view('admin_template/footer');
+    }
 
-                $this->m_pelanggaran->tambah_pelanggaran($data, 'tb_pelanggaran');
-                redirect('index.php/admin/Admin/pelanggaran');
-            }
-        }
+    public function tambah_aksi_pelanggaran()
+    {
+        $id_pelanggaran = $this->input->post('id_pelanggaran');
+        $NIS = $this->input->post('NIS');
+        $jenis_pelanggaran = $this->input->post('jenis_pelanggaran');
+        $tgl = $this->input->post('tgl');
+        $sanksi = $this->input->post('sanksi');
+        $catatan = $this->input->post('catatan');
 
-        public function detail_pelanggaran($id)
-        {
-            $where = array(
-                'id_pelanggaran' => $id
-            );
+        // Form Validasi
+        $this->form_validation->set_rules('NIS', 'NIS : Nama Santri', 'trim|required');
+        $this->form_validation->set_rules('jenis_pelanggaran', 'Jenis Pelanggaran', 'trim|required');
+        $this->form_validation->set_rules('tgl', 'Tanggal Melanggar', 'trim|required');
+        $this->form_validation->set_rules('sanksi', 'Sanksi', 'trim|required');
+        $this->form_validation->set_rules('catatan', 'Catatan', 'trim|required');
 
-            $data['tb_pelanggaran'] = $this->m_pelanggaran->detail_pelanggaran($where, 'tb_pelanggaran')->result();
 
-            $this->load->view('admin_template/header');
-            $this->load->view('admin_template/mainmenu');
-            $this->load->view('admin/v_detail_pelanggaran', $data);
-            $this->load->view('admin_template/footer');
+        // Pesan form validasi
+        $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
+        $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
+        $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
+
+        // Menjalankan form, apabila berhasil maka tambah produk berhasil
+        if ($this->form_validation->run() == false) {
+            $this->tmbhpelanggaran();
+        } else {
+
+            $data = array(
+            'id_pelanggaran' => $id_pelanggaran,
+            'NIS' => $NIS,
+            'jenis_pelanggaran' => $jenis_pelanggaran,
+            'tgl' => $tgl,
+            'sanksi' => $sanksi,
+            'catatan' => $catatan,
+        );
+
+            $this->m_pelanggaran->tambah_pelanggaran($data, 'tb_pelanggaran');
+            redirect('index.php/admin/Admin/pelanggaran');
         }
 
         public function edit_pelanggaran($id)

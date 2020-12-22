@@ -48,7 +48,7 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">NIS : Nama Santri</h5>
-                                            <fieldset class="form-group<?= form_error('NIS') ? 'has-error' : null; ?>">
+                                            <fieldset class="form-group">
                                                 <select name="NIS" id="NIS" class="custom-select">
                                                 <option value=""> Pilih NIS : Nama </option>
                                                 <?php
@@ -58,25 +58,24 @@
                                                 <?php
                                                     endforeach;
                                                 ?>
-                                                </select>
-                                                <?= form_error('NIS', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
+                                                </select>  
                                             </fieldset>
 
                                            <h5 class="mt-2">Jenis Pelanggaran</h5>
                                             <fieldset class="form-group<?= form_error('jenis_pelanggaran') ? 'has-error' : null; ?>">
-                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="jenis_pelanggaran" placeholder="Masukkan Jenis Pelanggaran" required>
+                                                <input type="text" name="jenis_pelanggaran" class="form-control" id="jenis_pelanggaran" placeholder="Masukkan Jenis Pelanggaran">
                                                 <?= form_error('jenis_pelanggaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
                                             <h5 class="mt-2">Tanggal Melanggar</h5>
                                             <fieldset class="form-group<? form_error('tgl') ? 'has-error' : null; ?>">
-                                                <input type="date" data-format="dd-MM-yyyy" name="tgl" class="form-control" id="tgl" required>
+                                                <input type="date" data-format="dd-MM-yyyy" name="tgl" class="form-control" id="tgl">
                                                 <?= form_error('tgl', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
 
                                            <h5 class="mt-2">Sanksi</h5>
                                             <fieldset class="form-group<?= form_error('sanksi') ? 'has-eror' : null; ?>">
-                                                <input type="text" name="sanksi" class="form-control" id="sanksi" placeholder="Masukkan Sanksi" required>
+                                                <input type="text" name="sanksi" class="form-control" id="sanksi" placeholder="Masukkan Sanksi">
                                                 <?= form_error('sanksi', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?> 
                                             </fieldset>
                                         </div>
@@ -89,8 +88,9 @@
                                         <div class="card-body">
 
                                             <h5 class="mt-2">Catatan</h5>
-                                            <fieldset class="form-group">
+                                            <fieldset class="form-group<?= form_error('catatan') ? 'has-error' : null; ?>">
                                                 <textarea class="form-control" name="catatan" id="catatan" rows="4" placeholder="Tambahkan Catatan" ></textarea>
+                                            <?= form_error('catatan', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                         </div>
