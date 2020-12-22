@@ -51,6 +51,7 @@ class Santri extends CI_Controller
 
     public function pembayaran()
     {
+        
         $data['user'] = $this->m_user_pembayaran->tampil_data()->result();
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_histori_pembayaran', $data);
