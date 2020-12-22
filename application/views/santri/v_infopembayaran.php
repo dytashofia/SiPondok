@@ -1,4 +1,4 @@
- <div class="app-content content">
+ <div style="margin-left:0;" class="app-content content">
      <div class="content-wrapper">
          <!-- <div class="content-wrapper-before"></div> -->
          <div class="content-header row">
@@ -97,7 +97,7 @@
                                      <!-- &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a> -->
                                  </div>
                                  <div class="ml-1 mt-1">
-                                     <h4 class="card-title mb-3"> Atas Nama Santri : <?php echo ucfirst($this->session->userdata('nama_santri'));?> </h4>
+                                     <h4 class="card-title mb-3"> Atas Nama Santri : <?php echo ucfirst($this->session->userdata('nama_santri')); ?> </h4>
                                      <!-- &nbsp;&nbsp;&nbsp;<a href="#"><button type="button" class="btn ff btn-primary btn-min-width mr-1 mb-1"><i class="ft-plus"> </i> Tambah Data</button></a> -->
                                  </div>
                                  <div class="table-responsive">
@@ -146,38 +146,38 @@
                                              </tr>
                                          </thead>
                                          <tbody>
-                                            <?php
+                                             <?php
                                                 $noUrut = 1;
-                                                foreach($info as $produk) :
-                                            ?>
-                                                <tr>
-                                                    <td><?= $noUrut;?></td>
-                                                    <td><?= $produk->jenis_pembayaran;?></td>
-                                                    <td><?= $produk->jumlah_bayar;?></td>
-                                                    <td><?= $produk->tanggal_awal;?></td>
-                                                    <td><?= $produk->tanggal_akhir;?></td>
-                                                    <td>
-                                                            <?php
-                                                            if($produk->tanggal_awal =='0000-00-00'){?>
-                                                                 <?php echo "tidak ada aksi"?>
-                                                                
-                                                        <?php }else{ ?>   
-                                                            <div class="btn-group mr-2 mb-2">
-                                                                    <a href="<?php echo base_url('santri/Santri/tmbhuploadpembayaran/'.$produk->id_setbayar); ?>" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                                        <button type="button" class="btn btn-primary">
-                                                                            <i class="la la-pencil color-muted m-r-5">Bayar</i>
-                                                                        </button>
-                                                                    </a>
-                                                                </div>       
-                                                    <?php } ?>
-                                                   
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                                    $noUrut++;
-                                                    endforeach;
+                                                foreach ($info as $produk) :
                                                 ?>
-                                            </tbody>
+                                                 <tr>
+                                                     <td><?= $noUrut; ?></td>
+                                                     <td><?= $produk->jenis_pembayaran; ?></td>
+                                                     <td><?= $produk->jumlah_bayar; ?></td>
+                                                     <td><?= $produk->tanggal_awal; ?></td>
+                                                     <td><?= $produk->tanggal_akhir; ?></td>
+                                                     <td>
+                                                         <?php
+                                                            if ($produk->tanggal_awal == '0000-00-00') { ?>
+                                                             <?php echo "tidak ada aksi" ?>
+
+                                                         <?php } else { ?>
+                                                             <div class="btn-group mr-2 mb-2">
+                                                                 <a href="<?php echo base_url('santri/Santri/tmbhuploadpembayaran/' . $produk->id_setbayar); ?>" title="Bayar" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                                     <button type="button" class="btn btn-primary">
+                                                                         <i class="la la-pencil color-muted m-r-5">Bayar</i>
+                                                                     </button>
+                                                                 </a>
+                                                             </div>
+                                                         <?php } ?>
+
+                                                     </td>
+                                                 </tr>
+                                             <?php
+                                                    $noUrut++;
+                                                endforeach;
+                                                ?>
+                                         </tbody>
                                          <tfoot>
                                              <tr>
                                                  <th>NO</th>

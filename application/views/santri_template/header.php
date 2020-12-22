@@ -8,7 +8,7 @@
     <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
     <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
-    <title>Dashboard - Admin Ponpes Raden Rahmat Sunan Ampel</title>
+    <title>Halaman Santri Ponpes Raden Rahmat Sunan Ampel</title>
     <link rel="apple-touch-icon" href="<?php echo base_url(); ?>theme-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/Login1/images/logo_pondok.png">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
@@ -34,7 +34,7 @@
     <!-- fixed-top-->
     <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
         <div class="navbar-wrapper">
-            <div class="navbar-container content">
+            <div style="margin-left:0;" class="navbar-container content">
                 <div class="collapse navbar-collapse show" id="navbar-mobile">
                     <style>
                         .ss {

@@ -1,4 +1,4 @@
- <div class="app-content content">
+ <div style="margin-left:0;" class="app-content content">
      <div class="content-wrapper">
          <!-- <div class="content-wrapper-before"></div> -->
          <div class="content-header row">
@@ -128,28 +128,28 @@
                                              </tr>
                                          </thead>
                                          <tbody>
-                                         <?php 
-                                            $no_urut = 1; 
-                                            foreach($pelanggaran_user as $pl) :      
-                                         ?>
-                                             <tr>
-                                                 <td><?= $no_urut; ?></td>
-                                                 <td hidden><?= $pl->id_pelanggaran; ?></td>
-                                                 <td><?= $pl->NIS; ?></td>
-                                                 <td><?= $pl->nama_santri; ?></td>
-                                                 <td><?= $pl->jenis_pelanggaran; ?></td>
-                                                 <td><?= $pl->tgl; ?></td>
-                                                 <td><?= $pl->sanksi; ?></td>
-                                                 <td><?= $pl->catatan; ?></td>
-                                             </tr>
-                                        <?php 
-                                            $no_urut ++;
-                                            endforeach;
-                                        ?>     
-                                        <tbody>    
+                                             <?php
+                                                $no_urut = 1;
+                                                foreach ($pelanggaran_user as $pl) :
+                                                ?>
+                                                 <tr>
+                                                     <td><?= $no_urut; ?></td>
+                                                     <td hidden><?= $pl->id_pelanggaran; ?></td>
+                                                     <td><?= $pl->NIS; ?></td>
+                                                     <td><?= $pl->nama_santri; ?></td>
+                                                     <td><?= $pl->jenis_pelanggaran; ?></td>
+                                                     <td><?= $pl->tgl; ?></td>
+                                                     <td><?= $pl->sanksi; ?></td>
+                                                     <td><?= $pl->catatan; ?></td>
+                                                 </tr>
+                                             <?php
+                                                    $no_urut++;
+                                                endforeach;
+                                                ?>
+                                         <tbody>
                                          <tfoot>
                                              <tr>
-                                               <th>NO</th>
+                                                 <th>NO</th>
                                                  <th>NIS</th>
                                                  <th>NAMA SANTRI</th>
                                                  <th>JENIS PELANGGARAN</th>

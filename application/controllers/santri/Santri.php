@@ -10,7 +10,7 @@ class Santri extends CI_Controller
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
         $this->load->model('m_user_pelanggaran');
-        $this->load->helper('url','form');
+        $this->load->helper('url', 'form');
     }
 
     public function index()
@@ -30,8 +30,24 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
+    public function diniyah()
+    {
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_diniyah');
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
+    }
+
+    public function khataman()
+    {
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_khataman');
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
+    }
+
     //=======================================PEMBAYARAN==========================================//
-    
+
     public function pembayaran()
     {
         $data['user'] = $this->m_user_pembayaran->tampil_data()->result();
@@ -83,13 +99,13 @@ class Santri extends CI_Controller
         // Mengambil data pembayaran menggunakan model
 
         $data = $this->m_user_pembayaran->tampil_data()->result();
-        
+
         $where = array('id_setbayar' => $id);
         $detail = $this->m_user_pembayaran->tampil_data_info_where($where, 'detail_pembayaran')->result();
 
 
         $data = array(
-            'detail'=>$detail,
+            'detail' => $detail,
             'id_pembayaran' => $id_pembayaran
 
         );
@@ -97,7 +113,6 @@ class Santri extends CI_Controller
         $this->load->view('santri/v_tmbhuploadpembayaran', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
-        
     }
 
     public function aksiTambahuploadpembayaran()
@@ -115,13 +130,12 @@ class Santri extends CI_Controller
             $config['upload_path']          = './assets/img/pembayaran';
             $config['allowed_types']        = 'jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
-            $this->load->library('upload',$config);
-            if(!$this->upload->do_upload('bukti_pembayaran')) {
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('bukti_pembayaran')) {
                 //echo "Upload Gagal"; die();
-            }else{
-                $bukti_pembayaran=$this->upload->data('file_name');
+            } else {
+                $bukti_pembayaran = $this->upload->data('file_name');
             }
-
         }
 
 
@@ -147,8 +161,6 @@ class Santri extends CI_Controller
         $this->load->view('santri/v_editupload', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
-        
-
     }
 
     public function updatepembayaran()
@@ -167,27 +179,25 @@ class Santri extends CI_Controller
             $config['upload_path']          = './assets/img/pembayaran';
             $config['allowed_types']        = 'jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
-            $this->load->library('upload',$config);
-            if(!$this->upload->do_upload('bukti_pembayaran')) {
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('bukti_pembayaran')) {
                 //echo "Upload Gagal"; die();
-            }else{
-                $bukti_pembayaran=$this->upload->data('file_name');
-                
-                if($foto->num_rows()>0){
-                    $pros=$foto->row();
-                    $name=$pros->bukti_pembayaran;
-                   
-                    if(file_exists($lok=FCPATH.'/assets/img/pembayaran/'.$name)){
+            } else {
+                $bukti_pembayaran = $this->upload->data('file_name');
+
+                if ($foto->num_rows() > 0) {
+                    $pros = $foto->row();
+                    $name = $pros->bukti_pembayaran;
+
+                    if (file_exists($lok = FCPATH . '/assets/img/pembayaran/' . $name)) {
                         unlink($lok);
                     }
+                }
             }
-            
         }
 
-        }
 
-       
-                
+
         $data = array(
             'id_pembayaran' => $id_pembayaran,
             'NIS' => $NIS,
@@ -196,7 +206,7 @@ class Santri extends CI_Controller
             'tgl_pembayaran' => $tgl_pembayaran,
             'status' => $status
         );
-        
+
         if ($bukti_pembayaran != NULL) {
 
             $data['bukti_pembayaran'] = $bukti_pembayaran;
@@ -231,10 +241,10 @@ class Santri extends CI_Controller
 
 
 
-//=================================================PERIZINAN====================================================//
-     public function perizinan()
+    //=================================================PERIZINAN====================================================//
+    public function perizinan()
     {
-        
+
         $data = $this->m_perizinansantri->tampil_data()->num_rows();
         if ($data > 0) {
             // Mengambil id soal sebelumnya
@@ -387,11 +397,11 @@ class Santri extends CI_Controller
         redirect('index.php/admin/Admin/perizinan');
     }
 
-public function suket($id)
+    public function suket($id)
     {
 
         $where = array('id_perizinan' => $id);
-        $data['izin']= $this->m_perizinansantri->suket_data($where)->result();
+        $data['izin'] = $this->m_perizinansantri->suket_data($where)->result();
         $this->load->library('pdf');
         $this->pdf->setPaper('A4', 'potrait');
         $this->pdf->filename = "Surat_Izin.pdf";

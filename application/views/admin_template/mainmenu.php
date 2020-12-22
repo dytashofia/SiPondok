@@ -23,8 +23,15 @@
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/pelanggaran"><i class="ft-bold"></i><span class="menu-title" data-i18n="">Pelanggaran</span></a>
                </li>
-               <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/admin/kompetensi"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
+               <li class="nav-item has-sub "><a href="#"><i class="ft-grid"></i><span class="menu-title" data-i18n="">Kompetensi</span></a>
+                   <ul class="menu-content" style="">
+                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/kompetensi">Diniyah</a>
+                       </li>
+                       <li class="is-shown"><a class="menu-item" href="">Khataman</a>
+                       </li>
+                   </ul>
                </li>
+
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/produk/produk"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Produk</span></a>
                </li>
                <li class=" nav-item"><a href="<?php echo base_url(); ?>index.php/admin/artikel/artikel"><i class="ft-book"></i><span class="menu-title" data-i18n="">Artikel</span></a>
