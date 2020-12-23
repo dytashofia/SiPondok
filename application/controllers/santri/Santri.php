@@ -144,12 +144,12 @@ class Santri extends CI_Controller
         // Membuat validasi form
         $this->form_validation->set_rules('nama_pembayar', 'NAMA PEMBAYAR', 'trim|required|strip_tags');
         $this->form_validation->set_rules('tgl_pembayaran', 'TANGGAL PEMBAYARAN', 'trim|required|strip_tags');
-        
+
         // Membuat pesan validasi error
         $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
         $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
         $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
-        
+
 
         // Menjalankan form
         // Apabila hasil validasi form menunjukkan ada sesuatu yang salah
@@ -179,8 +179,8 @@ class Santri extends CI_Controller
         $data['editbayar'] = $this->m_user_pembayaran->edit_data($where, 'tb_pembayaran')->result();
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_editupload', $data);
-        //$this->load->view('santri_template/profile');
-        //$this->load->view('santri_template/footer');
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
     }
 
     public function updatepembayaran()
