@@ -156,17 +156,16 @@
 
                                  <h5 class="mt-2">Upload Bukti Transfer</h5>
                                  <fieldset class="form-group">
-                                     <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" value="<?= set_value('bukti_pembayaran'); ?>" placeholder="Masukkan Bukti Pembayaran...">
-                                     <!--masih belum bisa validasinya-->
-                                     <?= form_error('bukti_pembayaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
+                                     <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" placeholder="Masukkan Bukti Pembayaran...">
+                                     <!--masih belum bisa validasinya
+                                     <?= form_error('bukti_pembayaran', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>-->
                                  </fieldset>
-
 
                                  <fieldset class="form-group">
                                      <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
                                  </fieldset>
-
-
+                                 <!--Def kalo disini konflik pakek nyak aku aja ya soalnya ini 
+                                tadi field nya double sudah aku betulin-->
 
 
                              </div>
