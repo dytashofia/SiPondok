@@ -169,7 +169,7 @@
                                                       <td><?= $diniyah->tgl_diniyah; ?></td>
                                                       <td><?= $diniyah->id_mapel; ?></td>
                                                       <td>
-                                                          <a href="<?php echo base_url(); ?>index.php/admin/admin/absen_diniyah" title="Lihat Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Lihat Ringkasan">
+                                                          <a href="#" title="Lihat Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Lihat Ringkasan">
                                                               <button type="button" class="btn btn-success">
                                                                   <i class="la la-eye color-muted m-r-5"></i>
                                                               </button>

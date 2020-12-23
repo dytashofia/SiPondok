@@ -180,7 +180,7 @@ class Admin extends CI_Controller
 
         // Menjalankan form, apabila berhasil maka tambah produk berhasil
         if ($this->form_validation->run() == false) {
-            $this->edit_admin();
+            $this->edit_admin($id_admin);
         } else {
 
             $data = array(

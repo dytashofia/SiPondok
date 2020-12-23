@@ -34,7 +34,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <?php echo form_open_multipart('santri/Santri/aksi_tambah_khataman'); ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
@@ -43,12 +43,12 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID KHATAMAN</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_khataman" class="form-control" id="id_khataman" value="<?= $id_khataman; ?>" readonly> 
+                                                <input type="text" name="id_khataman" class="form-control" id="id_khataman" value="<?= $id_khataman; ?>" readonly>
                                             </fieldset>
-                                            
-                                           <h5 class="mt-2">NIS</h5>
+
+                                            <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group<">
-                                                <input type="text" name="NIS" class="form-control" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS'));?>" readonly>  
+                                                <input type="text" name="NIS" class="form-control" id="NIS" value="<?php echo ucfirst($this->session->userdata('NIS')); ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">Tanggal</h5>
@@ -62,13 +62,13 @@
                                                     <option value="" selected>--Pilih--</option>
                                                     <option value="Hadir">Hadir</option>
                                                     <option value="Tidak Hadir">Tidak Hadir</option>
-                                                </select>  
+                                                </select>
                                             </fieldset>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
@@ -80,23 +80,22 @@
                     <?php echo form_close(); ?>
                 </div>
 
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js">
                 </script>
 
 
-                <script type="text/javascript">
+                <!-- <script type="text/javascript">
                     $(function() {
                         $("tgl").datepicker({
                             todayHighlight: true;
                             format : "dd-mm-yyyy";
                         });   
                     })
-                </script>
+                </script> -->
             </div>
             <!-- Striped rows end -->
-           
-            
+
+
         </div>
 
     </div>

@@ -220,7 +220,7 @@
                                   <div class="table-responsive">
 
 
-                                      <table class="table table-striped table-bordered zero-configuration">
+                                      <table class="table text-center table-striped table-bordered zero-configuration">
                                           <style>
                                               .dataTables_filter {
                                                   text-align: right;
@@ -278,7 +278,8 @@
                                                       <?php } ?>
                                                   </td>
 
-                                                  <td><?= $i->status; ?>
+                                                  <td>
+                                                      <?= $i->status; ?>
                                                       <br>
                                                       <?php
                                                         if ($i->status == 'Diizinkan') { ?>
@@ -297,7 +298,7 @@
                                                               &nbsp;
 
                                                           <?php } else { ?>
-
+                                                              <?php echo "Menunggu konfirmasi" ?>
                                                           <?php } ?>
                                                   </td>
                                                   <td>

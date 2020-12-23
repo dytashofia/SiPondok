@@ -166,25 +166,6 @@
                                      <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
                                  </fieldset>
 
-                                 <h5 class="mt-2">NAMA PEMBAYAR</h5>
-                                 <fieldset class="form-group">
-                                     <input type="text" class="form-control" name="nama_pembayar" id="nama_pembayar">
-                                 </fieldset>
-
-                                 <h5 class="mt-2">TANGGAL PEMBAYARAN</h5>
-                                 <fieldset class="form-group">
-                                     <input type="date" class="form-control" name="tgl_pembayaran" id="tgl_pembayaran">
-                                 </fieldset>
-
-                                 <h5 class="mt-2">Upload Bukti Transfer</h5>
-                                 <fieldset class="form-group">
-                                     <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
-                                 </fieldset>
-
-
-                                 <fieldset class="form-group">
-                                     <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
-                                 </fieldset>
 
 
 

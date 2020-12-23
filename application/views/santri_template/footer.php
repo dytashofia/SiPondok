@@ -34,7 +34,7 @@
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/bar/column.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>theme-assets/js/scripts/charts/chartjs/pie-doughnut/doughnut-simple.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="<?php echo base_url() . 'assets/file_izin/js/jquery-3.2.1.js' ?>"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url() . 'assets/file_izin/js/jquery-3.2.1.js' ?>"></script> -->
 
 
 <script type="text/javascript">
