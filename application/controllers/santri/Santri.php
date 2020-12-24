@@ -75,7 +75,16 @@ class Santri extends CI_Controller
     }
 
 
-   
+    public function detailkhataman($id){
+
+        $where=array('id_khataman' => $id );
+        $data['khatam']=$this->m_khataman->khatamanharian($id)->result();
+         $data['jumlah']=$this->m_khataman->jumlahkhatam($id)->row();
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_khatamdetail',$data);
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
+    }
 
 // ==========================================end khataman=============================================== //
 
