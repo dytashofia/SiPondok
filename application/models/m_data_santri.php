@@ -57,5 +57,10 @@ class M_data_santri extends CI_Model
     public function detail($id = NULL){
         $query = $this->db->get_where('tb_santri', array('NIS' => $id))->result();
         return $query;
-      }
+    }
+
+    public function tambah($data)
+    {
+        $this->db->insert('tb_santri', $data);
+    }
 }
