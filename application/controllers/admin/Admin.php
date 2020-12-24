@@ -479,7 +479,7 @@ class Admin extends CI_Controller
     {
 
         $data['bayar'] = $this->m_pembayaran->tampil_data()->result();
-
+        $data['set'] = $this->m_pembayaran->tampil_setbayar()->result();
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
