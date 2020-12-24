@@ -10,6 +10,8 @@ class Santri extends CI_Controller
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
         $this->load->model('m_user_pelanggaran');
+        $this->load->model('m_khataman');
+        $this->load->model('m_setkhatam');
         $this->load->model('m_diniyah');
         $this->load->helper('url', 'form');
     }
@@ -40,13 +42,42 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
+   // -==============================================khataman=============================================//
+
     public function khataman()
     {
-        $this->load->view('santri_template/header');
-        $this->load->view('santri/v_khataman');
-        $this->load->view('santri_template/profile');
+        $data['khatam'] = $this->m_setkhatam->tampil_data()->result();
+        $data['juz']=$this->m_khataman->tampil_juz()->result();
+       $this->load->view('santri_template/header');
+        $this->load->view('santri/v_khataman',$data);
+         
         $this->load->view('santri_template/footer');
     }
+
+
+     public function tambahkhataman()
+    {
+        $id_khataman = $this->input->post('id_khataman');
+        $NIS = $this->input->post('NIS');
+        $tgl_juz = $this->input->post('tgl_juz');
+        $id_juz= $this->input->post('id_juz');
+
+
+        $data = array(
+            'id_khataman' => $id_khataman,
+            'NIS' => $NIS,
+            'tgl_juz' => $tgl_juz,
+            'id_juz' => $id_juz
+        );
+
+        $this->m_khataman->tambah_data($data, 'detail_khataman');
+        redirect('index.php/santri/Santri/khataman');
+    }
+
+
+   
+
+// ==========================================end khataman=============================================== //
 
     //=======================================PEMBAYARAN==========================================//
 
