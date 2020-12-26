@@ -118,12 +118,7 @@
 
                                             <h5 class="mt-2">FOTO SANTRI</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" class="form-control" name="fto" id="fto">
-                                            </fieldset>
-
-                                            <h5 class="mt-2">TANGGAL MASUK</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="tgl_m" id="tgl_m" value="<?= date('d/m/Y'); ?>">
+                                                <input type="file" class="form-control" name="fto" id="fto" required>
                                             </fieldset>
                 
                                             <h5 class="mt-2">USERNAME</h5>
@@ -163,12 +158,12 @@
 
                                             <h5 class="mt-2">Bukti Pembayaran</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
+                                                <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran" required>
                                             </fieldset>
 
                                             <h5 class="mt-2">Surat Pernyataan</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" class="form-control" name="pernyataan" id="pernyataan">
+                                                <input type="file" class="form-control" name="pernyataan" id="pernyataan" required>
                                             </fieldset>
                                             <!-- <fieldset class="form-group">
                                                 <input type="" class="form-control" name="status" id="status" value="Belum dikonfirmasi">

@@ -120,9 +120,9 @@
 
                                             <h5 class="mt-2">FOTO</h5>
                                             <?php if($ds->foto==''){?>
-                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                                <img src="<?php echo base_url('assets/berkasSantri')?>" width="120"><br>
                                              <?php }else{ ?>
-                                                <embed  src="<?php echo base_url('assets/file_santri'.$ds->foto)?>" width="120" height="120"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/berkasSantri/'. $ds->foto)?>" width="150"></embed><br>
                                             <?php }?> 
                                             <fieldset class="form-group">
                                             <div>
