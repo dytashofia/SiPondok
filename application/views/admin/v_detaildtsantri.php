@@ -47,12 +47,12 @@
 
                                             <h5 class="mt-2">TEMPAT TANGGAL LAHIR</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="ttl" id="ttl" value="<?= $ds->ttl;?>" readonly>
+                                                <input type="text" class="form-control" name="ttl" id="ttl" value="<?= date('d-F-Y', strtotime($ds->ttl)); ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">ALAMAT</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $ds->alamat;?>" readonly>
+                                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $ds->alamat; ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">PENDIDIKAN</h5>
@@ -76,7 +76,7 @@
 
                                             <h5 class="mt-2">TANGGAL MASUK</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="tgl_masuk" id="tgl_masuk" value="<?= $ds->tgl_masuk;?>" readonly>
+                                                <input type="text" class="form-control" name="tgl_masuk" id="tgl_masuk" value="<?= date('d-F-Y', strtotime($ds->tgl_masuk)); ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">NAMA AYAH</h5>

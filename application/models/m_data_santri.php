@@ -54,8 +54,10 @@ class M_data_santri extends CI_Model
     }
 
 
-    public function detail($id = NULL){
-        $query = $this->db->get_where('tb_santri', array('NIS' => $id))->result();
+    public function detail($id){
+        $query = $this->db->get_where('tb_santri', [
+            'NIS' => $id
+        ])->result();
         return $query;
     }
 

@@ -40,7 +40,7 @@
                                                 <h5 class="mt-2">Nama Santri </h5>
                                                 <fieldset class="form-group">
                                                     <input type="text" class="form-control" value="<?= $edit['nama_santri']; ?>" name="nama" id="nama">
-                                                    <?= form_error('nama_santri', '<small class="text-danger">', '</small>'); ?>
+                                                    <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
                                                 </fieldset>
 
                                                 <h5 class="mt-2">Jenis Kelamin</h5>
@@ -71,6 +71,12 @@
                                                     <?= form_error('ttl', '<small class="text-form text-danger">', '</small>'); ?>
                                                 </fieldset>
 
+                                                <h5 class="mt-2">ALAMAT</h5>
+                                                <fieldset class="form-group">
+                                                    <textarea class="form-control" name="almt" id="almt"><?= $edit['alamat']; ?></textarea>
+                                                    <?= form_error('almt', '<small class="text-form text-danger">', '</small>'); ?>
+                                                </fieldset>
+
                                                 <h5 class="mt-2">Pendidikan</h5>
                                                 <?php if ($edit['pendidikan'] == 'SMA/SMK') : ?>
                                                     <select name="pdd" id="pdd" class="custom-select">
@@ -99,7 +105,7 @@
                                                     <?= form_error('jur', '<small class="text-danger">', '</small>'); ?>
                                                 </fieldset>
 
-                                                <h5 class="mt-2">NIM</h5>
+                                                <h5 class="mt-2">NIM/NIS</h5>
                                                 <fieldset class="form-group">
                                                     <input type="text" class="form-control" name="nim" id="nim" value="<?= $edit['nim']; ?>">
                                                     <?= form_error('nim', '<small class="text-danger">', '</small>'); ?>
@@ -171,7 +177,7 @@
 
                                                 <h5 class="mt-2">Password</h5>
                                                 <fieldset class="form-group">
-                                                    <input type="text" class="form-control" name="psw" id="psw" value="<?= $edit['password']; ?>">
+                                                    <input type="password" class="form-control" name="psw" id="psw" value="<?= $edit['password']; ?>">
                                                     <?= form_error('psw', '<small class="text-danger">', '</small>'); ?>
                                                 </fieldset>
 
@@ -193,19 +199,25 @@
                                                 <h5 class="mt-2">FOTO</h5>
                                                 <?php if ($edit['foto'] == '') { ?>
                                                     <p class="text-bold text-muted">Belum upload</p>
+                                                    <fieldset class="form-group p-2">
+                                                        <input type="file" class="form-control" name="fto" id="fto">
+                                                    </fieldset>
                                                 <?php } else { ?>
-                                                    <embed src="<?= base_url('assets/berkasSantri' . $edit['foto']) ?>" width="150"></embed><br>
+                                                    <embed src="<?= base_url('assets/berkasSantri/' . $edit['foto']) ?>" width="150"></embed><br>
                                                     <?= $edit['foto']; ?>
 
                                                     <fieldset class="form-group p-2">
                                                         <input type="file" class="form-control" name="fto" id="fto">
                                                     </fieldset>
-                                                    <input type="hidden" name="old_fto" value="<?= $edit['foto']; ?>">
                                                 <?php } ?>
+                                                <input type="hidden" name="old_fto" value="<?= $edit['foto']; ?>">
 
                                                 <h5 class="mt-2">SURAT PERNYATAAN</h5>
                                                 <?php if ($edit['surat_pernyataan'] == '') { ?>
                                                     <p class="text-bold text-muted">Belum upload</p>
+                                                    <fieldset class="form-group">
+                                                        <input type="file" class="form-control" name="pernyataan" id="pernyataan">
+                                                    </fieldset>
                                                 <?php } else { ?>
                                                     <a class="btn btn-success" href="<?= base_url('assets/berkasSantri' . $edit['surat_pernyataan']) ?>">Download Surat Pernyataan</a><br>
                                                     <?= $edit['surat_pernyataan']; ?>
@@ -213,12 +225,15 @@
                                                     <fieldset class="form-group">
                                                         <input type="file" class="form-control" name="pernyataan" id="pernyataan">
                                                     </fieldset>
-                                                    <input type="hidden" name="old_pernyataan" value="<?= $edit['surat_pernyataan']; ?>">
                                                 <?php } ?>
+                                                <input type="hidden" name="old_pernyataan" value="<?= $edit['surat_pernyataan']; ?>">
 
                                                 <h5 class="mt-2">BUKTI PEMBAYARAN</h5>
                                                 <?php if ($edit['bukti_pembayaran'] == '') { ?>
                                                     <p class="text-bold text-muted">Belum upload</p>
+                                                    <fieldset class="form-group p-2">
+                                                        <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
+                                                    </fieldset>
                                                 <?php } else { ?>
                                                     <embed src="<?= base_url('assets/berkasSantri' . $edit['bukti_pembayaran']) ?>" width="120" height="120"></embed><br>
                                                     <?= $edit['bukti_pembayaran']; ?>
@@ -226,8 +241,8 @@
                                                     <fieldset class="form-group p-2">
                                                         <input type="file" class="form-control" name="bukti_pembayaran" id="bukti_pembayaran">
                                                     </fieldset>
-                                                    <input type="hidden" name="old_pembayaran" value="<?= $edit['bukti_pembayaran']; ?>">
                                                 <?php } ?>
+                                                <input type="hidden" name="old_pembayaran" value="<?= $edit['bukti_pembayaran']; ?>">
 
                                             </div>
                                         </div>

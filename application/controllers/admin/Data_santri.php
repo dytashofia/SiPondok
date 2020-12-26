@@ -376,8 +376,6 @@ class Data_santri extends CI_Controller
   // menampilkan detail data promo
   public function detail($id)
   {
-    $where = array('NIS' => $id);
-    $detail = $this->M_data_santri->detail($id);
     $data['detail'] = $this->M_data_santri->detail($id);
     $this->load->view('admin_template/header');
     $this->load->view('admin_template/mainmenu');
