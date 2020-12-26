@@ -134,7 +134,7 @@ class Data_santri extends CI_Controller
       /** Upload bukti bayar */
       $upload_image = $_FILES['bukti_pembayaran']['name'];
       if ($upload_image) {
-          $config['allowed_types'] = 'gif|jpg|png|pdf|doc|docx';
+          $config['allowed_types'] = 'gif|jpg|png';
           $config['max_size'] = '2048';
           $config['upload_path']  = './assets/berkasSantri/';
 

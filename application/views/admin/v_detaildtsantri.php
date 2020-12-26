@@ -131,25 +131,21 @@
                                             </fieldset>  
                                             <h5 class="mt-2">SURAT PERNYATAAN</h5>
                                             <?php if($ds->surat_pernyataan==''){?>
-                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                                <p class="text-bold text-muted">Belum upload</P>
                                              <?php }else{ ?>
-                                                <a  class="btn btn-success" href="<?php echo base_url('assets/file_santri'.$ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
+                                                <a  class="btn btn-success" href="<?php echo base_url('assets/berkasSantri'. $ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
+                                                <?php echo $ds->surat_pernyataan; ?>
                                             <?php }?> 
                                             <fieldset class="form-group">
-                                            <!-- <div>
-                                                 <?php echo $ds->surat_pernyataan; ?>
-                                            </div> -->
                                             </fieldset>  
                                             <h5 class="mt-2">BUKTI PEMBAYARAN</h5>
                                             <?php if($ds->bukti_pembayaran==''){?>
-                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                                <p class="text-bold text-muted">Belum upload</P>
                                              <?php }else{ ?>
-                                                <embed  src="<?php echo base_url('assets/file_santri'.$ds->bukti_pembayaran)?>" width="120" height="120"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/berkasSantri'. $ds->bukti_pembayaran)?>" width="150"></embed><br>
+                                                <?php echo $ds->bukti_pembayaran; ?>
                                             <?php }?> 
                                             <fieldset class="form-group">
-                                            <div>
-                                                 <?php echo $ds->bukti_pembayaran; ?>
-                                            </div>
                                             </fieldset> 
                                         </div>
                                         <div> 
