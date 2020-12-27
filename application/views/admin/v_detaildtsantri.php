@@ -98,17 +98,6 @@
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="no_telp_wali" id="no_telp_wali" value="<?= $ds->no_telp_wali;?>" readonly>
                                             </fieldset>
-
-                                            <h5 class="mt-2">USERNAME</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="username" id="username" value="<?= $ds->username;?>" readonly>
-                                            </fieldset>
-
-                                            <h5 class="mt-2">PASSWORD</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="password" id="password" value="<?= $ds->password;?>" readonly>
-                                            </fieldset>
-
                                         </div>
                                     </div>
                                 </div>
@@ -147,12 +136,6 @@
                                             <?php }?> 
                                             <fieldset class="form-group">
                                             </fieldset> 
-                                        </div>
-                                        <div> 
-                                            <h5 class="mt-2">STATUS</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="status_pembayaran" id="status_pembayaran" value="Belum dikonfirmasi" value="<?= $ds->status_pembayaran; ?>" readonly>
-                                            </fieldset>
                                         </div>
                                     </div>
                                 </div>
