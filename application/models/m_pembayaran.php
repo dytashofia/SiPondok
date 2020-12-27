@@ -20,8 +20,8 @@ function laporan($startdate,$enddate,$jenis_pembayaran){
      return $query->result();
   }
 
-  function laporan2($startdate,$enddate){
-     $query= $this->db->query("SELECT *FROM tb_santri WHERE NOT EXISTS(SELECT NIS FROM tb_pembayaran WHERE tb_santri.NIS=tb_pembayaran.NIS and tb_pembayaran.tgl_pembayaran BETWEEN '$startdate' and '$enddate')");
+  function laporan2($startdate,$enddate,$jenis_pembayaran){
+     $query= $this->db->query("SELECT *FROM tb_santri WHERE NOT EXISTS(SELECT NIS FROM tb_pembayaran WHERE tb_santri.NIS=tb_pembayaran.NIS and tb_pembayaran.id_setbayar='$jenis_pembayaran' and tb_pembayaran.tgl_pembayaran BETWEEN '$startdate' and '$enddate')");
      return $query->result();
   }
 

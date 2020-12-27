@@ -84,7 +84,7 @@
                                             <td><?= $k->nama_bulan;?></td>
                                             <td> <?= $k->tgl_awal_bulan;?></td>
                                             <td><?= $k->tgl_akhir_bulan;?></td>
-                                            <td><a href=""><button type="button" class="btn-sx btn-primary"><i class="la la-check-circle color-info"> </i> Cek</button></a></td>
+                                            <td><a href="<?php echo base_url(); ?>index.php/admin/admin/laporankhataman/<?= $k->id_khataman;?>"><button type="button" class="btn-sx btn-primary"><i class="la la-check-circle color-info"> </i> Cek</button></a></td>
                                             <td>
 
 
