@@ -50,10 +50,10 @@
 
              <div class="card-body box-profile">
 
-                 <img style="margin-bottom:20px; border-radius: 100%; width:120px;" class="profile-user-img img-fluid img-circle" src="http://localhost/ujikom2/assets/uploads/users/admin.png" alt="adefsing">
+                 <img style="margin-bottom:20px; border-radius: 100%; width:120px;" class="profile-user-img img-fluid img-circle" src="<?= base_url(); ?>assets/berkasSantri/<?php echo ucfirst($this->session->userdata('foto')); ?>" alt="adefsing">
 
-                 <h4 class="card-title">adefsing</h4>
-                 <p class="card-text">adefsing | adefsing@gmail.com</p>
+                 <h4 class="card-title"><?php echo ucfirst($this->session->userdata('nama_santri')); ?></h4>
+                 <p class="card-text"><?php echo ucfirst($this->session->userdata('NIS')); ?> | <?php echo ucfirst($this->session->userdata('username')); ?>@gmail.com</p>
 
                  <button class="tombol" type="submit">
                      Edit Profile
