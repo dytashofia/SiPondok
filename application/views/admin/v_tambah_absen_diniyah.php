@@ -41,9 +41,15 @@
                             <div class="col-lg-6 col-md-12">
 
                                 <h5 class="mt-2">ID Diniyah</h5>
+                                <?php
+                                                    foreach ($tb_diniyah as $diniyah) :
+                                                ?>
                                 <fieldset class="form-group">
-                                    <input type="text" name="id_diniyah" class="form-control" id="id_diniyah" value="<?php echo $id_diniyah; ?>" readonly> 
+                                    <input type="text" name="id_diniyah" class="form-control" id="id_diniyah" value="<?= $diniyah->id_diniyah; ?>" readonly> 
                                 </fieldset>
+                                <?php
+                                                    endforeach;
+                                                ?>
                             
                                 <div class="card">
                                     <div class="card-block">

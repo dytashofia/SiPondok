@@ -3,7 +3,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
             <div class="content-header-left col-md-4 col-12 mb-2">
-                <h3 class="content-header-title">Edit Data Diniyah</h3>
+                <h3 class="content-header-title">Absen Santri</h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
                 <div class="breadcrumbs-top float-md-right">
@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Edit Data Diniyah
+                            <li class="breadcrumb-item active">Absen Santri
                             </li>
                         </ol>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Edit Data Diniyah</h4>
+                            <h4 class="card-title">Absen Santri</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -36,8 +36,8 @@
                             </div>
                         </div>
 
-                        <?php echo form_open_multipart('index.php/admin/Admin/update_diniyah'); ?>
-                        <?php foreach ($tb_diniyah as $diniyah) { ?>
+                        <?php echo form_open_multipart('index.php/admin/Admin/aksi_absen_diniyah'); ?>
+                        <?php foreach ($absen_santri as $absen) { ?>
                         <div class="row match-height">
                             <div class="col-lg-12 col-md-12">
                                 <div class="card">
@@ -45,17 +45,17 @@
                                         <div class="card-body">
                                             <h5 class="mt-2">ID Diniyah</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="id_diniyah" id="id_diniyah" value="<?= $diniyah->id_diniyah; ?>" class="form-control" readonly>
+                                                <input type="text" name="id_diniyah" id="id_diniyah" value="<?= $absen->id_diniyah; ?>" class="form-control" readonly>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Mapel</h5>
-                                            <fieldset class="form-group<?= form_error('id_mapel') ? 'has-error' : null ?>">
-                                                <select name="id_mapel" id="id_mapel" class="custom-select">
-                                                    <option value="">Edit Mapel</option>
+                                            <h5 class="mt-2">Nama Santri</h5>
+                                            <fieldset class="form-group<?= form_error('NIS') ? 'has-error' : null ?>">
+                                                <select name="NIS" id="NIS" class="custom-select">
+                                                    <option value="">Nama Santri</option>
                                                     <?php
-                                                    foreach ($tb_mapel as $mapel) :
+                                                    foreach ($tb_santri as $santri) :
                                                     ?>
-                                                        <option value="<?= $mapel->id_mapel; ?>"><?= $mapel->nama_mapel; ?></option>
+                                                        <option value="<?= $santri->NIS; ?>"><?= $santri->nama_santri; ?></option>
                                                     <?php
                                                     endforeach;
                                                     ?>
@@ -63,10 +63,6 @@
                                                 <?= form_error('id_mapel', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Tanggal Diniyah</h5>
-                                            <fieldset class="form-group">
-                                                <input type="date" name="tgl_diniyah" id="tgl_diniyah" value="<?= $diniyah->tgl_diniyah; ?>" class="form-control">
-                                            </fieldset>
                                         </div>
                                     </div>
                                 </div>

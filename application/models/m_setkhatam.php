@@ -45,4 +45,14 @@ function tambah_data($data, $table)
    //  $query= $this->db->query("SELECT tb_santri.nama_santri FROM detail_khataman JOIN tb_santri ON detail_khataman.NIS=tb_santri.NIS WHERE detail_khataman.id_khataman='$id';");
    //  return $query;
    // }
+
+  function khatam($id){
+    $query= $this->db->query("SELECT nama_santri, NIS FROM tb_santri WHERE EXISTS(SELECT NIS FROM detail_khataman WHERE tb_santri.NIS=detail_khataman.NIS AND detail_khataman.id_khataman='$id')");
+    return $query;
+  }
+
+  function tidak($id){
+    $query= $this->db->query("SELECT nama_santri FROM tb_santri WHERE NOT EXISTS(SELECT NIS FROM detail_khataman WHERE tb_santri.NIS=detail_khataman.NIS AND detail_khataman.id_khataman='$id')");
+    return $query;
+  }
 }

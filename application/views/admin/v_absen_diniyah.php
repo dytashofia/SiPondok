@@ -67,12 +67,11 @@
                                                 <input type="text" name="nama_mapel" id="nama_mapel" value="" class="form-control" readonly>
                                             </fieldset>
 
-                                            
-                               
+                                   
                            
                                             <h5 class="mt-2">Tambahkan Nama Santri</h5>
                                             <fieldset class="form-group">
-                                                <a href="<?php echo base_url('index.php/admin/Admin/tambah_absen_diniyah/') ?>" title="Tambah Santri" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Santri">
+                                                <a href="<?php echo base_url() ?>index.php/admin/Admin/tambah_absen_diniyah/<?= $absen->id_diniyah; ?>" title="Tambah Santri" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Santri">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="la la-plus color-muted m-r-5"></i>
                                                         </button>

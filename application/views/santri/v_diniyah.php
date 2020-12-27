@@ -149,6 +149,7 @@
                                                   padding-bottom: 50px;
                                               }
                                           </style>
+                                          
                                           <thead>
                                               <tr>
                                                   <th>NO</th>
@@ -167,7 +168,7 @@
                                                       <td><?= $no_urut; ?></td>
                                                       <td><?= $diniyah->id_diniyah; ?></td>
                                                       <td><?= $diniyah->tgl_diniyah; ?></td>
-                                                      <td><?= $diniyah->id_mapel; ?></td>
+                                                      <td><?= $diniyah->nama_mapel; ?></td>
                                                       <td>
                                                           <a href="#" title="Lihat Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Lihat Ringkasan">
                                                               <button type="button" class="btn btn-success">
@@ -179,7 +180,7 @@
 
                                                           <div class="btn-group mr-2 mb-2">
 
-                                                              <a href="#" title="Tambah Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Ringkasan">
+                                                              <a href="<?php echo base_url('index.php/santri/Santri/tambah_ringkasan/'); ?>" title="Tambah Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Ringkasan">
                                                                   <button type="button" class="btn btn-warning">
                                                                       <i class="la la-plus color-danger"></i> Ringkasan
                                                                   </button>
