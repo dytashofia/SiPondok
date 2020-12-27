@@ -45,21 +45,21 @@ class Daftar extends CI_Controller
         'required' => 'kolom ini tidak boleh kosong'
       ]);
   
-      // $this->form_validation->set_rules('jk', 'Jk', 'required|trim', [
-      //   'required' => 'pilih jenis kelamin'
-      // ]);
+      $this->form_validation->set_rules('jk', 'Jk', 'required|trim', [
+        'required' => 'pilih jenis kelamin'
+      ]);
   
-      // $this->form_validation->set_rules('ttl', 'Ttl', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('ttl', 'Ttl', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('almt', 'Almt', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('almt', 'Almt', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('nim', 'Nim', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('nim', 'Nim', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
       
       // $this->form_validation->set_rules('pdd', 'Pdd', 'required|trim', [
       //   'required' => 'kolom ini tidak boleh kosong'
