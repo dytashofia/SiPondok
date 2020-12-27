@@ -69,7 +69,7 @@
                                             <th>ID</th>
                                             <th>TANGGAL</th>
                                             <th>MAPEL</th>
-                                            <th>DAFTAR SANTRI</th>
+                                            <th>ABSEN DINIYAH</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
@@ -81,9 +81,9 @@
                                                 <td><?= $no_urut; ?></td>
                                                 <td><?= $diniyah->id_diniyah; ?></td>
                                                 <td><?= $diniyah->tgl_diniyah; ?></td>
-                                                <td><?= $diniyah->id_mapel; ?></td>
+                                                <td><?= $diniyah->nama_mapel; ?></td>
                                                 <td>
-                                                    <a href="<?php echo base_url(); ?>index.php/admin/admin/absen_diniyah" title="Tambah Santri" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Santri">
+                                                    <a href="<?php echo base_url('index.php/admin/Admin/absen_diniyah/'.$diniyah->id_diniyah); ?>" title="Tambah Santri" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Santri">
                                                         <button type="button" class="btn btn-primary">
                                                             <i class="la la-plus color-muted m-r-5"></i>
                                                         </button>
@@ -92,20 +92,20 @@
                                                 <td>
 
                                                     <div class="btn-group mr-2 mb-2">
-                                                        <a href="#" title="Edit" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                        <a href="<?= base_url('index.php/admin/Admin/edit_diniyah/'.$diniyah->id_diniyah); ?>" title="Edit" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
                                                             <button type="button" class="btn btn-primary">
                                                                 <i class="la la-pencil color-muted m-r-5"></i>
                                                             </button>
                                                         </a>
 
                                                         &nbsp;
-                                                        <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                        <a href="<?php echo base_url('index.php/admin/Admin/hapus_diniyah/'.$diniyah->id_diniyah); ?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                             <button type="button" class="btn btn-danger">
                                                                 <i class="la la-trash color-danger"></i>
                                                             </button>
                                                         </a>
                                                         &nbsp;
-                                                        <a href="#" title="Detail" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                        <a href="<?= base_url('index.php/admin/Admin/detail_diniyah/'.$diniyah->id_diniyah); ?>" title="Detail" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
                                                             <button type="button" class="btn btn-warning">
                                                                 <i class="la la-exclamation-circle color-danger"></i>
                                                             </button>
@@ -126,7 +126,7 @@
                                             <th>ID</th>
                                             <th>TANGGAL</th>
                                             <th>MAPEL</th>
-                                            <th>DAFTAR SANTRI</th>
+                                            <th>ABSEN DINIYAH</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>

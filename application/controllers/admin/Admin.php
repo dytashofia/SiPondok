@@ -10,7 +10,6 @@ class Admin extends CI_Controller
         $this->load->model('m_perizinan');
         $this->load->model('m_admin');
         $this->load->model('m_pembayaran');
-        $this->load->model('m_absensi_diniyah');
         $this->load->model('m_diniyah');
         $this->load->helper('url', 'form');
         $this->load->library('form_validation');
@@ -996,6 +995,9 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+
+    //======================================== diniyah ==========================================
+
     public function diniyah()
     {
         $data['tb_diniyah'] = $this->m_diniyah->tampil_diniyah()->result();
@@ -1008,13 +1010,163 @@ class Admin extends CI_Controller
 
     public function tambah_diniyah()
     {
+        $data = $this->m_diniyah->tampil_diniyah()->num_rows();
+        if ($data > 0) {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_diniyah->tampil_data_akhir()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach ($lastId as $row) {
+                // Melakukan pemisahan huruf dengan angka pada id perizinan
+                $rawid_diniyah = substr($row->id_diniyah, 3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
+                $id_diniyahInt = intval($rawid_diniyah);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if (strlen($id_diniyahInt) == 1) {
+                    // jika panjang id hanya 1 angka
+                    $id_diniyah = "D00" . ($id_diniyahInt + 1);
+                } else if (strlen($id_diniyahInt) == 2) {
+                    // jika panjang id hanya 2 angka
+                    $id_diniyah = "D0" . ($id_diniyahInt + 1);
+                } else if (strlen($id_diniyahInt) == 3) {
+                    // jika panjang id hanya 3 angka
+                    $id_diniyah = "D" . ($id_diniyahInt + 1);
+                }
+            }
+        } else {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_diniyah = "D001";
+        }
+
+        $tb_mapel = $this->m_diniyah->tampil_mapel()->result();
+        $diniyah = $this->m_diniyah->tampil_diniyah()->result();
+      
+
+
+        $data = array(
+            'id_diniyah' => $id_diniyah,
+            'tb_mapel' => $tb_mapel
+        );
+
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tambah_diniyah');
+        $this->load->view('admin/v_tambah_diniyah', $data);
         $this->load->view('admin_template/footer');
     }
 
+    public function tambah_aksi_diniyah()
+    {
+        $id_diniyah = $this->input->post('id_diniyah');
+        $id_mapel = $this->input->post('id_mapel');
+        $tgl_diniyah = $this->input->post('tgl_diniyah');
+
+        $data = array
+        (
+            'id_diniyah' => $id_diniyah,
+            'id_mapel' => $id_mapel,
+            'tgl_diniyah' => $tgl_diniyah 
+        );
+
+        $this->m_diniyah->tambah_diniyah($data, 'tb_diniyah');
+        redirect('index.php/admin/Admin/diniyah');
+    }
+
+    public function edit_diniyah($id) 
+    {
+        $where = array(
+            'id_diniyah' => $id,      
+        );
+
+        $data['tb_diniyah'] = $this->m_diniyah->edit_diniyah($where, 'tb_diniyah')->result();
+        
+        //$this->load->view('admin_template/header');
+        //$this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_edit_diniyah', $data);
+        //$this->load->view('admin_template/footer');
+    }
+
+    public function update_diniyah()
+    {
+        
+    }
+
+    public function hapus_diniyah($id)
+    {
+        $where = array(
+            'id_diniyah' => $id
+        );
+
+        $this->m_diniyah->hapus_diniyah($where, 'tb_diniyah');
+        redirect('index.php/admin/Admin/diniyah');
+    }
+
+    public function detail_diniyah($id)
+    {
+        $where = array(
+            'id_diniyah' => $id
+        );
+
+        $data['tb_diniyah'] = $this->m_diniyah->detail_diniyah($where, 'tb_diniyah')->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detail_diniyah', $data);
+        $this->load->view('admin_template/footer');
+    }
+
+    public function absen_diniyah($id)
+    {
+        $where = array(
+            'id_diniyah' => $id,
+        );
+
+        $data['tb_absen_diniyah'] = $this->m_diniyah->absen_diniyah($where, 'tb_diniyah')->result();    
+      
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_absen_diniyah', $data);
+        $this->load->view('admin_template/footer');
+    }
+
+    public function tambah_absen_diniyah()
+    {
+        $tb_santri = $this->m_diniyah->tampil_santri()->result();
+        $tb_diniyah = $this->m_diniyah->tampil_diniyah()->result();
+
+        $data = array(
+            'tb_santri' => $tb_santri,
+            'tb_diniyah' => $tb_diniyah,
+            'id_diniyah' => $id_diniyah
+        );
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_tambah_absen_diniyah', $data);
+        $this->load->view('admin_template/footer');
+    }
+
+    public function aksi_absen_diniyah()
+    {
+        $id_diniyah = $this->input->post('id_diniyah');
+        $NIS = $this->input->post('NIS');
+
+        $data = array
+        (
+            'id_diniyah' => $id_diniyah,
+            'NIS' => $NIS
+        );
+
+        $this->m_diniyah->tambah_absen_diniyah($data, 'detail_diniyah');
+        //redirect('index.php/admin/Admin/absen_diniyah');
+    }
+
+    
+    
+    //=============================== end diniyah =====================================
+    
+    
     public function khataman()
     {
 
@@ -1026,13 +1178,5 @@ class Admin extends CI_Controller
 
 
 
-    //================================ Absensi ============================================
-
-    public function absen_diniyah()
-    {
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_absen_diniyah');
-        $this->load->view('admin_template/footer');
-    }
+    
 }

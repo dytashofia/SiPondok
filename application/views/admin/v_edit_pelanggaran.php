@@ -50,7 +50,7 @@
 
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" name="NIS" class="form-control" id="NIS" value="<?= $pelanggaran->NIS; ?>" require> 
+                                                <input type="text" name="NIS" class="form-control" id="NIS" value="<?= $pelanggaran->NIS; ?>" require readonly> 
                                             </fieldset>
                                     
                                            <h5 class="mt-2">Jenis Pelanggaran</h5>
