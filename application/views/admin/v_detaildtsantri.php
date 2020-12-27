@@ -47,12 +47,12 @@
 
                                             <h5 class="mt-2">TEMPAT TANGGAL LAHIR</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="ttl" id="ttl" value="<?= $ds->ttl;?>" readonly>
+                                                <input type="text" class="form-control" name="ttl" id="ttl" value="<?= date('d-F-Y', strtotime($ds->ttl)); ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">ALAMAT</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $ds->alamat;?>" readonly>
+                                                <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $ds->alamat; ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">PENDIDIKAN</h5>
@@ -76,7 +76,7 @@
 
                                             <h5 class="mt-2">TANGGAL MASUK</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" name="tgl_masuk" id="tgl_masuk" value="<?= $ds->tgl_masuk;?>" readonly>
+                                                <input type="text" class="form-control" name="tgl_masuk" id="tgl_masuk" value="<?= date('d-F-Y', strtotime($ds->tgl_masuk)); ?>" readonly>
                                             </fieldset>
 
                                             <h5 class="mt-2">NAMA AYAH</h5>
@@ -120,9 +120,9 @@
 
                                             <h5 class="mt-2">FOTO</h5>
                                             <?php if($ds->foto==''){?>
-                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                                <img src="<?php echo base_url('assets/berkasSantri')?>" width="120"><br>
                                              <?php }else{ ?>
-                                                <embed  src="<?php echo base_url('assets/file_santri'.$ds->foto)?>" width="120" height="120"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/berkasSantri/'. $ds->foto)?>" width="150"></embed><br>
                                             <?php }?> 
                                             <fieldset class="form-group">
                                             <div>
@@ -131,25 +131,21 @@
                                             </fieldset>  
                                             <h5 class="mt-2">SURAT PERNYATAAN</h5>
                                             <?php if($ds->surat_pernyataan==''){?>
-                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                                <p class="text-bold text-muted">Belum upload</P>
                                              <?php }else{ ?>
-                                                <a  class="btn btn-success" href="<?php echo base_url('assets/file_santri'.$ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
+                                                <a  class="btn btn-success" href="<?php echo base_url('assets/berkasSantri'. $ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
+                                                <?php echo $ds->surat_pernyataan; ?>
                                             <?php }?> 
                                             <fieldset class="form-group">
-                                            <!-- <div>
-                                                 <?php echo $ds->surat_pernyataan; ?>
-                                            </div> -->
                                             </fieldset>  
                                             <h5 class="mt-2">BUKTI PEMBAYARAN</h5>
                                             <?php if($ds->bukti_pembayaran==''){?>
-                                                <img src="<?php echo base_url('assets/file_santri')?>" width="120" height="120"><br>
+                                                <p class="text-bold text-muted">Belum upload</P>
                                              <?php }else{ ?>
-                                                <embed  src="<?php echo base_url('assets/file_santri'.$ds->bukti_pembayaran)?>" width="120" height="120"></embed><br>
+                                                <embed  src="<?php echo base_url('assets/berkasSantri'. $ds->bukti_pembayaran)?>" width="150"></embed><br>
+                                                <?php echo $ds->bukti_pembayaran; ?>
                                             <?php }?> 
                                             <fieldset class="form-group">
-                                            <div>
-                                                 <?php echo $ds->bukti_pembayaran; ?>
-                                            </div>
                                             </fieldset> 
                                         </div>
                                         <div> 

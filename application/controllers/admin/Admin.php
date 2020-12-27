@@ -11,6 +11,7 @@ class Admin extends CI_Controller
         $this->load->model('m_admin');
         $this->load->model('m_pembayaran');
         $this->load->model('m_diniyah');
+        $this->load->model('m_setkhatam');
         $this->load->helper('url', 'form');
         $this->load->library('form_validation');
 
@@ -179,7 +180,7 @@ class Admin extends CI_Controller
 
         // Menjalankan form, apabila berhasil maka tambah produk berhasil
         if ($this->form_validation->run() == false) {
-            $this->edit_admin();
+            $this->edit_admin($id_admin);
         } else {
 
             $data = array(
@@ -477,7 +478,7 @@ class Admin extends CI_Controller
     {
 
         $data['bayar'] = $this->m_pembayaran->tampil_data()->result();
-
+        $data['set'] = $this->m_pembayaran->tampil_setbayar()->result();
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');

@@ -287,11 +287,11 @@
                 <h5 class="mt-2">JENIS PEMBAYARAN</h5>
                                             <fieldset class="form-group<?=form_error('id_setbayar') ? 'has-error' : null?>">
                                                 <select name="id_setbayar" id="id_setbayar" class="custom-select">
-                                                
+                                            
                                                   <?php
-                                                    foreach ($bayar as $b) :
+                                                    foreach ($set as $s) :
                                                 ?>
-                                                    <option value="<?= $b->id_setbayar;?>"><?= $b->jenis_pembayaran;?></option>
+                                                    <option value="<?= $s->id_setbayar;?>"><?= $s->jenis_pembayaran;?></option>
                                                 <?php
                                                     endforeach;
                                                 ?>

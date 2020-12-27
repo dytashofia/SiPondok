@@ -10,6 +10,11 @@ class M_pembayaran extends CI_Model {
   
 	}
 
+function tampil_setbayar(){
+      return $this->db->get('detail_pembayaran');
+    }
+
+
 function laporan($startdate,$enddate,$jenis_pembayaran){
      $query= $this->db->query("SELECT tb_santri.nama_santri,detail_pembayaran.jenis_pembayaran, detail_pembayaran.id_setbayar, tb_pembayaran.tgl_pembayaran FROM tb_pembayaran JOIN tb_santri ON tb_santri.NIS=tb_pembayaran.NIS JOIN detail_pembayaran ON tb_pembayaran.id_setbayar=detail_pembayaran.id_setbayar WHERE EXISTS(SELECT NIS FROM tb_santri WHERE tb_santri.NIS=tb_pembayaran.NIS and tb_pembayaran.tgl_pembayaran BETWEEN '$startdate' and '$enddate' and tb_pembayaran.id_setbayar='$jenis_pembayaran')");
      return $query->result();
@@ -25,6 +30,7 @@ function laporan($startdate,$enddate,$jenis_pembayaran){
    {
        $this->db->insert($table, $data);
    }
+
 
     function tampil_data_akhir()
   {

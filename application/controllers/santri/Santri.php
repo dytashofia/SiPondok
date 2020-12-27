@@ -10,6 +10,8 @@ class Santri extends CI_Controller
         $this->load->model('m_user_pembayaran');
         $this->load->model('m_perizinansantri');
         $this->load->model('m_user_pelanggaran');
+        $this->load->model('m_khataman');
+        $this->load->model('m_setkhatam');
         $this->load->model('m_diniyah');
         $this->load->helper('url', 'form');
     }
@@ -40,13 +42,51 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
+   // -==============================================khataman=============================================//
+
     public function khataman()
     {
+        $data['khatam'] = $this->m_setkhatam->tampil_data()->result();
+        $data['juz']=$this->m_khataman->tampil_juz()->result();
+       $this->load->view('santri_template/header');
+        $this->load->view('santri/v_khataman',$data);
+         
+        $this->load->view('santri_template/footer');
+    }
+
+
+     public function tambahkhataman()
+    {
+        $id_khataman = $this->input->post('id_khataman');
+        $NIS = $this->input->post('NIS');
+        $tgl_juz = $this->input->post('tgl_juz');
+        $id_juz= $this->input->post('id_juz');
+
+
+        $data = array(
+            'id_khataman' => $id_khataman,
+            'NIS' => $NIS,
+            'tgl_juz' => $tgl_juz,
+            'id_juz' => $id_juz
+        );
+
+        $this->m_khataman->tambah_data($data, 'detail_khataman');
+        redirect('index.php/santri/Santri/khataman');
+    }
+
+
+    public function detailkhataman($id){
+
+        $where=array('id_khataman' => $id );
+        $data['khatam']=$this->m_khataman->khatamanharian($id)->result();
+         $data['jumlah']=$this->m_khataman->jumlahkhatam($id)->row();
         $this->load->view('santri_template/header');
-        $this->load->view('santri/v_khataman');
+        $this->load->view('santri/v_khatamdetail',$data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
+
+// ==========================================end khataman=============================================== //
 
     //=======================================PEMBAYARAN==========================================//
 
@@ -144,13 +184,12 @@ class Santri extends CI_Controller
         // Membuat validasi form
         $this->form_validation->set_rules('nama_pembayar', 'NAMA PEMBAYAR', 'trim|required|strip_tags');
         $this->form_validation->set_rules('tgl_pembayaran', 'TANGGAL PEMBAYARAN', 'trim|required|strip_tags');
-        $this->form_validation->set_rules('bukti_pembayaran', 'Upload Bukti Transfer', 'uploaded');
 
         // Membuat pesan validasi error
         $this->form_validation->set_message('required', 'Kolom %s tidak boleh kosong.');
         $this->form_validation->set_message('trim', 'Kolom %s berisi karakter yang dilarang.');
         $this->form_validation->set_message('strip_tags', 'Kolom %s berisi karakter yang dilarang.');
-        $this->form_validation->set_message('uploaded', ' %s tidak boleh kosong.');
+
 
         // Menjalankan form
         // Apabila hasil validasi form menunjukkan ada sesuatu yang salah

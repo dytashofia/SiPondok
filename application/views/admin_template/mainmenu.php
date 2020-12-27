@@ -27,7 +27,7 @@
                    <ul class="menu-content" style="">
                        <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/diniyah">Diniyah</a>
                        </li>
-                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/khataman">Khataman</a>
+                       <li class="is-shown"><a class="menu-item" href="<?php echo base_url(); ?>index.php/admin/admin/setkhataman">Khataman</a>
                        </li>
                    </ul>
                </li>
