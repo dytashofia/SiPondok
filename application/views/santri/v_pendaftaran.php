@@ -101,6 +101,11 @@
                                             Download <b>Surat Pernyataan </b> &nbsp; <a href="<?php echo base_url(); ?>santri/login"><button type="button" style="width: 50px;" class="btn-sm btn-primary btn-min-width ff mr-1 mt-1 mb-1">LOGIN</button></a>
                                             <?php echo form_open_multipart('index.php/santri/Daftar/tambah'); ?>
 
+                                            <h5 class="mt-2">NIS</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="NIS" id="NIS" value="<?= $id_s; ?>" readonly>
+                                            </fieldset>
+
                                             <h5 class="mt-2">Nama Lengkap</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="nama" id="nama">
@@ -167,35 +172,49 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">Nama Ayah Santri</h5>
+                                            <h5 class="mt-2">Nama Ayah</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="ayah" id="ayah">
                                                 <?= form_error('ayah', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama Ibu Santri</h5>
+                                            <h5 class="mt-2">Nama Ibu</h5>
                                             <fieldset class="form-group">
                                                 <input type="text" class="form-control" name="ibu" id="ibu">
                                                 <?= form_error('ibu', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Alamat Wali Santri</h5>
+                                            <h5 class="mt-2">Nama Wali</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="wali" id="wali">
                                             </fieldset>
 
                                             <h5 class="mt-2">No. Telepon/HP Wali Santri</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="number" class="form-control" name="nohpwali" id="nohpwali">
+                                                <?= form_error('nohpwali', '<small class="text-danger">', '</small>'); ?>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Username</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="username" id="username">
+                                                <?= form_error('username', '<small class="text-form text-danger">', '</small>'); ?>
+                                            </fieldset>
+                
+                                            <h5 class="mt-2">Password</h5>
+                                            <fieldset class="form-group">
+                                                <input type="password" class="form-control" name="psw" id="psw">
+                                                <?= form_error('psw', '<small class="text-form text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Upload Foto 3x4</h5>
                                             <fieldset class="form-group">
-                                                <input style="height: 270px; 
-                                                    padding:30% 0 0 100%; 
-                                                    background-image:url('<?php echo base_url(); ?>assets/img/tabah.png'); 
-                                                    background-repeat: no-repeat;
-                                                    background-position: center;" type="file" class="form-control" id="basicInput">
+                                                <input type="file" class="form-control" name="fto" id="fto" required>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">Surat Pernyataan</h5>
+                                            <fieldset class="form-group">
+                                                <input type="file" class="form-control" name="pernyataan" id="pernyataan" required>
                                             </fieldset>
 
                                         </div>
