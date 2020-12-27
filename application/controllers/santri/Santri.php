@@ -13,6 +13,7 @@ class Santri extends CI_Controller
         $this->load->model('m_khataman');
         $this->load->model('m_setkhatam');
         $this->load->model('m_diniyah');
+        $this->load->model('m_setdiniyah');
         $this->load->helper('url', 'form');
     }
 
@@ -33,13 +34,26 @@ class Santri extends CI_Controller
         $this->load->view('santri_template/footer');
     }
 
+    // ================== diniyah =========================
+
     public function diniyah()
     {
-        $data['tb_diniyah'] = $this->m_diniyah->tampil_diniyah()->result();
+        $data['tb_diniyah'] = $this->m_setdiniyah->tampil_data()->result();
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_diniyah', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
+    }
+
+    public function tambah_ringkasan()
+    {
+        $data['ringkasan'] = $this->m_diniyah->tampil_diniyah()->result();
+        $data['santri']=$this->m_khataman->tampil_juz()->result();
+        
+        $this->load->view('santri_template/header');
+        $this->load->view('santri/v_khataman',$data);
+         
+        $this->load->view('santri_template/footer'); 
     }
 
    // -==============================================khataman=============================================//
@@ -48,7 +62,8 @@ class Santri extends CI_Controller
     {
         $data['khatam'] = $this->m_setkhatam->tampil_data()->result();
         $data['juz']=$this->m_khataman->tampil_juz()->result();
-       $this->load->view('santri_template/header');
+        
+        $this->load->view('santri_template/header');
         $this->load->view('santri/v_khataman',$data);
          
         $this->load->view('santri_template/footer');
@@ -79,7 +94,7 @@ class Santri extends CI_Controller
 
         $where=array('id_khataman' => $id );
         $data['khatam']=$this->m_khataman->khatamanharian($id)->result();
-         $data['jumlah']=$this->m_khataman->jumlahkhatam($id)->row();
+        $data['jumlah']=$this->m_khataman->jumlahkhatam($id)->row();
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_khatamdetail',$data);
         $this->load->view('santri_template/profile');
@@ -503,147 +518,5 @@ class Santri extends CI_Controller
     //===============================================EDNPERIZINAN=================================================//
 
 
-    //================================================== ABSENSI =====================================================
-    public function absen()
-    {
-        $this->load->view('santri_template/header');
-        $this->load->view('santri/v_absen');
-        $this->load->view('santri_template/footer');
-    }
-
-    public function absen_khataman()
-    {
-        $data['absensi_khataman'] = $this->m_user_absensi->tampil_absen_khataman()->result();
-        $this->load->view('santri_template/header');
-        $this->load->view('santri/v_absen_khataman', $data);
-        $this->load->view('santri_template/footer');
-    }
-
-    public function tambah_absen_khataman()
-    {
-        $data = $this->m_user_absensi->tampil_absen_khataman()->num_rows();
-        if ($data > 0) {
-            // Mengambil id soal sebelumnya
-            $lastId = $this->m_user_absensi->tampil_data_akhir_khataman()->result();
-            // Melakukan perulangan untuk mengambil data
-            foreach ($lastId as $row) {
-                // Melakukan pemisahan huruf dengan angka pada id perizinan
-                $rawid_khataman = substr($row->id_khataman, 3);
-                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
-                $id_khatamanInt = intval($rawid_khataman);
-
-                // Menghitung panjang id yang sudah menjadi integer
-                if (strlen($id_khatamanInt) == 1) {
-                    // jika panjang id hanya 1 angka
-                    $id_khataman = "KH00" . ($id_khatamanInt + 1);
-                } else if (strlen($id_khatamanInt) == 2) {
-                    // jika panjang id hanya 2 angka
-                    $id_khataman = "KH0" . ($id_khatamanInt + 1);
-                } else if (strlen($id_khatamanInt) == 3) {
-                    // jika panjang id hanya 3 angka
-                    $id_khataman = "KH" . ($id_khatamanInt + 1);
-                }
-            }
-        } else {
-            // Jika jumlah perizinan kurang dari sama dengan 0
-            $id_khataman = "KH001";
-        }
-        $khataman = $this->m_user_absensi->tampil_absen_khataman();
-
-
-        $data = array(
-            'id_khataman' => $id_khataman
-        );
-
-        $this->load->view('santri_template/header');
-        $this->load->view('santri/v_tambah_khataman', $data);
-        $this->load->view('santri_template/footer');
-    }
-
-    public function aksi_tambah_khataman()
-    {
-        $id_khataman = $this->input->post('id_khataman');
-        $NIS = $this->input->post('NIS');
-        $tgl = $this->input->post('tgl');
-        $keterangan = $this->input->post('keterangan');
-
-        $data = array(
-            'id_khataman' => $id_khataman,
-            'NIS' => $NIS,
-            'tgl' => $tgl,
-            'keterangan' => $keterangan
-        );
-
-        $this->m_user_absensi->tambah_absen_khataman($data, 'tb_absensi_khataman');
-        redirect('santri/Santri/absen_khataman');
-    }
-
-    public function absen_diniyah()
-    {
-        $data['absensi_diniyah'] = $this->m_user_absensi->tampil_absen_diniyah()->result();
-        $this->load->view('santri_template/header');
-        $this->load->view('santri/v_absen_diniyah', $data);
-        $this->load->view('santri_template/footer');
-    }
-
-    public function tambah_absen_diniyah()
-    {
-        $data = $this->m_user_absensi->tampil_absen_diniyah()->num_rows();
-        if ($data > 0) {
-            // Mengambil id soal sebelumnya
-            $lastId = $this->m_user_absensi->tampil_data_akhir_diniyah()->result();
-            // Melakukan perulangan untuk mengambil data
-            foreach ($lastId as $row) {
-                // Melakukan pemisahan huruf dengan angka pada id perizinan
-                $rawid_diniyah = substr($row->id_diniyah, 3);
-                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
-                $id_diniyahInt = intval($rawid_diniyah);
-
-                // Menghitung panjang id yang sudah menjadi integer
-                if (strlen($id_diniyahInt) == 1) {
-                    // jika panjang id hanya 1 angka
-                    $id_diniyah = "DN00" . ($id_diniyahInt + 1);
-                } else if (strlen($id_diniyahInt) == 2) {
-                    // jika panjang id hanya 2 angka
-                    $id_khataman = "DN0" . ($id_diniyahInt + 1);
-                } else if (strlen($id_diniyahInt) == 3) {
-                    // jika panjang id hanya 3 angka
-                    $id_diniyah = "DN" . ($id_diniyahInt + 1);
-                }
-            }
-        } else {
-            // Jika jumlah perizinan kurang dari sama dengan 0
-            $id_diniyah = "DN001";
-        }
-        $diniyah = $this->m_user_absensi->tampil_absen_diniyah();
-
-
-        $data = array(
-            'id_diniyah' => $id_diniyah
-        );
-
-        $this->load->view('santri_template/header');
-        $this->load->view('santri/v_tambah_diniyah', $data);
-        $this->load->view('santri_template/footer');
-    }
-
-    public function aksi_tambah_diniyah()
-    {
-        $id_diniyah = $this->input->post('id_diniyah');
-        $NIS = $this->input->post('NIS');
-        $tgl = $this->input->post('tgl');
-        $keterangan = $this->input->post('keterangan');
-        $ringkasan_materi = $this->input->post('ringkasan_materi');
-
-        $data = array(
-            'id_diniyah' => $id_diniyah,
-            'NIS' => $NIS,
-            'tgl' => $tgl,
-            'keterangan' => $keterangan,
-            'ringkasan_materi' => $ringkasan_materi
-        );
-
-        $this->m_user_absensi->tambah_absen_diniyah($data, 'tb_absensi_diniyah');
-        redirect('santri/Santri/absen_diniyah');
-    }
+    
 }

@@ -11,6 +11,7 @@ class Admin extends CI_Controller
         $this->load->model('m_admin');
         $this->load->model('m_pembayaran');
         $this->load->model('m_diniyah');
+        $this->load->model('m_setdiniyah');
         $this->load->model('m_setkhatam');
         $this->load->helper('url', 'form');
         $this->load->library('form_validation');
@@ -875,11 +876,6 @@ class Admin extends CI_Controller
         $pelanggaran = $this->m_pelanggaran->tampil_pelanggaran();
         // Apabila hasil validasi form menunjukkan tidak ada yang salah
 
-        $data = array(
-            'id_pelanggaran' => $id_pelanggaran
-
-        );
-
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_tmbhpelanggaran', $data);
@@ -955,12 +951,14 @@ class Admin extends CI_Controller
             'NIS' => $NIS,
             'jenis_pelanggaran' => $jenis_pelanggaran,
             'sanksi' => $sanksi,
-            'catatn' => $catatan,
+            'catatan' => $catatan,
         );
 
         $where = array(
             'id_pelanggaran' => $id_pelanggaran,
         );
+
+        $this->m_pelanggaran->update_pelanggaran($where, $data, 'tb_pelanggaran');
 
         redirect('index.php/admin/Admin/pelanggaran');
     }
@@ -1001,20 +999,20 @@ class Admin extends CI_Controller
 
     public function diniyah()
     {
-        $data['tb_diniyah'] = $this->m_diniyah->tampil_diniyah()->result();
+        $data['tb_diniyah'] = $this->m_setdiniyah->tampil_data()->result();
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_diniyah', $data);
+        $this->load->view('admin/v_diniyah_admin', $data);
         $this->load->view('admin_template/footer');
     }
 
     public function tambah_diniyah()
     {
-        $data = $this->m_diniyah->tampil_diniyah()->num_rows();
+        $data = $this->m_setdiniyah->tampil_data()->num_rows();
         if ($data > 0) {
             // Mengambil id soal sebelumnya
-            $lastId = $this->m_diniyah->tampil_data_akhir()->result();
+            $lastId = $this->m_setdiniyah->tampil_data_akhir()->result();
             // Melakukan perulangan untuk mengambil data
             foreach ($lastId as $row) {
                 // Melakukan pemisahan huruf dengan angka pada id perizinan
@@ -1040,7 +1038,7 @@ class Admin extends CI_Controller
         }
 
         $tb_mapel = $this->m_diniyah->tampil_mapel()->result();
-        $diniyah = $this->m_diniyah->tampil_diniyah()->result();
+        $diniyah = $this->m_setdiniyah->tampil_data()->result();
       
 
 
@@ -1069,7 +1067,7 @@ class Admin extends CI_Controller
             'tgl_diniyah' => $tgl_diniyah 
         );
 
-        $this->m_diniyah->tambah_diniyah($data, 'tb_diniyah');
+        $this->m_setdiniyah->tambah_data($data, 'tb_diniyah');
         redirect('index.php/admin/Admin/diniyah');
     }
 
@@ -1079,17 +1077,35 @@ class Admin extends CI_Controller
             'id_diniyah' => $id,      
         );
 
-        $data['tb_diniyah'] = $this->m_diniyah->edit_diniyah($where, 'tb_diniyah')->result();
+        $data['tb_mapel'] = $this->m_diniyah->tampil_mapel()->result();
+        $data['tb_diniyah'] = $this->m_setdiniyah->edit_data($where, 'tb_diniyah')->result();
         
-        //$this->load->view('admin_template/header');
-        //$this->load->view('admin_template/mainmenu');
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_edit_diniyah', $data);
-        //$this->load->view('admin_template/footer');
+        $this->load->view('admin_template/footer');
     }
 
     public function update_diniyah()
     {
-        
+        $id_diniyah = $this->input->post('id_diniyah');
+        $id_mapel = $this->input->post('id_mapel');
+        $tgl_diniyah = $this->input->post('tgl_diniyah');
+
+        $data = array
+        (
+            'id_diniyah' => $id_diniyah,
+            'id_mapel' => $id_mapel,
+            'tgl_diniyah' => $tgl_diniyah 
+        );
+
+        $where = array
+        (
+            'id_diniyah' => $id_diniyah, 
+        );
+
+        $this->m_setdiniyah->update_data($where, $data, 'tb_diniyah');
+        redirect('index.php/admin/Admin/diniyah');
     }
 
     public function hapus_diniyah($id)
@@ -1098,7 +1114,7 @@ class Admin extends CI_Controller
             'id_diniyah' => $id
         );
 
-        $this->m_diniyah->hapus_diniyah($where, 'tb_diniyah');
+        $this->m_setdiniyah->hapus_data($where, 'tb_diniyah');
         redirect('index.php/admin/Admin/diniyah');
     }
 
@@ -1108,7 +1124,7 @@ class Admin extends CI_Controller
             'id_diniyah' => $id
         );
 
-        $data['tb_diniyah'] = $this->m_diniyah->detail_diniyah($where, 'tb_diniyah')->result();
+        $data['tb_diniyah'] = $this->m_setdiniyah->detail_diniyah($where, 'tb_diniyah')->result();
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
@@ -1118,35 +1134,36 @@ class Admin extends CI_Controller
 
     public function absen_diniyah($id)
     {
-        $where = array(
-            'id_diniyah' => $id,
+        
+       $where = array(
+            'id_diniyah' => $id,      
         );
+        
+        $data['tb_mapel'] = $this->m_diniyah->tampil_mapel()->result();
+        $data['tb_santri'] = $this->m_diniyah->tampil_santri()->result();
+        $data['absen_santri'] = $this->m_diniyah->absen_santri($where, 'tb_diniyah')->result();
+        
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_absen_santri', $data);
+        $this->load->view('admin_template/footer');
+    }
 
-        $data['tb_absen_diniyah'] = $this->m_diniyah->absen_diniyah($where, 'tb_diniyah')->result();    
-      
+    /*public function tambah_absen_diniyah()
+    {
+        $tb_santri = $this->m_diniyah->tampil_santri()->result();
+        $data['diniyah'] = $this->m_diniyah->tampil_diniyah()->result();
+        $data['mapel'] = $this->m_diniyah->tampil_mapel()->result();
+
+        $data = array(
+            'tb_santri' => $tb_santri,
+        );
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_absen_diniyah', $data);
-        $this->load->view('admin_template/footer');
-    }
-
-    public function tambah_absen_diniyah()
-    {
-        $tb_santri = $this->m_diniyah->tampil_santri()->result();
-        $tb_diniyah = $this->m_diniyah->tampil_diniyah()->result();
-
-        $data = array(
-            'tb_santri' => $tb_santri,
-            'tb_diniyah' => $tb_diniyah,
-            'id_diniyah' => $id_diniyah
-        );
-
-        $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_tambah_absen_diniyah', $data);
-        $this->load->view('admin_template/footer');
-    }
+        //$this->load->view('admin_template/footer');
+    }*/
 
     public function aksi_absen_diniyah()
     {
