@@ -99,51 +99,64 @@
 
                                         <div class="card-body">
                                             Download <b>Surat Pernyataan </b> &nbsp; <a href="<?php echo base_url(); ?>santri/login"><button type="button" style="width: 50px;" class="btn-sm btn-primary btn-min-width ff mr-1 mt-1 mb-1">LOGIN</button></a>
+                                            <?php echo form_open_multipart('index.php/santri/Daftar/tambah'); ?>
 
                                             <h5 class="mt-2">Nama Lengkap</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="nama" id="nama">
+                                                <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Jenis Kelamin</h5>
-                                            <fieldset class="form-group">
-                                                <select class="form-control" id="basicSelect">
+                                            <select name="jk" id="jk" class="custom-select">
                                                     <option>Select Option</option>
                                                     <option>Laki-Laki</option>
                                                     <option>Perempuan</option>
-                                                </select>
-                                            </fieldset>
+                                            </select>
+                                                <?= form_error('jk', '<small class="text-danger">', '</small>'); ?>
 
                                             <h5 class="mt-2">Tanggal Lahir</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" id="basicInput">
+                                                <input type="date" class="form-control" name="ttl" id="ttl">
+                                                <?= form_error('ttl', '<small class="text-form text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Alamat Asal</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                            <textarea class="form-control" name="almt" id="almt"> </textarea>
+                                                <?= form_error('almt', '<small class="text-form text-danger">', '</small>'); ?>
                                             </fieldset>
                                             <br>
                                             <h4 class="card-title">Pendidikan yang di tempuh</h4>
 
                                             <h5 class="mt-2">D3/D4/S1/S2/S3</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="pdd" id="pdd">
+                                                <?= form_error('pdd', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama Kampus</h5>
+                                            <h5 class="mt-2">Nama Instansi</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="univ" id="univ">
+                                                <?= form_error('univ', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Jurusan/Prodi/Fakultas</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="jur" id="jur">
+                                                <?= form_error('jur', '<small class="text-danger">', '</small>'); ?>
+                                            </fieldset>
+
+                                            <h5 class="mt-2">NIM/NIS</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="nim" id="nim">
+                                                <?= form_error('nim', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">No. Telepon/HP</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="number" class="form-control" name="nohp" id="nohp">
+                                                <?= form_error('nohp', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                         </div>
@@ -154,19 +167,16 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-                                            <h5 class="mt-2">Tanggal Masuk Pondok</h5>
+                                            <h5 class="mt-2">Nama Ayah Santri</h5>
                                             <fieldset class="form-group">
-                                                <input type="date" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="ayah" id="ayah">
+                                                <?= form_error('ayah', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
-                                            <h5 class="mt-2">Nama Wali Santri</h5>
+                                            <h5 class="mt-2">Nama Ibu Santri</h5>
                                             <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
-                                            </fieldset>
-
-                                            <h5 class="mt-2">Pekerjaan Wali Santri</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" class="form-control" id="basicInput">
+                                                <input type="text" class="form-control" name="ibu" id="ibu">
+                                                <?= form_error('ibu', '<small class="text-danger">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Alamat Wali Santri</h5>
@@ -195,11 +205,10 @@
                         </div>
                         <div class="form-group" style="text-align:right; padding-right:10px;">
                             <!-- Buttons with Icon -->
-                            <a href="<?php echo base_url(); ?>santri/login"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                            <a href="<?php echo base_url(); ?>index.php/admin/admin/santri"><button type="button" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
-
+                            <a href="<?php echo base_url(); ?>index.php/santri/login"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
                         </div>
-
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>

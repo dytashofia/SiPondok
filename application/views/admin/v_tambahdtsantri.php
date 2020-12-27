@@ -61,7 +61,7 @@
                                             </select>
                                             <?= form_error('jk', '<small class="text-danger">', '</small>'); ?>
 
-                                            <h5 class="mt-2">TEMPAT TANGGAL LAHIR</h5>
+                                            <h5 class="mt-2">TANGGAL LAHIR</h5>
                                             <fieldset class="form-group">
                                                 <input type="date" class="form-control" name="ttl" id="ttl">
                                                 <?= form_error('ttl', '<small class="text-form text-danger">', '</small>'); ?>
@@ -75,11 +75,8 @@
 
 
                                             <h5 class="mt-2">PENDIDIKAN</h5>
-                                            <select name="pdd" id="pdd" class="custom-select">
-                                                <option value="" selected>--Pilih--</option>
-                                                <option value="SMA/SMK">SMA/SMK</option>
-                                                <option value="Kuliah">Kuliah</option>
-                                            </select>
+                                            <h6 class="mt-2">SMA/SMK/D3/D4/S1/S2/S3</h6>
+                                            <input type="text" class="form-control" name="pdd" id="pdd">
                                             <?= form_error('pdd', '<small class="text-danger">', '</small>'); ?>
 
                                             <h5 class="mt-2">NIM/NIS</h5>
@@ -176,7 +173,7 @@
                     </div>
                     <div class="form-group" style="text-align:right; padding-right:10px;">
                         <!-- Buttons with Icon -->
-                        <a href="<?php echo base_url(); ?>index.php/admin/admin/pembayaran"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                        <a href="<?php echo base_url(); ?>index.php/admin/Data_santri"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
                         <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
                     </div>
                     <?php echo form_close(); ?>
