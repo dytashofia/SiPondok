@@ -11,15 +11,15 @@ class Daftar extends CI_Controller
         $this->load->library('PrimsLib');
     }
 
-    public function index()
-    {
-        $this->load->view('santri_template/header2');
-        $this->load->view('santri/v_pendaftaran');
-        $this->load->view('santri_template/footer');
-    }
+    // public function index()
+    // {
+    //     $this->load->view('santri_template/header2');
+    //     $this->load->view('santri/v_pendaftaran', $data);
+    //     $this->load->view('santri_template/footer');
+    // }
 
     // Menambahkan data santri
-  public function tambah()
+  public function index()
 
   {
     /**

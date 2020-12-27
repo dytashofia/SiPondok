@@ -99,7 +99,7 @@
 
                                         <div class="card-body">
                                             Download <b>Surat Pernyataan </b> &nbsp; <a href="<?php echo base_url(); ?>santri/login"><button type="button" style="width: 50px;" class="btn-sm btn-primary btn-min-width ff mr-1 mt-1 mb-1">LOGIN</button></a>
-                                            <?php echo form_open_multipart('index.php/santri/Daftar/tambah'); ?>
+                                            <?php echo form_open_multipart('index.php/santri/Daftar/index'); ?>
 
                                             <h5 class="mt-2">NIS</h5>
                                             <fieldset class="form-group">
