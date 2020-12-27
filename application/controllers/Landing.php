@@ -1,14 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Landing extends CI_Controller {
-	
-	function __construct(){
-		parent::__construct();		
-        $this->load->helper('url');// menggunakan helper url
-               
+class Landing extends CI_Controller
+{
+
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('url'); // menggunakan helper url
+
 	}
-	
+
 	public function index()
 	{
 		$this->load->view('V_landing/home');
