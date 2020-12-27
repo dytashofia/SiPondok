@@ -61,41 +61,41 @@ class Daftar extends CI_Controller
         'required' => 'kolom ini tidak boleh kosong'
       ]);
       
-      // $this->form_validation->set_rules('pdd', 'Pdd', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('pdd', 'Pdd', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('jur', 'Jur', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('jur', 'Jur', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('univ', 'Univ', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('univ', 'Univ', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
       
-      // $this->form_validation->set_rules('nohp', 'Nohp', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('nohp', 'Nohp', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('username', 'Username', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('username', 'Username', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('psw', 'Psw', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('psw', 'Psw', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('ayah', 'Ayah', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('ibu', 'Ibu', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
-      // $this->form_validation->set_rules('nohpwali', 'Nohpwali', 'required|trim', [
-      //   'required' => 'kolom ini tidak boleh kosong'
-      // ]);
+      $this->form_validation->set_rules('nohpwali', 'Nohpwali', 'required|trim', [
+        'required' => 'kolom ini tidak boleh kosong'
+      ]);
   
       // Cek form validation jika tidak sesuai dengan rules maka kembali ke view
       if ($this->form_validation->run() == FALSE) {
