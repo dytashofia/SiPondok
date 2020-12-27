@@ -1149,21 +1149,24 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    /*public function tambah_absen_diniyah()
+    public function tambah_absen_diniyah($id)
     {
+        $where = array('id_diniyah' => $id);
         $tb_santri = $this->m_diniyah->tampil_santri()->result();
-        $data['diniyah'] = $this->m_diniyah->tampil_diniyah()->result();
-        $data['mapel'] = $this->m_diniyah->tampil_mapel()->result();
+        $tb_diniyah = $this->m_diniyah->tampil($where)->result();
 
         $data = array(
             'tb_santri' => $tb_santri,
+            'tb_diniyah' => $tb_diniyah,
         );
 
         $this->load->view('admin_template/header');
         $this->load->view('admin_template/mainmenu');
-        $this->load->view('admin/v_absen_diniyah', $data);
-        //$this->load->view('admin_template/footer');
-    }*/
+        $this->load->view('admin/v_tambah_absen_diniyah', $data);
+        $this->load->view('admin_template/footer');
+
+        
+    }
 
     public function aksi_absen_diniyah()
     {
@@ -1194,7 +1197,123 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
+public function setkhataman()
+    {
 
+        $data = $this->m_setkhatam->tampil_data()->num_rows();
+        if ($data > 0) {
+            // Mengambil id soal sebelumnya
+            $lastId = $this->m_setkhatam->tampil_data_akhir()->result();
+            // Melakukan perulangan untuk mengambil data
+            foreach ($lastId as $row) {
+                // Melakukan pemisahan huruf dengan angka pada id perizinan
+                $rawid_khataman = substr($row->id_khataman, 3);
+                // Melakukan konversi nilai pemisahan huruf dengan angka pada id perizinn menjadi integer
+                $id_khatamanInt = intval($rawid_khataman);
+
+                // Menghitung panjang id yang sudah menjadi integer
+                if (strlen($id_khatamanInt) == 1) {
+                    // jika panjang id hanya 1 angka
+                    $id_khataman = "KH00" . ($id_khatamanInt + 1);
+                } else if (strlen($id_khatamanInt) == 2) {
+                    // jika panjang id hanya 2 angka
+                    $id_khataman = "KH0" . ($id_khatamanInt + 1);
+                } else if (strlen($id_khatamanInt) == 3) {
+                    // jika panjang id hanya 3 angka
+                    $id_khataman = "KH" . ($id_khatamanInt + 1);
+                }
+            }
+        } else {
+            // Jika jumlah perizinan kurang dari sama dengan 0
+            $id_khataman = "KH001";
+        }
+
+        // Mengambil data mata pelajaran menggunakan model
+
+        $data = $this->m_setkhatam->tampil_data()->result();
+        $khatam = $this->m_setkhatam->tampil_data()->result();
+
+        $data = array(
+            'id_khataman' => $id_khataman,
+            'khatam' => $khatam
+
+
+        );
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_setkhatam', $data);
+        $this->load->view('admin_template/footer');
+    }
+
+public function aksiTambahkhatam()
+    {
+        $id_khataman = $this->input->post('id_khataman');
+        $nama_bulan = $this->input->post('bulan_khataman');
+        $tgl_awal_bulan = $this->input->post('tgl_awal_bulan');
+        $tgl_akhir_bulan= $this->input->post('tgl_akhir_bulan');
+        
+
+
+        $data = array(
+            'id_khataman' => $id_khataman,
+            'tgl_awal_bulan' =>  $tgl_awal_bulan,
+            'tgl_akhir_bulan' => $tgl_akhir_bulan,
+            'nama_bulan' =>$nama_bulan
+        );
+
+        $this->m_setkhatam->tambah_data($data, 'tb_khataman');
+        redirect('index.php/admin/Admin/setkhataman');
+    }
+
+
+public function updatesetkhatam()
+    {
+        $id_khataman = $this->input->post('id_khataman');
+        $nama_bulan = $this->input->post('bulan_khataman');
+        $tgl_awal_bulan = $this->input->post('tgl_awal_bulan');
+        $tgl_akhir_bulan= $this->input->post('tgl_akhir_bulan');
+        
+
+
+        $data = array(
+            'id_khataman' => $id_khataman,
+            'tgl_awal_bulan' =>  $tgl_awal_bulan,
+            'tgl_akhir_bulan' => $tgl_akhir_bulan,
+            'nama_bulan' =>$nama_bulan
+        );
+
+        $where = array(
+            'id_khataman' => $id_khataman
+        );
+
+        $this->m_setkhatam->update_data($where, $data);
+        redirect('index.php/admin/Admin/setkhataman');
+    }
+ 
+    function hapussetkhatam($id)
+    {
+        $where = array('id_khataman' => $id);
+
+        $this->m_setkhatam->hapus_data($where, 'tb_khataman');
+
+        redirect('index.php/admin/Admin/setkhataman');
+    }
+
+
+    public function laporankhataman($id)
+
+    {
+
+        $data['khatam'] = $this->m_setkhatam->khatam($id)->result();
+        $data['tidak']  = $this->m_setkhatam->tidak($id)->result();
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_laporankhataman',$data);
+        $this->load->view('admin_template/footer');
+    }
+
+    //================================ end khataman ============================================>
 
     
 }
