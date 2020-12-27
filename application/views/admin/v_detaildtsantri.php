@@ -133,7 +133,7 @@
                                             <?php if($ds->surat_pernyataan==''){?>
                                                 <p class="text-bold text-muted">Belum upload</P>
                                              <?php }else{ ?>
-                                                <a  class="btn btn-success" href="<?php echo base_url('assets/berkasSantri'. $ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
+                                                <a  class="btn btn-success" href="<?php echo base_url('assets/berkasSantri/'. $ds->surat_pernyataan)?>">Download Surat Pernyataan</a><br>
                                                 <?php echo $ds->surat_pernyataan; ?>
                                             <?php }?> 
                                             <fieldset class="form-group">
