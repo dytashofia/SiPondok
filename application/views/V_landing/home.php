@@ -71,7 +71,7 @@ https://templatemo.com/tm-558-klassy-cafe
                             </li>
                         -->
               <li class="scroll-to-section"><a href="#menu">Artikel</a></li>
-              <li class="scroll-to-section"><a href="#chefs">Produk</a></li>
+              <li class="scroll-to-section"><a href="#menu1">Produk</a></li>
               <li class="submenu">
                 <a href="javascript:;">Features</a>
                 <ul>
@@ -117,21 +117,28 @@ https://templatemo.com/tm-558-klassy-cafe
               <!-- Item -->
               <div class="item">
                 <div class="img-fill">
-                  <img src="<?php echo base_url(); ?>assets/landing/images/slide-01.jpg" alt="">
+                  <img src="<?php echo base_url(); ?>assets/landing/images/ft 1.jpg" alt="">
                 </div>
               </div>
               <!-- // Item -->
               <!-- Item -->
               <div class="item">
                 <div class="img-fill">
-                  <img src="<?php echo base_url(); ?>assets/landing/images/slide-02.jpg" alt="">
+                  <img src="<?php echo base_url(); ?>assets/landing/images/ft 2.jpg" alt="">
                 </div>
               </div>
               <!-- // Item -->
               <!-- Item -->
               <div class="item">
                 <div class="img-fill">
-                  <img src="<?php echo base_url(); ?>assets/landing/images/slide-03.jpg" alt="">
+                  <img src="<?php echo base_url(); ?>assets/landing/images/ft 3.jpg" alt="">
+                </div>
+              </div>
+              <!-- // Item -->
+              <!-- Item -->
+              <div class="item">
+                <div class="img-fill">
+                  <img src="<?php echo base_url(); ?>assets/landing/images/ft 4.jpg" alt="">
                 </div>
               </div>
               <!-- // Item -->
@@ -151,9 +158,15 @@ https://templatemo.com/tm-558-klassy-cafe
           <div class="left-text-content">
             <div class="section-heading">
               <h6>About Us</h6>
-              <h2>We Leave A Delicious Memory For You</h2>
+              <h2>Pondok Pesantren Raden Rahmad Sunan Ampel</h2>
             </div>
-            <p>Klassy Cafe is one of the best <a href="https://templatemo.com/tag/restaurant" target="_blank" rel="sponsored">restaurant HTML templates</a> with Bootstrap v4.5.2 CSS framework. You can download and feel free to use this website template layout for your restaurant business. You are allowed to use this template for commercial purposes. <br><br>You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please contact us for more information.</p>
+            <p>Pondok Pesantren Raden Rahmat Sunan Ampel audalah salah satu pondok pesantren yang berada di Lingkungan Jambuan, Kelurahan Antirogo Kecamatan Sumbersari Kabupaten Jember.
+              Ponpes Raden Rahmat Sunan Ampel merupakan lembaga pendidikan Islam yang didirikan oleh Yayasan Al-Munawwiriy Sunan Ampel pada tahun 2014.
+              Yayasan al-munawwiriy sunan ampel bertempat di Desa Jatimulyo Kecamatan Jenggawah Kabupaten Jember.
+              Pada awalnya santri Pondok Pesantren Raden Rahmat Sunan Ampel yang merupakan mahasiswa/i Universitas Jember dan Politeknik Negeri Jember
+              mengikuti kegiatan pengajian, tadarus, dzikir bersama, qiyamul lail dan ibadah lainnya di Ponpes Al-Falah Desa Jatimulyo Kecamatan Jenggawah yang merupakan lembaga pendidikan Islam di bawah naungan Yayasan almunawwiriy sunan ampel.
+              Untuk lebih mengoptimalkan kegiatan pendidikan santri mahasiswa, maka diperlukan Pondok Pesantren di lingkungan kampus di kota Jember.
+              Ponpes tersebut diberi nama Pondok Pesantren Raden Rahmat Sunan Ampel (PONPES RRSA) Jember</p>
             <div class="row">
               <div class="col-4">
                 <img src="<?php echo base_url(); ?>assets/landing/images/about-thumb-01.jpg" alt="">
@@ -170,8 +183,8 @@ https://templatemo.com/tm-558-klassy-cafe
         <div class="col-lg-6 col-md-6 col-xs-12">
           <div class="right-content">
             <div class="thumb">
-              <a rel="nofollow" href="http://youtube.com"><i class="fa fa-play"></i></a>
-              <img src="<?php echo base_url(); ?>assets/landing/images/about-video-bg.jpg" alt="">
+              <a rel="nofollow" href="https://www.youtube.com/watch?v=FXZHG1Hk9XM"><i class="fa fa-play"></i></a>
+              <img src="<?php echo base_url(); ?>assets/landing/images/profil.jpg" alt="">
             </div>
           </div>
         </div>
@@ -181,13 +194,13 @@ https://templatemo.com/tm-558-klassy-cafe
   <!-- ***** About Area Ends ***** -->
 
   <!-- ***** Menu Area Starts ***** -->
-  <section class="section" id="menu">
+  <section style="margin-top:20px;" class="section" id="menu">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
           <div class="section-heading">
-            <h6>Our Menu</h6>
-            <h2>Our selection of cakes with quality taste</h2>
+            <h6>Artikel</h6>
+            <h2>Kumpulan Artikel Pondok Pesantren Raden Rahmat Sunan Ampel</h2>
           </div>
         </div>
       </div>
@@ -196,103 +209,36 @@ https://templatemo.com/tm-558-klassy-cafe
       <div class="col-lg-12">
         <div class="owl-menu-item owl-carousel">
           <div class="item">
-            <div class='card card1'>
+            <div style="background-image:url(assets/landing/images/menu-item-03.jpg);" class='card '>
+
               <div class="price">
-                <h6>$14</h6>
+                <h6 style="width: 112px; height:27px; font-size:10px; line-height:28px;">10 Desember 2020</h6>
               </div>
               <div class='info'>
                 <h1 class='title'>Chocolate Cake</h1>
                 <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
                 <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                  <div class="scroll-to-section"><a href="#reservation">Lanjut Membaca <i class="fa fa-angle-down"></i></a></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class='card card2'>
-              <div class="price">
-                <h6>$22</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Klassy Pancake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card3'>
-              <div class="price">
-                <h6>$18</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Tall Klassy Bread</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card4'>
-              <div class="price">
-                <h6>$10</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Blueberry CheeseCake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card5'>
-              <div class="price">
-                <h6>$8.50</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Klassy Cup Cake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card3'>
-              <div class="price">
-                <h6>$7.25</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Klassic Cake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
   </section>
   <!-- ***** Menu Area Ends ***** -->
-
+  <section style="margin-top:0" class="section" id="menu1">
+  </section>
   <!-- ***** Chefs Area Starts ***** -->
-  <section class="section" id="menu">
+  <section style="margin-top:0;" class="section" id="menu">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
           <div class="section-heading">
-            <h6>Our Menu</h6>
-            <h2>Our selection of cakes with quality taste</h2>
+            <h6>Produk</h6>
+            <h2>Kumpulan Produk Pondok Pesantren Raden Rahmat Sunan Ampel</h2>
           </div>
         </div>
       </div>
@@ -303,87 +249,18 @@ https://templatemo.com/tm-558-klassy-cafe
           <div class="item">
             <div class='card card1'>
               <div class="price">
-                <h6>$14</h6>
+                <h6 style="width: 140px;">Rp 100.000</h6>
               </div>
               <div class='info'>
                 <h1 class='title'>Chocolate Cake</h1>
                 <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
                 <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                  <div class="scroll-to-section"><a href="#reservation">Buat Pesanan <i class="fa fa-angle-down"></i></a></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class='card card2'>
-              <div class="price">
-                <h6>$22</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Klassy Pancake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card3'>
-              <div class="price">
-                <h6>$18</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Tall Klassy Bread</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card4'>
-              <div class="price">
-                <h6>$10</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Blueberry CheeseCake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card5'>
-              <div class="price">
-                <h6>$8.50</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Klassy Cup Cake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class='card card3'>
-              <div class="price">
-                <h6>$7.25</h6>
-              </div>
-              <div class='info'>
-                <h1 class='title'>Klassic Cake</h1>
-                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                <div class="main-text-button">
-                  <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -398,22 +275,22 @@ https://templatemo.com/tm-558-klassy-cafe
           <div class="left-text-content">
             <div class="section-heading">
               <h6>Contact Us</h6>
-              <h2>Here You Can Make A Reservation Or Just walkin to our cafe</h2>
+              <h2>Anda dapat mengirim pesan serta menghubungi kami jika ada kendala teknis</h2>
             </div>
-            <p>Donec pretium est orci, non vulputate arcu hendrerit a. Fusce a eleifend riqsie, namei sollicitudin urna diam, sed commodo purus porta ut.</p>
+            <p>Jl. Koptu Berlian No.8, Jambutan, Antirogo, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68125</p>
             <div class="row">
               <div class="col-lg-6">
                 <div class="phone">
                   <i class="fa fa-phone"></i>
                   <h4>Phone Numbers</h4>
-                  <span><a href="#">080-090-0990</a><br><a href="#">080-090-0880</a></span>
+                  <span><a href="#">085-33174-2836</a><br><a href="#">082-33858-4462</a></span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="message">
                   <i class="fa fa-envelope"></i>
                   <h4>Emails</h4>
-                  <span><a href="#">hello@company.com</a><br><a href="#">info@company.com</a></span>
+                  <span><a href="#">pprrsunanampel@gmail.com</a><br><a href="#">adefsing@gmail.com</a></span>
                 </div>
               </div>
             </div>
@@ -424,7 +301,7 @@ https://templatemo.com/tm-558-klassy-cafe
             <form id="contact" action="" method="post">
               <div class="row">
                 <div class="col-lg-12">
-                  <h4>Table Reservation</h4>
+                  <h4>Tabel Pesan</h4>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <fieldset>
@@ -442,25 +319,6 @@ https://templatemo.com/tm-558-klassy-cafe
                   </fieldset>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <fieldset>
-                    <select value="number-guests" name="number-guests" id="number-guests">
-                      <option value="number-guests">Number Of Guests</option>
-                      <option name="1" id="1">1</option>
-                      <option name="2" id="2">2</option>
-                      <option name="3" id="3">3</option>
-                      <option name="4" id="4">4</option>
-                      <option name="5" id="5">5</option>
-                      <option name="6" id="6">6</option>
-                      <option name="7" id="7">7</option>
-                      <option name="8" id="8">8</option>
-                      <option name="9" id="9">9</option>
-                      <option name="10" id="10">10</option>
-                      <option name="11" id="11">11</option>
-                      <option name="12" id="12">12</option>
-                    </select>
-                  </fieldset>
-                </div>
-                <div class="col-lg-6">
                   <div id="filterDate2">
                     <div class="input-group date" data-date-format="dd/mm/yyyy">
                       <input name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
@@ -470,16 +328,6 @@ https://templatemo.com/tm-558-klassy-cafe
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                  <fieldset>
-                    <select value="time" name="time" id="time">
-                      <option value="time">Time</option>
-                      <option name="Breakfast" id="Breakfast">Breakfast</option>
-                      <option name="Lunch" id="Lunch">Lunch</option>
-                      <option name="Dinner" id="Dinner">Dinner</option>
-                    </select>
-                  </fieldset>
-                </div>
                 <div class="col-lg-12">
                   <fieldset>
                     <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
@@ -487,7 +335,7 @@ https://templatemo.com/tm-558-klassy-cafe
                 </div>
                 <div class="col-lg-12">
                   <fieldset>
-                    <button type="submit" id="form-submit" class="main-button-icon">Make A Reservation</button>
+                    <button type="submit" id="form-submit" class="main-button-icon">Buat Pesan</button>
                   </fieldset>
                 </div>
               </div>
@@ -500,273 +348,15 @@ https://templatemo.com/tm-558-klassy-cafe
   <!-- ***** Reservation Area Ends ***** -->
 
   <!-- ***** Menu Area Starts ***** -->
-  <section class="section" id="offers">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 offset-lg-4 text-center">
-          <div class="section-heading">
-            <h6>Klassy Week</h6>
-            <h2>This Week’s Special Meal Offers</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row" id="tabs">
-            <div class="col-lg-12">
-              <div class="heading-tabs">
-                <div class="row">
-                  <div class="col-lg-6 offset-lg-3">
-                    <ul>
-                      <li><a href='#tabs-1'><img src="<?php echo base_url(); ?>assets/landing/images/tab-icon-01.png" alt="">Breakfast</a></li>
-                      <li><a href='#tabs-2'><img src="<?php echo base_url(); ?>assets/landing/images/tab-icon-02.png" alt="">Lunch</a></a></li>
-                      <li><a href='#tabs-3'><img src="<?php echo base_url(); ?>assets/landing/images/tab-icon-03.png" alt="">Dinner</a></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <section class='tabs-content'>
-                <article id='tabs-1'>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="row">
-                        <div class="left-list">
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-01.png" alt="">
-                              <h4>Fresh Chicken Salad</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$10.50</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-02.png" alt="">
-                              <h4>Orange Juice</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$8.50</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-03.png" alt="">
-                              <h4>Fruit Salad</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$9.90</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="row">
-                        <div class="right-list">
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-04.png" alt="">
-                              <h4>Eggs Omelette</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$6.50</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-05.png" alt="">
-                              <h4>Dollma Pire</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$5.00</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-06.png" alt="">
-                              <h4>Omelette & Cheese</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$4.10</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article id='tabs-2'>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="row">
-                        <div class="left-list">
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-04.png" alt="">
-                              <h4>Eggs Omelette</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$14</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-05.png" alt="">
-                              <h4>Dollma Pire</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$18</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-06.png" alt="">
-                              <h4>Omelette & Cheese</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$22</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="row">
-                        <div class="right-list">
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-01.png" alt="">
-                              <h4>Fresh Chicken Salad</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$10</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-02.png" alt="">
-                              <h4>Orange Juice</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$20</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-03.png" alt="">
-                              <h4>Fruit Salad</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$30</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article id='tabs-3'>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="row">
-                        <div class="left-list">
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-05.png" alt="">
-                              <h4>Eggs Omelette</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$14</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-03.png" alt="">
-                              <h4>Orange Juice</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$18</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-02.png" alt="">
-                              <h4>Fruit Salad</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$10</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="row">
-                        <div class="right-list">
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-06.png" alt="">
-                              <h4>Fresh Chicken Salad</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$8.50</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-01.png" alt="">
-                              <h4>Dollma Pire</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$9</h6>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-12">
-                            <div class="tab-item">
-                              <img src="<?php echo base_url(); ?>assets/landing/images/tab-item-04.png" alt="">
-                              <h4>Omelette & Cheese</h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.</p>
-                              <div class="price">
-                                <h6>$11</h6>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section style="padding-top:0;" class="section" id="offers">
+    <div>
+      <iframe style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.430040959495!2d113.73577421415862!3d-8.159354184004112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695bff3b16eeb%3A0xa66446d5bdacf5c1!2sPondok%20Pesantren%20Raden%20Rahmat%20Sunan%20Ampel%20Jember!5e0!3m2!1sid!2sid!4v1604020369647!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
   <!-- ***** Chefs Area Ends ***** -->
 
   <!-- ***** Footer Start ***** -->
-  <footer>
+  <footer style="margin-top: 0;">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-xs-12">
@@ -781,7 +371,7 @@ https://templatemo.com/tm-558-klassy-cafe
         </div>
         <div class="col-lg-4">
           <div class="logo">
-            <a href="index.html"><img src="<?php echo base_url(); ?>assets/landing/images/white-logo.png" alt=""></a>
+            <a href="index.html"><img src="<?php echo base_url(); ?>assets/landing/images/white-logoo.png" alt=""></a>
           </div>
         </div>
         <div class="col-lg-4 col-xs-12">
