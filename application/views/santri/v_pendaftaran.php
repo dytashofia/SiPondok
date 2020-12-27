@@ -98,7 +98,7 @@
                                     <div class="card-block">
 
                                         <div class="card-body">
-                                            Download <b>Surat Pernyataan </b> &nbsp; <a href="<?php echo base_url(); ?>santri/login"><button type="button" style="width: 50px;" class="btn-sm btn-primary btn-min-width ff mr-1 mt-1 mb-1">LOGIN</button></a>
+                                            Download &nbsp; <a href="<?php echo base_url('assets/berkasSantri/Surat_Pernyataan.pdf')?>"><button type="button" style="width: 50px;" class="btn-sm btn-primary btn-min-width ff mr-1 mt-1 mb-1">Surat Pernyataan</button></a>
                                             <?php echo form_open_multipart('index.php/santri/Daftar/index'); ?>
 
                                             <h5 class="mt-2">NIS</h5>
