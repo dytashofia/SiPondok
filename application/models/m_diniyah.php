@@ -19,6 +19,23 @@ class M_diniyah extends CI_Model
         return $query;
     }
 
+    public function tampil($where)
+    {
+        $data = array
+        (
+            "tb_diniyah.id_diniyah", 
+            "tb_diniyah.tgl_diniyah", 
+            "tb_mapel.nama_mapel" 
+        );
+
+        $this->db->select($data);
+        $this->db->from('tb_diniyah', 'tb_mapel');
+        $this->db->join('tb_mapel', 'tb_diniyah.id_mapel = tb_mapel.id_mapel');
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function tampil_data_akhir()
     {
         $this->db->order_by('id_diniyah', 'DESC');
@@ -84,6 +101,7 @@ class M_diniyah extends CI_Model
             "tb_diniyah.tgl_diniyah", 
             "tb_mapel.nama_mapel", 
             "tb_mapel.nama_ustad"
+
         );
 
         $this->db->select($data);

@@ -1131,19 +1131,19 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/footer');
     }
 
-    public function tambah_absen_diniyah()
+    public function tambah_absen_diniyah($id)
     {
+        $where = array('id_diniyah' => $id);
         $tb_santri = $this->m_diniyah->tampil_santri()->result();
-        $tb_diniyah = $this->m_diniyah->tampil_diniyah()->result();
+        $tb_diniyah = $this->m_diniyah->tampil($where)->result();
 
         $data = array(
             'tb_santri' => $tb_santri,
             'tb_diniyah' => $tb_diniyah,
-            'id_diniyah' => $id_diniyah
         );
 
         $this->load->view('admin_template/header');
-        $this->load->view('admin_template/mainmenu');
+      
         $this->load->view('admin/v_tambah_absen_diniyah', $data);
         $this->load->view('admin_template/footer');
     }
