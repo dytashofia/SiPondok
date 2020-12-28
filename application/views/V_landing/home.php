@@ -105,8 +105,8 @@ https://templatemo.com/tm-558-klassy-cafe
               <h4 style="font-size: 26px ;">Pondok Pesantren Raden Rahmad Sunan Ampel</h4>
               <h6>JEMBER</h6>
               <div class="main-white-button scroll-to-section">
-                <a href="#reservation">Login</a>
-                <a href="#reservation">Pendaftaran</a>
+                <a href="<?php echo base_url(); ?>santri/login">Login</a>
+                <a href="<?php echo base_url(); ?>santri/daftar">Pendaftaran</a>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ https://templatemo.com/tm-558-klassy-cafe
               mengikuti kegiatan pengajian, tadarus, dzikir bersama, qiyamul lail dan ibadah lainnya di Ponpes Al-Falah Desa Jatimulyo Kecamatan Jenggawah yang merupakan lembaga pendidikan Islam di bawah naungan Yayasan almunawwiriy sunan ampel.
               Untuk lebih mengoptimalkan kegiatan pendidikan santri mahasiswa, maka diperlukan Pondok Pesantren di lingkungan kampus di kota Jember.
               Ponpes tersebut diberi nama Pondok Pesantren Raden Rahmat Sunan Ampel (PONPES RRSA) Jember</p>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-4">
                 <img src="<?php echo base_url(); ?>assets/landing/images/about-thumb-01.jpg" alt="">
               </div>
@@ -177,7 +177,7 @@ https://templatemo.com/tm-558-klassy-cafe
               <div class="col-4">
                 <img src="<?php echo base_url(); ?>assets/landing/images/about-thumb-03.jpg" alt="">
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-xs-12">
