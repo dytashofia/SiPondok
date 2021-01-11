@@ -90,46 +90,40 @@
                              </div>
                          </div>
                          <div class="card-content collapse show">
-                             <?php echo form_open_multipart('santri/Santri/aksiTambahuploadpembayaran'); ?>
-                             <div class="card-body">
-                                 <h5 class="mt-2">ID DINIYAH </h5>
-                                 <fieldset class="form-group">
-                                     <input type="text" class="form-control" name="id_diniyah" id="id_diniyah" value="<?= $id_diniyah; ?>" readonly>
-                                 </fieldset>
+                            <?php echo form_open_multipart('/santri/Santri/aksi_tambah_ringkasan'); ?>
+                        <?php foreach ($detail_santri as $ringkasan_santri) { ?>
+                        <div class="row match-height">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="card">
+                                    <div class="card-block">
+                                        <div class="card-body">
+                                            <h5 class="mt-2">ID Diniyah</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="id_diniyah" id="id_diniyah" value="<?= $ringkasan_santri->id_diniyah; ?>" class="form-control" readonly>
+                                            </fieldset>
+                                            <h5 class="mt-2">NAMA MAPEL</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="id_diniyah" id="id_diniyah" value="<?= $ringkasan_santri->nama_mapel; ?>" class="form-control" readonly>
+                                            </fieldset>
+                                            <h5 class="mt-2">RINGKASAN</h5>
+                                            <fieldset class="form-group">
+                                                <input type="text" name="sanksi" class="form-control" id="sanksi" placeholder="Masukkan Sanksi">
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
 
-                                 <h5 class="mt-2">RINGKASAN MATERI</h5>
-                                 <fieldset class="form-group">
-                                     <input type="text" class="form-control" name="ringkasan_materi" id="ringkasan_materi" value="<?php echo ucfirst($this->session->userdata('nama_santri')); ?>" readonly>
-                                 </fieldset>
+                        </div>
+                        <div class="form-group" style="text-align:right; padding-right:10px;">
+                            <!-- Buttons with Icon -->
+                            <a href="<?php echo base_url(); ?>santri/Santri/diniyah"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
+                        </div>
 
-                                   <h5 class="mt-2">RINGKASAN MATERI</h5>
-                                 <fieldset class="form-group">
-                                     <textarea class="form-control" name="catatan" id="catatan" rows="4" placeholder="Tambahkan Catatan" ></textarea>
-                                 </fieldset>
-
-                                 
-
-                                
-                                 
-
-                               
-
-
-                                 <fieldset class="form-group">
-                                     <input type="hidden" class="form-control" name="status" id="status" value="Menunggu konfirmasi">
-                                 </fieldset>
-                                 <!--Def kalo disini konflik pakek nyak aku aja ya soalnya ini 
-                                tadi field nya double sudah aku betulin-->
-
-
-                             </div>
-                             <div class="form-group" style="text-align:right; padding-right:10px;">
-                                 <!-- Buttons with Icon -->
-                                 <a href="<?php echo base_url('santri/Santri/infopembayaran'); ?>"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
-                                 <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1"><i class="ft-file"></i> Simpan </button></a>
-
-                             </div>
-                             <?php echo form_close(); ?>
+                         <?= form_close(); ?>    
+                           
                          </div>
                      </div>
                  </div>

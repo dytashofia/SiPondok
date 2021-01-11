@@ -73,13 +73,11 @@
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-block">
-                                        <div class="card-body">
-                                                                                    
-                                            <h5 class="mt-2">Foto</h5>
+                                        <div class="card-body">                                      
+                                            <h5 class="mt-2">Foto Admin</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" name="foto_admin" id="foto_admin" class="form-control" >
+                                                <input type="file" class="form-control" id="foto_admin" name="foto_admin">
                                             </fieldset>
-
                                         </div>
                                     </div>
                                 </div>

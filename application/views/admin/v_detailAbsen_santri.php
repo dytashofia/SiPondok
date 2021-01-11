@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tabel Nama Admin</h4>
+                            <h4 class="card-title">Tabel Nama Santri</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -61,44 +61,30 @@
                                         <tr>
                                             <th>NO</th>
                                             <th>NAMA SANTRI</th>
+                                          
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php $no_urut = 1;
-                                        foreach($tb_admin as $admin) :
+                                        foreach($detailAbsen as $absen) :
                                     ?>                                     
                                         <tr>
                                             <td><?= $no_urut; ?></td>
-                                            <td><?= $admin->id_admin; ?></td>
-                                            <td><?= $admin->username; ?></td>
-                                            <td><?= $admin->password; ?></td>
-                                            <td><?= $admin->nama_admin; ?></td>
-                                            <td><?= $admin->foto_admin; ?></td>
+                                            <td hidden><?= $absen->id_diniyah; ?></td>
+                                            <td><?= $absen->nama_santri; ?></td>
+                                            
+                                            
                                             <td>
-
                                                 <div class="btn-group mr-2 mb-2">
-                                                    <a href="<?php echo base_url('index.php/admin/Admin/edit_admin/'.$admin->id_admin); ?>" title="Edit" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                        <button type="button" class="btn btn-primary">
-                                                            <i class="la la-pencil color-muted m-r-5"></i>
-                                                        </button>
-                                                    </a>
-
                                                     &nbsp;
-                                                    <a href="<?php echo base_url('index.php/admin/Admin/hapus_admin/'.$admin->id_admin); ?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                    <a href="#" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
                                                         <button type="button" class="btn btn-danger">
                                                             <i class="la la-trash color-danger"></i>
                                                         </button>
                                                     </a>
                                                     &nbsp;
-                                                    <a href="<?php echo base_url('index.php/admin/Admin/detail_admin/'.$admin->id_admin); ?>" title="Detail" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                        <button type="button" class="btn btn-warning">
-                                                            <i class="la la-exclamation-circle color-danger"></i>
-                                                        </button>
-                                                    </a>
-
                                                 </div>
-
                                             </td>
                                         </tr>
                                     <?php 
@@ -109,11 +95,8 @@
                                     <tfoot>
                                         <tr>
                                             <th>NO</th>
-                                            <th>ID</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
-                                            <th>NAMA ADMIN</th>
-                                            <th>FOTO ADMIN</th>
+                                            <th>NAMA SANTRI</th>
+                                            <th>RANGKUMAN MATERI</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>

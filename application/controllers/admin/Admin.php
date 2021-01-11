@@ -94,13 +94,13 @@ class Admin extends CI_Controller
         if ($foto_admin = '') {
         } else {
             $config['upload_path']          = './assets/img/gbrAdmin';
-            $config['allowed_types']        = 'jpg|png|jpeg|gif|JPG|JPEG';
+            $config['allowed_types']        = 'jpg|png|jpeg|gif|JPG|JPEG|pdf';
 
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('foto_admin')) {
-                //echo "Upload Gagal"; die();
+                $bukti_pembayaran = $this->upload->data('file_name');
             } else {
-                $foto_admin = $this->upload->data('file_name');
+                $bukti_pembayaran = $this->upload->data('file_name');
             }
         }
 
@@ -1135,7 +1135,7 @@ class Admin extends CI_Controller
     public function absen_diniyah($id)
     {
         
-       $where = array(
+        $where = array(
             'id_diniyah' => $id,      
         );
         
@@ -1164,8 +1164,7 @@ class Admin extends CI_Controller
         $this->load->view('admin_template/mainmenu');
         $this->load->view('admin/v_tambah_absen_diniyah', $data);
         $this->load->view('admin_template/footer');
-
-        
+  
     }
 
     public function aksi_absen_diniyah()
@@ -1180,8 +1179,24 @@ class Admin extends CI_Controller
         );
 
         $this->m_diniyah->tambah_absen_diniyah($data, 'detail_diniyah');
-        //redirect('index.php/admin/Admin/absen_diniyah');
+        redirect('index.php/admin/Admin/detailAbsen_santri');
     }
+
+    public function detailAbsen_santri()
+    {
+        $data['detailAbsen'] = $this->m_diniyah->detailAbsen_santri()->result();
+
+        $this->load->view('admin_template/header');
+        $this->load->view('admin_template/mainmenu');
+        $this->load->view('admin/v_detailAbsen_santri', $data);
+        $this->load->view('admin_template/footer');
+    }
+
+    public function hapus_detailAbsen()
+    {
+        
+    }
+
 
     
     

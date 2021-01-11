@@ -154,49 +154,24 @@
                                               <tr>
                                                   <th>NO</th>
                                                   <th>ID DINIYAH</th>
-                                                  <th>TANGGAL</th>
-                                                  <th>MAPEL</th>
-                                                  <th>RINGKASAN MATERI</th>
-                                                  <th>ACTION</th>
+                                                  <th>NAMA SANTRI</th>
+                                                  <th>TANGGAL DINIYAH</th>
+                                                  <th>NAMA MAPEL</th>
+                                                
                                               </tr>
                                           </thead>
                                           <tbody>
                                               <?php $no_urut = 1;
                                                 foreach ($tb_diniyah as $diniyah) :
                                                 ?>
-                                                  <tr>
-                                                      <td><?= $no_urut; ?></td>
-                                                      <td><?= $diniyah->id_diniyah; ?></td>
-                                                      <td><?= $diniyah->tgl_diniyah; ?></td>
-                                                      <td><?= $diniyah->nama_mapel; ?></td>
-                                                      <td>
-                                                          <a href="#" title="Lihat Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Lihat Ringkasan">
-                                                              <button type="button" class="btn btn-success">
-                                                                  <i class="la la-eye color-muted m-r-5"></i>
-                                                              </button>
-                                                          </a>
-                                                      </td>
-                                                      <td>
-
-                                                          <div class="btn-group mr-2 mb-2">
-
-                                                              <a href="<?php echo base_url('index.php/santri/Santri/tambah_ringkasan/'); ?>" title="Tambah Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Tambah Ringkasan">
-                                                                  <button type="button" class="btn btn-warning">
-                                                                      <i class="la la-plus color-danger"></i> Ringkasan
-                                                                  </button>
-                                                              </a>
-
-                                                              &nbsp;
-                                                              <a href="#" title="Edit Ringkasan" onclick="return" data-toggle="tooltip" data-placement="top" data-original-title="Edit Ringkasan">
-                                                                  <button type="button" class="btn btn-primary">
-                                                                      <i class="la la-pencil color-muted m-r-5"></i>
-                                                                  </button>
-                                                              </a>
-
-                                                          </div>
-
-                                                      </td>
-                                                  </tr>
+                                                    <tr>
+                                                        <td><?= $no_urut; ?></td>
+                                                        <td><?= $diniyah->id_diniyah; ?></td>
+                                                        <td><?= $diniyah->nama_santri; ?></td>
+                                                        <td><?= $diniyah->tgl_diniyah; ?></td>
+                                                        <td><?= $diniyah->nama_mapel; ?></td>
+                                                       
+                                                    </tr>
                                               <?php
                                                     $no_urut++;
                                                 endforeach;
@@ -206,10 +181,10 @@
                                               <tr>
                                                   <th>NO</th>
                                                   <th>ID DINIYAH</th>
-                                                  <th>TANGGAL</th>
-                                                  <th>MAPEL</th>
-                                                  <th>RINGKASAN MATERI</th>
-                                                  <th>ACTION</th>
+                                                  <th>NAMA SANTRI</th>
+                                                  <th>TANGGAL DINIYAH</th>
+                                                  <th>NAMA MAPEL</th>
+                                                
                                               </tr>
                                           </tfoot>
                                       </table>

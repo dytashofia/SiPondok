@@ -38,27 +38,51 @@ class Santri extends CI_Controller
 
     public function diniyah()
     {
-        $data['tb_diniyah'] = $this->m_setdiniyah->tampil_data()->result();
+        $data['tb_diniyah'] = $this->m_diniyah->ringkasan($NIS)->result();
+
         $this->load->view('santri_template/header');
         $this->load->view('santri/v_diniyah', $data);
         $this->load->view('santri_template/profile');
         $this->load->view('santri_template/footer');
     }
 
-    public function tambah_ringkasan()
+    public function tambah_ringkasan($id)
     {
-        $data['ringkasan'] = $this->m_diniyah->tampil_diniyah()->result();
-        $data['santri']=$this->m_khataman->tampil_juz()->result();
-        
+        $where = array
+        (
+            'id_diniyah' => $id
+        );
+
+        $data['tb_santri'] = $this->m_diniyah->tampil_santri()->result();
+        $data['tb_mapel'] = $this->m_diniyah->tampil_mapel()->result();
+        $data['tb_detail_diniyah'] = $this->m_diniyah->tampil_ringkasan($where, 'detail_diniyah')->result();
+
         $this->load->view('santri_template/header');
-        $this->load->view('santri/v_khataman',$data);
-         
-        $this->load->view('santri_template/footer'); 
+        $this->load->view('santri/v_tmbhRingkasan', $data);
+        $this->load->view('santri_template/profile');
+        $this->load->view('santri_template/footer');
+    }
+
+    public function aksi_tambah_ringkasan()
+    {
+        $id_diniyah = $this->input->post('id_diniyah');
+        $NIS = $this->input->post('NIS');
+        $ringkasan_materi = $this->input->post('ringkasan_materi');
+
+        $data = array
+        (
+            'id_diniyah' => $id_diniyah, 
+            'NIS' => $NIS,
+            'ringkasan_materi' =>$ringkasan_materi
+        );
+
+        $this->m_diniyah->tambah_ringkasan($data, 'detail_diniyah');   
+        redirect('index.php/santri/Santri/diniyah');
     }
 
    // -==============================================khataman=============================================//
 
-    public function khataman()
+    public function khataman() 
     {
         $data['khatam'] = $this->m_setkhatam->tampil_data()->result();
         $data['juz']=$this->m_khataman->tampil_juz()->result();

@@ -19,6 +19,32 @@ class M_diniyah extends CI_Model
         return $query;
     }
 
+    public function ringkasan($NIS)
+    {
+        
+        $NIS = $this->session->userdata('NIS');
+        
+        $query = $this->db->query("SELECT detail_diniyah.id_diniyah, tb_santri.nama_santri, tb_diniyah.tgl_diniyah, tb_mapel.nama_mapel FROM detail_diniyah, tb_santri, tb_diniyah, tb_mapel WHERE detail_diniyah.id_diniyah = tb_diniyah.id_diniyah AND detail_diniyah.NIS = tb_santri.NIS AND tb_diniyah.id_mapel = tb_mapel.id_mapel AND detail_diniyah.NIS = '$NIS'");
+        return $query;
+    }
+    
+    public function tampil_ringkasan($where)
+    {
+        $data = array
+        (
+            "detail_diniyah.id_diniyah", 
+            "tb_santri.NIS", 
+            "detail_diniyah.ringkasan_materi"
+        );
+
+        $this->db->select($data);
+        $this->db->from('detail_diniyah', 'tb_santri');
+        $this->db->join('tb_santri', 'detail_diniyah.NIS = tb_santri.NIS');
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function tampil($where)
     {
         $data = array
@@ -67,17 +93,17 @@ class M_diniyah extends CI_Model
     {
         $data = array
         (
-            "tb_diniyah.id_diniyah", 
-            "tb_diniyah.tgl_diniyah", 
-            "tb_mapel.nama_mapel" 
+            "detail_diniyah.id_diniyah",
+            "tb_santri.nama_santri", 
+            "detail_diniyah.ringkasan_materi" 
         );
 
         $this->db->select($data);
-        $this->db->where($where);
-        $this->db->from('tb_diniyah', 'tb_mapel');
-        $this->db->join('tb_mapel', 'tb_diniyah.id_mapel = tb_mapel.id_mapel');
+        $this->db->from('detail_diniyah', 'tb_santri');
+        $this->db->join('tb_santri', 'detail_diniyah.NIS = tb_santri.NIS');
         $query = $this->db->get();
-        return $query->row();
+        return $query;
+
     }
 
 //  ======================================== Absen Diniyah ========================================
