@@ -69,9 +69,10 @@
                                             <!-- <th>ID ARMADA</th> -->
                                             <th>NIS</th>
                                             <th>NAMA</th>
-                                            <th>USERNAME</th>
-                                            <th>PASSWORD</th>
-                                            <th>ACTION</th>
+                                            <th>JENIS KELAMIN</th>
+                                            <th>ALAMAT</th>
+                                            <th>PENDIDIKAN</th>
+                                            <th>AKSI</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -84,8 +85,9 @@
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $sntr->NIS ?></td>
                                                 <td><?= $sntr->nama_santri ?></td>
-                                                <td><?= $sntr->username ?></td>
-                                                <td><?= $sntr->password ?></td>
+                                                <td><?= $sntr->jk ?></td>
+                                                <td><?= $sntr->alamat ?></td>
+                                                <td><?= $sntr->pendidikan ?></td>
                                                 <td>
                                                     <div class="btn-group mr-2 mb-2">
                                                         <a href="<?php echo base_url() ?>index.php/admin/Data_santri/edit/<?php echo $id; ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">

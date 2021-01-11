@@ -71,50 +71,52 @@
                                             <th>NAMA ADMIN</th>
                                             <th>GAMBAR</th>
                                             <th>DESKRIPSI</th>
+                                            <th>TANGGAL</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
-                                    <?php
+
+                                        <?php
                                         $noUrut = 1;
-                                        foreach($tb_artikel as $artikel) :
-                                    ?>
-                                        <tr>
-                                            <td><?= $noUrut;?></td>
-                                            <td><?= $artikel->id_artikel;?></td>
-                                            <td><?= $artikel->nama_admin;?></td>
-                                            <td><?= $artikel->gambar;?></td>
-                                            <td><?= $artikel->deskripsi;?></td>
-                                            <td>
+                                        foreach ($tb_artikel as $artikel) :
+                                        ?>
+                                            <tr>
+                                                <td><?= $noUrut; ?></td>
+                                                <td><?= $artikel->id_artikel; ?></td>
+                                                <td><?= $artikel->nama_admin; ?></td>
+                                                <td><?= $artikel->gambar; ?></td>
+                                                <td><?= $artikel->deskripsi; ?></td>
+                                                <td><?= $artikel->tgl; ?></td>
+                                                <td>
 
-                                                <div class="btn-group mr-2 mb-2">
-                                                    <a href="<?php echo base_url('index.php/admin/artikel/editArtikel/'.$artikel->id_artikel);?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-                                                        <button type="button" class="btn btn-primary">
-                                                            <i class="la la-pencil color-muted m-r-5"></i>
-                                                        </button>
-                                                    </a>
+                                                    <div class="btn-group mr-2 mb-2">
+                                                        <a href="<?php echo base_url('index.php/admin/artikel/editArtikel/' . $artikel->id_artikel); ?>" title="Edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
+                                                            <button type="button" class="btn btn-primary">
+                                                                <i class="la la-pencil color-muted m-r-5"></i>
+                                                            </button>
+                                                        </a>
 
-                                                    &nbsp;
-                                                    <a href="<?= base_url('index.php/admin/artikel/hapusArtikel/'.$artikel->id_artikel);?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
-                                                        <button type="button" class="btn btn-danger">
-                                                            <i class="la la-trash color-danger"></i>
-                                                        </button>
-                                                    </a>
-                                                    &nbsp;
-                                                    <a href="<?= base_url('index.php/admin/artikel/tampilDetailArtikel/'.$artikel->id_artikel);?>" title="Detail" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
-                                                        <button type="button" class="btn btn-warning">
-                                                            <i class="la la-exclamation-circle color-danger"></i>
-                                                        </button>
-                                                    </a>
+                                                        &nbsp;
+                                                        <a href="<?= base_url('index.php/admin/artikel/hapusArtikel/' . $artikel->id_artikel); ?>" title="Hapus" onclick="return confirm('Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" data-original-title="Hapus">
+                                                            <button type="button" class="btn btn-danger">
+                                                                <i class="la la-trash color-danger"></i>
+                                                            </button>
+                                                        </a>
+                                                        &nbsp;
+                                                        <a href="<?= base_url('index.php/admin/artikel/tampilDetailArtikel/' . $artikel->id_artikel); ?>" title="Detail" data-toggle="tooltip" data-placement="top" data-original-title="Detail">
+                                                            <button type="button" class="btn btn-warning">
+                                                                <i class="la la-exclamation-circle color-danger"></i>
+                                                            </button>
+                                                        </a>
 
-                                                </div>
+                                                    </div>
 
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
                                         <?php
                                             $noUrut++;
-                                            endforeach;
+                                        endforeach;
                                         ?>
 
                                     </tbody>
@@ -126,6 +128,7 @@
                                             <th>ID ADMIN</th>
                                             <th>GAMBAR</th>
                                             <th>DESKRIPSI</th>
+                                            <th>TANGGAL</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </tfoot>

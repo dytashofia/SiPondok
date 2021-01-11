@@ -35,63 +35,69 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <?php
-                            foreach($data_artikel as $artikel) :
+                        foreach ($data_artikel as $artikel) :
                         ?>
-                        <div class="row match-height">
-                            <div class="col-lg-6 col-md-12">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-body">
+                            <div class="row match-height">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <div class="card-body">
 
-                                            
-                                            <h5 class="mt-2">ID Artikel</h5>
-                                            <fieldset class="form-group">
-                                                <input type="text" name="id_produk" id="id_produk" class="form-control" value="<?= $artikel->id_artikel;?>"  placeholder="Masukkan ID Produk..." readonly>
-                                            </fieldset>
 
-                                            <h5 class="mt-2">Gambar</h5>
-                                            <fieldset class="form-group">
-                                            <tr>
-                                                    <td>
-                                                        <img src="<?php echo base_url(); ?>assets/img/artikel/<?php echo $artikel->gambar; ?>
+                                                <h5 class="mt-2">ID Artikel</h5>
+                                                <fieldset class="form-group">
+                                                    <input type="text" name="id_produk" id="id_produk" class="form-control" value="<?= $artikel->id_artikel; ?>" placeholder="Masukkan ID Produk..." readonly>
+                                                </fieldset>
+
+                                                <h5 class="mt-2">Gambar</h5>
+                                                <fieldset class="form-group">
+                                                    <tr>
+                                                        <td>
+                                                            <img src="<?php echo base_url(); ?>assets/img/artikel/<?php echo $artikel->gambar; ?>
                                                         " width="120" height="130">
-                                                    </td>
-                                                    <td></td>
-                                            </tr>
-                                            </fieldset>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                </fieldset>
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <div class="card-body">
+
+                                                <h5 class="mt-2">Tanggal Artikel</h5>
+                                                <fieldset class="form-group">
+                                                    <input type="date" name="tgl" id="tgl" class="form-control" value="<?= $artikel->tgl; ?>" placeholder="Masukkan tgl Produk...">
+                                                </fieldset>
+
+                                                <h5 class="mt-2">Deskripsi</h5>
+                                                <fieldset class="form-group">
+                                                    <textarea style="height: 300px;" class="form-control" name="deskripsi" id="deskripsi" rows="5" readonly><?= $artikel->deskripsi; ?></textarea>
+                                                </fieldset>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="card-body">
-                                            <h5 class="mt-2">Deskripsi</h5>
-                                            <fieldset class="form-group">
-                                            <textarea style="height: 300px;" class="form-control" name="deskripsi" id="deskripsi" rows="5"readonly><?= $artikel->deskripsi;?></textarea>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group" style="text-align:right; padding-right:10px;">
-                            <!-- Buttons with Icon -->
-                            <a href="<?php echo base_url(); ?>index.php/admin/artikel/artikel"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
+                            <div class="form-group" style="text-align:right; padding-right:10px;">
+                                <!-- Buttons with Icon -->
+                                <a href="<?php echo base_url(); ?>index.php/admin/artikel/artikel"> <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1"><i class="ft-arrow-left"></i> Kembali </button></a>
 
-                        </div>
+                            </div>
                         <?php
-                                    endforeach;
-                         ?>
-                        <?php echo form_close();?>
+                        endforeach;
+                        ?>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Striped rows end -->
         </div>
     </div>

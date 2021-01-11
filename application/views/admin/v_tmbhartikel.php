@@ -35,8 +35,8 @@
                                 </ul>
                             </div>
                         </div>
-                        
-                        <?php echo form_open_multipart('index.php/admin/artikel/aksiTambahartikel');?>
+
+                        <?php echo form_open_multipart('index.php/admin/artikel/aksiTambahartikel'); ?>
                         <div class="row match-height">
                             <div class="col-lg-6 col-md-12">
                                 <div class="card">
@@ -48,23 +48,23 @@
                                             </fieldset>
 
                                             <h5 class="mt-2">Nama Admin</h5>
-                                            <fieldset class="form-group<?=form_error('id_admin') ? 'has-error' : null?>">
-                                            <select name="id_admin" id="id_admin" class="custom-select">
-                                                <option value=""> Pilih Admin </option>
-                                                <?php
+                                            <fieldset class="form-group<?= form_error('id_admin') ? 'has-error' : null ?>">
+                                                <select name="id_admin" id="id_admin" class="custom-select">
+                                                    <option value=""> Pilih Admin </option>
+                                                    <?php
                                                     foreach ($admin as $detailAdmin) :
-                                                ?>
-                                                    <option value="<?= $detailAdmin->id_admin; ?>"><?= $detailAdmin->nama_admin; ?></option>
-                                                <?php
+                                                    ?>
+                                                        <option value="<?= $detailAdmin->id_admin; ?>"><?= $detailAdmin->nama_admin; ?></option>
+                                                    <?php
                                                     endforeach;
-                                                ?>
+                                                    ?>
                                                 </select>
                                                 <?= form_error('id_admin', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
                                             <h5 class="mt-2">Gambar</h5>
                                             <fieldset class="form-group">
-                                                <input type="file" name="gambar" class="form-control" >
+                                                <input type="file" name="gambar" class="form-control">
                                             </fieldset>
                                         </div>
                                     </div>
@@ -74,10 +74,13 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-body">
-
+                                            <h5 class="mt-2">Tanggal Artikel</h5>
+                                            <fieldset class="form-group">
+                                                <input type="date" name="tgl" id="tgl" class="form-control" placeholder="Masukkan tgl Produk...">
+                                            </fieldset>
                                             <h5 class="mt-2">Deskripsi</h5>
-                                            <fieldset class="form-group<?=form_error('deskripsi') ? 'has-error' : null?>">
-                                                <textarea style="height: 200px;" class="form-control" name="deskripsi" id="deskripsi" rows="5"><?=set_value('deskripsi');?></textarea>
+                                            <fieldset class="form-group<?= form_error('deskripsi') ? 'has-error' : null ?>">
+                                                <textarea style="height: 200px;" class="form-control" name="deskripsi" id="deskripsi" rows="5"><?= set_value('deskripsi'); ?></textarea>
                                                 <?= form_error('deskripsi', '<small class="text-form text-danger mt-2 ml-2">', '</small>'); ?>
                                             </fieldset>
 
