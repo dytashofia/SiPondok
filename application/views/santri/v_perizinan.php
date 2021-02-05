@@ -279,7 +279,7 @@
                                                   </td>
 
                                                   <td>
-                                                      <?= $i->status; ?>
+                                
                                                       <br>
                                                       <?php
                                                         if ($i->status == 'Diizinkan') { ?>
